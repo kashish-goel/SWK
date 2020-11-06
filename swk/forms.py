@@ -115,17 +115,12 @@ class DutyEntryForm(forms.ModelForm):
             
             Row(
                 Column('lane_name', css_class='form-group col-md-5 mb-0'),
+                Column('num_houses_lane', css_class='form-group col-md-5 mb-0'),                
                 css_class='form-row'
             ),
-            Row(
-                Column('num_houses_lane', css_class='form-group col-md-5 mb-0'),
-                css_class='form-row'
-            ),
+            
             Row(
                 Column('first_attendants_name', css_class='form-group col-md-5 mb-0'),
-                css_class='form-row'
-            ),
-            Row(
                 Column('second_attendants_name', css_class='form-group col-md-5 mb-0'),
                 css_class='form-row'
             ),
