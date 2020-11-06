@@ -63,7 +63,9 @@ def DutyEntryPage(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Your data is saved')
-        return render(request,'HomePage.html')
+            return HttpResponseRedirect(request.path_info)
+        else:
+            messages.waring(request, 'Please check your form') 
     else:
         form = DutyEntryForm(request.POST or None)
         context= {
