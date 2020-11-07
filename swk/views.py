@@ -63,9 +63,7 @@ def DutyEntryPage(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Your data is saved')
-            return HttpResponseRedirect(request.path_info)
-        else:
-            messages.waring(request, 'Please check your form') 
+        return HttpResponseRedirect(request.path_info)
     else:
         form = DutyEntryForm(request.POST or None)
         context= {
@@ -74,6 +72,7 @@ def DutyEntryPage(request):
         }
 
     return render(request,'DutyEntryForm.html',context)
+
 
 
 def TracksheetPage(request):
@@ -116,7 +115,7 @@ def TracksheetPage(request):
             return HttpResponseRedirect(request.path_info)
      
         else:
-            messages.waring(request, 'Please check your form') 
+            messages.warning(request, 'Please check your form') 
     else:
         
         form = TracksheetForm(request.POST or None)
