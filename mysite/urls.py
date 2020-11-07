@@ -32,6 +32,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('swk.urls')),
     path('map/',include('map.urls')),
+    path('dashboard/',include('dashboard.urls')),
     # url(r'^swk/',include('swk.urls')),
     re_path(r'^cms/', include(wagtailadmin_urls)),
     re_path(r'^documents/', include(wagtaildocs_urls)),

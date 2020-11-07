@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'map',
     'crispy_forms',
     'report_builder',
+    'dashboard',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
