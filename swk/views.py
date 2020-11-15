@@ -6,6 +6,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User,auth
 from django.contrib.auth import logout
 from django.contrib import messages
+from django.http import JsonResponse
 
 
 from django.contrib.auth.decorators import login_required
@@ -73,26 +74,24 @@ def DutyEntryPage(request):
 
     return render(request,'DutyEntryForm.html',context)
 
-
-
 def TracksheetPage(request):
     form = TracksheetForm(request.POST or None)
 
-    if request.is_ajax():
-        selected_drywaste_bf = request.GET['drywaste_bf']
-        selected_wetwaste_bf = request.GET['wetwaste_bf']
-        selected_drywaste_af = request.GET['drywaste_af']
-        selected_wetwaste_af = request.GET['wetwaste_af']
-        selcted_lane_name = request.GET['lane_name']
+    # if request.is_ajax():
+    #     selected_drywaste_bf = request.GET['drywaste_bf']
+    #     selected_wetwaste_bf = request.GET['wetwaste_bf']
+    #     selected_drywaste_af = request.GET['drywaste_af']
+    #     selected_wetwaste_af = request.GET['wetwaste_af']
+    #     selcted_lane_name = request.GET['lane_name']
         
-        rejected_waste = ((selected_drywaste_bf + selected_wetwaste_bf) - (selected_drywaste_af + selected_wetwaste_af))
-        num_houses = DutyEntry.objects.raw('select  num_houses_lane from DutyEntry'.format(selcted_lane_name))
-        # min = Corporatorward.objects.raw('select 1 as id,min({}) from corporatorward'.format(selected_field))[0].min
+    #     rejected_waste = ((selected_drywaste_bf + selected_wetwaste_bf) - (selected_drywaste_af + selected_wetwaste_af))
+    #     num_houses = DutyEntry.objects.raw('select  num_houses_lane from DutyEntry'.format(selcted_lane_name))
+    #     # min = Corporatorward.objects.raw('select 1 as id,min({}) from corporatorward'.format(selected_field))[0].min
 
-        jsondata = {
-            'num_houses': num_houses, 'rejected_waste': rejected_waste
-        }
-        return JsonResponse(jsondata)
+    #     jsondata = {
+    #         'num_houses': num_houses, 'rejected_waste': rejected_waste
+    #     }
+    #     return JsonResponse(jsondata)
         
     if request.method == "POST":
                  
@@ -112,6 +111,8 @@ def TracksheetPage(request):
             # instance.rejected = ((instance.drywaste_bf +instance.wetwaste_bf) - (instance.drywaste_af + instance.wetwaste_af))
             instance.save()
             messages.success(request, 'Your data is saved for {} dated {}'.format(laneName,date)) 
+            # form.save()
+            # messages.success(request, 'Your data is saved')
             return HttpResponseRedirect(request.path_info)
      
         else:
@@ -119,11 +120,11 @@ def TracksheetPage(request):
     else:
         
         form = TracksheetForm(request.POST or None)
-        context= {
-            'form': form,
-            
-            # 'test': 'test',
-        }
+    context= {
+        'form': form,
+        
+        'test': 'test',
+    }
 
     return render(request,'TracksheetForm.html',context)
 

@@ -364,7 +364,28 @@ table, th, td
                   </div>
               </div>
 
-                
+              <div id="checkboxes4">
+                <div class="checkbox" id="boundary">
+                    <label><input type="checkbox" value="{Gsc}" onchange="putWFSChloro();"><span> Choloropleth Map </span></label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="{ASch}" onchange="GetSelectedfac(this);buffer(this);"><span> Schools(coming up soon...)</span></label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="{iti}" onchange="GetSelectedfac(this);buffer(this);"><span> Educational Institutes(coming up soon...)</span></label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="{bif}" onchange="GetSelectedfac(this);buffer(this);"><span> Terrace Garden (coming up soon...)</span></label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="{iti}" onchange="GetSelectedfac(this);buffer(this);"><span> Nutri Gardens(coming up soon...)</span></label>
+              </div>
+              <div class="checkbox">
+                  <label><input type="checkbox" value="{bif}" onchange="GetSelectedfac(this);buffer(this);"><span> Open Space (coming up soon...)</span></label>
+              </div>
+            </div>
+        </div>
+
                 </form>
 
         
@@ -428,13 +449,14 @@ table, th, td
                 position: 'bottomright'
             });
             var LayerList = [];
-            var pointLayerList = [];
-            var newLayerList = [];
-            var faciLayerList = [];
-            var tribLayerList = [];
-            var TRIBLAYER, insti_content;
-            let tableurl;
-            var searchControl;
+            var tempParameter = defaultParameters;
+            // var pointLayerList = [];
+            // var newLayerList = [];
+            // var faciLayerList = [];
+            // var tribLayerList = [];
+            // var TRIBLAYER, insti_content;
+            // let tableurl;
+            // var searchControl;
             
 
         // <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -478,7 +500,7 @@ table, th, td
             mymap.setView([19.023, 72.816], 16);
             newLayerList.push(wms_layer);
             } 
-
+            
 
             function showCheckboxes2() {
                 var checkboxes = document.getElementById("checkboxes2");
@@ -608,6 +630,64 @@ table, th, td
                     }
                 });
             }
+
+            //Cholorpleth maps functions    
+            function putWFSChloro() {
+                           
+                tempParameter.typeName = "geonode:maha_demography";
+                tempParameter.cql_filter="district_n='"+demoLayerCode[index]+"'";
+                tempParameter.propertyName="id,the_geom,district_n,area_name,tot_p,tot_f,tot_m,p_ill,p_lit";
+                legend.addTo(mymap);
+                info.addTo(mymap);
+                displayPolygon(tempParameter,districtLat[index],districtLong[index]);
+                myDistrictLayerList.push(demoLayerCode[index]);
+            } 
+
+
+            function getColor(d) {
+                return d > 1000 ? '#800026' :
+                    d > 500  ? '#BD0026' :
+                    d > 200  ? '#E31A1C' :
+                    d > 100  ? '#FC4E2A' :
+                    d > 50   ? '#FD8D3C' :
+                    d > 20   ? '#FEB24C' :
+                    d > 10   ? '#FED976' :
+                                '#FFEDA0';
+            }
+
+            function style(feature) {
+            return {
+                fillColor: getColor(feature.properties.density),
+                weight: 2,
+                opacity: 1,
+                color: 'white',
+                dashArray: '3',
+                fillOpacity: 0.7
+            };
+        }
+
+        L.geoJson(statesData, {style: style}).addTo(map);
+
+        function highlightFeature(e) {
+            var layer = e.target;
+
+            layer.setStyle({
+                weight: 5,
+                color: '#666',
+                dashArray: '',
+                fillOpacity: 0.7
+            });
+
+            if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                layer.bringToFront();
+            }
+        }
+
+        function resetHighlight(e) {
+            geojson.resetStyle(e.target);
+        }
+
+
 
 
           
