@@ -4,6 +4,14 @@ from django.forms import ModelForm
 
 from wagtail.core.models import Page
 
+class DutyEntry(models.Model):
+    lane_name = models.CharField(primary_key = True, max_length=200, blank = False)
+    first_attendants_name = models.CharField(max_length=100)
+    second_attendants_name = models.CharField(max_length=100)
+    num_houses_lane = models.IntegerField()
+   
+    def __str__(self):
+        return self.lane_name
 
 class HomePage(Page):
 
@@ -25,21 +33,15 @@ class Tracksheet(models.Model):
     wetwaste_bf = models.IntegerField()
     wetwaste_af = models.IntegerField()
     lane_name = models.CharField(max_length=200, blank = False)
+    # lane_name = models.ForeignKey(DutyEntry,default = 1, on_delete=models.SET_DEFAULT)
     num_attendants = models.IntegerField(default = 2 )
     first_attendants_name = models.CharField(max_length=100)
     second_attendants_name = models.CharField(max_length=100)
     time_of_visit = models.CharField(max_length=100)
     track_id = models.AutoField(primary_key=True)
-    rejected = models.IntegerField()
+    # rejected = models.IntegerField()
 
     def __str__(self):
         return self.lane_name
 
-class DutyEntry(models.Model):
-    lane_name = models.CharField(primary_key = True, max_length=200, blank = False)
-    first_attendants_name = models.CharField(max_length=100)
-    second_attendants_name = models.CharField(max_length=100)
-    num_houses_lane = models.IntegerField()
-   
-    def __str__(self):
-        return self.lane_name
+

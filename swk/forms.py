@@ -77,7 +77,7 @@ class TracksheetForm(forms.ModelForm):
     wetwaste_af = forms.IntegerField(label = "Wet waste after(kgs)")
     num_houses_doing_segg = forms.IntegerField(label = "No. of houses doing segregation")
     num_houses_giving_mixwaste = forms.IntegerField(label = "Houses giving mixed waste")
-    rejected = forms.IntegerField(label = "Rejected Waste")
+    # rejected = forms.IntegerField(label = "Rejected Waste")
 
     
     def __init__(self, *args, **kwargs):
@@ -110,7 +110,7 @@ class TracksheetForm(forms.ModelForm):
                 Column('drywaste_bf', css_class='form-group col-md-3 mb-0'),
                 Column('drywaste_af', css_class='form-group col-md-3 mb-0'),
                 Column('wetwaste_bf', css_class='form-group col-md-3 mb-0'),
-                Column('wetwaste_af', css_class='form-group col-md-3 mb-0 ajax_change'),
+                Column('wetwaste_af', css_class='form-group col-md-3 mb-0'),
                 css_class='form-row'
             ),
             # rejected = forms.IntegerField(   
