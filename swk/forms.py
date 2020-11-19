@@ -63,12 +63,24 @@ Satten_name = [
     ('Vinayak Salve','Vinayak Salve'),
     
 ]
+
+supervisor_name = [
+    ('Akshay Kharat','Akshay Kharat'),
+    ('Sanjay Thorat','Sanjay Thorat'),
+    ('Ankit Singh','Ankit Singh'),
+    ('Umesh Salve','Umesh Salve'),
+    ('Savita Sonawane','Savita Sonawane'),
+    ('Zaheer','Zaheer'),
+    ('Akash','Akash'),
+]
+
 class TracksheetForm(forms.ModelForm):
     
     date= forms.DateField(required=True,widget=forms.TextInput(attrs={'type': 'date'}),initial=datetime.date.today)
-    lane_name = forms.CharField(label = 'Name of the Lane/Galli',widget=forms.Select(choices=demarcated_lane))
+    lane_name = forms.CharField(label = 'Name of the Route',widget=forms.Select(choices=demarcated_lane))
     first_attendants_name = forms.CharField(label = 'Name of First Attendant',widget=forms.Select(choices=Fatten_name))
     second_attendants_name = forms.CharField(label = 'Name of Second Attendant',widget=forms.Select(choices=Satten_name))
+    supervisor_name = forms.CharField(label = 'Name of Supervisor',widget=forms.Select(choices=supervisor_name))
     num_houses_reached = forms.IntegerField(label = 'Houses Reached')
     time_of_visit = forms.CharField(label = "Morning /Evening Visit",widget=forms.Select(choices=timeslot))
     drywaste_bf = forms.IntegerField(label = "Dry waste before(kgs)")
@@ -93,9 +105,10 @@ class TracksheetForm(forms.ModelForm):
             # 'address_1',
             # 'address_2',
             Row(
-                Column('num_attendants', css_class='form-group col-md-4 mb-0'),
-                Column('first_attendants_name', css_class='form-group col-md-4 mb-0'),
-                Column('second_attendants_name', css_class='form-group col-md-4 mb-0'),
+                Column('num_attendants', css_class='form-group col-md-3 mb-0'),
+                Column('first_attendants_name', css_class='form-group col-md-3 mb-0'),
+                Column('second_attendants_name', css_class='form-group col-md-3 mb-0'),
+                Column('supervisor_name', css_class='form-group col-md-3 mb-0'),
                 css_class='form-row'
             ),
             # 'check_me_out',

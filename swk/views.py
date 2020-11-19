@@ -106,8 +106,10 @@ def TracksheetPage(request):
             context = {'form':form,'data':raw}
             date = form.cleaned_data['date']
             laneName = form.cleaned_data['lane_name']
-
+            # rejectedwaste = form.cleaned_data['drywaste_bf'] + form.cleaned_data['wetwaste_bf']
             instance = form.save(commit=False)
+            instance.num_houses_lane = 100
+            
             # instance.rejected = ((instance.drywaste_bf +instance.wetwaste_bf) - (instance.drywaste_af + instance.wetwaste_af))
             instance.save()
             messages.success(request, 'Your data is saved for {} dated {}'.format(laneName,date)) 
