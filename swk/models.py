@@ -37,6 +37,7 @@ class Tracksheet(models.Model):
     num_attendants = models.IntegerField(default = 2 )
     first_attendants_name = models.CharField(max_length=100)
     second_attendants_name = models.CharField(max_length=100)
+    supervisor_name = models.CharField(max_length=100,default = 'Zaheer')
     time_of_visit = models.CharField(max_length=100)
     track_id = models.AutoField(primary_key=True)
     # rejected = models.IntegerField()
@@ -45,3 +46,27 @@ class Tracksheet(models.Model):
         return self.lane_name
 
 
+class SwkTracksheetReport(models.Model):
+    num_houses_reached = models.IntegerField()
+    num_houses_doing_segg = models.IntegerField()
+    num_houses_giving_mixwaste = models.IntegerField()
+    drywaste_bf = models.IntegerField()
+    drywaste_af = models.IntegerField()
+    wetwaste_bf = models.IntegerField()
+    wetwaste_af = models.IntegerField()
+    lane_name = models.CharField(max_length=200)
+    num_attendants = models.IntegerField()
+    first_attendants_name = models.CharField(max_length=100)
+    second_attendants_name = models.CharField(max_length=100)
+    time_of_visit = models.CharField(max_length=100)
+    track_id = models.AutoField(primary_key=True)
+    date = models.DateField()
+    supervisor_name = models.CharField(max_length=100)
+    num_houses = models.IntegerField(blank=True, null=True)
+    rejected_total = models.IntegerField(blank=True, null=True)
+    rejected_dry = models.IntegerField(blank=True, null=True)
+    rejected_wet = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'swk_tracksheet_report'
