@@ -79,6 +79,12 @@
 
             <div class="navbar-collapse collapse " id="navbarNavDropdown">
                 <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://makerghat.urbansciences.in/layers/?limit=5&offset=0">Upload Layer</a> 
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://swachh-worli-koliwada.web.app/">Dashboard</a> 
+                  </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'logout' %}">Logout</a>
