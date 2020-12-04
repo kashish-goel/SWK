@@ -54,6 +54,7 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
         setSelLane(e.target.feature.properties.name);
     }
 
+
     const onEachSpot = (spot,layer) =>{
 
     }
@@ -83,7 +84,10 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
     // console.log(layer.options.style.color);
     layer.on({
         click: handleMapClick,
+        mouseover: e => e.target.openPopup(),
+        mouseout: e=> e.target.closePopup()
         });
+
     }
 
     const pointToLayer = (feature,latlong) =>{
