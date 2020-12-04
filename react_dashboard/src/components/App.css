@@ -7,15 +7,14 @@
   }
   
   .app{
-      margin: 100px;
-      padding: 100px;
+      margin: 20px;
+      padding: 20px;
   }
   
   .app__header{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin-top:50px;
     margin-bottom: 50px;
     color:lightgreen;
     font-size: 1.5rem;

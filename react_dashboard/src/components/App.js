@@ -21,7 +21,7 @@ export default function App() {
   }
 
 
-  // console.log(lanes);
+  console.log(geojson);
   return (
   <div className="app">
 
