@@ -1,0 +1,3137 @@
+/*! CommonJS bailout: exports is used directly at 425:50-57 */
+
+/*! CommonJS bailout: exports is used directly at 425:82-89 */
+
+/*! CommonJS bailout: exports is used directly at 4:48-55 */
+
+/*! CommonJS bailout: exports is used directly at 4:80-87 */
+
+/*! CommonJS bailout: exports is used directly at 5:48-55 */
+
+/*! CommonJS bailout: exports is used directly at 5:80-87 */
+
+/*! CommonJS bailout: exports is used directly at 7:73-80 */
+
+/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 10:121-141 */
+
+/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 11:504-524 */
+
+/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 12:312-332 */
+
+/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 13:15-35 */
+
+/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 16:248-268 */
+
+/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 19:56-76 */
+
+/*! CommonJS bailout: exports.unstable_shouldYield(...) prevents optimization as exports is passed as call context at 16:106-134 */
+
+/*! CommonJS bailout: module.exports is used directly at 103:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 112:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 11:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 12:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 13:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 14:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 15:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 16:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 17:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 18:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 18:2-16 */
+
+/*! CommonJS bailout: module.exports is used directly at 19:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 2087:12-26 */
+
+/*! CommonJS bailout: module.exports is used directly at 20:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 21:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 22:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 230:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 23:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 24:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 25:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 26:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 27:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 28:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 29:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 30:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 31:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 32:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 33:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 34:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 35:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 36:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 37:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 38:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 39:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 3:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 46:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 47:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 49:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 4:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 58:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 60:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 62:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 65:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 6:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 73:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 7:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 83:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 84:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 8:63-77 */
+
+/*! CommonJS bailout: module.exports is used directly at 8:67-81 */
+
+/*! CommonJS bailout: module.exports is used directly at 90:0-14 */
+
+/*! CommonJS bailout: module.exports is used directly at 9:0-14 */
+
+/*! CommonJS bailout: this is used directly at 10:2-6 */
+
+/*! CommonJS bailout: this is used directly at 11:2-6 */
+
+/*! CommonJS bailout: this is used directly at 12:2-6 */
+
+/*! CommonJS bailout: this is used directly at 13:2-6 */
+
+/*! CommonJS bailout: this is used directly at 14:2-6 */
+
+/*! CommonJS bailout: this is used directly at 17161:7-11 */
+
+/*! CommonJS bailout: this is used directly at 9:2-6 */
+
+/*! default exports */
+
+/*! dynamic exports */
+
+/*! export AsyncMode [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export AsyncMode [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .AsyncMode */
+
+/*! export AttributionControl [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/AttributionControl.js .default */
+
+/*! export Bar [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export Bubble [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export Chart [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export Children [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export Children [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .Children */
+
+/*! export Circle [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/Circle.js .default */
+
+/*! export CircleMarker [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/CircleMarker.js .default */
+
+/*! export Color [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export Component [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export Component [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .Component */
+
+/*! export ConcurrentMode [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export ConcurrentMode [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .ConcurrentMode */
+
+/*! export ContextConsumer [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export ContextConsumer [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .ContextConsumer */
+
+/*! export ContextProvider [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export ContextProvider [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .ContextProvider */
+
+/*! export ControlledLayer [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export ControlledLayer [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/LayersControl.js .ControlledLayer */
+
+/*! export DELAY_RIPPLE [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export DivOverlay [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/DivOverlay.js .default */
+
+/*! export Doughnut [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export ENTERED [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export ENTERING [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export EVENTS_RE [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export EXITED [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export EXITING [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export Element [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export Element [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .Element */
+
+/*! export FeatureGroup [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/FeatureGroup.js .default */
+
+/*! export FetchData [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export FetchGeom [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export FormatSpecifier [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export ForwardRef [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export ForwardRef [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .ForwardRef */
+
+/*! export Fragment [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export Fragment [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .Fragment */
+
+/*! export Fragment [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .Fragment */
+
+/*! export GeoJSON [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/GeoJSON.js .default */
+
+/*! export GridLayer [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/GridLayer.js .default */
+
+/*! export HorizontalBar [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export ImageOverlay [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/ImageOverlay.js .default */
+
+/*! export LayerGroup [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/LayerGroup.js .default */
+
+/*! export LayersControl [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/LayersControl.js .default */
+
+/*! export Lazy [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export Lazy [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .Lazy */
+
+/*! export LeafletConsumer [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export LeafletConsumer [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/context.js .LeafletConsumer */
+
+/*! export LeafletProvider [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export LeafletProvider [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/context.js .LeafletProvider */
+
+/*! export Line [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export Map [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/Map.js .default */
+
+/*! export MapComponent [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/MapComponent.js .default */
+
+/*! export MapControl [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/MapControl.js .default */
+
+/*! export MapEvented [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/MapEvented.js .default */
+
+/*! export MapLayer [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/MapLayer.js .default */
+
+/*! export Marker [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/Marker.js .default */
+
+/*! export Memo [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export Memo [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .Memo */
+
+/*! export Pane [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/Pane.js .default */
+
+/*! export Path [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/Path.js .default */
+
+/*! export Pie [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export Polar [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export Polygon [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/Polygon.js .default */
+
+/*! export Polyline [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/Polyline.js .default */
+
+/*! export Popup [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/Popup.js .default */
+
+/*! export Portal [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export Portal [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .Portal */
+
+/*! export Profiler [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export Profiler [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .Profiler */
+
+/*! export Profiler [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .Profiler */
+
+/*! export PureComponent [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export PureComponent [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .PureComponent */
+
+/*! export Radar [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export Rectangle [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/Rectangle.js .default */
+
+/*! export Rgb [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export RuleList [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export SVGOverlay [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/SVGOverlay.js .default */
+
+/*! export ScaleControl [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/ScaleControl.js .default */
+
+/*! export Scatter [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export SheetsManager [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export SheetsRegistry [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export StrictMode [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export StrictMode [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .StrictMode */
+
+/*! export StrictMode [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .StrictMode */
+
+/*! export StylesContext [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export Suspense [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export Suspense [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .Suspense */
+
+/*! export Suspense [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .Suspense */
+
+/*! export TileLayer [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/TileLayer.js .default */
+
+/*! export Tooltip [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/Tooltip.js .default */
+
+/*! export UNMOUNTED [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export VideoOverlay [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/VideoOverlay.js .default */
+
+/*! export WMSTileLayer [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/WMSTileLayer.js .default */
+
+/*! export ZoomControl [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/ZoomControl.js .default */
+
+/*! export __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-dom/cjs/react-dom.production.min.js .__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED */
+
+/*! export __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED */
+
+/*! export __esModule [not provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export __esModule [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export addClassName [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export ariaHidden [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export basis [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export bisectCenter [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export bisectLeft [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export bisectRight [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export brighter [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export calMonthlyData [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export calcDailyData [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export calcTotalWaste [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export cloneElement [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export cloneElement [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .cloneElement */
+
+/*! export copy [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export create [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export createContext [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export createContext [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .createContext */
+
+/*! export createElement [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export createElement [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .createElement */
+
+/*! export createFactory [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export createFactory [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .createFactory */
+
+/*! export createGenerateId [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export createPortal [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export createPortal [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-dom/cjs/react-dom.production.min.js .createPortal */
+
+/*! export createRef [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export createRef [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .createRef */
+
+/*! export createRule [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export createUnarySpacing [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export csv [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-request/src/csv.js .default */
+
+/*! export csvFormat [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export csvFormatBody [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export csvFormatRow [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export csvFormatRows [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export csvFormatValue [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export csvParse [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export csvParseRows [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export dark [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export darken [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export darker [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export decomposeColor [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export defaults [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export duration [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export easing [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export emphasize [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export entries [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-collection/src/entries.js .default */
+
+/*! export extend [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export fade [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export findDOMNode [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export findDOMNode [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-dom/cjs/react-dom.production.min.js .findDOMNode */
+
+/*! export flushSync [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export flushSync [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-dom/cjs/react-dom.production.min.js .flushSync */
+
+/*! export format [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export formatDecimalParts [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export formatPrefix [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export forwardRef [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export forwardRef [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .forwardRef */
+
+/*! export gamma [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export genericArray [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export getChildMapping [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export getContrastRatio [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export getDropdownLanes [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export getDynamicStyles [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export getInitialChildMapping [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export getLuminance [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export getNextChildMapping [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export getOffsetLeft [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export getOffsetTop [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export getTransitionProps [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export groupDataByCategory [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export handleBreakpoints [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export hasCSSTOMSupport [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export hasValue [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export hexToRgb [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export hsl [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export hslConvert [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export hslToRgb [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export html [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-request/src/html.js .default */
+
+/*! export hue [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export hydrate [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export hydrate [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-dom/cjs/react-dom.production.min.js .hydrate */
+
+/*! export identity [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export increment [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export initInterpolator [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export initRange [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export isAdornedStart [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export isAsyncMode [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export isAsyncMode [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .isAsyncMode */
+
+/*! export isBrowser [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export isConcurrentMode [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export isConcurrentMode [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .isConcurrentMode */
+
+/*! export isContextConsumer [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export isContextConsumer [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .isContextConsumer */
+
+/*! export isContextProvider [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export isContextProvider [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .isContextProvider */
+
+/*! export isElement [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export isElement [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .isElement */
+
+/*! export isFilled [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export isForwardRef [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export isForwardRef [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .isForwardRef */
+
+/*! export isFragment [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export isFragment [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .isFragment */
+
+/*! export isLazy [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export isLazy [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .isLazy */
+
+/*! export isMemo [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export isMemo [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .isMemo */
+
+/*! export isNumberArray [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export isPlainObject [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export isPortal [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export isPortal [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .isPortal */
+
+/*! export isProfiler [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export isProfiler [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .isProfiler */
+
+/*! export isStrictMode [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export isStrictMode [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .isStrictMode */
+
+/*! export isSuspense [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export isSuspense [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .isSuspense */
+
+/*! export isValidElement [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export isValidElement [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .isValidElement */
+
+/*! export isValidElementType [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export isValidElementType [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .isValidElementType */
+
+/*! export json [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-request/src/json.js .default */
+
+/*! export keys [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export keys [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-collection/src/keys.js .default */
+
+/*! export lazy [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export lazy [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .lazy */
+
+/*! export light [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export lighten [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export linearish [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export loggish [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export map [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-collection/src/map.js .default */
+
+/*! export memo [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export memo [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .memo */
+
+/*! export mergeChildMappings [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export mergeGeomData [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export nest [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-collection/src/nest.js .default */
+
+/*! export numbers [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export parseInteger [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export powish [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export prefix [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export prefixExponent [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export recomposeColor [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export reflow [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export removeClassName [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export render [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export render [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-dom/cjs/react-dom.production.min.js .render */
+
+/*! export request [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-request/src/request.js .default */
+
+/*! export rgb [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export rgbBasis [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export rgbBasisClosed [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export rgbConvert [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export rgbToHex [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export scheme [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export sequentialLog [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export sequentialPow [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export sequentialSqrt [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export sequentialSymlog [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export set [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-collection/src/set.js .default */
+
+/*! export sheets [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export sheetsManager [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export sliceLaneData [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export sqrt [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export styles [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export supportedKeyframes [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export supportedProperty [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export supportedValue [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export symlogish [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export teardown [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export text [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-request/src/text.js .default */
+
+/*! export tickIncrement [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export tickStep [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export toCssValue [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export transformer [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export tsv [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-request/src/tsv.js .default */
+
+/*! export tsvFormat [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export tsvFormatBody [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export tsvFormatRow [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export tsvFormatRows [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export tsvFormatValue [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export tsvParse [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export tsvParseRows [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export typeOf [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export typeOf [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .typeOf */
+
+/*! export unmountComponentAtNode [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unmountComponentAtNode [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-dom/cjs/react-dom.production.min.js .unmountComponentAtNode */
+
+/*! export unstable_IdlePriority [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_IdlePriority [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_IdlePriority */
+
+/*! export unstable_ImmediatePriority [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_ImmediatePriority [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_ImmediatePriority */
+
+/*! export unstable_LowPriority [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_LowPriority [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_LowPriority */
+
+/*! export unstable_NormalPriority [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_NormalPriority [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_NormalPriority */
+
+/*! export unstable_Profiling [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_Profiling [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_Profiling */
+
+/*! export unstable_UserBlockingPriority [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_UserBlockingPriority [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_UserBlockingPriority */
+
+/*! export unstable_batchedUpdates [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_batchedUpdates [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-dom/cjs/react-dom.production.min.js .unstable_batchedUpdates */
+
+/*! export unstable_cancelCallback [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_cancelCallback [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_cancelCallback */
+
+/*! export unstable_continueExecution [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_continueExecution [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_continueExecution */
+
+/*! export unstable_createPortal [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_createPortal [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-dom/cjs/react-dom.production.min.js .unstable_createPortal */
+
+/*! export unstable_forceFrameRate [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_forceFrameRate [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_forceFrameRate */
+
+/*! export unstable_getCurrentPriorityLevel [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_getCurrentPriorityLevel [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_getCurrentPriorityLevel */
+
+/*! export unstable_getFirstCallbackNode [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_getFirstCallbackNode [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_getFirstCallbackNode */
+
+/*! export unstable_next [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_next [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_next */
+
+/*! export unstable_now [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_now [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_now */
+
+/*! export unstable_pauseExecution [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_pauseExecution [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_pauseExecution */
+
+/*! export unstable_renderSubtreeIntoContainer [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_renderSubtreeIntoContainer [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-dom/cjs/react-dom.production.min.js .unstable_renderSubtreeIntoContainer */
+
+/*! export unstable_requestPaint [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_requestPaint [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_requestPaint */
+
+/*! export unstable_runWithPriority [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_runWithPriority [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_runWithPriority */
+
+/*! export unstable_scheduleCallback [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_scheduleCallback [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_scheduleCallback */
+
+/*! export unstable_shouldYield [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_shouldYield [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_shouldYield */
+
+/*! export unstable_wrapCallback [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_wrapCallback [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_wrapCallback */
+
+/*! export useCallback [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export useCallback [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .useCallback */
+
+/*! export useContext [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export useContext [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .useContext */
+
+/*! export useDebugValue [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export useDebugValue [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .useDebugValue */
+
+/*! export useEffect [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export useEffect [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .useEffect */
+
+/*! export useFormControl [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export useImperativeHandle [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export useImperativeHandle [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .useImperativeHandle */
+
+/*! export useLayoutEffect [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export useLayoutEffect [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .useLayoutEffect */
+
+/*! export useLeaflet [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export useLeaflet [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/context.js .useLeaflet */
+
+/*! export useMemo [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export useMemo [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .useMemo */
+
+/*! export useReducer [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export useReducer [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .useReducer */
+
+/*! export useRef [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export useRef [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .useRef */
+
+/*! export useState [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export useState [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .useState */
+
+/*! export values [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-collection/src/values.js .default */
+
+/*! export version [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export version [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-dom/cjs/react-dom.production.min.js .version */
+
+/*! export version [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .version */
+
+/*! export withLeaflet [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export withLeaflet [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/context.js .withLeaflet */
+
+/*! export xml [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-request/src/xml.js .default */
+
+/*! exports [not provided] [no usage info] */
+
+/*! flagged exports */
+
+/*! namespace exports */
+
+/*! other exports [not provided] [no usage info] */
+
+/*! runtime requirements: __webpack_exports__ */
+
+/*! runtime requirements: __webpack_exports__, __webpack_require__ */
+
+/*! runtime requirements: __webpack_exports__, __webpack_require__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+
+/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+
+/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.p, __webpack_require__.d, __webpack_require__.* */
+
+/*! runtime requirements: __webpack_exports__, module.loaded, module.id, module, __webpack_require__.nmd, __webpack_require__, __webpack_require__.* */
+
+/*! runtime requirements: __webpack_exports__, module.loaded, module.id, module, __webpack_require__.nmd, top-level-this-exports, __webpack_require__.g, __webpack_require__, __webpack_require__.* */
+
+/*! runtime requirements: __webpack_exports__, top-level-this-exports */
+
+/*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.d, __webpack_require__.r, __webpack_require__.* */
+
+/*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+
+/*! runtime requirements: __webpack_require__, __webpack_require__.n, __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+
+/*! runtime requirements: __webpack_require__, __webpack_require__.n, __webpack_exports__, __webpack_require__.r, module.id, __webpack_require__.d, __webpack_require__.*, module */
+
+/*! runtime requirements: __webpack_require__, __webpack_require__.n, __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
+
+/*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.* */
+
+/*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
+
+/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
+
+/*! runtime requirements: module */
+
+/*! runtime requirements: module, __webpack_require__ */
+
+/*! runtime requirements: module, __webpack_require__.g, __webpack_require__.* */
+
+/*! runtime requirements: module, __webpack_require__.nc, __webpack_require__.* */
+
+/*! runtime requirements: module, __webpack_require__.o, __webpack_require__ */
+
+/*! runtime requirements: module, top-level-this-exports, __webpack_require__ */
+
+/*! runtime requirements: module, top-level-this-exports, module.loaded, module.id, __webpack_require__.nmd, __webpack_require__, __webpack_require__.* */
+
+/*! runtime requirements: top-level-this-exports, __webpack_require__ */
+
+/*! unknown exports (runtime-defined) */
+
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+
+/*!*******************************!*\
+  !*** ./src/components/App.js ***!
+  \*******************************/
+
+/*!********************************!*\
+  !*** ./src/components/App.css ***!
+  \********************************/
+
+/*!********************************!*\
+  !*** ./src/components/util.js ***!
+  \********************************/
+
+/*!***********************************!*\
+  !*** ./node_modules/lodash/eq.js ***!
+  \***********************************/
+
+/*!***********************************!*\
+  !*** ./src/components/useData.js ***!
+  \***********************************/
+
+/*!************************************!*\
+  !*** ./node_modules/lodash/get.js ***!
+  \************************************/
+
+/*!*************************************!*\
+  !*** ./node_modules/lodash/_Map.js ***!
+  \*************************************/
+
+/*!*************************************!*\
+  !*** ./node_modules/lodash/_Set.js ***!
+  \*************************************/
+
+/*!*************************************!*\
+  !*** ./node_modules/lodash/keys.js ***!
+  \*************************************/
+
+/*!*************************************!*\
+  !*** ./node_modules/react/index.js ***!
+  \*************************************/
+
+/*!**************************************!*\
+  !*** ./node_modules/lodash/_Hash.js ***!
+  \**************************************/
+
+/*!**************************************!*\
+  !*** ./node_modules/lodash/_root.js ***!
+  \**************************************/
+
+/*!**************************************!*\
+  !*** ./node_modules/lodash/hasIn.js ***!
+  \**************************************/
+
+/*!**************************************!*\
+  !*** ./node_modules/lodash/keyBy.js ***!
+  \**************************************/
+
+/*!***************************************!*\
+  !*** ./node_modules/lodash/_Stack.js ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./node_modules/lodash/_isKey.js ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./node_modules/lodash/_toKey.js ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./node_modules/lodash/lodash.js ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./node_modules/moment/moment.js ***!
+  \***************************************/
+
+/*!****************************************!*\
+  !*** ./node_modules/d3-dsv/src/csv.js ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./node_modules/d3-dsv/src/dsv.js ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./node_modules/d3-dsv/src/tsv.js ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./node_modules/lodash/_Symbol.js ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./node_modules/lodash/_getTag.js ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./node_modules/lodash/isArray.js ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./node_modules/lodash/isEqual.js ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./node_modules/lodash/memoize.js ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./node_modules/react-is/index.js ***!
+  \****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_Promise.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_WeakMap.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_baseFor.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_baseGet.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_hasPath.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_hashGet.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_hashHas.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_hashSet.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_isIndex.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_overArg.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/identity.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/isBuffer.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/isLength.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/isObject.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/isSymbol.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/property.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/toString.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/react-dom/index.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/scheduler/index.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/warning/warning.js ***!
+  \*****************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/clsx/dist/clsx.m.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/d3-request/index.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/d3-scale/src/log.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/d3-scale/src/pow.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/jss/dist/jss.esm.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_DataView.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_MapCache.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_SetCache.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_arrayMap.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_baseEach.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_baseKeys.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_cacheHas.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_castPath.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_getValue.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_isMasked.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_nodeUtil.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_stackGet.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_stackHas.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_stackSet.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_toSource.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/lodash/stubArray.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/lodash/stubFalse.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/af.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ar.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/az.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/be.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/bg.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/bm.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/bn.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/bo.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/br.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/bs.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ca.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/cs.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/cv.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/cy.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/da.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/de.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/dv.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/el.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/eo.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/es.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/et.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/eu.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/fa.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/fi.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/fo.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/fr.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/fy.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ga.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/gd.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/gl.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/gu.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/he.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/hi.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/hr.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/hu.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/id.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/is.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/it.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ja.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/jv.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ka.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/kk.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/km.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/kn.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ko.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ku.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ky.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/lb.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/lo.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/lt.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/lv.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/me.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/mi.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/mk.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ml.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/mn.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/mr.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ms.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/mt.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/my.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/nb.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ne.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/nl.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/nn.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/pl.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/pt.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ro.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ru.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/sd.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/se.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/si.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/sk.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/sl.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/sq.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/sr.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ss.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/sv.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/sw.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ta.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/te.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/tg.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/th.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/tk.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/tr.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/uk.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ur.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/uz.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/vi.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/yo.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/prop-types/index.js ***!
+  \******************************************/
+
+/*!*******************************************!*\
+  !*** ./node_modules/d3-scale/src/init.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./node_modules/d3-scale/src/nice.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_ListCache.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_arrayPush.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_arraySome.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_baseHasIn.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_baseTimes.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_baseUnary.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_getNative.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_getRawTag.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_hashClear.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_isKeyable.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/isFunction.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./node_modules/moment/locale/fil.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./node_modules/moment/locale/tet.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./node_modules/moment/locale/tlh.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./node_modules/moment/locale/tzl.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./node_modules/moment/locale/tzm.js ***!
+  \*******************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/d3-array/src/ticks.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/d3-color/src/color.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/d3-request/src/csv.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/d3-request/src/dsv.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/d3-request/src/tsv.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/d3-request/src/xml.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_Uint8Array.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_baseForOwn.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_baseGetTag.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_coreJsData.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_equalByTag.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_freeGlobal.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_getAllKeys.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_getMapData.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_getSymbols.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_hashDelete.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_mapToArray.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_nativeKeys.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_setToArray.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_stackClear.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/lodash/isArguments.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/lodash/isArrayLike.js ***!
+  \********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/chart.js/dist/Chart.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/d3-array/src/bisect.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/d3-array/src/extent.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/d3-array/src/number.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/d3-color/src/define.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/d3-request/src/html.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/d3-request/src/json.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/d3-request/src/text.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/d3-request/src/type.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/d3-scale/src/linear.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/d3-scale/src/number.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/d3-scale/src/symlog.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_arrayFilter.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_baseIsEqual.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_baseIsMatch.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_baseMatches.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_equalArrays.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_isPrototype.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_mapCacheGet.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_mapCacheHas.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_mapCacheSet.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_setCacheAdd.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_setCacheHas.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_stackDelete.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/isObjectLike.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/isTypedArray.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/ar-dz.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/ar-kw.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/ar-ly.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/ar-ma.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/ar-sa.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/ar-tn.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/bn-bd.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/de-at.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/de-ch.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/en-au.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/en-ca.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/en-gb.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/en-ie.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/en-il.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/en-in.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/en-nz.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/en-sg.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/es-do.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/es-mx.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/es-us.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/fr-ca.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/fr-ch.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/hy-am.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/it-ch.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/ms-my.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/nl-be.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/pa-in.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/pt-br.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/tl-ph.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/ug-cn.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/zh-cn.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/zh-hk.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/zh-mo.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/zh-tw.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/object-assign/index.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./src/components/Barchart/Barchart.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./src/components/Dropdown/Dropdown.js ***!
+  \*********************************************/
+
+/*!**********************************************!*\
+  !*** ./node_modules/d3-format/src/locale.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_assocIndexOf.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_baseIsNative.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_baseIteratee.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_baseProperty.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_baseToString.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_equalObjects.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_getMatchData.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_listCacheGet.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_listCacheHas.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_listCacheSet.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_nativeCreate.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_stringToPath.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./node_modules/moment/locale/oc-lnc.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./node_modules/react-leaflet/es/Map.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./src/components/Barchart/Barchart.css ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./src/components/Dropdown/Dropdown.css ***!
+  \**********************************************/
+
+/*!***********************************************!*\
+  !*** ./node_modules/d3-array/src/bisector.js ***!
+  \***********************************************/
+
+/*!***********************************************!*\
+  !*** ./node_modules/d3-collection/src/map.js ***!
+  \***********************************************/
+
+/*!***********************************************!*\
+  !*** ./node_modules/d3-collection/src/set.js ***!
+  \***********************************************/
+
+/*!***********************************************!*\
+  !*** ./node_modules/d3-scale/src/constant.js ***!
+  \***********************************************/
+
+/*!***********************************************!*\
+  !*** ./node_modules/fast-deep-equal/index.js ***!
+  \***********************************************/
+
+/*!***********************************************!*\
+  !*** ./node_modules/leaflet/dist/leaflet.css ***!
+  \***********************************************/
+
+/*!***********************************************!*\
+  !*** ./node_modules/lodash/_arrayLikeKeys.js ***!
+  \***********************************************/
+
+/*!***********************************************!*\
+  !*** ./node_modules/lodash/_createBaseFor.js ***!
+  \***********************************************/
+
+/*!***********************************************!*\
+  !*** ./node_modules/lodash/_mapCacheClear.js ***!
+  \***********************************************/
+
+/*!***********************************************!*\
+  !*** ./node_modules/lodash/_memoizeCapped.js ***!
+  \***********************************************/
+
+/*!***********************************************!*\
+  !*** ./node_modules/moment/locale/sr-cyrl.js ***!
+  \***********************************************/
+
+/*!***********************************************!*\
+  !*** ./node_modules/moment/locale/uz-latn.js ***!
+  \***********************************************/
+
+/*!***********************************************!*\
+  !*** ./node_modules/react-leaflet/es/Pane.js ***!
+  \***********************************************/
+
+/*!***********************************************!*\
+  !*** ./node_modules/react-leaflet/es/Path.js ***!
+  \***********************************************/
+
+/*!***********************************************!*\
+  !*** ./src/components/InfoBoxes/InfoBoxes.js ***!
+  \***********************************************/
+
+/*!************************************************!*\
+  !*** ./node_modules/d3-array/src/ascending.js ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./node_modules/d3-collection/src/keys.js ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./node_modules/d3-collection/src/nest.js ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./node_modules/d3-format/src/exponent.js ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./node_modules/d3-format/src/identity.js ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./node_modules/d3-interpolate/src/rgb.js ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./node_modules/d3-request/src/request.js ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./node_modules/lodash/_baseAggregator.js ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./node_modules/lodash/_baseGetAllKeys.js ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./node_modules/lodash/_createBaseEach.js ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./node_modules/lodash/_defineProperty.js ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./node_modules/lodash/_listCacheClear.js ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./node_modules/lodash/_mapCacheDelete.js ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./node_modules/lodash/_objectToString.js ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./node_modules/moment/locale/gom-deva.js ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./node_modules/moment/locale/gom-latn.js ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./node_modules/moment/locale/tzm-latn.js ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./node_modules/moment/locale/x-pseudo.js ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./node_modules/react-leaflet/es/Popup.js ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./node_modules/react-leaflet/es/index.js ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./src/components/InfoBoxes/InfoBoxes.css ***!
+  \************************************************/
+
+/*!*************************************************!*\
+  !*** ./node_modules/d3-collection/src/index.js ***!
+  \*************************************************/
+
+/*!*************************************************!*\
+  !*** ./node_modules/d3-interpolate/src/date.js ***!
+  \*************************************************/
+
+/*!*************************************************!*\
+  !*** ./node_modules/d3-scale/src/continuous.js ***!
+  \*************************************************/
+
+/*!*************************************************!*\
+  !*** ./node_modules/d3-scale/src/sequential.js ***!
+  \*************************************************/
+
+/*!*************************************************!*\
+  !*** ./node_modules/d3-scale/src/tickFormat.js ***!
+  \*************************************************/
+
+/*!*************************************************!*\
+  !*** ./node_modules/lodash/_arrayAggregator.js ***!
+  \*************************************************/
+
+/*!*************************************************!*\
+  !*** ./node_modules/lodash/_baseAssignValue.js ***!
+  \*************************************************/
+
+/*!*************************************************!*\
+  !*** ./node_modules/lodash/_baseIsArguments.js ***!
+  \*************************************************/
+
+/*!*************************************************!*\
+  !*** ./node_modules/lodash/_baseIsEqualDeep.js ***!
+  \*************************************************/
+
+/*!*************************************************!*\
+  !*** ./node_modules/lodash/_listCacheDelete.js ***!
+  \*************************************************/
+
+/*!*************************************************!*\
+  !*** ./node_modules/react-leaflet/es/Circle.js ***!
+  \*************************************************/
+
+/*!*************************************************!*\
+  !*** ./node_modules/react-leaflet/es/Marker.js ***!
+  \*************************************************/
+
+/*!*************************************************!*\
+  !*** ./src/components/LineCharts/LineCharts.js ***!
+  \*************************************************/
+
+/*!**************************************************!*\
+  !*** ./node_modules/d3-collection/src/values.js ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ./node_modules/d3-dispatch/src/dispatch.js ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ./node_modules/d3-format/src/formatTrim.js ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ./node_modules/d3-interpolate/src/array.js ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ./node_modules/d3-interpolate/src/basis.js ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ./node_modules/d3-interpolate/src/color.js ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ./node_modules/d3-interpolate/src/round.js ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ./node_modules/d3-interpolate/src/value.js ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ./node_modules/leaflet/dist/leaflet-src.js ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ./node_modules/lodash/_baseIsTypedArray.js ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ./node_modules/lodash/_basePropertyDeep.js ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ./node_modules/lodash/_createAggregator.js ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ./node_modules/react-chartjs-2/es/index.js ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ./node_modules/react-leaflet/es/GeoJSON.js ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ./node_modules/react-leaflet/es/Polygon.js ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ./node_modules/react-leaflet/es/Tooltip.js ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ./node_modules/react-leaflet/es/context.js ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ./src/components/LineCharts/LineCharts.css ***!
+  \**************************************************/
+
+/*!***************************************************!*\
+  !*** ./node_modules/d3-collection/src/entries.js ***!
+  \***************************************************/
+
+/*!***************************************************!*\
+  !*** ./node_modules/d3-format/src/formatGroup.js ***!
+  \***************************************************/
+
+/*!***************************************************!*\
+  !*** ./node_modules/d3-format/src/formatTypes.js ***!
+  \***************************************************/
+
+/*!***************************************************!*\
+  !*** ./node_modules/d3-interpolate/src/number.js ***!
+  \***************************************************/
+
+/*!***************************************************!*\
+  !*** ./node_modules/d3-interpolate/src/object.js ***!
+  \***************************************************/
+
+/*!***************************************************!*\
+  !*** ./node_modules/d3-interpolate/src/string.js ***!
+  \***************************************************/
+
+/*!***************************************************!*\
+  !*** ./node_modules/is-in-browser/dist/module.js ***!
+  \***************************************************/
+
+/*!***************************************************!*\
+  !*** ./node_modules/moment/locale/ sync ^\.\/.*$ ***!
+  \***************************************************/
+
+/*!***************************************************!*\
+  !*** ./node_modules/react-leaflet/es/MapLayer.js ***!
+  \***************************************************/
+
+/*!***************************************************!*\
+  !*** ./node_modules/react-leaflet/es/Polyline.js ***!
+  \***************************************************/
+
+/*!****************************************************!*\
+  !*** ./node_modules/hyphenate-style-name/index.js ***!
+  \****************************************************/
+
+/*!****************************************************!*\
+  !*** ./node_modules/lodash/_isStrictComparable.js ***!
+  \****************************************************/
+
+/*!****************************************************!*\
+  !*** ./node_modules/react-leaflet/es/GridLayer.js ***!
+  \****************************************************/
+
+/*!****************************************************!*\
+  !*** ./node_modules/react-leaflet/es/Rectangle.js ***!
+  \****************************************************/
+
+/*!****************************************************!*\
+  !*** ./node_modules/react-leaflet/es/TileLayer.js ***!
+  \****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./node_modules/d3-format/src/defaultLocale.js ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./node_modules/d3-format/src/formatDecimal.js ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./node_modules/d3-format/src/formatRounded.js ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./node_modules/d3-interpolate/src/constant.js ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./node_modules/d3-scale-chromatic/src/ramp.js ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./node_modules/leaflet/dist/images/layers.png ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./node_modules/lodash/_baseMatchesProperty.js ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./node_modules/react-leaflet/es/DivOverlay.js ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./node_modules/react-leaflet/es/LayerGroup.js ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./node_modules/react-leaflet/es/MapControl.js ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./node_modules/react-leaflet/es/MapEvented.js ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./node_modules/react-leaflet/es/SVGOverlay.js ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./node_modules/react-leaflet/es/utils/omit.js ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./node_modules/react-leaflet/es/utils/pick.js ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./src/components/InfoBoxes/InfoBox/InfoBox.js ***!
+  \*****************************************************/
+
+/*!******************************************************!*\
+  !*** ./node_modules/d3-format/src/formatNumerals.js ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./node_modules/d3-format/src/precisionFixed.js ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./node_modules/d3-format/src/precisionRound.js ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./node_modules/react-leaflet/es/ZoomControl.js ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/components/InfoBoxes/InfoBox/InfoBox.css ***!
+  \******************************************************/
+
+/*!*******************************************************!*\
+  !*** ./node_modules/@material-ui/system/esm/merge.js ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ./node_modules/d3-format/src/formatSpecifier.js ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ./node_modules/d3-format/src/precisionPrefix.js ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ./node_modules/d3-scale-chromatic/src/colors.js ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ./node_modules/react-leaflet/es/CircleMarker.js ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ./node_modules/react-leaflet/es/FeatureGroup.js ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ./node_modules/react-leaflet/es/ImageOverlay.js ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ./node_modules/react-leaflet/es/MapComponent.js ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ./node_modules/react-leaflet/es/ScaleControl.js ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ./node_modules/react-leaflet/es/VideoOverlay.js ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ./node_modules/react-leaflet/es/WMSTileLayer.js ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ./src/components/ChoroplethMap/ChoroplethMap.js ***!
+  \*******************************************************/
+
+/*!********************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \********************************************************/
+
+/*!********************************************************!*\
+  !*** ./node_modules/css-vendor/dist/css-vendor.esm.js ***!
+  \********************************************************/
+
+/*!********************************************************!*\
+  !*** ./node_modules/d3-format/src/formatPrefixAuto.js ***!
+  \********************************************************/
+
+/*!********************************************************!*\
+  !*** ./node_modules/d3-interpolate/src/basisClosed.js ***!
+  \********************************************************/
+
+/*!********************************************************!*\
+  !*** ./node_modules/d3-interpolate/src/numberArray.js ***!
+  \********************************************************/
+
+/*!********************************************************!*\
+  !*** ./node_modules/leaflet/dist/images/layers-2x.png ***!
+  \********************************************************/
+
+/*!********************************************************!*\
+  !*** ./node_modules/react-leaflet/es/LayersControl.js ***!
+  \********************************************************/
+
+/*!********************************************************!*\
+  !*** ./node_modules/react/cjs/react.production.min.js ***!
+  \********************************************************/
+
+/*!********************************************************!*\
+  !*** ./src/components/ChoroplethMap/ChoroplethMap.css ***!
+  \********************************************************/
+
+/*!*********************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/Card/Card.js ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/Grow/Grow.js ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/List/List.js ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/Menu/Menu.js ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ./node_modules/@material-ui/system/esm/memoize.js ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ./node_modules/@material-ui/system/esm/spacing.js ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ./node_modules/lodash/_matchesStrictComparable.js ***!
+  \*********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/colors/red.js ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./node_modules/@material-ui/utils/esm/deepmerge.js ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./node_modules/leaflet/dist/images/marker-icon.png ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./src/components/LineCharts/LineChart/LineChart.js ***!
+  \**********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/typeof.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/Input/Input.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/Modal/Modal.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/Paper/Paper.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/colors/blue.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/colors/grey.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/colors/pink.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./node_modules/react-transition-group/esm/config.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./src/components/LineCharts/LineChart/LineChart.css ***!
+  \***********************************************************/
+
+/*!************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/extends.js ***!
+  \************************************************************/
+
+/*!************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/colors/green.js ***!
+  \************************************************************/
+
+/*!************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/styles/shape.js ***!
+  \************************************************************/
+
+/*!************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/utils/setRef.js ***!
+  \************************************************************/
+
+/*!************************************************************!*\
+  !*** ./node_modules/react-leaflet-control/dist/control.js ***!
+  \************************************************************/
+
+/*!************************************************************!*\
+  !*** ./node_modules/tiny-warning/dist/tiny-warning.esm.js ***!
+  \************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/Portal/Portal.js ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/Select/Select.js ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/colors/common.js ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/colors/indigo.js ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/colors/orange.js ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/styles/zIndex.js ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./node_modules/@material-ui/system/esm/breakpoints.js ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./node_modules/prop-types/factoryWithThrowingShims.js ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./node_modules/prop-types/lib/ReactPropTypesSecret.js ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./node_modules/react-leaflet/es/AttributionControl.js ***!
+  \*************************************************************/
+
+/*!**************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/styles/shadows.js ***!
+  \**************************************************************/
+
+/*!**************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/utils/debounce.js ***!
+  \**************************************************************/
+
+/*!**************************************************************!*\
+  !*** ./node_modules/react-is/cjs/react-is.production.min.js ***!
+  \**************************************************************/
+
+/*!***************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/InputBase/utils.js ***!
+  \***************************************************************/
+
+/*!***************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/Popover/Popover.js ***!
+  \***************************************************************/
+
+/*!***************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/SvgIcon/SvgIcon.js ***!
+  \***************************************************************/
+
+/*!***************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/styles/useTheme.js ***!
+  \***************************************************************/
+
+/*!***************************************************************!*\
+  !*** ./node_modules/react-transition-group/esm/Transition.js ***!
+  \***************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/createClass.js ***!
+  \****************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/List/ListContext.js ***!
+  \****************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/utils/capitalize.js ***!
+  \****************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/utils/useForkRef.js ***!
+  \****************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./node_modules/react-dom/cjs/react-dom.production.min.js ***!
+  \****************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./node_modules/react-leaflet/es/utils/updateClassName.js ***!
+  \****************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./node_modules/scheduler/cjs/scheduler.production.min.js ***!
+  \****************************************************************/
+
+/*!*****************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/ButtonBase/Ripple.js ***!
+  \*****************************************************************/
+
+/*!*****************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/ListItem/ListItem.js ***!
+  \*****************************************************************/
+
+/*!*****************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/MenuItem/MenuItem.js ***!
+  \*****************************************************************/
+
+/*!*****************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/MenuList/MenuList.js ***!
+  \*****************************************************************/
+
+/*!*****************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/styles/withStyles.js ***!
+  \*****************************************************************/
+
+/*!*****************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/transitions/utils.js ***!
+  \*****************************************************************/
+
+/*!*****************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/utils/ownerWindow.js ***!
+  \*****************************************************************/
+
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js ***!
+  \******************************************************************/
+
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js ***!
+  \******************************************************************/
+
+/*!******************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/Modal/ModalManager.js ***!
+  \******************************************************************/
+
+/*!******************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/Select/SelectInput.js ***!
+  \******************************************************************/
+
+/*!******************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/styles/transitions.js ***!
+  \******************************************************************/
+
+/*!******************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/utils/isMuiElement.js ***!
+  \******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js ***!
+  \*******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js ***!
+  \*******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/defineProperty.js ***!
+  \*******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/InputBase/InputBase.js ***!
+  \*******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/styles/createMixins.js ***!
+  \*******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/styles/defaultTheme.js ***!
+  \*******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/utils/createSvgIcon.js ***!
+  \*******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/utils/ownerDocument.js ***!
+  \*******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/utils/useControlled.js ***!
+  \*******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./node_modules/@material-ui/styles/esm/useTheme/useTheme.js ***!
+  \*******************************************************************/
+
+/*!********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/iterableToArray.js ***!
+  \********************************************************************/
+
+/*!********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/nonIterableRest.js ***!
+  \********************************************************************/
+
+/*!********************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/Modal/SimpleBackdrop.js ***!
+  \********************************************************************/
+
+/*!********************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/styles/createPalette.js ***!
+  \********************************************************************/
+
+/*!********************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/styles/createSpacing.js ***!
+  \********************************************************************/
+
+/*!********************************************************************!*\
+  !*** ./node_modules/react-transition-group/esm/TransitionGroup.js ***!
+  \********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js ***!
+  \*********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/ButtonBase/ButtonBase.js ***!
+  \*********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/Typography/Typography.js ***!
+  \*********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/styles/createMuiTheme.js ***!
+  \*********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ./node_modules/@material-ui/styles/esm/jssPreset/jssPreset.js ***!
+  \*********************************************************************/
+
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js ***!
+  \**********************************************************************/
+
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js ***!
+  \**********************************************************************/
+
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js ***!
+  \**********************************************************************/
+
+/*!**********************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/ButtonBase/TouchRipple.js ***!
+  \**********************************************************************/
+
+/*!**********************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/utils/getScrollbarSize.js ***!
+  \**********************************************************************/
+
+/*!**********************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/utils/useEventCallback.js ***!
+  \**********************************************************************/
+
+/*!**********************************************************************!*\
+  !*** ./node_modules/@material-ui/styles/esm/ThemeProvider/nested.js ***!
+  \**********************************************************************/
+
+/*!**********************************************************************!*\
+  !*** ./node_modules/@material-ui/utils/esm/formatMuiErrorMessage.js ***!
+  \**********************************************************************/
+
+/*!**********************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/components/App.css ***!
+  \**********************************************************************/
+
+/*!**********************************************************************!*\
+  !*** ./node_modules/jss-plugin-global/dist/jss-plugin-global.esm.js ***!
+  \**********************************************************************/
+
+/*!**********************************************************************!*\
+  !*** ./node_modules/jss-plugin-nested/dist/jss-plugin-nested.esm.js ***!
+  \**********************************************************************/
+
+/*!***********************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/CardContent/CardContent.js ***!
+  \***********************************************************************/
+
+/*!***********************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/FilledInput/FilledInput.js ***!
+  \***********************************************************************/
+
+/*!***********************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/FormControl/FormControl.js ***!
+  \***********************************************************************/
+
+/*!***********************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/styles/colorManipulator.js ***!
+  \***********************************************************************/
+
+/*!***********************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/styles/createTypography.js ***!
+  \***********************************************************************/
+
+/*!***********************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/utils/useIsFocusVisible.js ***!
+  \***********************************************************************/
+
+/*!***********************************************************************!*\
+  !*** ./node_modules/@material-ui/styles/esm/makeStyles/makeStyles.js ***!
+  \***********************************************************************/
+
+/*!***********************************************************************!*\
+  !*** ./node_modules/@material-ui/styles/esm/useTheme/ThemeContext.js ***!
+  \***********************************************************************/
+
+/*!***********************************************************************!*\
+  !*** ./node_modules/@material-ui/styles/esm/withStyles/withStyles.js ***!
+  \***********************************************************************/
+
+/*!***********************************************************************!*\
+  !*** ./node_modules/react-transition-group/esm/utils/ChildMapping.js ***!
+  \***********************************************************************/
+
+/*!************************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/styles/createBreakpoints.js ***!
+  \************************************************************************/
+
+/*!*************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js ***!
+  \*************************************************************************/
+
+/*!*************************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/NativeSelect/NativeSelect.js ***!
+  \*************************************************************************/
+
+/*!*************************************************************************!*\
+  !*** ./node_modules/@material-ui/styles/esm/makeStyles/indexCounter.js ***!
+  \*************************************************************************/
+
+/*!*************************************************************************!*\
+  !*** ./node_modules/d3-scale-chromatic/src/sequential-single/Greens.js ***!
+  \*************************************************************************/
+
+/*!**************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js ***!
+  \**************************************************************************/
+
+/*!**************************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/FormControl/useFormControl.js ***!
+  \**************************************************************************/
+
+/*!**************************************************************************!*\
+  !*** ./node_modules/@material-ui/styles/esm/makeStyles/multiKeyStore.js ***!
+  \**************************************************************************/
+
+/*!***************************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/OutlinedInput/OutlinedInput.js ***!
+  \***************************************************************************/
+
+/*!***************************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/utils/createChainedFunction.js ***!
+  \***************************************************************************/
+
+/*!***************************************************************************!*\
+  !*** ./node_modules/@material-ui/styles/esm/mergeClasses/mergeClasses.js ***!
+  \***************************************************************************/
+
+/*!***************************************************************************!*\
+  !*** ./node_modules/react-transition-group/esm/TransitionGroupContext.js ***!
+  \***************************************************************************/
+
+/*!****************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js ***!
+  \****************************************************************************/
+
+/*!****************************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/FormControl/formControlState.js ***!
+  \****************************************************************************/
+
+/*!****************************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/OutlinedInput/NotchedOutline.js ***!
+  \****************************************************************************/
+
+/*!****************************************************************************!*\
+  !*** ./node_modules/@material-ui/styles/esm/getStylesCreator/noopTheme.js ***!
+  \****************************************************************************/
+
+/*!****************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
+  \****************************************************************************/
+
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@material-ui/styles/esm/getThemeProps/getThemeProps.js ***!
+  \*****************************************************************************/
+
+/*!******************************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/FormControl/FormControlContext.js ***!
+  \******************************************************************************/
+
+/*!******************************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/NativeSelect/NativeSelectInput.js ***!
+  \******************************************************************************/
+
+/*!******************************************************************************!*\
+  !*** ./node_modules/jss-plugin-camel-case/dist/jss-plugin-camel-case.esm.js ***!
+  \******************************************************************************/
+
+/*!******************************************************************************!*\
+  !*** ./node_modules/jss-plugin-props-sort/dist/jss-plugin-props-sort.esm.js ***!
+  \******************************************************************************/
+
+/*!*******************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js ***!
+  \*******************************************************************************/
+
+/*!*******************************************************************************!*\
+  !*** ./node_modules/@material-ui/styles/esm/StylesProvider/StylesProvider.js ***!
+  \*******************************************************************************/
+
+/*!********************************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/internal/svg-icons/ArrowDropDown.js ***!
+  \********************************************************************************/
+
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js ***!
+  \*********************************************************************************/
+
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/TextareaAutosize/TextareaAutosize.js ***!
+  \*********************************************************************************/
+
+/*!**********************************************************************************!*\
+  !*** ./node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js ***!
+  \**********************************************************************************/
+
+/*!**********************************************************************************!*\
+  !*** ./node_modules/jss-plugin-default-unit/dist/jss-plugin-default-unit.esm.js ***!
+  \**********************************************************************************/
+
+/*!***********************************************************************************!*\
+  !*** ./node_modules/@material-ui/styles/esm/getStylesCreator/getStylesCreator.js ***!
+  \***********************************************************************************/
+
+/*!************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/components/Barchart/Barchart.css ***!
+  \************************************************************************************/
+
+/*!************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/components/Dropdown/Dropdown.css ***!
+  \************************************************************************************/
+
+/*!*************************************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/Unstable_TrapFocus/Unstable_TrapFocus.js ***!
+  \*************************************************************************************/
+
+/*!*************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/leaflet/dist/leaflet.css ***!
+  \*************************************************************************************/
+
+/*!**************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/components/InfoBoxes/InfoBoxes.css ***!
+  \**************************************************************************************/
+
+/*!****************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/components/LineCharts/LineCharts.css ***!
+  \****************************************************************************************/
+
+/*!****************************************************************************************!*\
+  !*** ./node_modules/jss-plugin-vendor-prefixer/dist/jss-plugin-vendor-prefixer.esm.js ***!
+  \****************************************************************************************/
+
+/*!********************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/components/InfoBoxes/InfoBox/InfoBox.css ***!
+  \********************************************************************************************/
+
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/components/ChoroplethMap/ChoroplethMap.css ***!
+  \**********************************************************************************************/
+
+/*!************************************************************************************************!*\
+  !*** ./node_modules/jss-plugin-rule-value-function/dist/jss-plugin-rule-value-function.esm.js ***!
+  \************************************************************************************************/
+
+/*!*************************************************************************************************!*\
+  !*** ./node_modules/@material-ui/styles/esm/createGenerateClassName/createGenerateClassName.js ***!
+  \*************************************************************************************************/
+
+/*!*************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/components/LineCharts/LineChart/LineChart.css ***!
+  \*************************************************************************************************/
