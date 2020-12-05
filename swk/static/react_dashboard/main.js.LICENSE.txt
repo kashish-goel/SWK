@@ -1,149 +1,3 @@
-/*! CommonJS bailout: exports is used directly at 425:50-57 */
-
-/*! CommonJS bailout: exports is used directly at 425:82-89 */
-
-/*! CommonJS bailout: exports is used directly at 4:48-55 */
-
-/*! CommonJS bailout: exports is used directly at 4:80-87 */
-
-/*! CommonJS bailout: exports is used directly at 5:48-55 */
-
-/*! CommonJS bailout: exports is used directly at 5:80-87 */
-
-/*! CommonJS bailout: exports is used directly at 7:73-80 */
-
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 10:121-141 */
-
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 11:504-524 */
-
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 12:312-332 */
-
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 13:15-35 */
-
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 16:248-268 */
-
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 19:56-76 */
-
-/*! CommonJS bailout: exports.unstable_shouldYield(...) prevents optimization as exports is passed as call context at 16:106-134 */
-
-/*! CommonJS bailout: module.exports is used directly at 103:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 112:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 11:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 12:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 13:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 14:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 15:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 16:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 17:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 18:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 18:2-16 */
-
-/*! CommonJS bailout: module.exports is used directly at 19:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 2087:12-26 */
-
-/*! CommonJS bailout: module.exports is used directly at 20:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 21:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 22:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 230:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 23:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 24:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 25:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 26:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 27:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 28:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 29:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 30:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 31:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 32:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 33:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 34:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 35:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 36:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 37:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 38:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 39:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 3:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 46:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 47:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 49:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 4:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 58:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 60:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 62:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 65:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 6:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 73:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 7:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 83:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 84:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 8:63-77 */
-
-/*! CommonJS bailout: module.exports is used directly at 8:67-81 */
-
-/*! CommonJS bailout: module.exports is used directly at 90:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 9:0-14 */
-
-/*! CommonJS bailout: this is used directly at 10:2-6 */
-
-/*! CommonJS bailout: this is used directly at 11:2-6 */
-
-/*! CommonJS bailout: this is used directly at 12:2-6 */
-
-/*! CommonJS bailout: this is used directly at 13:2-6 */
-
-/*! CommonJS bailout: this is used directly at 14:2-6 */
-
-/*! CommonJS bailout: this is used directly at 17161:7-11 */
-
-/*! CommonJS bailout: this is used directly at 9:2-6 */
-
 /*! default exports */
 
 /*! dynamic exports */
@@ -157,6 +11,8 @@
 /*! export Bar [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export Bubble [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export CREATED [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export Chart [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -190,11 +46,17 @@
 
 /*! export ControlledLayer [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/LayersControl.js .ControlledLayer */
 
+/*! export Cubehelix [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export DELAY_RIPPLE [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export DivOverlay [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/DivOverlay.js .default */
 
 /*! export Doughnut [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export ENDED [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export ENDING [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export ENTERED [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -209,6 +71,8 @@
 /*! export Element [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export Element [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .Element */
+
+/*! export EnterNode [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export FeatureGroup [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/FeatureGroup.js .default */
 
@@ -298,6 +162,8 @@
 
 /*! export PureComponent [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .PureComponent */
 
+/*! export RUNNING [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export Radar [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export Rectangle [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/Rectangle.js .default */
@@ -306,11 +172,19 @@
 
 /*! export RuleList [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export SCHEDULED [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export STARTED [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export STARTING [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export SVGOverlay [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/SVGOverlay.js .default */
 
 /*! export ScaleControl [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/ScaleControl.js .default */
 
 /*! export Scatter [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export Selection [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export SheetsManager [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -332,7 +206,11 @@
 
 /*! export TileLayer [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/TileLayer.js .default */
 
+/*! export Timer [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export Tooltip [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/Tooltip.js .default */
+
+/*! export Transition [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export UNMOUNTED [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -352,17 +230,29 @@
 
 /*! export __esModule [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export active [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-transition/src/active.js .default */
+
 /*! export addClassName [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export ariaHidden [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export ascending [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-array/src/ascending.js .default */
+
 /*! export basis [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export bisect [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-array/src/bisect.js .default */
 
 /*! export bisectCenter [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export bisectLeft [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export bisectLeft [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-array/src/bisect.js .bisectLeft */
+
 /*! export bisectRight [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export bisectRight [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-array/src/bisect.js .bisectRight */
+
+/*! export bisector [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-array/src/bisector.js .default */
 
 /*! export brighter [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -372,9 +262,15 @@
 
 /*! export calcTotalWaste [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export calendar [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export childMatcher [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export cloneElement [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export cloneElement [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .cloneElement */
+
+/*! export cool [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export copy [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -406,6 +302,8 @@
 
 /*! export createUnarySpacing [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export creator [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-selection/src/creator.js .default */
+
 /*! export csv [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-request/src/csv.js .default */
 
 /*! export csvFormat [provided] [no usage info] [missing usage info prevents renaming] */
@@ -422,11 +320,25 @@
 
 /*! export csvParseRows [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export cubehelixLong [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export cubicIn [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export cubicInOut [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export cubicOut [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export customEvent [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export customEvent [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/on.js .customEvent */
+
 /*! export dark [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export darken [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export darker [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export days [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export decomposeColor [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -434,7 +346,27 @@
 
 /*! export defaults [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export deg2rad [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export deinterpolateLinear [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export descending [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-array/src/descending.js .default */
+
+/*! export deviation [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-array/src/deviation.js .default */
+
+/*! export dispatch [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-dispatch/src/dispatch.js .default */
+
 /*! export duration [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export durationDay [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export durationHour [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export durationMinute [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export durationSecond [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export durationWeek [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export easing [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -442,7 +374,13 @@
 
 /*! export entries [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-collection/src/entries.js .default */
 
+/*! export event [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export event [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/on.js .event */
+
 /*! export extend [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export extent [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-array/src/extent.js .default */
 
 /*! export fade [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -456,17 +394,33 @@
 
 /*! export format [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export format [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-format/src/defaultLocale.js .format */
+
 /*! export formatDecimalParts [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export formatDefaultLocale [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-format/src/defaultLocale.js .default */
+
+/*! export formatLocale [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-format/src/locale.js .default */
+
 /*! export formatPrefix [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export formatPrefix [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-format/src/defaultLocale.js .formatPrefix */
+
+/*! export formatSpecifier [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-format/src/formatSpecifier.js .default */
 
 /*! export forwardRef [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export forwardRef [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .forwardRef */
 
+/*! export friday [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export fridays [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export gamma [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export genericArray [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export get [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export getChildMapping [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -498,6 +452,10 @@
 
 /*! export hexToRgb [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export histogram [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-array/src/histogram.js .default */
+
+/*! export hours [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export hsl [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export hslConvert [provided] [no usage info] [missing usage info prevents renaming] */
@@ -514,11 +472,39 @@
 
 /*! export identity [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export implicit [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export increment [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export inferno [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export init [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export initInterpolator [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export initRange [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export interpolateCool [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-scale/src/rainbow.js .cool */
+
+/*! export interpolateCubehelixDefault [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-scale/src/cubehelix.js .default */
+
+/*! export interpolateInferno [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-scale/src/viridis.js .inferno */
+
+/*! export interpolateMagma [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-scale/src/viridis.js .magma */
+
+/*! export interpolatePlasma [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-scale/src/viridis.js .plasma */
+
+/*! export interpolateRainbow [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-scale/src/rainbow.js .default */
+
+/*! export interpolateTransformCss [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export interpolateTransformSvg [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export interpolateViridis [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-scale/src/viridis.js .default */
+
+/*! export interpolateWarm [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-scale/src/rainbow.js .warm */
+
+/*! export interrupt [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-transition/src/interrupt.js .default */
 
 /*! export isAdornedStart [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -600,35 +586,105 @@
 
 /*! export lazy [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .lazy */
 
+/*! export legendColor [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export legendHelpers [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export legendSize [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export legendSymbol [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export light [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export lighten [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export linearish [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export local [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-selection/src/local.js .default */
+
 /*! export loggish [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export magma [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export map [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export map [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-collection/src/map.js .default */
+
+/*! export matcher [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-selection/src/matcher.js .default */
+
+/*! export max [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-array/src/max.js .default */
+
+/*! export mean [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-array/src/mean.js .default */
+
+/*! export median [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-array/src/median.js .default */
 
 /*! export memo [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export memo [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .memo */
 
+/*! export merge [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-array/src/merge.js .default */
+
 /*! export mergeChildMappings [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export mergeGeomData [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export milliseconds [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export min [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-array/src/min.js .default */
+
+/*! export minutes [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export monday [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export mondays [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export months [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export mouse [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-selection/src/mouse.js .default */
+
+/*! export namespace [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-selection/src/namespace.js .default */
+
+/*! export namespaces [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-selection/src/namespaces.js .default */
+
 /*! export nest [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-collection/src/nest.js .default */
+
+/*! export newId [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export now [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export numbers [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export pairs [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-array/src/pairs.js .default */
+
+/*! export parseCss [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export parseInteger [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export parseSvg [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export permute [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-array/src/permute.js .default */
+
+/*! export plasma [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export point [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export powish [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export precisionFixed [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-format/src/precisionFixed.js .default */
+
+/*! export precisionPrefix [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-format/src/precisionPrefix.js .default */
+
+/*! export precisionRound [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-format/src/precisionRound.js .default */
 
 /*! export prefix [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export prefixExponent [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export quantile [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-array/src/quantile.js .default */
+
+/*! export rad2deg [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export range [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-array/src/range.js .default */
 
 /*! export recomposeColor [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -652,7 +708,65 @@
 
 /*! export rgbToHex [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export root [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export saturday [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export saturdays [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export scaleBand [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-scale/src/band.js .default */
+
+/*! export scaleIdentity [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-scale/src/identity.js .default */
+
+/*! export scaleImplicit [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-scale/src/ordinal.js .implicit */
+
+/*! export scaleLinear [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-scale/src/linear.js .default */
+
+/*! export scaleLog [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-scale/src/log.js .default */
+
+/*! export scaleOrdinal [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-scale/src/ordinal.js .default */
+
+/*! export scalePoint [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-scale/src/band.js .point */
+
+/*! export scalePow [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-scale/src/pow.js .default */
+
+/*! export scaleQuantile [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-scale/src/quantile.js .default */
+
+/*! export scaleQuantize [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-scale/src/quantize.js .default */
+
+/*! export scaleSequential [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-scale/src/sequential.js .default */
+
+/*! export scaleSqrt [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-scale/src/pow.js .sqrt */
+
+/*! export scaleThreshold [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-scale/src/threshold.js .default */
+
+/*! export scaleTime [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-scale/src/time.js .default */
+
+/*! export scaleUtc [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-scale/src/utcTime.js .default */
+
+/*! export scan [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-array/src/scan.js .default */
+
 /*! export scheme [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export schemeCategory10 [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-scale/src/category10.js .default */
+
+/*! export schemeCategory20 [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-scale/src/category20.js .default */
+
+/*! export schemeCategory20b [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-scale/src/category20b.js .default */
+
+/*! export schemeCategory20c [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-scale/src/category20c.js .default */
+
+/*! export seconds [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export select [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-selection/src/select.js .default */
+
+/*! export selectAll [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selectAll.js .default */
+
+/*! export selection [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/index.js .default */
+
+/*! export selector [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selector.js .default */
+
+/*! export selectorAll [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selectorAll.js .default */
 
 /*! export sequentialLog [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -662,17 +776,31 @@
 
 /*! export sequentialSymlog [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export set [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export set [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-collection/src/set.js .default */
 
 /*! export sheets [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export sheetsManager [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export shuffle [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-array/src/shuffle.js .default */
+
+/*! export slice [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export sliceLaneData [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export sqrt [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export styleValue [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export styles [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export sum [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-array/src/sum.js .default */
+
+/*! export sunday [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export sundays [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export supportedKeyframes [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -686,13 +814,43 @@
 
 /*! export text [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-request/src/text.js .default */
 
+/*! export thresholdFreedmanDiaconis [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-array/src/threshold/freedmanDiaconis.js .default */
+
+/*! export thresholdScott [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-array/src/threshold/scott.js .default */
+
+/*! export thresholdSturges [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-array/src/threshold/sturges.js .default */
+
+/*! export thursday [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export thursdays [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export tickIncrement [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export tickStep [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export tickStep [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-array/src/ticks.js .tickStep */
+
+/*! export ticks [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-array/src/ticks.js .default */
+
+/*! export timeFormat [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export timeParse [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export timer [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export timerFlush [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export toCssValue [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export touch [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-selection/src/touch.js .default */
+
+/*! export touches [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-selection/src/touches.js .default */
+
 /*! export transformer [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export transition [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-transition/src/transition/index.js .default */
+
+/*! export transpose [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-array/src/transpose.js .default */
 
 /*! export tsv [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-request/src/tsv.js .default */
 
@@ -709,6 +867,12 @@
 /*! export tsvParse [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export tsvParseRows [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export tuesday [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export tuesdays [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export tweenValue [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export typeOf [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -852,7 +1016,51 @@
 
 /*! export useState [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .useState */
 
+/*! export utcDays [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export utcFormat [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export utcFriday [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export utcFridays [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export utcHours [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export utcMinutes [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export utcMonday [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export utcMondays [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export utcMonths [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export utcParse [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export utcSaturday [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export utcSaturdays [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export utcSunday [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export utcSundays [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export utcThursday [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export utcThursdays [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export utcTuesday [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export utcTuesdays [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export utcWednesday [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export utcWednesdays [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export utcYears [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export values [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-collection/src/values.js .default */
+
+/*! export variance [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-array/src/variance.js .default */
 
 /*! export version [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -860,11 +1068,25 @@
 
 /*! export version [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .version */
 
+/*! export warm [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export wednesday [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export wednesdays [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export window [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-selection/src/window.js .default */
+
 /*! export withLeaflet [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export withLeaflet [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-leaflet/es/context.js .withLeaflet */
 
+/*! export xhtml [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export xml [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-request/src/xml.js .default */
+
+/*! export years [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export zip [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/d3-svg-legend/node_modules/d3-array/src/zip.js .default */
 
 /*! exports [not provided] [no usage info] */
 
@@ -1569,6 +1791,10 @@
   \******************************************/
 
 /*!*******************************************!*\
+  !*** ./node_modules/d3-ease/src/cubic.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
   !*** ./node_modules/d3-scale/src/init.js ***!
   \*******************************************/
 
@@ -1662,6 +1888,10 @@
 
 /*!********************************************!*\
   !*** ./node_modules/d3-request/src/xml.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/d3-timer/src/timer.js ***!
   \********************************************/
 
 /*!********************************************!*\
@@ -1985,6 +2215,10 @@
   \**********************************************/
 
 /*!**********************************************!*\
+  !*** ./node_modules/d3-timer/src/timeout.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
   !*** ./node_modules/lodash/_assocIndexOf.js ***!
   \**********************************************/
 
@@ -2137,6 +2371,10 @@
   \************************************************/
 
 /*!************************************************!*\
+  !*** ./node_modules/d3-selection/src/array.js ***!
+  \************************************************/
+
+/*!************************************************!*\
   !*** ./node_modules/lodash/_baseAggregator.js ***!
   \************************************************/
 
@@ -2213,6 +2451,18 @@
   \*************************************************/
 
 /*!*************************************************!*\
+  !*** ./node_modules/d3-selection/src/select.js ***!
+  \*************************************************/
+
+/*!*************************************************!*\
+  !*** ./node_modules/d3-selection/src/window.js ***!
+  \*************************************************/
+
+/*!*************************************************!*\
+  !*** ./node_modules/d3-transition/src/index.js ***!
+  \*************************************************/
+
+/*!*************************************************!*\
   !*** ./node_modules/lodash/_arrayAggregator.js ***!
   \*************************************************/
 
@@ -2274,6 +2524,18 @@
 
 /*!**************************************************!*\
   !*** ./node_modules/d3-interpolate/src/value.js ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ./node_modules/d3-selection/src/creator.js ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ./node_modules/d3-selection/src/matcher.js ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ./node_modules/d3-transition/src/active.js ***!
   \**************************************************/
 
 /*!**************************************************!*\
@@ -2341,6 +2603,14 @@
   \***************************************************/
 
 /*!***************************************************!*\
+  !*** ./node_modules/d3-selection/src/constant.js ***!
+  \***************************************************/
+
+/*!***************************************************!*\
+  !*** ./node_modules/d3-selection/src/selector.js ***!
+  \***************************************************/
+
+/*!***************************************************!*\
   !*** ./node_modules/is-in-browser/dist/module.js ***!
   \***************************************************/
 
@@ -2355,6 +2625,10 @@
 /*!***************************************************!*\
   !*** ./node_modules/react-leaflet/es/Polyline.js ***!
   \***************************************************/
+
+/*!****************************************************!*\
+  !*** ./node_modules/d3-selection/src/namespace.js ***!
+  \****************************************************/
 
 /*!****************************************************!*\
   !*** ./node_modules/hyphenate-style-name/index.js ***!
@@ -2398,6 +2672,14 @@
 
 /*!*****************************************************!*\
   !*** ./node_modules/d3-scale-chromatic/src/ramp.js ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./node_modules/d3-selection/src/namespaces.js ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./node_modules/d3-transition/src/interrupt.js ***!
   \*****************************************************/
 
 /*!*****************************************************!*\
@@ -2453,6 +2735,10 @@
   \******************************************************/
 
 /*!******************************************************!*\
+  !*** ./node_modules/d3-selection/src/selectorAll.js ***!
+  \******************************************************/
+
+/*!******************************************************!*\
   !*** ./node_modules/react-leaflet/es/ZoomControl.js ***!
   \******************************************************/
 
@@ -2474,6 +2760,14 @@
 
 /*!*******************************************************!*\
   !*** ./node_modules/d3-scale-chromatic/src/colors.js ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/on.js ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ./node_modules/d3-svg-legend/indexRollupNext.js ***!
   \*******************************************************/
 
 /*!*******************************************************!*\
@@ -2569,6 +2863,54 @@
   \*********************************************************/
 
 /*!*********************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/attr.js ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/call.js ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/data.js ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/each.js ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/exit.js ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/html.js ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/join.js ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/node.js ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/size.js ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/sort.js ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/text.js ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ./node_modules/d3-transition/src/transition/on.js ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
   !*** ./node_modules/lodash/_matchesStrictComparable.js ***!
   \*********************************************************/
 
@@ -2578,6 +2920,54 @@
 
 /*!**********************************************************!*\
   !*** ./node_modules/@material-ui/utils/esm/deepmerge.js ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/clone.js ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/datum.js ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/empty.js ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/enter.js ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/index.js ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/lower.js ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/merge.js ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/nodes.js ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/order.js ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/raise.js ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/style.js ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./node_modules/d3-transition/src/transition/end.js ***!
   \**********************************************************/
 
 /*!**********************************************************!*\
@@ -2617,6 +3007,46 @@
   \***********************************************************/
 
 /*!***********************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/append.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/filter.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/insert.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/remove.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/select.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/sparse.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./node_modules/d3-transition/src/selection/index.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./node_modules/d3-transition/src/transition/attr.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./node_modules/d3-transition/src/transition/ease.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./node_modules/d3-transition/src/transition/text.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
   !*** ./node_modules/react-transition-group/esm/config.js ***!
   \***********************************************************/
 
@@ -2638,6 +3068,38 @@
 
 /*!************************************************************!*\
   !*** ./node_modules/@material-ui/core/esm/utils/setRef.js ***!
+  \************************************************************/
+
+/*!************************************************************!*\
+  !*** ./node_modules/d3-interpolate/src/transform/index.js ***!
+  \************************************************************/
+
+/*!************************************************************!*\
+  !*** ./node_modules/d3-interpolate/src/transform/parse.js ***!
+  \************************************************************/
+
+/*!************************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/classed.js ***!
+  \************************************************************/
+
+/*!************************************************************!*\
+  !*** ./node_modules/d3-transition/src/transition/delay.js ***!
+  \************************************************************/
+
+/*!************************************************************!*\
+  !*** ./node_modules/d3-transition/src/transition/index.js ***!
+  \************************************************************/
+
+/*!************************************************************!*\
+  !*** ./node_modules/d3-transition/src/transition/merge.js ***!
+  \************************************************************/
+
+/*!************************************************************!*\
+  !*** ./node_modules/d3-transition/src/transition/style.js ***!
+  \************************************************************/
+
+/*!************************************************************!*\
+  !*** ./node_modules/d3-transition/src/transition/tween.js ***!
   \************************************************************/
 
 /*!************************************************************!*\
@@ -2677,6 +3139,30 @@
   \*************************************************************/
 
 /*!*************************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/dispatch.js ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/iterator.js ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/property.js ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./node_modules/d3-transition/src/transition/filter.js ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./node_modules/d3-transition/src/transition/remove.js ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./node_modules/d3-transition/src/transition/select.js ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
   !*** ./node_modules/prop-types/factoryWithThrowingShims.js ***!
   \*************************************************************/
 
@@ -2694,6 +3180,10 @@
 
 /*!**************************************************************!*\
   !*** ./node_modules/@material-ui/core/esm/utils/debounce.js ***!
+  \**************************************************************/
+
+/*!**************************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/selectAll.js ***!
   \**************************************************************/
 
 /*!**************************************************************!*\
@@ -2717,6 +3207,18 @@
   \***************************************************************/
 
 /*!***************************************************************!*\
+  !*** ./node_modules/d3-transition/src/selection/interrupt.js ***!
+  \***************************************************************/
+
+/*!***************************************************************!*\
+  !*** ./node_modules/d3-transition/src/transition/duration.js ***!
+  \***************************************************************/
+
+/*!***************************************************************!*\
+  !*** ./node_modules/d3-transition/src/transition/schedule.js ***!
+  \***************************************************************/
+
+/*!***************************************************************!*\
   !*** ./node_modules/react-transition-group/esm/Transition.js ***!
   \***************************************************************/
 
@@ -2734,6 +3236,34 @@
 
 /*!****************************************************************!*\
   !*** ./node_modules/@material-ui/core/esm/utils/useForkRef.js ***!
+  \****************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./node_modules/d3-interpolate/src/transform/decompose.js ***!
+  \****************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/selectChild.js ***!
+  \****************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./node_modules/d3-transition/src/selection/transition.js ***!
+  \****************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./node_modules/d3-transition/src/transition/attrTween.js ***!
+  \****************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./node_modules/d3-transition/src/transition/selectAll.js ***!
+  \****************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./node_modules/d3-transition/src/transition/selection.js ***!
+  \****************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./node_modules/d3-transition/src/transition/textTween.js ***!
   \****************************************************************/
 
 /*!****************************************************************!*\
@@ -2776,6 +3306,18 @@
   !*** ./node_modules/@material-ui/core/esm/utils/ownerWindow.js ***!
   \*****************************************************************/
 
+/*!*****************************************************************!*\
+  !*** ./node_modules/d3-scale-chromatic/src/diverging/RdYlGn.js ***!
+  \*****************************************************************/
+
+/*!*****************************************************************!*\
+  !*** ./node_modules/d3-transition/src/transition/styleTween.js ***!
+  \*****************************************************************/
+
+/*!*****************************************************************!*\
+  !*** ./node_modules/d3-transition/src/transition/transition.js ***!
+  \*****************************************************************/
+
 /*!******************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js ***!
   \******************************************************************/
@@ -2798,6 +3340,14 @@
 
 /*!******************************************************************!*\
   !*** ./node_modules/@material-ui/core/esm/utils/isMuiElement.js ***!
+  \******************************************************************/
+
+/*!******************************************************************!*\
+  !*** ./node_modules/d3-transition/src/transition/easeVarying.js ***!
+  \******************************************************************/
+
+/*!******************************************************************!*\
+  !*** ./node_modules/d3-transition/src/transition/interpolate.js ***!
   \******************************************************************/
 
 /*!*******************************************************************!*\
@@ -2840,6 +3390,18 @@
   !*** ./node_modules/@material-ui/styles/esm/useTheme/useTheme.js ***!
   \*******************************************************************/
 
+/*!*******************************************************************!*\
+  !*** ./node_modules/d3-selection/src/selection/selectChildren.js ***!
+  \*******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/index.js ***!
+  \*******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-scale/index.js ***!
+  \*******************************************************************/
+
 /*!********************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/iterableToArray.js ***!
   \********************************************************************/
@@ -2858,6 +3420,14 @@
 
 /*!********************************************************************!*\
   !*** ./node_modules/@material-ui/core/esm/styles/createSpacing.js ***!
+  \********************************************************************/
+
+/*!********************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-format/index.js ***!
+  \********************************************************************/
+
+/*!********************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-time/src/day.js ***!
   \********************************************************************/
 
 /*!********************************************************************!*\
@@ -2882,6 +3452,42 @@
 
 /*!*********************************************************************!*\
   !*** ./node_modules/@material-ui/styles/esm/jssPreset/jssPreset.js ***!
+  \*********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/src/max.js ***!
+  \*********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/src/min.js ***!
+  \*********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/src/sum.js ***!
+  \*********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/src/zip.js ***!
+  \*********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-scale/src/log.js ***!
+  \*********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-scale/src/pow.js ***!
+  \*********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-time/src/hour.js ***!
+  \*********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-time/src/week.js ***!
+  \*********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-time/src/year.js ***!
   \*********************************************************************/
 
 /*!**********************************************************************!*\
@@ -2918,6 +3524,38 @@
 
 /*!**********************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/components/App.css ***!
+  \**********************************************************************/
+
+/*!**********************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/src/mean.js ***!
+  \**********************************************************************/
+
+/*!**********************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/src/scan.js ***!
+  \**********************************************************************/
+
+/*!**********************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-color/src/math.js ***!
+  \**********************************************************************/
+
+/*!**********************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-dispatch/index.js ***!
+  \**********************************************************************/
+
+/*!**********************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-scale/src/band.js ***!
+  \**********************************************************************/
+
+/*!**********************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-scale/src/nice.js ***!
+  \**********************************************************************/
+
+/*!**********************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-scale/src/time.js ***!
+  \**********************************************************************/
+
+/*!**********************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-time/src/month.js ***!
   \**********************************************************************/
 
 /*!**********************************************************************!*\
@@ -2965,11 +3603,99 @@
   \***********************************************************************/
 
 /*!***********************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/src/array.js ***!
+  \***********************************************************************/
+
+/*!***********************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/src/merge.js ***!
+  \***********************************************************************/
+
+/*!***********************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/src/pairs.js ***!
+  \***********************************************************************/
+
+/*!***********************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/src/range.js ***!
+  \***********************************************************************/
+
+/*!***********************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/src/ticks.js ***!
+  \***********************************************************************/
+
+/*!***********************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-color/src/color.js ***!
+  \***********************************************************************/
+
+/*!***********************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-scale/src/array.js ***!
+  \***********************************************************************/
+
+/*!***********************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/index.js ***!
+  \***********************************************************************/
+
+/*!***********************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-time/src/minute.js ***!
+  \***********************************************************************/
+
+/*!***********************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-time/src/second.js ***!
+  \***********************************************************************/
+
+/*!***********************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-time/src/utcDay.js ***!
+  \***********************************************************************/
+
+/*!***********************************************************************!*\
   !*** ./node_modules/react-transition-group/esm/utils/ChildMapping.js ***!
   \***********************************************************************/
 
 /*!************************************************************************!*\
   !*** ./node_modules/@material-ui/core/esm/styles/createBreakpoints.js ***!
+  \************************************************************************/
+
+/*!************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/src/bisect.js ***!
+  \************************************************************************/
+
+/*!************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/src/extent.js ***!
+  \************************************************************************/
+
+/*!************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/src/median.js ***!
+  \************************************************************************/
+
+/*!************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/src/number.js ***!
+  \************************************************************************/
+
+/*!************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-color/src/define.js ***!
+  \************************************************************************/
+
+/*!************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-scale/src/colors.js ***!
+  \************************************************************************/
+
+/*!************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-scale/src/linear.js ***!
+  \************************************************************************/
+
+/*!************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-scale/src/number.js ***!
+  \************************************************************************/
+
+/*!************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-time/src/utcHour.js ***!
+  \************************************************************************/
+
+/*!************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-time/src/utcWeek.js ***!
+  \************************************************************************/
+
+/*!************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-time/src/utcYear.js ***!
   \************************************************************************/
 
 /*!*************************************************************************!*\
@@ -2985,7 +3711,43 @@
   \*************************************************************************/
 
 /*!*************************************************************************!*\
-  !*** ./node_modules/d3-scale-chromatic/src/sequential-single/Greens.js ***!
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/src/permute.js ***!
+  \*************************************************************************/
+
+/*!*************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/src/shuffle.js ***!
+  \*************************************************************************/
+
+/*!*************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-format/src/locale.js ***!
+  \*************************************************************************/
+
+/*!*************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-scale/src/ordinal.js ***!
+  \*************************************************************************/
+
+/*!*************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-scale/src/rainbow.js ***!
+  \*************************************************************************/
+
+/*!*************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-scale/src/utcTime.js ***!
+  \*************************************************************************/
+
+/*!*************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-scale/src/viridis.js ***!
+  \*************************************************************************/
+
+/*!*************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-time/src/duration.js ***!
+  \*************************************************************************/
+
+/*!*************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-time/src/interval.js ***!
+  \*************************************************************************/
+
+/*!*************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-time/src/utcMonth.js ***!
   \*************************************************************************/
 
 /*!**************************************************************************!*\
@@ -3000,6 +3762,50 @@
   !*** ./node_modules/@material-ui/styles/esm/makeStyles/multiKeyStore.js ***!
   \**************************************************************************/
 
+/*!**************************************************************************!*\
+  !*** ./node_modules/d3-request/node_modules/d3-dispatch/src/dispatch.js ***!
+  \**************************************************************************/
+
+/*!**************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/src/bisector.js ***!
+  \**************************************************************************/
+
+/*!**************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/src/constant.js ***!
+  \**************************************************************************/
+
+/*!**************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/src/identity.js ***!
+  \**************************************************************************/
+
+/*!**************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/src/quantile.js ***!
+  \**************************************************************************/
+
+/*!**************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/src/variance.js ***!
+  \**************************************************************************/
+
+/*!**************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-scale/src/constant.js ***!
+  \**************************************************************************/
+
+/*!**************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-scale/src/identity.js ***!
+  \**************************************************************************/
+
+/*!**************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-scale/src/quantile.js ***!
+  \**************************************************************************/
+
+/*!**************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-scale/src/quantize.js ***!
+  \**************************************************************************/
+
+/*!**************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-time/src/utcMinute.js ***!
+  \**************************************************************************/
+
 /*!***************************************************************************!*\
   !*** ./node_modules/@material-ui/core/esm/OutlinedInput/OutlinedInput.js ***!
   \***************************************************************************/
@@ -3010,6 +3816,58 @@
 
 /*!***************************************************************************!*\
   !*** ./node_modules/@material-ui/styles/esm/mergeClasses/mergeClasses.js ***!
+  \***************************************************************************/
+
+/*!***************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/src/ascending.js ***!
+  \***************************************************************************/
+
+/*!***************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/src/deviation.js ***!
+  \***************************************************************************/
+
+/*!***************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/src/histogram.js ***!
+  \***************************************************************************/
+
+/*!***************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/src/transpose.js ***!
+  \***************************************************************************/
+
+/*!***************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-color/src/cubehelix.js ***!
+  \***************************************************************************/
+
+/*!***************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-format/src/exponent.js ***!
+  \***************************************************************************/
+
+/*!***************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-interpolate/src/rgb.js ***!
+  \***************************************************************************/
+
+/*!***************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-scale/src/cubehelix.js ***!
+  \***************************************************************************/
+
+/*!***************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-scale/src/threshold.js ***!
+  \***************************************************************************/
+
+/*!***************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/local.js ***!
+  \***************************************************************************/
+
+/*!***************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/mouse.js ***!
+  \***************************************************************************/
+
+/*!***************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/point.js ***!
+  \***************************************************************************/
+
+/*!***************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/touch.js ***!
   \***************************************************************************/
 
 /*!***************************************************************************!*\
@@ -3033,11 +3891,95 @@
   \****************************************************************************/
 
 /*!****************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/src/descending.js ***!
+  \****************************************************************************/
+
+/*!****************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-interpolate/src/date.js ***!
+  \****************************************************************************/
+
+/*!****************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-scale/src/category10.js ***!
+  \****************************************************************************/
+
+/*!****************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-scale/src/category20.js ***!
+  \****************************************************************************/
+
+/*!****************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-scale/src/continuous.js ***!
+  \****************************************************************************/
+
+/*!****************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-scale/src/sequential.js ***!
+  \****************************************************************************/
+
+/*!****************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-scale/src/tickFormat.js ***!
+  \****************************************************************************/
+
+/*!****************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/select.js ***!
+  \****************************************************************************/
+
+/*!****************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/window.js ***!
+  \****************************************************************************/
+
+/*!****************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-time/src/millisecond.js ***!
+  \****************************************************************************/
+
+/*!****************************************************************************!*\
   !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
   \****************************************************************************/
 
 /*!*****************************************************************************!*\
   !*** ./node_modules/@material-ui/styles/esm/getThemeProps/getThemeProps.js ***!
+  \*****************************************************************************/
+
+/*!*****************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-dispatch/src/dispatch.js ***!
+  \*****************************************************************************/
+
+/*!*****************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-interpolate/src/array.js ***!
+  \*****************************************************************************/
+
+/*!*****************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-interpolate/src/basis.js ***!
+  \*****************************************************************************/
+
+/*!*****************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-interpolate/src/color.js ***!
+  \*****************************************************************************/
+
+/*!*****************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-interpolate/src/round.js ***!
+  \*****************************************************************************/
+
+/*!*****************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-interpolate/src/value.js ***!
+  \*****************************************************************************/
+
+/*!*****************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-scale/src/category20b.js ***!
+  \*****************************************************************************/
+
+/*!*****************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-scale/src/category20c.js ***!
+  \*****************************************************************************/
+
+/*!*****************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/creator.js ***!
+  \*****************************************************************************/
+
+/*!*****************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/matcher.js ***!
+  \*****************************************************************************/
+
+/*!*****************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/touches.js ***!
   \*****************************************************************************/
 
 /*!******************************************************************************!*\
@@ -3046,6 +3988,38 @@
 
 /*!******************************************************************************!*\
   !*** ./node_modules/@material-ui/core/esm/NativeSelect/NativeSelectInput.js ***!
+  \******************************************************************************/
+
+/*!******************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-format/src/formatGroup.js ***!
+  \******************************************************************************/
+
+/*!******************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-format/src/formatTypes.js ***!
+  \******************************************************************************/
+
+/*!******************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-interpolate/src/number.js ***!
+  \******************************************************************************/
+
+/*!******************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-interpolate/src/object.js ***!
+  \******************************************************************************/
+
+/*!******************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-interpolate/src/string.js ***!
+  \******************************************************************************/
+
+/*!******************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/constant.js ***!
+  \******************************************************************************/
+
+/*!******************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selector.js ***!
+  \******************************************************************************/
+
+/*!******************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-time-format/src/locale.js ***!
   \******************************************************************************/
 
 /*!******************************************************************************!*\
@@ -3064,8 +4038,40 @@
   !*** ./node_modules/@material-ui/styles/esm/StylesProvider/StylesProvider.js ***!
   \*******************************************************************************/
 
+/*!*******************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/namespace.js ***!
+  \*******************************************************************************/
+
+/*!*******************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selectAll.js ***!
+  \*******************************************************************************/
+
 /*!********************************************************************************!*\
   !*** ./node_modules/@material-ui/core/esm/internal/svg-icons/ArrowDropDown.js ***!
+  \********************************************************************************/
+
+/*!********************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-format/src/defaultLocale.js ***!
+  \********************************************************************************/
+
+/*!********************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-format/src/formatDecimal.js ***!
+  \********************************************************************************/
+
+/*!********************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-format/src/formatDefault.js ***!
+  \********************************************************************************/
+
+/*!********************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-format/src/formatRounded.js ***!
+  \********************************************************************************/
+
+/*!********************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-interpolate/src/constant.js ***!
+  \********************************************************************************/
+
+/*!********************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/namespaces.js ***!
   \********************************************************************************/
 
 /*!*********************************************************************************!*\
@@ -3075,6 +4081,42 @@
 /*!*********************************************************************************!*\
   !*** ./node_modules/@material-ui/core/esm/TextareaAutosize/TextareaAutosize.js ***!
   \*********************************************************************************/
+
+/*!*********************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/src/threshold/scott.js ***!
+  \*********************************************************************************/
+
+/*!*********************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-format/src/precisionFixed.js ***!
+  \*********************************************************************************/
+
+/*!*********************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-format/src/precisionRound.js ***!
+  \*********************************************************************************/
+
+/*!*********************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-interpolate/src/cubehelix.js ***!
+  \*********************************************************************************/
+
+/*!*********************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selectorAll.js ***!
+  \*********************************************************************************/
+
+/*!*********************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/sourceEvent.js ***!
+  \*********************************************************************************/
+
+/*!**********************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-format/src/formatSpecifier.js ***!
+  \**********************************************************************************/
+
+/*!**********************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-format/src/precisionPrefix.js ***!
+  \**********************************************************************************/
+
+/*!**********************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/on.js ***!
+  \**********************************************************************************/
 
 /*!**********************************************************************************!*\
   !*** ./node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js ***!
@@ -3088,12 +4130,68 @@
   !*** ./node_modules/@material-ui/styles/esm/getStylesCreator/getStylesCreator.js ***!
   \***********************************************************************************/
 
+/*!***********************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/src/threshold/sturges.js ***!
+  \***********************************************************************************/
+
+/*!***********************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-format/src/formatPrefixAuto.js ***!
+  \***********************************************************************************/
+
+/*!***********************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-interpolate/src/basisClosed.js ***!
+  \***********************************************************************************/
+
+/*!***********************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-interpolate/src/numberArray.js ***!
+  \***********************************************************************************/
+
 /*!************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/components/Barchart/Barchart.css ***!
   \************************************************************************************/
 
 /*!************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/components/Dropdown/Dropdown.css ***!
+  \************************************************************************************/
+
+/*!************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/attr.js ***!
+  \************************************************************************************/
+
+/*!************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/call.js ***!
+  \************************************************************************************/
+
+/*!************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/data.js ***!
+  \************************************************************************************/
+
+/*!************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/each.js ***!
+  \************************************************************************************/
+
+/*!************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/exit.js ***!
+  \************************************************************************************/
+
+/*!************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/html.js ***!
+  \************************************************************************************/
+
+/*!************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/node.js ***!
+  \************************************************************************************/
+
+/*!************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/size.js ***!
+  \************************************************************************************/
+
+/*!************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/sort.js ***!
+  \************************************************************************************/
+
+/*!************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/text.js ***!
   \************************************************************************************/
 
 /*!*************************************************************************************!*\
@@ -3104,20 +4202,108 @@
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/leaflet/dist/leaflet.css ***!
   \*************************************************************************************/
 
+/*!*************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/datum.js ***!
+  \*************************************************************************************/
+
+/*!*************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/empty.js ***!
+  \*************************************************************************************/
+
+/*!*************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/enter.js ***!
+  \*************************************************************************************/
+
+/*!*************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/index.js ***!
+  \*************************************************************************************/
+
+/*!*************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/lower.js ***!
+  \*************************************************************************************/
+
+/*!*************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/merge.js ***!
+  \*************************************************************************************/
+
+/*!*************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/nodes.js ***!
+  \*************************************************************************************/
+
+/*!*************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/order.js ***!
+  \*************************************************************************************/
+
+/*!*************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/raise.js ***!
+  \*************************************************************************************/
+
+/*!*************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/style.js ***!
+  \*************************************************************************************/
+
+/*!*************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-time-format/src/defaultLocale.js ***!
+  \*************************************************************************************/
+
 /*!**************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/components/InfoBoxes/InfoBoxes.css ***!
   \**************************************************************************************/
+
+/*!**************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/append.js ***!
+  \**************************************************************************************/
+
+/*!**************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/filter.js ***!
+  \**************************************************************************************/
+
+/*!**************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/insert.js ***!
+  \**************************************************************************************/
+
+/*!**************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/remove.js ***!
+  \**************************************************************************************/
+
+/*!**************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/select.js ***!
+  \**************************************************************************************/
+
+/*!**************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/sparse.js ***!
+  \**************************************************************************************/
+
+/*!***************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/classed.js ***!
+  \***************************************************************************************/
 
 /*!****************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/components/LineCharts/LineCharts.css ***!
   \****************************************************************************************/
 
 /*!****************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/dispatch.js ***!
+  \****************************************************************************************/
+
+/*!****************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/property.js ***!
+  \****************************************************************************************/
+
+/*!****************************************************************************************!*\
   !*** ./node_modules/jss-plugin-vendor-prefixer/dist/jss-plugin-vendor-prefixer.esm.js ***!
   \****************************************************************************************/
 
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-selection/src/selection/selectAll.js ***!
+  \*****************************************************************************************/
+
 /*!********************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/components/InfoBoxes/InfoBox/InfoBox.css ***!
+  \********************************************************************************************/
+
+/*!********************************************************************************************!*\
+  !*** ./node_modules/d3-svg-legend/node_modules/d3-array/src/threshold/freedmanDiaconis.js ***!
   \********************************************************************************************/
 
 /*!**********************************************************************************************!*\
