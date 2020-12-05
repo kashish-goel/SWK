@@ -1,5 +1,18 @@
 .map {
-    height: 500px;
+    display: flex;
+    height: 560px;
+    gap: 10px;
+    /* background-color: white; */
+    /* padding: 1rem; */
+    /* border-radius: 20px; */
+    /* margin-top: 16px; */
+    /* box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5); */
+  }
+
+
+  .map__choropleth {
+    flex: .9;
+    height: 560px;
     background-color: white;
     padding: 1rem;
     border-radius: 20px;
@@ -12,15 +25,25 @@
     border-radius: 12px;
   }
 
-  .legend-div{
+  .map__slider {
+    flex: .1;
+    height : 500px;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 20px;
+    margin-top: 16px;
+    box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5);
+  }
+
+  /* .legend-div{
     width: 250px;
     height: 160px;
     border-radius: 20px;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.336);
-  }
+  } */
 
   #svg-time-slider{
     border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.788);
+    /* background-color: rgba(255, 255, 255, 0.788); */
   }

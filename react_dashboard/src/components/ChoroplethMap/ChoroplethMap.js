@@ -3,7 +3,7 @@ import { Map, TileLayer , GeoJSON, LayersControl,Marker,Popup,FeatureGroup,Circl
 import Control from 'react-leaflet-control';
 
 import "./ChoroplethMap.css";
-import { groupDataByCategory, mergeGeomData , getDomain, getDropdownLanes} from "./../util";
+import { groupDataByCategory, mergeGeomData , groupDataByDateCategory} from "./../util";
 import { scaleSequential } from "d3-scale";
 import { interpolateRdYlGn,interpolateGreens,scaleQuantize} from "d3-scale-chromatic";
 import {select} from "d3-selection";
@@ -24,16 +24,20 @@ import {FormControl,InputLabel,MenuItem, Select} from '@material-ui/core'
 function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
     const geoJsonRef = useRef();
     const dataByCategory = groupDataByCategory(data,selCategory);
-    console.log(data)
-    const geojsonWithData = mergeGeomData(geojson.zones,dataByCategory);
-    const domain = Object.values(dataByCategory);
-    const [min,max] = extent(domain);
     const [zoneControl,setZoneControl] = useState(false);
-    let colorScale= scaleSequential().domain([min,max]).interpolator(interpolateRdYlGn);
     const svgLegRef = useRef();
     const svgSliderRef = useRef();
+    const [selMonth, setSelMonth] = useState('09');
+    const [selDay, setSelDay] = useState(1);
 
-
+    const dataByDateCategory = groupDataByDateCategory(data,selCategory,selMonth,selDay)
+    
+    const geojsonWithData = mergeGeomData(geojson.zones,dataByDateCategory);
+    const domain = (dataByDateCategory.length > 0)?dataByDateCategory.map(d => Object.values(d)[0]):[0]
+    // const domain = Object.values(dataByCategory);
+    const [min,max] = extent(domain);
+    let colorScale= scaleSequential().domain([min,max]).interpolator(interpolateRdYlGn);
+    
 
 
     // for(var i=0; i<parentDivs.length; i++)
@@ -79,7 +83,7 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
                             .ticks(5)
                             .default(0.015)
                             .on('onchange', val => {
-                                console.log(val)
+                                setSelDay(val)
                             // d3.select('p#value-vertical').text(d3.format('.2%')(val));
                             });
 
@@ -104,10 +108,9 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
     }
     const onEachLane = (lane,layer) =>{
         // geoJsonRef.current.leafletElement.resetStyle(layer);
-        console.log(lane) 
-        if(geoJsonRef.current){
-            console.log(geoJsonRef.current)
-        }
+        // if(geoJsonRef.current){
+        //     console.log(geoJsonRef.current)
+        // }
 
     
 
@@ -156,10 +159,14 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
     }
            
     let geojsonMap =  <GeoJSON key='my-geojson' style={zoneStyle} data={geojsonWithData} onEachFeature={onEachLane}  />
+
+    const handleDropdownChange = (e) =>{
+        setSelMonth(e.target.value)
+    }
     return (
         <div className="map">
     
-       
+       <div className="map__choropleth">
         <Map center={[19.0182, 72.8168]} zoom={17} scrollWheelZoom={false} onOverlayadd={ showZoneControl } onoverlayremove={ removeZoneControl }>
             <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -171,16 +178,18 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
                     <Select
                         labelId="demo-simple-select-outlined-label"
                         id="demo-simple-select-outlined"
-                        value={10}
-                        // onChange={handleChange}
+                        value={selMonth}
+                        onChange={handleDropdownChange}
                         label="Age"
                         >
                         <MenuItem value="">
                             <em>None</em>
                         </MenuItem>
-                        <MenuItem value={10}>Ten</MenuItem>
-                        <MenuItem value={20}>Twenty</MenuItem>
-                        <MenuItem value={30}>Thirty</MenuItem>
+                        <MenuItem value={'09'}>September</MenuItem>
+                        <MenuItem value={'10'}>October</MenuItem>
+                        <MenuItem value={'11'}>November</MenuItem>
+                        <MenuItem value={'12'}>December</MenuItem>
+                                                
                     </Select>
         </FormControl>
         </Control>
@@ -227,6 +236,9 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
 
 
         </Map>
+
+        </div>
+        {/* <div className="map__slider"></div> */}
 
         </div>
     )

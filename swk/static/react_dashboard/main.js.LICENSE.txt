@@ -460,6 +460,8 @@
 
 /*! export groupDataByCategory [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export groupDataByDateCategory [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export handleBreakpoints [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export hasCSSTOMSupport [provided] [no usage info] [missing usage info prevents renaming] */

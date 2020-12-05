@@ -1,5 +1,8 @@
 import _ from 'lodash';
 
+
+const colName = {'dry':'drywaste_af','wet':'wetwaste_af','rejected':'Rejected'};
+
 export const parseInteger = (data) =>{
     const dataColumns = ['Rejected','drywaste_af','drywaste_bf','num_houses_doing_segg','num_houses_giving_mixwaste','num_houses_reached','wetwaste_af','wetwaste_bf'];
     dataColumns.map(col =>{
@@ -52,9 +55,9 @@ export const calMonthlyData = (data,selLane,selCategory) =>{
         calcLabels.push(month[key]);
         calcData.push(groupedData[key]);
     }
-    for(let key in month){
-      console.log(key);
-  }
+  //   for(let key in month){
+  //     console.log(key);
+  // }
     // console.log(groupedData,calcData,calcLabels);
     const barData = {
         chartData:{
@@ -120,7 +123,6 @@ export const sliceLaneData = (data,selLane) =>{
 
 
 export const groupDataByCategory = (data,selCategory) =>{
-    const colName = {'dry':'drywaste_af','wet':'wetwaste_af','rejected':'Rejected'};
     const dataByCategory = data.reduce((obj,elem)=>{
       let category = elem["lane_name"];
       if(!obj.hasOwnProperty(category))
@@ -133,14 +135,53 @@ export const groupDataByCategory = (data,selCategory) =>{
 }
 
 
-export const mergeGeomData = (geojson,dataByCategory) =>{
+// export const mergeGeomData = (geojson,dataByCategory) =>{ 
+//   const features = geojson.features;
+//   for(let key in features){
+//     let laneName = features[key].properties.name;
+//     features[key].properties['dataValue'] = dataByCategory[laneName];
+//   }
+//   console.log(geojson)
+
+//   return geojson;
+  
+// }
+
+export const mergeGeomData = (geojson,dataByCategory) =>{ 
   const features = geojson.features;
   for(let key in features){
     let laneName = features[key].properties.name;
-    features[key].properties['dataValue'] = dataByCategory[laneName];
+    if(dataByCategory.length>0){   //if dataBycategory is not emply
+      let value = dataByCategory.filter(obj => {
+        if(obj[laneName])
+          return (obj) 
+      })
+  
+      value = (Object.values(value[0])[0])
+  
+      features[key].properties['dataValue'] = value; 
+    }
+    
   }
-
   return geojson;
   
 }
 
+
+// const sliceCategoryData = (data,selCategory) =>{
+//   data.filter(d => data.)
+// }
+export const groupDataByDateCategory = (data,selCategory,selMonth,selDay) =>{
+
+  let date = `${selDay}/${selMonth}/20`; 
+  console.log(date)
+  date = (date.length === 7)?"0" + date:date
+  const newData = data.filter(d => d.date === date).map(d => {
+    const obj={}
+    obj[d.lane_name] = d[colName[selCategory]]
+    return obj
+  })
+console.log(newData)
+  return newData
+
+}
