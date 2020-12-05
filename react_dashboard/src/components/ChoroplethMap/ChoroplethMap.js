@@ -24,25 +24,26 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
     const svgLegRef = useRef();
 
 
-    useEffect(() => {
-        const legend = select(svgLegRef.current)
-        // let legend = select("#svg-color-scale")
+    // useEffect(() => {
+        // const legend = select(svgLegRef.current)
+        let legend = select("#svg-color-scale")
         legend.append("g")
-        .attr("class", "legendQuant")
+        .attr("class", "svg-color-legend")
         .attr("transform", "translate(50,15)");
-
 
 
         let colorLegend = legendColor()
             .labelFormat(format(".2f"))
-            .title('Legend')
+            .title(`Legend : ${selCategory} waste`)
             .scale(colorScale);
 
-            legend.select(".legendQuant").call(colorLegend);
+        
+
+        legend.select(".svg-color-legend").call(colorLegend);
   
 
     
-    }, [dataByCategory])
+    // }, [dataByCategory])
     
     const zoneStyle = (e) =>{
         return {fillColor:colorScale(e.properties.dataValue)}
@@ -50,42 +51,39 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
     const spotsStyle = { color: 'red',fill:'black' }
 
 
-    const handleMapClick = (e) => {
-        setSelLane(e.target.feature.properties.name);
-    }
-
-
     const onEachSpot = (spot,layer) =>{
 
     }
     const onEachLane = (lane,layer) =>{
         // geoJsonRef.current.leafletElement.resetStyle(layer);
+        console.log(lane) 
         if(geoJsonRef.current){
             console.log(geoJsonRef.current)
         }
 
-        layer.bindPopup(`<b>${lane.properties.name}</b> <hr> <h1 class="text-center">${lane.properties.dataValue}</h1>`);
+        // layer.bindPopup(`<b>${lane.properties.name}</b> <hr> <h1 class="text-center">${lane.properties.dataValue}</h1>`);
         // if(lane.properties.name ==='Bhandar Vada & Amar Prem chowk'){
         //     layer.options.style.color = "red";
         // }
         // if(lane.properties.name ==='HiraSethChawl - Waras Lane'){
         //     layer.options.style.color = "yellow";
         // }
-        if(lane.properties.name ==='Navneet Lane to Tare Galli'){
-            // console.log(layer);
-            // layer.setStyle({fillColor :'blue'}) 
-        layer.options.style.color = "green";
-    }
 
     layer.options.fillOpacity = .8;
 
     // layer.options.style.color = getColor(lane.properties.dataValue,min,max,(max-min)/2);
     // layer.options.style.color = colorScale(lane.properties.dataValue);
     // console.log(layer.options.style.color);
+    let popup;
     layer.on({
-        click: handleMapClick,
-        mouseover: e => e.target.openPopup(),
-        mouseout: e=> e.target.closePopup()
+        click: e => setSelLane(e.target.feature.properties.name),
+        mouseover: e => {
+            popup = L.popup()
+            .setLatLng(e.latlng)
+            .setContent(`<b>${e.target.feature.properties.name}</b> <hr> <h1 class="text-center" style={color:lightgreen}>${e.target.feature.properties.dataValue} kg</h1> `)
+            .openOn(layer._map);
+        },
+        mouseout: e=> layer._map.closePopup()
         });
 
     }
