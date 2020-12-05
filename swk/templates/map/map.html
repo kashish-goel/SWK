@@ -336,7 +336,7 @@ table, th, td
                     <br>
                     <div class="multiselect">
                       <div class="selectBox" onclick="putWMSkiosk()">
-                          <button type="button" class="btn btn-outline-dark" style="width: 90%;font-size:12px; ">Kiosks Location</button>
+                          <button type="button" class="btn btn-outline-dark" value="{kisok}" style="width: 90%;font-size:12px; ">Kiosks Location</button>
                           <div class="overSelect"></div>
                       </div>
                     </div>
@@ -438,6 +438,8 @@ table, th, td
 </form>
 {% endblock map_content%}
 {% block extra_map_javascript%}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
 // *****************
 
@@ -460,13 +462,15 @@ table, th, td
             var tempParameter = defaultParameters;
             var newLayerList = [];
             var myWorliLayerList = [];
-                       
+            var popup_layer, insti_content;           
             let  imageloca= [];
+            let currentPos = null;
+
             // var pointLayerList = [];
             // var newLayerList = [];
             // var faciLayerList = [];
             // var tribLayerList = [];
-            // var TRIBLAYER, insti_content;
+            
             // let tableurl;
             // var searchControl;
             
@@ -502,12 +506,7 @@ table, th, td
 
             function putWMSkiosk() {
                
-                let currentPos = null;
-
-                // var str1 = "<img class = 'popupimage' src='/home/ubuntu/worli-koliwada/GPS Photos/prerana".concat(feature.properties.image);
-                //         var str2 = str1.concat("' alt='image not found'>").concat(`Village Name:${feature.properties.village}`);
-                //         console.log(str2);
-                //         layer.bindPopup(str2);
+              
                            
                 var wms_layer = L.tileLayer.wms('https://makerghat.urbansciences.in/geoserver/wms', {
                     layers: "geonode:kiosk_24nov",
@@ -530,14 +529,14 @@ table, th, td
 
             mymap.on('click', function(e) {
             currentPos = [e.latlng.lat, e.latlng.lng];
-            // alert(currentPos);
+            //console.log("current",currentPos);
             
             });
             querykioskImage(currentPos);
 
             } 
             
-            //jalyukti
+            //info window for images
             function querykioskImage(currentPos) {
                 let url_sc;
                 // let keys = Object.keys(activatedHealthFacility);
@@ -552,8 +551,7 @@ table, th, td
                         // var str1 = "<img class = 'popupimage' src='../static/images/GPS_Photos/prerana/".concat("Copy of GPSe-0.jpg");
                         var str2 = str1.concat("' alt='image not found'>").concat(`Name:${feature.properties.filename}`);
                         // console.log(str2);
-                        console.log(str2);
-                        // alert(str2);
+                      
                         layer.bindPopup(str2);
                 }
                 fetch(newurl).then(
@@ -589,6 +587,63 @@ table, th, td
 
 
             }
+
+            //for informationwindow of SPots layer
+
+            function queryspotImage(currentPos) {
+                let url_sc;
+                // let keys = Object.keys(activatedHealthFacility);
+               
+                url_sc = 'https://makerghat.urbansciences.in/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=json&typename=geonode:spots_3december';
+              
+                newurl = url_sc;
+
+                function onEachFeatureForPointBB(feature, layer) {
+                    
+                        var str1 = "<img class = 'popupimage' src='../static/images/176_photos/".concat(feature.properties.name).concat(".jpg");
+                        // var str1 = "<img class = 'popupimage' src='../static/images/GPS_Photos/prerana/".concat("Copy of GPSe-0.jpg");
+                        var str2 = str1.concat("' alt='image not found'>").concat(`Date of Image:${feature.properties.Date}`);
+                        // console.log(str2);
+                      
+                        layer.bindPopup(str2);
+                }
+                fetch(newurl).then(
+                    function(response) {
+                        if (response.status !== 200) {
+                            console.log('Looks like there was a problem. Status Code: ' +
+                                response.status);
+                            return;
+                        }
+
+
+                        response.json().then(function(geojsonData) {
+                            // console.log(geojsonData.features);
+                            let spotimageLoc = L.geoJson(geojsonData.features, {
+                                pointToLayer: function(feature, latlng) {
+                                    return L.circleMarker(latlng, {
+                                       fillColor: "blue",
+                                       color:"green",
+                                        weight:5,
+                                        opacity: .3,
+                                        fillOpacity: 0.8
+                                    });
+                                },
+                                onEachFeature: onEachFeatureForPointBB,
+                            }).addTo(mymap);
+                            imageloca.push(spotimageLoc);
+                        });
+
+
+                    }).catch(function(err) {
+                    console.log('Fetch Error :-S', err);
+                });
+
+
+            }
+
+
+
+
             function showCheckboxes2() {
                 var checkboxes = document.getElementById("checkboxes2");
                 if (!expanded) {
@@ -684,8 +739,11 @@ table, th, td
                     else if (boundary == "{zones}")                        
                         removeWMS("geonode:zone_polygon_4_12_2020");
                     else if (boundary == "{spot}")                        
-                        removeWMS("geonode:spots_3december");
-                   
+                        {
+                            removeWMS("geonode:spots_3december");
+                            imageloca.forEach(layer => mymap.removeLayer(layer));
+
+                        }
                 };
 
 
@@ -760,12 +818,14 @@ table, th, td
                         opacity: .7,
                        
                    });
-               popup_layer="https://makerghat.urbansciences.in/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
                wms_layer.addTo(mymap);
                mymap.setView([19.02, 72.818], 16);
                newLayerList.push(wms_layer);
+               popup_layer="https://makerghat.urbansciences.in/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
+               console.log("popupzone",popup_layer);
                console.log(wms_layer);
-               }else if (layer == "geonode:spots_3december") {
+               }
+               else if (layer == "geonode:spots_3december") {
                 console.log(layer)
                 var wms_layer = L.tileLayer.wms('https://makerghat.urbansciences.in/geoserver/wms', {
                     layers: layer,
@@ -774,10 +834,19 @@ table, th, td
                     
                 });
                 
-            wms_layer.addTo(mymap);
-            mymap.setView([19.02, 72.818], 16);
-            newLayerList.push(wms_layer);
-            console.log(wms_layer);
+                wms_layer.addTo(mymap);
+                mymap.setView([19.02, 72.818], 16);
+                newLayerList.push(wms_layer);
+                //popup_layer="https://makerghat.urbansciences.in/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
+                
+                console.log(wms_layer);
+                mymap.on('click', function(e) {
+                currentPos = [e.latlng.lat, e.latlng.lng];
+                
+                
+                });
+                queryspotImage(currentPos);
+                
             }
             } 
 
@@ -1221,6 +1290,54 @@ table, th, td
             });                
         }
 
+
+        function Identify(e) {
+
+            console.log("Identify",e);
+            // set parameters needed for GetFeatureInfo WMS request
+            var sw = mymap.options.crs.project(mymap.getBounds().getSouthWest());
+            var ne = mymap.options.crs.project(mymap.getBounds().getNorthEast());
+            var BBOX = sw.x + "," + sw.y + "," + ne.x + "," + ne.y;
+            var WIDTH = mymap.getSize().x;
+            var HEIGHT = mymap.getSize().y;
+
+            var X = Math.trunc(mymap.layerPointToContainerPoint(e.layerPoint).x);
+            var Y = Math.trunc(mymap.layerPointToContainerPoint(e.layerPoint).y);
+
+            // compose the URL for the request
+          
+
+            var URL = popup_layer + '&BBOX=' + BBOX + '&FEATURE_COUNT=1&HEIGHT=' + HEIGHT + '&WIDTH=' + WIDTH + '&INFO_FORMAT=application%2Fjson&TILED=false&CRS=EPSG%3A3857&I=' + X + '&J=' + Y;
+            // console.log(URL);
+            //send GetFeatureInfo as asynchronous HTTP request using jQuery $.ajax
+            $.ajax({
+                url: URL,
+                dataType: "json",
+                type: "GET",
+                success: function(data) {
+                    if (data.features.length !== 0) { // at least one feature returned in response
+                        var feature = data.features[0]; // first feature from response
+                        console.log(feature);
+                        // Set up popup for clicked feature and open it
+                        var popup = new L.Popup({
+                            maxWidth: 300
+                        });
+                        if (feature.properties.zono_numbe) {
+                            console.log("I reached at");
+                            insti_content = "<table class = 'popupclass' ><tr><td><b>Zones</b></td><td></td></tr>" +
+                                "<tr><td><b>Zone Name</b></td><td>" + feature.properties.zone_name + "</td></tr>" +
+                                "<tr><td><b>Zone Number</b></td><td>" + feature.properties.zono_numbe+ "</td></tr>" + "</table>";
+                        } 
+
+                        popup.setContent(insti_content);
+                            popup.setLatLng(e.latlng);
+                            mymap.openPopup(popup);
+                        }
+                    }
+                });
+            }
+
+            mymap.addEventListener('click', Identify);
 
         
 </script>
