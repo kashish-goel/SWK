@@ -600,9 +600,9 @@ table, th, td
 
                 function onEachFeatureForPointBB(feature, layer) {
                     
-                        var str1 = "<img class = 'popupimage' src='../static/images/176_photos/".concat(feature.properties.name).concat(".jpg");
+                        var str1 = "<img class = 'popupimage' src='../static/images/SPOT/".concat(feature.properties.Name);
                         // var str1 = "<img class = 'popupimage' src='../static/images/GPS_Photos/prerana/".concat("Copy of GPSe-0.jpg");
-                        var str2 = str1.concat("' alt='image not found'>").concat(`Date of Image:${feature.properties.Date}`);
+                        var str2 = str1.concat("' alt='image not found'>").concat(`<br><br>Date of Image:${feature.properties.Date}`);
                         // console.log(str2);
                       
                         layer.bindPopup(str2);
