@@ -461,6 +461,8 @@ table, th, td
             var LayerList = [];
             var tempParameter = defaultParameters;
             var newLayerList = [];
+            var pointLayerList = [];
+
             var myWorliLayerList = [];
             var popup_layer, insti_content;           
             let  imageloca= [];
@@ -724,8 +726,11 @@ table, th, td
                         putWMSru("geonode:ward_193_updated_3nov");
                     else if (boundary == "{zones}")    
                         putWMSru("geonode:zone_polygon_4_12_2020");   
-                    else if (boundary == "{spot}")    
-                        putWMSru("geonode:spots_3december");   
+                    else if (boundary == "{spot}"){    
+                        //putWMSru("geonode:spots_3december");
+                        tempParameter.typeName = 'geonode:spots_3december'; 
+                        displayPoints(tempParameter);
+                    }   
                        
 
                 } else {
@@ -833,8 +838,9 @@ table, th, td
                     transparent: 'true',
                     
                 });
-                
                 wms_layer.addTo(mymap);
+
+
                 mymap.setView([19.02, 72.818], 16);
                 newLayerList.push(wms_layer);
                 //popup_layer="https://makerghat.urbansciences.in/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
@@ -859,6 +865,88 @@ table, th, td
                     }
                 });
             }
+
+
+
+
+        // function for displaying spots
+
+        function onEachFeaturePoint(feature, layer) {
+	    // does this feature have a property named popupContent?
+		
+        var str1 = "<img class = 'popupimage' src='../static/images/SPOT/".concat(feature.properties.Name);
+                        // var str1 = "<img class = 'popupimage' src='../static/images/GPS_Photos/prerana/".concat("Copy of GPSe-0.jpg");
+                        var str2 = str1.concat("' alt='image not found'>").concat(`<br><br>Date of Image:${feature.properties.Date}`);
+                        // console.log(str2);
+                      
+                        layer.bindPopup(str2);
+	
+    }
+
+
+        var markerClusters = L.markerClusterGroup({"chunkedLoading": true});
+
+        function displayPoints(param){
+            //console.log("Ireached in displaypoints");
+            mymap.spin(true,{lines: 9, length: 2, width: 20, scale: 60,radius: 70, color: "grey"});
+            mymap.setView([19.003, 72.8168], 9);
+            var parameters = L.Util.extend(param);
+            point_url = rootUrl + L.Util.getParamString(parameters)
+            // var geojsonMarkerOptions = {
+            //     radius: 7,
+            //     fillColor: "#3700ff",
+            //     color: "#a86c32",
+            //     weight: 2,
+            //     opacity: 1,
+            //     fillOpacity: 0.8
+            // };
+
+            var greenIcon = L.icon({
+            iconUrl: "{% static 'images/trash.png' %}",
+            iconSize:     [28, 60], // size of the icon
+            //shadowSize:   [50, 64], // size of the shadow
+            iconAnchor:   [20,50], // point of the icon which will correspond to marker's location
+            // shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor:  [0, 0] // point from which the popup should open relative to the iconAnchor
+        });
+
+            fetch(point_url)
+            .then(
+                function(response) {
+                if (response.status !== 200) {
+                    console.log('Looks like there was a problem. Status Code: ' +
+                    response.status);
+                    return;
+                }
+
+                // Examine the text in the response
+                response.json().then(function(stressData) {
+                    geojson = L.geoJson(stressData.features,{
+                    pointToLayer: function (feature, latlng) {
+                    return L.marker(latlng, {icon:greenIcon});
+                },onEachFeature: onEachFeaturePoint
+            });
+
+                markerClusters.addLayer(geojson);
+                mymap.addLayer(markerClusters);
+                LayerList.push(markerClusters);
+                pointLayerList.push(geojson);
+                mymap.spin(false);
+                url = "";
+                });
+
+
+                }
+            )
+            .catch(function(err) {
+                console.log('Fetch Error :-S', err);
+            });
+            // }
+
+    
+}    
+
+
 
         //     //Cholorpleth maps functions  
 
