@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'report_builder',
     'react_dashboard',
     'rest_framework',
+    'corsheaders',
 
 ]
 
@@ -72,6 +73,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     # 'wagtail.core.middleware.SiteMiddleware',
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 
 ]
 STATIC_URL = '/static/'
@@ -118,9 +121,9 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'swkapi',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
+        'NAME': 'swk',
+        'USER': 'swkuser',
+        'PASSWORD': 'swkpass',
         'HOST': 'localhost',
         'PORT': '',
     }
@@ -163,3 +166,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+]

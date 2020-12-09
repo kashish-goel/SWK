@@ -147,30 +147,22 @@ export const groupDataByCategory = (data,selCategory) =>{
   
 // }
 
-export const mergeGeomData = (geojson,dataByCategory) =>{
-  console.log('hello') 
+export const mergeGeomData = (geojson,dataByCategory) =>{ 
   const features = geojson.features;
-  console.log(features)
   for(let key in features){
-    let laneName = features[key].properties.zone_name;
-    console.log(laneName.length)
-    if(laneName.length > 0){
-      if(dataByCategory.length>0){   //if dataBycategory is not emply
-        let value = dataByCategory.filter(obj => {
-          if(obj[laneName])
-            return (obj) 
-        })  
-        console.log(value)
-    
-        value = (Object.values(value[0])[0])
-    
-        features[key].properties['dataValue'] = value; 
-      }
+    let laneName = features[key].properties.name;
+    if(dataByCategory.length>0){   //if dataBycategory is not emply
+      let value = dataByCategory.filter(obj => {
+        if(obj[laneName])
+          return (obj) 
+      })
+  
+      value = (Object.values(value[0])[0])
+  
+      features[key].properties['dataValue'] = value; 
     }
-
     
   }
-  console.log(geojson)
   return geojson;
   
 }
@@ -182,12 +174,14 @@ export const mergeGeomData = (geojson,dataByCategory) =>{
 export const groupDataByDateCategory = (data,selCategory,selMonth,selDay) =>{
 
   let date = `${selDay}/${selMonth}/20`; 
+  console.log(date)
   date = (date.length === 7)?"0" + date:date
   const newData = data.filter(d => d.date === date).map(d => {
     const obj={}
     obj[d.lane_name] = d[colName[selCategory]]
     return obj
   })
+console.log(newData)
   return newData
 
 }

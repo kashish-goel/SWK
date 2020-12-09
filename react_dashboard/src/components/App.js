@@ -32,7 +32,7 @@ export default function App() {
 
     
 
-    <div className="app__info">
+    {/* <div className="app__info">
        <InfoBoxes data={data} selLane={selLane} selCategory={selCategory} setSelCategory={setSelCategory}/>
     </div>
 
@@ -46,8 +46,7 @@ export default function App() {
 
     </div>
     
-      <LineCharts data={data} selLane={selLane}/>
-    {/* <Map /> */}
+      <LineCharts data={data} selLane={selLane}/> */}
 
   </div>
   
