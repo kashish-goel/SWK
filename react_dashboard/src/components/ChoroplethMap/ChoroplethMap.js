@@ -174,13 +174,13 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
             />
         <Control position="bottomright">
             <FormControl variant="outlined" >
-                <InputLabel id="demo-simple-select-outlined-label">Age</InputLabel>
+                <InputLabel id="demo-simple-select-outlined-label">Month</InputLabel>
                     <Select
                         labelId="demo-simple-select-outlined-label"
                         id="demo-simple-select-outlined"
                         value={selMonth}
                         onChange={handleDropdownChange}
-                        label="Age"
+                        label="Month"
                         >
                         <MenuItem value="">
                             <em>None</em>

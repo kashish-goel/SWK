@@ -11,8 +11,8 @@ export default function LineCharts({data, selLane}) {
     return (
         <div className='linecharts'>
         <LineChart data={dryData} selLane = {selLane} category="Dry"/>
-        <LineChart data={wetData} selLane = {selLane} category="Dry"/>
-        <LineChart data={rejectedData} selLane = {selLane} category="Dry"/>
+        <LineChart data={wetData} selLane = {selLane} category="Wet"/>
+        <LineChart data={rejectedData} selLane = {selLane} category="Rejected"/>
         </div>
     )
 }
