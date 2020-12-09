@@ -31,6 +31,7 @@ from wagtail.documents import urls as wagtaildocs_urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('swk.urls')),
+    path('',include('swkapi.urls')),
     path('map/',include('map.urls')),
     path('dashboard/',include('react_dashboard.urls')),
     # url(r'^swk/',include('swk.urls')),
