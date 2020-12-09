@@ -56,6 +56,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'report_builder',
     'react_dashboard',
+    'rest_framework',
+
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -116,9 +118,9 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'swk',
-        'USER': 'swkuser',
-        'PASSWORD': 'swkpass',
+        'NAME': 'swkapi',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
         'HOST': 'localhost',
         'PORT': '',
     }
