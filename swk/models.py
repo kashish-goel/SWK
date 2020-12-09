@@ -40,7 +40,8 @@ class Tracksheet(models.Model):
     supervisor_name = models.CharField(max_length=100,default = 'Zaheer')
     time_of_visit = models.CharField(max_length=100)
     track_id = models.AutoField(primary_key=True)
-    # rejected = models.IntegerField()
+    rejected = models.IntegerField()
+    zone_id=models.CharField(max_length=10)
 
     def __str__(self):
         return self.lane_name
