@@ -40,10 +40,12 @@ export default function App() {
       <div className="app__stat__map">
         <ChoroplethMap geojson={geojson} data={data} setSelLane={setSelLane} selCategory={selCategory}/>
       </div>
-    </div>
-    {/* <div className="app__stat__barchart">
+      <div className="app__stat__barchart">
         <Barchart data={data} selLane={selLane} selCategory={selCategory}/>
-      </div> */}
+      </div>
+
+    </div>
+    
       <LineCharts data={data} selLane={selLane}/>
     {/* <Map /> */}
 

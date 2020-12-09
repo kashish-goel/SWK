@@ -166,7 +166,7 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
     return (
         <div className="map">
     
-       <div className="map__choropleth">
+       {/* <div className="map__choropleth"> */}
         <Map center={[19.0182, 72.8168]} zoom={17} scrollWheelZoom={false} onOverlayadd={ showZoneControl } onoverlayremove={ removeZoneControl }>
             <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -237,7 +237,7 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
 
         </Map>
 
-        </div>
+        {/* </div> */}
         {/* <div className="map__slider"></div> */}
 
         </div>
