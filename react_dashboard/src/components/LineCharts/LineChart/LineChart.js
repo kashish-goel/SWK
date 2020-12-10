@@ -6,7 +6,7 @@ function Linechart({data, selLane,category}) {
     // const [state,setState] = useState();
 
 
-      let titleText = `${selLane} Daily ${category} Waste  Distribution`;
+      let titleText = `${selLane} Daily ${category} Waste Distribution`;
       titleText = titleText.charAt(0).toUpperCase() + titleText.slice(1)
       const options={
           title:{
