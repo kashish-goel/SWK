@@ -324,7 +324,7 @@ table, th, td
                               <label><input type="checkbox" value="{spot}" onchange="getBoundaryru(this)"><span> Spot</span></label>
                           </div>
                           <div class="checkbox">
-                              <label><input type="checkbox" value="{bubble}" onchange="getBoundaryru(this)"><span> Bubble(coming up soon...)</span></label>
+                              <label><input type="checkbox" value="{bubble}" onchange="getBoundaryru(this)"><span> Bubble</span></label>
                           </div>
                           <div class="checkbox">
                               <label><input type="checkbox" value="{zones}" onchange="getBoundaryru(this)"><span> Zones</span></label>
@@ -726,6 +726,9 @@ table, th, td
                         putWMSru("geonode:ward_193_updated_3nov");
                     else if (boundary == "{zones}")    
                         putWMSru("geonode:zone_polygon_4_12_2020");   
+                    else if (boundary == "{bubble}")    
+                        putWMSru("geonode:bubbles_2_9dec2020");   
+                 
                     else if (boundary == "{spot}"){    
                         //putWMSru("geonode:spots_3december");
                         tempParameter.typeName = 'geonode:spots_3december'; 
@@ -743,6 +746,9 @@ table, th, td
                         removeWMS("geonode:ward_193_updated_3nov");
                     else if (boundary == "{zones}")                        
                         removeWMS("geonode:zone_polygon_4_12_2020");
+                    else if (boundary == "{bubbles}")    
+                        putWMSru("geonode:bubbles_2_9dec2020");   
+                 
                     else if (boundary == "{spot}")                        
                         {
                             removeWMS("geonode:spots_3december");
@@ -830,7 +836,23 @@ table, th, td
                console.log("popupzone",popup_layer);
                console.log(wms_layer);
                }
-               else if (layer == "geonode:spots_3december") {
+               
+               else if (layer == "geonode:bubbles_2_9dec2020") {
+                console.log(layer)
+                var wms_layer = L.tileLayer.wms('https://makerghat.urbansciences.in/geoserver/wms', {
+                    layers: layer,
+                    format: 'image/png',
+                     opacity: .7,
+                    
+                });
+                wms_layer.addTo(mymap);
+                mymap.setView([19.02, 72.818], 16);
+                newLayerList.push(wms_layer);
+                popup_layer="https://makerghat.urbansciences.in/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
+                console.log("popupzone",popup_layer);
+                console.log(wms_layer);
+                }
+                else if (layer == "geonode:spots_3december") {
                 console.log(layer)
                 var wms_layer = L.tileLayer.wms('https://makerghat.urbansciences.in/geoserver/wms', {
                     layers: layer,
