@@ -89,9 +89,8 @@ class TracksheetForm(forms.ModelForm):
     wetwaste_af = forms.IntegerField(label = "Wet waste after(kgs)")
     num_houses_doing_segg = forms.IntegerField(label = "No. of houses doing segregation")
     num_houses_giving_mixwaste = forms.IntegerField(label = "Houses giving mixed waste")
-    # rejected = forms.IntegerField(label = "Rejected Waste")
-
-    
+    rejected = forms.IntegerField(label="Rejected Waste:",widget=forms.HiddenInput(),required=False)
+    zone_id=forms.CharField(max_length=10, label="Zone ID",widget=forms.HiddenInput(),required=False)
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
@@ -126,8 +125,13 @@ class TracksheetForm(forms.ModelForm):
                 Column('wetwaste_af', css_class='form-group col-md-3 mb-0'),
                 css_class='form-row'
             ),
+            Row(
+                Column('rejected', css_class='form-group col-md-3 mb-0'),
+                Column('zone_id', css_class='form-group col-md-3 mb-0'),
+                css_class='form-row'
+            ),
             # rejected = forms.IntegerField(   
-                                        # widget=forms.TextInput(attrs={'readonly':'readonly'})
+            #                             widget=forms.TextInput(attrs={'readonly':'readonly'})
             # ),
             # UneditableField('text_input', css_id="rejected"),
             
@@ -140,8 +144,7 @@ class TracksheetForm(forms.ModelForm):
         model = Tracksheet
         fields = '__all__'
 
-class TracksheetOutputForm(forms.Form):
-  outfield = forms.IntegerField(label="Rejected Waste: ")
+
 
 class DutyEntryForm(forms.ModelForm):
     lane_name = forms.CharField(label = 'Name of the Route',widget=forms.Select(choices=demarcated_lane))

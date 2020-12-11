@@ -96,7 +96,7 @@ def TracksheetPage(request):
     if request.method == "POST":
                  
         form = TracksheetForm(request.POST or None)
-        
+        print(form)
         if form.is_valid():
             query_column = form.cleaned_data['lane_name']
             # operator = form.cleaned_data['operator']
@@ -109,8 +109,10 @@ def TracksheetPage(request):
             # rejectedwaste = form.cleaned_data['drywaste_bf'] + form.cleaned_data['wetwaste_bf']
             instance = form.save(commit=False)
             instance.num_houses_lane = 100
-            
-            # instance.rejected = ((instance.drywaste_bf +instance.wetwaste_bf) - (instance.drywaste_af + instance.wetwaste_af))
+            # form.cleaned_data['rejected'] = ((form.cleaned_data['wetwaste_bf']-form.cleaned_data['wetwaste_af']) + (form.cleaned_data['drywaste_bf']-form.cleaned_data['drywaste_af']))
+            # print(form.cleaned_data['rejected'])
+            instance.rejected = ((instance.drywaste_bf +instance.wetwaste_bf) - (instance.drywaste_af + instance.wetwaste_af))
+            print(instance.rejected)
             instance.save()
             messages.success(request, 'Your data is saved for {} dated {}'.format(laneName,date)) 
             # form.save()
