@@ -21,7 +21,6 @@ export default function App() {
   }
 
 
-  console.log(geojson);
   return (
   <div className="app">
 

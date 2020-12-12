@@ -2,12 +2,15 @@ import React,{} from 'react'
 import {Bar} from 'react-chartjs-2';
 import './Barchart.css';
 import { calMonthlyData } from '../util';
+import {ZONES} from '../util'
 
 function Barchart({data,selLane,selCategory}) {
     // const [state,setState] = useState();
     const barData = calMonthlyData(data,selLane,selCategory);
     const upperCaseSelCategory = selCategory.charAt(0).toUpperCase() + selCategory.slice(1)
-    const upperCaseSelLane = selLane.charAt(0).toUpperCase() + selLane.slice(1)
+    const zone_name = ZONES.filter(zone => zone.zone_id === selLane)[0]['lane_name']
+
+    const upperCaseSelLane = zone_name.charAt(0).toUpperCase() + zone_name.slice(1)
 
     let titleText = `${upperCaseSelLane} Monthly ${upperCaseSelCategory} Waste Distribution`;
 

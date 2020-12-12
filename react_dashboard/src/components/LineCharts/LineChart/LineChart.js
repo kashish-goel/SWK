@@ -1,12 +1,13 @@
 import React,{} from 'react'
 import {Line} from 'react-chartjs-2';
 import './LineChart.css';
-
+import {ZONES} from '../../util.js'
 function Linechart({data, selLane,category}) {
     // const [state,setState] = useState();
+    const zone_name = ZONES.filter(zone => zone.zone_id === selLane)[0]['lane_name']
 
 
-      let titleText = `${selLane} Daily ${category} Waste Distribution`;
+      let titleText = `${zone_name} Daily ${category} Waste Distribution`;
       titleText = titleText.charAt(0).toUpperCase() + titleText.slice(1)
       const options={
           title:{

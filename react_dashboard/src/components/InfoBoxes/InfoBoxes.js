@@ -6,7 +6,7 @@ import {calcTotalWaste} from '../util';
 export default function InfoBoxes({data,selLane,selCategory,setSelCategory}) {
     let dry = calcTotalWaste(data,selLane,'drywaste_af');
     let wet = calcTotalWaste(data,selLane,'wetwaste_af');
-    let rejected = calcTotalWaste(data,selLane,'Rejected');
+    let rejected = calcTotalWaste(data,selLane,'rejected');
 
     // const [dry,setDry] = useState();
     return (
