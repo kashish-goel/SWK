@@ -1,34 +1,26 @@
-{% extends 'base.html' %}
-{% load crispy_forms_tags %}
-
-
-{% block content %}
-
-{% block extra_css %}
+{% extends 'new.html' %} {% load crispy_forms_tags %} {% block content %} {% block extra_css %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <style>
-.form-row{
-    margin:50px;
-}
+    .form-row {
+        margin: 50px;
+    }
 </style>
-{% endblock %}
-
-
-{% if messages %}
-  <ul class="messages">
+{% endblock %} {% if messages %}
+<ul class="messages">
     {% for message in messages %}
 
-      <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
         {{message}}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-      </div>
+    </div>
 
     {% endfor %}
-  </ul>
+</ul>
 {% endif %}
 
-   <div class="container mb-5 text-center"> 
+<div class="container mb-5 text-center">
     <h1 class='text-center mt-5'>Houses providing seggregated Waste</h1>
 
     <form method="post" data-url="{{ request.build_absolute_uri|safe }}">
@@ -36,19 +28,49 @@
         <!-- {{ form|crispy }}
         <button type="submit" class="btn btn-primary">Sign in</button> -->
         {% crispy form %}
-      </form>
+    </form>
     <!-- <form>
         {{ tracksheetoutput_form.as_ul }}
     </form> -->
-    </div>
+</div>
 <div>
-  <!-- {{ form.errors }}
+    <!-- {{ form.errors }}
   {{ form.non_field_errors }} -->
 
 </div>
-{% endblock %}
+{% endblock %} {% block extra_javascript %}
+<script>
+    $(function() {
+        var $docName = $('#id_lane_name').val();
+        console.log($docName)
+        $("#id_lane_name").on('change', function() {
+            var val = $("#id_lane_name").val();
 
-{% block extra_javascript %}
-<!-- <script src="../static/scripts/main.js"></script> -->
+            var $name = {
+                'name': $(this).val()
+            }
+            var $endpoint = window.location.href // or localhost/interface
+            $.ajax({
+                method: "GET",
+                url: $endpoint,
+                data: $name,
+                success: handleFormSuccess,
+                error: handleFormError,
+            })
+        })
+
+        function handleFormSuccess(data) {
+            console.log(data.zone_id);
+            $("#id_zone_id_id").val(data.zone_id);
+            // $("#ward").val(data.unit);
+        }
+
+        function handleFormError(jqXHR, textStatus, errorThrown) {
+            console.log(jqXHR)
+            console.log(textStatus)
+            console.log(errorThrown)
+        }
+    })
+</script>
 
 {% endblock %}

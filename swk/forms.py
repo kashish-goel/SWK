@@ -1,5 +1,5 @@
 from django import forms
-from .models import Tracksheet,DutyEntry
+from .models import Tracksheet,DutyEntry,Zones
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit, Row, Column
 import datetime
@@ -90,9 +90,11 @@ class TracksheetForm(forms.ModelForm):
     num_houses_doing_segg = forms.IntegerField(label = "No. of houses doing segregation")
     num_houses_giving_mixwaste = forms.IntegerField(label = "Houses giving mixed waste")
     rejected = forms.IntegerField(label="Rejected Waste:",widget=forms.HiddenInput(),required=False)
-    zone_id=forms.CharField(max_length=10, label="Zone ID",widget=forms.HiddenInput(),required=False)
+    zone_id_id=forms.CharField(max_length=10, label="Zone ID",widget=forms.HiddenInput(),required=False)
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        # self.fields['zone_id']=forms.ModelChoiceField(queryset=Zones.objects.filter(zone_name=user))
+
         self.helper = FormHelper()
         self.helper.layout = Layout(
             Row(
@@ -127,7 +129,7 @@ class TracksheetForm(forms.ModelForm):
             ),
             Row(
                 Column('rejected', css_class='form-group col-md-3 mb-0'),
-                Column('zone_id', css_class='form-group col-md-3 mb-0'),
+                Column('zone_id_id', css_class='form-group col-md-3 mb-0'),
                 css_class='form-row'
             ),
             # rejected = forms.IntegerField(   
@@ -143,6 +145,7 @@ class TracksheetForm(forms.ModelForm):
 
         model = Tracksheet
         fields = '__all__'
+        exclude = ['zone_id']
 
 
 

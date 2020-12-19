@@ -18,6 +18,14 @@ class HomePage(Page):
     template = "HomePage.html"
 
 
+class Zones(models.Model):
+    id = models.CharField(primary_key=True, max_length=10)
+    zone_name = models.CharField(max_length=100, blank=True, null=True)
+    zone_id = models.CharField(max_length=10, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'zones'
 
 class TracksheetModel(Page):
 
@@ -41,7 +49,7 @@ class Tracksheet(models.Model):
     time_of_visit = models.CharField(max_length=100)
     track_id = models.AutoField(primary_key=True)
     rejected = models.IntegerField()
-    zone_id=models.CharField(max_length=10)
+    zone_id=models.ForeignKey(Zones, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.lane_name
@@ -71,3 +79,4 @@ class SwkTracksheetReport(models.Model):
     class Meta:
         managed = False
         db_table = 'swk_tracksheet_report'
+
