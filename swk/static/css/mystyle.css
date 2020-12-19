@@ -1,38 +1,48 @@
 #mapdiv {
-    height:100vh;
+    height: 100vh;
 }
 
 #side-bar {
     background-color: #ffffff;
+    margin-top: 80px;
     /* text-decoration-color: red; */
 }
+
+
 /* unvisited link */
+
 a:link {
-color: black;
+    color: rgb(255, 255, 255);
 }
+
 
 /* visited link */
+
 a:visited {
-color: black;
+    color: rgb(250, 240, 240);
 }
 
+
 /* mouse over link */
+
 a:hover {
-color: blue;
+    color: blue;
 }
 
 a:active {
-color: blue;
-}
-#menu__link{
-    color: aqua;  
+    color: blue;
 }
 
-
-
-.col-xs-12, .col-xs-6, .col-xs-4 {
-    padding:3px;
+#menu__link {
+    color: aqua;
 }
+
+.col-xs-12,
+.col-xs-6,
+.col-xs-4 {
+    padding: 3px;
+}
+
 
 /* #divProject {
     background-color: beige;

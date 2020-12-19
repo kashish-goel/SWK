@@ -1,0 +1,127 @@
+{% extends 'new.html' %} {% load static%} {% block content %}
+
+
+<form method="POST" class="post-form" action="/update/{{data.track_id}}">
+    {% csrf_token %}
+    <div class="container">
+        <br>
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-4">
+                <h3>Update Details</h3>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label"> Track ID:</label>
+            <div class="col-sm-4">
+                <input type="text" name="id" id="id_track_id" required maxlength="20" value="{{ data.track_id }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label"> Houses Reached:</label>
+            <div class="col-sm-4">
+                <input type="text" name="num_houses_reached" id="id_num_houses_reached" required maxlength="100" value="{{ data.num_houses_reached }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label"> Houses Doing Seggregation:</label>
+            <div class="col-sm-4">
+                <input type="text" name="num_houses_doing_segg" id="id_num_houses_doing_segg" required maxlength="254" value="{{ data.num_houses_doing_segg }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label"> Houses Giving Mixed Wasted:</label>
+            <div class="col-sm-4">
+                <input type="text" name="num_houses_giving_mixwaste" id="id_num_houses_giving_mixwaste" required maxlength="15" value="{{ data.num_houses_giving_mixwaste }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Dry Waste BF:</label>
+            <div class="col-sm-4">
+                <input type="text" name="drywaste_bf" id="id_drywaste_bf" required maxlength="15" value="{{ data.drywaste_bf }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Dry Waste AF:</label>
+            <div class="col-sm-4">
+                <input type="text" name="drywaste_af" id="id_drywaste_af" required maxlength="15" value="{{ data.drywaste_af }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label"> Waste Waste BF:</label>
+            <div class="col-sm-4">
+                <input type="text" name="wetwaste_bf" id="id_wetwaste_bf" required maxlength="20" value="{{ data.wetwaste_bf }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label"> Waste Waste AF:</label>
+            <div class="col-sm-4">
+                <input type="text" name="wetwaste_af" id="id_wetwaste_af" required maxlength="100" value="{{ data.wetwaste_af }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Lane Name:</label>
+            <div class="col-sm-4">
+                <input type="text" name="lane_name" id="id_lane_name" required maxlength="254" value="{{ data.lane_name }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Attendants:</label>
+            <div class="col-sm-4">
+                <input type="text" name="num_attendants" id="id_num_attendants" required maxlength="15" value="{{ data.num_attendants }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">First Attendant:</label>
+            <div class="col-sm-4">
+                <input type="text" name="first_attendants_name" id="id_first_attendants_name" required maxlength="15" value="{{ data.first_attendants_name }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Second Attendant:</label>
+            <div class="col-sm-4">
+                <input type="text" name="second_attendants_name" id="id_second_attendants_name" required maxlength="15" value="{{ data.second_attendants_name }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Time of Visit:</label>
+            <div class="col-sm-4">
+                <input type="text" name="time_of_visit" id="id_time_of_visit" required maxlength="15" value="{{ data.time_of_visit }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Date:</label>
+            <div class="col-sm-4">
+                <input type="date" name="date" id="id_date" required value="{{ data.date }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Supervisor Name:</label>
+            <div class="col-sm-4">
+                <input type="text" name="supervisor_name" id="id_supervisor_name" required maxlength="15" value="{{ data.supervisor_name }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Rejected:</label>
+            <div class="col-sm-4">
+                <input type="text" name="rejected" id="id_rejected" required maxlength="15" value="{{ data.rejected }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Zone ID:</label>
+            <div class="col-sm-4">
+                <input type="text" name="zone_id_id" id="id_zone_id_id" required maxlength="15" value="{{ data.zone_id_id }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-4">
+                <button type="submit" class="btn btn-success">Update</button>
+            </div>
+        </div>
+    </div>
+</form>
+<script>
+    console.log("{{ data.zone_id_id }}")
+</script>
+{% endblock %}
