@@ -1,7 +1,15 @@
 {% extends 'new.html' %} {% load crispy_forms_tags %} {% block content %} {% block extra_css %}
 <style>
-    .myform>* {
+    /* .myform>* {
         margin: 30px 0;
+    } */
+    
+    .myform {
+        margin-top: 150px;
+    }
+    
+    div {
+        padding: 5px;
     }
 </style>
 {% endblock %} {% if messages %}
@@ -19,13 +27,14 @@
 </ul>
 {% endif %}
 
-<div class="container mb-2 text-center">
+<div class="container mb-2 text-center" style="margin-top: 100px;">
     <h1 class='text-center mt-5'>Duty Entry Form </h1><br>
 
-    <form method="post">
-        {% csrf_token %} {% crispy form %}
+    <form method=" post ">
+        {% csrf_token %} {{ form|crispy }} <button type="submit " class="btn btn-primary ">Submit</button></div>
 
-    </form>
+
+</form>
 </div>
 
 {% endblock %}

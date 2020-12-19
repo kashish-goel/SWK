@@ -11,57 +11,36 @@
         transform: translate(-50%, -50%);
         color: aliceblue;
     }
-    
-    .bg {
-        /* The image used */
-        background-image: url("{% static 'images/SWK_Boats_Sealink2.jpg' %}");
-        /* Full height */
-        height: 100%;
-        background-color: black;
-        /* Center and scale the image nicely */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        /* color: darkblue; */
-    }
 </style>
 
 {% endblock %} {% block content %}
-<div class="jumbotron jumbotron-fluid">
-    <div class="bg">
-        <div class="centered text-center">
-            <div style="font-size: 60px; margin-top:200px; "><b> Swachh Worli Koliwada </b></div><br>
-            <h4>A Project by Stree Mukti Sanghatana, sponsored by IDFC First Bank
-                <h4>
-        </div>
-    </div>
-    {% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
 
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{message}}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+
+<section id="hero">
+    <div class="hero-container">
+        <h1>Swachh Worli Koliwada</h1>
+        <h2>A Project by Stree Mukti Sanghatana, sponsored by IDFC First Bank</h2>
+        <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
+    </div>
+</section>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
-        </div>
+    </div>
 
-        {% endfor %}
-    </ul>
-    {% endif %}
+    {% endfor %}
+</ul>
+{% endif %}
 </div>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 
 <script>
-    $(".jumbotron").css({
-        height: $(window).height() + "px"
-    });
-
-    $(window).on("resize", function() {
-        $(".jumbotron").css({
-            height: $(window).height() + "px"
-        });
-    });
 </script>
 
 {% endblock %}
