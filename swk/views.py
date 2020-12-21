@@ -93,7 +93,7 @@ def DutyEntryPage(request):
             messages.success(request, 'Your data is saved')
         return HttpResponseRedirect(request.path_info)
     else:
-        form = DutyEntryForm(request.POST or None)
+        form = DutyEntryForm()
         context= {
             'form': form,
             'test': 'test',
