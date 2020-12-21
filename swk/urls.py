@@ -10,7 +10,10 @@ urlpatterns = [
     path('dutyentryform/', views.DutyEntryPage, name = "dutyentryform"),
     path('login/', views.user_login, name='login'),
     path("logout", views.logout_request, name="logout"),
-    
+    path('show/',views.show, name='show'),  
+    path('edit/<int:id>', views.edit),  
+    path('update/<int:id>', views.update),  
+    path('delete/<int:id>', views.destroy),  
     
 ]
 

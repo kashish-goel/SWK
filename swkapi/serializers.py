@@ -1,8 +1,9 @@
 from rest_framework import serializers
 
-from swk.models import Tracksheet
+from swk.models import Tracksheet,Zones
 
 class newTracksheet(serializers.HyperlinkedModelSerializer):
+    zone_id = serializers.CharField(source='zone_id_id')
     class Meta:
         model = Tracksheet
         fields = ( "date",

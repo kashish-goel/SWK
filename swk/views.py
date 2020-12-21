@@ -1,14 +1,12 @@
 from django.shortcuts import render,redirect
 from django.template import loader
 from .forms import TracksheetForm, DutyEntryForm
-from .models import DutyEntry
+from .models import DutyEntry,Tracksheet,Zones
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User,auth
 from django.contrib.auth import logout
 from django.contrib import messages
 from django.http import JsonResponse
-
-
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 
@@ -16,7 +14,38 @@ from django.http import HttpResponseRedirect
 # Create your views here.form
 
 
+def show(request):
+    datas= Tracksheet.objects.all().order_by('-date')
+    print(datas[0])
+    wardetail= DutyEntry.objects.all()
+    # data= User.objects.all()
+    return render(request,'show_data.html',{'datas':datas})
 
+def edit(request, id):  
+    data = Tracksheet.objects.get(track_id=id)
+    # docdata  = doctor.objects.get(id=id)  
+    return render(request,'edit.html', {'data':data}) 
+
+def update(request, id):
+    # print(id)
+    data = Tracksheet.objects.get(track_id=id) 
+    print(data) 
+    form = TracksheetForm(request.POST, instance = data)  
+    print(form)
+    if form.is_valid(): 
+        print("success") 
+        form.save()  
+        return redirect("/show/")  
+    else:
+        print("fail")
+    return render(request, 'edit.html', {'data': data}) 
+
+
+def destroy(request, id):  
+    data = Tracksheet.objects.get(track_id=id)  
+    data.delete()  
+    return redirect("/show/")  
+ 
 def user_login(request):
     # context = RequestContext(request)
     if request.method == 'POST':
@@ -47,7 +76,6 @@ def user_login(request):
 
 def formLayout(request):
     return render(request,"formlayout.html")
-
 def HomePage(request):
         return render(request,"HomePage.html")
 
@@ -76,6 +104,13 @@ def DutyEntryPage(request):
 
 def TracksheetPage(request):
     form = TracksheetForm(request.POST or None)
+    if request.is_ajax():
+        selected_field = request.GET['name']
+        print(selected_field)
+        docinfo = list(Zones.objects.filter(zone_name=selected_field).values()); 
+        # print(docinfo)
+        jsondata =docinfo[0]
+        return JsonResponse(jsondata)
 
     # if request.is_ajax():
     #     selected_drywaste_bf = request.GET['drywaste_bf']
@@ -105,19 +140,25 @@ def TracksheetPage(request):
             raw = DutyEntry.objects.raw(query)
             context = {'form':form,'data':raw}
             date = form.cleaned_data['date']
+            zone = form.cleaned_data['zone_id_id']
+            print(zone)
             laneName = form.cleaned_data['lane_name']
-            # rejectedwaste = form.cleaned_data['drywaste_bf'] + form.cleaned_data['wetwaste_bf']
-            instance = form.save(commit=False)
-            instance.num_houses_lane = 100
-            # form.cleaned_data['rejected'] = ((form.cleaned_data['wetwaste_bf']-form.cleaned_data['wetwaste_af']) + (form.cleaned_data['drywaste_bf']-form.cleaned_data['drywaste_af']))
-            # print(form.cleaned_data['rejected'])
-            instance.rejected = ((instance.drywaste_bf +instance.wetwaste_bf) - (instance.drywaste_af + instance.wetwaste_af))
-            print(instance.rejected)
-            instance.save()
-            messages.success(request, 'Your data is saved for {} dated {}'.format(laneName,date)) 
-            # form.save()
-            # messages.success(request, 'Your data is saved')
-            return HttpResponseRedirect(request.path_info)
+            if  Tracksheet.objects.filter(date=date, lane_name=laneName).exists():
+                messages.warning(request, 'Data already exists')
+            else:
+
+                instance = form.save(commit=False)
+                instance.num_houses_lane = 100
+                instance.rejected = ((instance.drywaste_bf +instance.wetwaste_bf) - (instance.drywaste_af + instance.wetwaste_af))
+                print(instance.rejected)
+                instance.zone_id_id=zone
+                print(instance.zone_id_id)
+
+                instance.save()
+                messages.success(request, 'Your data is saved for {} dated {}'.format(laneName,date)) 
+                # form.save()
+                # messages.success(request, 'Your data is saved')
+                return HttpResponseRedirect(request.path_info)
      
         else:
             messages.warning(request, 'Please check your form') 

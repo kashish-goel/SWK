@@ -1,58 +1,46 @@
-{% extends 'base.html' %} 
-{% load static %}
+{% extends 'new.html' %} {% load static %}
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 {% block extra_css%}
 <style>
     .centered {
         position: absolute;
-        top: 40%;
+        /* top: 40%; */
         left: 50%;
         transform: translate(-50%, -50%);
         color: aliceblue;
     }
-
-
-.bg {
-  /* The image used */
-  background-image: url("{% static 'images/SWK_Boats_Sealink2.jpg' %}");
-
-  /* Full height */
-  height: 100%; 
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 </style>
 
-{% endblock %} 
-{% block content %}
+{% endblock %} {% block content %}
 
+
+<section id="hero">
+    <div class="hero-container">
+        <h1>Swachh Worli Koliwada</h1>
+        <h2>A Project by Stree Mukti Sanghatana, sponsored by IDFC First Bank</h2>
+        <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
+    </div>
+</section>
 {% if messages %}
-  <ul class="messages">
+<ul class="messages">
     {% for message in messages %}
 
-      <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
         {{message}}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-      </div>
+                <span aria-hidden="true">&times;</span>
+              </button>
+    </div>
 
     {% endfor %}
-  </ul>
+</ul>
 {% endif %}
-
-<div class="bg">
-    <div class="centered text-center">
-        <div style="font-size: 60px;"><b> Swachh Worli Koliwada </b></div><br>
-        <h4>A Project by Stree Mukti Sanghatana, sponsored by IDFC First Bank <h4>
-    </div>
-    
 </div>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 
-  
-    
+<script>
+</script>
+
 {% endblock %}
