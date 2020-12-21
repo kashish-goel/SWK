@@ -46,7 +46,6 @@ class Tracksheet(models.Model):
     drywaste_af = models.IntegerField()
     wetwaste_bf = models.IntegerField()
     wetwaste_af = models.IntegerField()
-    
     time_of_visit = models.CharField(max_length=100)
     track_id = models.AutoField(primary_key=True)
     rejected = models.IntegerField()

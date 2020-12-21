@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.RenameField(
             model_name='tracksheet',
             old_name='zone_id',
-            new_name='zone_id_id',
+            new_name='zone_id',
         ),
     ]
