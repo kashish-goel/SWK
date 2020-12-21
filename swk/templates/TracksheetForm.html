@@ -9,21 +9,7 @@
         padding: 10px;
     }
 </style>
-{% endblock %} {% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        {{message}}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-    </div>
-
-    {% endfor %}
-</ul>
-{% endif %}
-
+{% endblock %}
 <div class="container mb-7 text-center" style="margin-top: 100px;">
     <h1 class='text-center mt-5'>Houses providing seggregated Waste</h1>
 
@@ -44,7 +30,20 @@
   {{ form.non_field_errors }} -->
 
 </div>
-{% endblock %} {% block extra_javascript %}
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+    </div>
+
+    {% endfor %}
+</ul>
+{% endif %} {% endblock %} {% block extra_javascript %}
 <script>
     $(function() {
         var $docName = $('#id_lane_name').val();

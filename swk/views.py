@@ -15,10 +15,11 @@ from django.http import HttpResponseRedirect
 
 
 def show(request):
-    datas= Tracksheet.objects.all()
+    datas= Tracksheet.objects.all().order_by('-date')
+    print(datas[0])
     wardetail= DutyEntry.objects.all()
-    data= User.objects.all()
-    return render(request,'show_data.html',{'datas':datas,'data':data})
+    # data= User.objects.all()
+    return render(request,'show_data.html',{'datas':datas})
 
 def edit(request, id):  
     data = Tracksheet.objects.get(track_id=id)
@@ -28,7 +29,7 @@ def edit(request, id):
 def update(request, id):
     # print(id)
     data = Tracksheet.objects.get(track_id=id) 
-    # print(data) 
+    print(data) 
     form = TracksheetForm(request.POST, instance = data)  
     print(form)
     if form.is_valid(): 
@@ -93,7 +94,7 @@ def DutyEntryPage(request):
             messages.success(request, 'Your data is saved')
         return HttpResponseRedirect(request.path_info)
     else:
-        form = DutyEntryForm()
+        form = DutyEntryForm(request.POST or None)
         context= {
             'form': form,
             'test': 'test',
@@ -130,7 +131,7 @@ def TracksheetPage(request):
     if request.method == "POST":
                  
         form = TracksheetForm(request.POST or None)
-        # print(form)
+        print(form)
         if form.is_valid():
             query_column = form.cleaned_data['lane_name']
             # operator = form.cleaned_data['operator']
@@ -139,6 +140,8 @@ def TracksheetPage(request):
             raw = DutyEntry.objects.raw(query)
             context = {'form':form,'data':raw}
             date = form.cleaned_data['date']
+            zone = form.cleaned_data['zone_id_id']
+            print(zone)
             laneName = form.cleaned_data['lane_name']
             if  Tracksheet.objects.filter(date=date, lane_name=laneName).exists():
                 messages.warning(request, 'Data already exists')
@@ -148,7 +151,9 @@ def TracksheetPage(request):
                 instance.num_houses_lane = 100
                 instance.rejected = ((instance.drywaste_bf +instance.wetwaste_bf) - (instance.drywaste_af + instance.wetwaste_af))
                 print(instance.rejected)
-        
+                instance.zone_id_id=zone
+                print(instance.zone_id_id)
+
                 instance.save()
                 messages.success(request, 'Your data is saved for {} dated {}'.format(laneName,date)) 
                 # form.save()
