@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from swk.models import Tracksheet
+from swk.models import Tracksheet,Zones
 
 class newTracksheet(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -18,4 +18,4 @@ class newTracksheet(serializers.HyperlinkedModelSerializer):
         "first_attendants_name",
         "second_attendants_name",
         "supervisor_name",
-        "time_of_visit","rejected","zone_id")
+        "time_of_visit","rejected","zone_id_id")

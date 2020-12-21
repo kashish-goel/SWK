@@ -12,14 +12,14 @@
 /* unvisited link */
 
 a:link {
-    color: rgb(250, 248, 248);
+    color: rgb(8, 8, 8);
 }
 
 
 /* visited link */
 
 a:visited {
-    color: rgb(250, 248, 248);
+    color: rgb(7, 7, 7);
 }
 
 
