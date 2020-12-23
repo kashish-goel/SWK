@@ -166,7 +166,7 @@ h6,
 .nav-menu a {
     display: block;
     position: relative;
-    color: #0a0a0a;
+    color: #181818;
     padding: 5px 15px;
     transition: 0.3s;
     font-size: 14px;
@@ -190,7 +190,7 @@ h6,
     opacity: 0;
     visibility: hidden;
     padding: 10px 0;
-    background: #fff;
+    background: rgb(12, 11, 11);
     box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
     transition: ease all 0.3s;
 }
@@ -285,7 +285,7 @@ h6,
 .mobile-nav a {
     display: block;
     position: relative;
-    color: #d2ece9;
+    color: #c0bcbc;
     padding: 10px 20px;
     font-weight: 500;
 }
@@ -293,7 +293,7 @@ h6,
 .mobile-nav a:hover,
 .mobile-nav .active>a,
 .mobile-nav li:hover>a {
-    color: #9cd5ce;
+    color: #f09292;
     text-decoration: none;
 }
 
@@ -338,7 +338,7 @@ h6,
 }
 
 .mobile-nav-toggle i {
-    color: #fff;
+    color: rgb(22, 21, 21);
 }
 
 .mobile-nav-overly {
@@ -348,7 +348,7 @@ h6,
     top: 0;
     left: 0;
     position: fixed;
-    background: rgba(1, 41, 42, 0.9);
+    background: rgba(13, 14, 14, 0.9);
     overflow: hidden;
     display: none;
 }
@@ -362,7 +362,7 @@ h6,
 }
 
 .mobile-nav-active .mobile-nav-toggle i {
-    color: #fff;
+    color: rgb(12, 11, 11);
 }
 
 
@@ -525,7 +525,7 @@ section {
 .breadcrumbs ol li+li::before {
     display: inline-block;
     padding-right: 10px;
-    color: #6c757d;
+    color: #111111;
     content: "/";
 }
 
