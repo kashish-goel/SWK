@@ -1,308 +1,289 @@
-{% extends 'map/map_base.html' %} {% load static%} {% block extra_map_css %}
+{% extends 'map/map_base.html' %}
+{% load static%}
+{% block extra_map_css %}
 <!-- import psycopg2 -->
 <style>
-    .border {
-        padding: 6px 8px;
-        border-style: groove;
-        border-radius: 5px;
-        margin: 20px;
-    }
+
     
-    .info {
-        padding: 6px 8px;
-        font: 14px/16px Arial, Helvetica, sans-serif;
-        background: rgba(255, 255, 255, 0.8);
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-        border-radius: 5px;
-    }
-    
-    .info h4 {
-        margin: 0 0 5px;
-        color: #777;
-    }
-    /* .table{
+.border {
+    padding: 6px 8px;
+    border-style: groove;
+    border-radius: 5px;
+    margin:20px;
+}
+.info {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+.info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}
+
+/* .table{
   border-collapse: collapse;
   padding: 50px;
   font-weight: bold;
 
   
   /* background:rgba(191, 149, 233, 0.473); */
-    /* } */
-    
-    */ table,
-    th,
-    td {
+
+/* } */ */
+table, th, td 
+    {
         border-bottom: 1px solid #ddd;
         border-collapse: collapse;
         padding: 2px 3px;
         text-align: center;
     }
-    
     th {
-        font-weight: bold;
+        font-weight:bold;
     }
-    
-    .legend {
-        line-height: 18px;
-        color: #555;
-    }
-    
-    .legend i {
-        width: 18px;
-        height: 18px;
-        float: left;
-        margin-right: 8px;
-        opacity: 0.7;
-    }
-    
-    .legendwet {
-        line-height: 18px;
-        color: #555;
-    }
-    
-    .legendwet i {
-        width: 18px;
-        height: 18px;
-        float: left;
-        margin-right: 8px;
-        opacity: 0.7;
-    }
-    /* css to customize Leaflet default styles  */
-    
-    .leaflet-popup-content-wrapper {
-        background: rgba(0, 0, 0, 0.9);
-        color: #ffffff;
-    }
-    
-    .leaflet-popup-content {
-        font-weight: bold;
-    }
-    /* css for table tbinfo*/
-    
-    #tbinfo {
-        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-        border-collapse: collapse;
-        font-weight: bolder;
-    }
-    
-    #tbinfo td,
-    #tbinfo th {
-        border: 3px solid #ddd;
-        padding: 8px;
-    }
-    
-    #tbinfo tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-    
-    #tbinfo tr:hover {
-        background-color: rgb(194, 92, 92);
-    }
-    
-    #tbinfo th {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: left;
-        background-color: #4CAF50;
-        color: white;
-    }
-    
-    #checkboxes {
+
+.legend {
+    line-height: 18px;
+    color: #555;
+}
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+.legendwet {
+    line-height: 18px;
+    color: #555;
+}
+.legendwet i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+
+/* css to customize Leaflet default styles  */
+.leaflet-popup-content-wrapper {
+    background: rgba(0, 0, 0, 0.9);
+    color: #ffffff;
+}
+
+.leaflet-popup-content{
+    font-weight: bold;
+}
+/* css for table tbinfo*/
+#tbinfo {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  font-weight: bolder;
+}
+
+#tbinfo td, #tbinfo th {
+  border: 3px solid #ddd;
+  padding: 8px;
+}
+
+#tbinfo tr:nth-child(even){background-color: #f2f2f2;}
+
+#tbinfo tr:hover {background-color: rgb(194, 92, 92);}
+
+#tbinfo th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+#checkboxes {
+  display: none;
+  /* border: 1px #dadada solid; */
+}
+
+#datepick {
+  display: none;
+  /* border: 1px #dadada solid; */
+}
+
+#checkboxes label {
+  display: block;
+  text-decoration-color: blue;
+  text-align: left;
+  margin: 10px;
+}
+
+#checkboxes2 {
+  display: none;
+  /* border: 1px #dadada solid; */
+}
+
+#checkboxes2 label {
+  display: block;
+  text-decoration-color: blue;
+  text-align: left;
+  margin: 10px;
+}
+
+#checkboxes3 {
+  display: none;
+  /* border: 1px #dadada solid; */
+}
+
+#checkboxes3 label {
+  display: block;
+  background-color:white;
+  text-decoration-color: blue;
+  text-align: left;
+  margin: 10px;
+}
+#checkboxes7 {
         display: none;
         /* border: 1px #dadada solid; */
-    }
+}
     
-    #datepick {
-        display: none;
-        /* border: 1px #dadada solid; */
-    }
-    
-    #checkboxes label {
-        display: block;
-        text-decoration-color: blue;
-        text-align: left;
-        margin: 10px;
-    }
-    
-    #checkboxes2 {
-        display: none;
-        /* border: 1px #dadada solid; */
-    }
-    
-    #checkboxes2 label {
-        display: block;
-        text-decoration-color: blue;
-        text-align: left;
-        margin: 10px;
-    }
-    
-    #checkboxes3 {
-        display: none;
-        /* border: 1px #dadada solid; */
-    }
-    
-    #checkboxes3 label {
-        display: block;
-        background-color: white;
-        text-decoration-color: blue;
-        text-align: left;
-        margin: 10px;
-    }
-    
-    #checkboxes7 {
-        display: none;
-        /* border: 1px #dadada solid; */
-    }
-    
-    #checkboxes7 label {
+#checkboxes7 label {
         display: block;
         text-align: left;
         margin: 10px;
-    }
+}
+
+#checkboxes2 {
+        display: none;
+        /* border: 1px #dadada solid; */
+}
     
-    #checkboxes2 {
+#checkboxes2 label {
+        display: block;
+        text-align: left;
+        margin: 10px;
+}
+
+#checkboxes5 {
         display: none;
         /* border: 1px #dadada solid; */
     }
     
-    #checkboxes2 label {
+#checkboxes5 label {
         display: block;
         text-align: left;
         margin: 10px;
-    }
-    
-    #checkboxes5 {
+}
+#checkboxes4 {
         display: none;
         /* border: 1px #dadada solid; */
-    }
-    
-    #checkboxes5 label {
-        display: block;
-        text-align: left;
-        margin: 10px;
-    }
-    
-    #checkboxes4 {
+}
+#checkboxeszone {
         display: none;
         /* border: 1px #dadada solid; */
-    }
+}
+#checkboxeszone label{
+    display: block;
+    text-align: left;
+    margin: 10px;
+}
+
+
+#radiobutt {
+    display:none;
+}
+#radiobutt label{
+    display: block;
+    text-align: left;
+    margin: 20px;
+}
     
-    #checkboxeszone {
-        display: none;
-        /* border: 1px #dadada solid; */
-    }
-    
-    #checkboxeszone label {
+#checkboxes4 label {
         display: block;
         text-align: left;
         margin: 10px;
-    }
-    
-    #radiobutt {
-        display: none;
-    }
-    
-    #radiobutt label {
-        display: block;
-        text-align: left;
-        margin: 20px;
-    }
-    
-    #checkboxes4 label {
-        display: block;
-        text-align: left;
-        margin: 10px;
-    }
-    /* Popup container - can be anything you want */
-    
-    .popup {
-        position: relative;
-        display: inline-block;
-        cursor: pointer;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        left: 50%;
-        margin-right: -5px;
-        border-width: 5px;
-    }
-    /* The actual popup */
-    
-    .popup .popuptext {
-        visibility: hidden;
-        width: 160px;
-        background-color: #555;
-        color: #fff;
-        text-align: center;
-        border-radius: 6px;
-        padding: 8px 0;
-        position: absolute;
-        z-index: 1;
-        bottom: 125%;
-        left: 50%;
-        margin-left: -80px;
-    }
-    /* Popup arrow */
-    
-    .popup .popuptext::after {
-        content: "";
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        margin-left: -5px;
-        border-width: 5px;
-        border-style: solid;
-        border-color: #555 transparent transparent transparent;
-    }
-    /* Toggle this class - hide and show the popup */
-    
-    .popup .show {
-        visibility: visible;
-        -webkit-animation: fadeIn 1s;
-        animation: fadeIn 1s;
-    }
-    /* Add animation (fade in the popup) */
-    
-    @-webkit-keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
-    }
-    
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
-    }
-    
-    .form-control {
-        width: 160px;
-    }
+}
+
+
+/* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  left: 50%;
+  margin-right: -5px;
+  border-width: 5px;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+.form-control {
+  width: 160px;
+}
 </style>
 
-{% endblock extra_map_css%} {% block map_content%}
-<!-- {% block sidebar %}
+{% endblock extra_map_css%}
+
+{% block map_content%}
+  <!-- {% block sidebar %}
   {% endblock %} -->
 
+  
+  
+    <div id="side-bar" style="background-color:  rgba(255, 255, 255);">                <!-- side-bar container -->
+        <div class="mobileShow">
 
-
-<div id="side-bar" style="background-color:  rgba(255, 255, 255);">
-    <!-- side-bar container -->
-    <div class="mobileShow">
-
-        <div style="text-align: center">
-            <button style="display: inline-block ;position: relative; background: #000; opacity: 0.60;" id="closebutton" name="closebutton" class="btn btn-secondary"><span class="fa fa-bars"></span></button>
+            <div style="text-align: center">
+                <button style="display: inline-block ;position: relative; background: #000; opacity: 0.60;" id="closebutton" name="closebutton" class="btn btn-secondary"><span class="fa fa-bars"></span></button>
+            </div>
+    
         </div>
-
-    </div>
-    <div>
+      <div>
         <div class="text-center border">
 
 
@@ -322,146 +303,147 @@
                                 <label><input type="checkbox" value="{lanes}" onchange="getBoundaryru(this)"><span> Worli Koliwada Lanes</span></label>
                             </div>
                             <div class="checkbox">
-                                <label><input type="checkbox" value="{corbound}" onchange="getBoundaryru(this)"><span> Corporator Ward Boundary</span></label>
+                              <label><input type="checkbox" value="{corbound}" onchange="getBoundaryru(this)"><span> Corporator Ward Boundary</span></label>
                             </div>
-
+                           
                         </div>
                     </div>
-
+                    
                     <br>
-
+                      
                     <div class="multiselect">
-                        <div class="selectBox" onclick="showCheckboxes7()">
-                            <button type="button" class="btn btn-outline-dark" style="width: 90%;font-size:12px; "> Zonal Geometry</button>
-                            <div class="overSelect"></div>
-                        </div>
-                        <div id="checkboxes7">
-                            <div class="checkbox" id="boundary">
-                                <label><input type="checkbox" value="{lane}" onchange="getBoundaryru(this)"><span> Lane(coming up soon...)</span></label>
-                            </div>
-                            <div class="checkbox">
-                                <label><input type="checkbox" value="{spot}" onchange="getBoundaryru(this)"><span> Spot</span></label>
-                            </div>
-                            <div class="checkbox">
-                                <label><input type="checkbox" value="{bubble}" onchange="getBoundaryru(this)"><span> Bubble(coming up soon...)</span></label>
-                            </div>
-                            <div class="checkbox">
-                                <label><input type="checkbox" value="{zones}" onchange="getBoundaryru(this)"><span> Zones</span></label>
-                            </div>
-
-
-                        </div>
+                      <div class="selectBox" onclick="showCheckboxes7()">
+                          <button type="button" class="btn btn-outline-dark" style="width: 90%;font-size:12px; "> Zonal Geometry</button>
+                          <div class="overSelect"></div>
+                      </div>
+                      <div id="checkboxes7">
+                          <!-- <div class="checkbox" id="boundary">
+                              <label><input type="checkbox" value="{lane}" onchange="getBoundaryru(this)"><span> Lane(coming up soon...)</span></label>
+                          </div> -->
+                          <div class="checkbox">
+                              <label><input type="checkbox" value="{spot}" onchange="getBoundaryru(this)"><span> Spot</span></label>
+                          </div>
+                          <div class="checkbox">
+                              <label><input type="checkbox" value="{bubble}" onchange="getBoundaryru(this)"><span> Bubble</span></label>
+                          </div>
+                          <div class="checkbox">
+                              <label><input type="checkbox" value="{zones}" onchange="getBoundaryru(this)"><span> Zones</span></label>
+                          </div>
+                         
+                      
+                      </div>
                     </div>
-                    <br>
+                    <!-- <br>
                     <div class="multiselect">
-                        <div class="selectBox" onclick="putWMSkiosk()">
-                            <button type="button" class="btn btn-outline-dark" value="{kisok}" style="width: 90%;font-size:12px; ">Kiosks Location</button>
-                            <div class="overSelect"></div>
-                        </div>
+                      <div class="selectBox" onclick="putWMSkiosk()">
+                          <button type="button" class="btn btn-outline-dark" value="{kisok}" style="width: 90%;font-size:12px; ">Kiosks Location</button>
+                          <div class="overSelect"></div>
+                      </div>
+                    </div> -->
+                  <br>
+                  <div class="multiselect">
+                    <div class="selectBox" onclick="showCheckboxes5()">
+                        <button type="button" class="btn btn-outline-dark" style="width: 90%;font-size:12px; "> Seggregation Centres and Pits</button>
+                        <div class="overSelect"></div>
                     </div>
-                    <br>
-                    <div class="multiselect">
-                        <div class="selectBox" onclick="showCheckboxes5()">
-                            <button type="button" class="btn btn-outline-dark" style="width: 90%;font-size:12px; "> Seggregation Centres and Pits</button>
-                            <div class="overSelect"></div>
+                    <div id="checkboxes5">
+
+                        <div class="checkbox" id="boundary">
+                            <label><input type="checkbox" value="{jany}" onchange="getBoundarytrib(this)"><span> Compost Pit 1(coming up soon...) </span></label>
                         </div>
-                        <div id="checkboxes5">
-
-                            <div class="checkbox" id="boundary">
-                                <label><input type="checkbox" value="{jany}" onchange="getBoundarytrib(this)"><span> Compost Pit 1(coming up soon...) </span></label>
-                            </div>
-                            <div class="checkbox" id="boundary">
-                                <label><input type="checkbox" value="{}" onchange="getBoundarytrib(this)" disabled=""><span> Compost Pit 2(coming up soon...)</span></label>
-                            </div>
-                            <div class="checkbox">
-                                <label><input type="checkbox" value="{}" onchange="getBoundarytrib(this)" disabled=""><span> Seggregation Centres(coming up soon...)</span></label>
-                            </div>
-
-
+                        <div class="checkbox" id="boundary">
+                            <label><input type="checkbox" value="{}" onchange="getBoundarytrib(this)" disabled=""><span> Compost Pit 2(coming up soon...)</span></label>
                         </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox" value="{}" onchange="getBoundarytrib(this)" disabled=""><span> Seggregation Centres(coming up soon...)</span></label>
+                        </div>
+                        
+
                     </div>
-                    <br>
-                    <div class="multiselect">
-                        <div class="selectBox" onclick="showCheckboxes4()">
-                            <button type="button" class="btn btn-outline-dark" style="width: 90%;font-size:12px; "> Public Places and Amenities</button>
-                            <div class="overSelect"></div>
-                        </div>
-                        <div id="checkboxes4">
-                            <div class="checkbox" id="boundary">
-                                <label><input type="checkbox" value="{Gsc}" onchange="GetSelectedfac(this);buffer(this);"><span> Public Toilets(coming up soon...)</span></label>
-                            </div>
-                            <div class="checkbox">
-                                <label><input type="checkbox" value="{ASch}" onchange="GetSelectedfac(this);buffer(this);"><span> Schools(coming up soon...)</span></label>
-                            </div>
-                            <div class="checkbox">
-                                <label><input type="checkbox" value="{iti}" onchange="GetSelectedfac(this);buffer(this);"><span> Educational Institutes(coming up soon...)</span></label>
-                            </div>
-                            <div class="checkbox">
-                                <label><input type="checkbox" value="{bif}" onchange="GetSelectedfac(this);buffer(this);"><span> Terrace Garden (coming up soon...)</span></label>
-                            </div>
-                            <div class="checkbox">
-                                <label><input type="checkbox" value="{iti}" onchange="GetSelectedfac(this);buffer(this);"><span> Nutri Gardens(coming up soon...)</span></label>
-                            </div>
-                            <div class="checkbox">
-                                <label><input type="checkbox" value="{bif}" onchange="GetSelectedfac(this);buffer(this);"><span> Open Space (coming up soon...)</span></label>
-                            </div>
-                        </div>
+                </div>
+                <br>
+                <div class="multiselect">
+                  <div class="selectBox" onclick="showCheckboxes4()">
+                      <button type="button" class="btn btn-outline-dark" style="width: 90%;font-size:12px; "> Public Places and Amenities</button>
+                      <div class="overSelect"></div>
+                  </div>
+                  <div id="checkboxes4">
+                      <div class="checkbox" id="boundary">
+                          <label><input type="checkbox" value="{Gsc}" onchange="GetSelectedfac(this);buffer(this);"><span> Public Toilets(coming up soon...)</span></label>
+                      </div>
+                      <div class="checkbox">
+                          <label><input type="checkbox" value="{ASch}" onchange="GetSelectedfac(this);buffer(this);"><span> Schools(coming up soon...)</span></label>
+                      </div>
+                      <div class="checkbox">
+                          <label><input type="checkbox" value="{iti}" onchange="GetSelectedfac(this);buffer(this);"><span> Educational Institutes(coming up soon...)</span></label>
+                      </div>
+                      <div class="checkbox">
+                          <label><input type="checkbox" value="{bif}" onchange="GetSelectedfac(this);buffer(this);"><span> Terrace Garden (coming up soon...)</span></label>
+                      </div>
+                      <div class="checkbox">
+                        <label><input type="checkbox" value="{iti}" onchange="GetSelectedfac(this);buffer(this);"><span> Nutri Gardens(coming up soon...)</span></label>
+                      </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="{bif}" onchange="GetSelectedfac(this);buffer(this);"><span> Open Space (coming up soon...)</span></label>
                     </div>
-                    <br>
-                    <div class="multiselect">
-                        <div class="selectBox" onclick="showcheckboxeszone()">
-                            <button type="button" class="btn btn-outline-dark" style="width: 90%;font-size:12px; ">Zone-wise trends in waste generation</button>
-                            <div class="overSelect"></div>
-                        </div>
-
-                        <div id="checkboxeszone">
-                            <div class="checkbox">
-                                <label><input type="checkbox" value ="{choro}" onclick="showradiobutt();"><span> Choropleth (color coded) zones</span></label>
-                                <div id="radiobutt">
-                                    <div class="checkbox" id="boundary">
-                                        <label><input type="radio" name = "radiogrp" id = "dryradio" value="{dryradio}" onchange="showDatePicker();"><span> Dry Waste Trend</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="radio" name = "radiogrp" id = "wetradio" value="{wetradio}" onchange="showDatePicker();"><span> Wet Waste Trend</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="radio" name = "radiogrp" id = "rejdryradio" value="{rejdryradio}" onchange="showDatePicker();"><span> Rejected Dry Waste Trend</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="radio" name = "radiogrp" id = "rejwetradio" value="{rejwetradio}" onchange="showDatePicker();"><span>Rejected Wet Waste Trend</span></label>
-                                    </div>
+                  </div>
+                </div>
+                <br>
+                <div class="multiselect">
+                    <div class="selectBox" onclick="showcheckboxeszone()">
+                        <button type="button" class="btn btn-outline-dark" style="width: 90%;font-size:12px; ">Zone-wise trends in waste generation</button>
+                    <div class="overSelect"></div>
+                    </div>
+                    
+                    <div id="checkboxeszone">
+                        <div class="checkbox">
+                            <label><input type="checkbox" value ="{choro}" onclick="showradiobutt();"><span> Choropleth (color coded) zones</span></label>
+                            <div id="radiobutt">
+                                <div class="checkbox" id="boundary">
+                                    <label><input type="radio" name = "radiogrp" id = "dryradio" value="{dryradio}" onchange="showDatePicker();"><span> Dry Waste Trend</span></label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="radio" name = "radiogrp" id = "wetradio" value="{wetradio}" onchange="showDatePicker();"><span> Wet Waste Trend</span></label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="radio" name = "radiogrp" id = "rejdryradio" value="{rejdryradio}" onchange="showDatePicker();"><span> Rejected Dry Waste Trend</span></label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="radio" name = "radiogrp" id = "rejwetradio" value="{rejwetradio}" onchange="showDatePicker();"><span>Rejected Wet Waste Trend</span></label>
                                 </div>
                             </div>
-                            <div class="checkbox"></div>
+                        </div>
+                        <div class="checkbox"></div>
                             <div class="checkbox">
                                 <label><input type="checkbox" value ="{graph}" onchange=""><span> Graphs (Coming Soon..)</span></label>
                             </div>
                         </div>
-
+                        
                     </div>
-
-
-
-
+                          
+                   
+                    
+                                        
                     <br>
                     <div id="datepick">
-                        <div class="wid_datepick" id="boundary">
-                            <label>Date  <input type="date" id="chorodate" name="chorodate" onchange="putWFSChoro(this);"></label>
-                        </div>
+                      <div class="wid_datepick" id="boundary">
+                          <label>Date  <input type="date" id="chorodate" name="chorodate" onchange="putWFSChoro(this);"></label>
+                      </div>
                     </div>
-        </div>
+                </div>
+                      
+            </form>
 
-        </form>
+        
+</form>
+{% endblock map_content%}
+{% block extra_map_javascript%}
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+// *****************
 
-        </form>
-        {% endblock map_content%} {% block extra_map_javascript%}
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script>
-            // *****************
-
-            const domain = ['https://makerghat.urbansciences.in/', 'http://localhost/'];
+        const domain = ['https://makerghat.urbansciences.in/', 'http://localhost/'];
             var rootUrl = domain[0] + 'geoserver/geonode/ows';
 
             var defaultParameters = {
@@ -482,25 +464,24 @@
             var pointLayerList = [];
 
             var myWorliLayerList = [];
-            var popup_layer, insti_content;
-            let imageloca = [];
+            var popup_layer, insti_content;           
+            let  imageloca= [];
             let currentPos = null;
 
             // var pointLayerList = [];
             // var newLayerList = [];
             // var faciLayerList = [];
             // var tribLayerList = [];
-
+            
             // let tableurl;
             // var searchControl;
+            
 
-
-            // <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
-        </script>
+        // <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="https://d3js.org/d3.v4.min.js"></script>
         <script>
             var expanded = false;
-
+            
             function showCheckboxes3() {
                 var checkboxes = document.getElementById("checkboxes3");
                 if (!expanded) {
@@ -514,7 +495,7 @@
 
             function showCheckboxes7() {
                 var checkboxes = document.getElementById("checkboxes7");
-
+                
                 if (!expanded) {
                     checkboxes7.style.display = "block";
                     expanded = true;
@@ -526,54 +507,51 @@
             }
 
             function putWMSkiosk() {
-
-
-
                 var wms_layer = L.tileLayer.wms('https://makerghat.urbansciences.in/geoserver/wms', {
                     layers: "geonode:kiosk_24nov",
                     format: 'image/png',
-                    opacity: 0.5,
-
+                    opacity:0.5,
+                    
                 });
 
                 var wms_layer1 = L.tileLayer.wms('https://makerghat.urbansciences.in/geoserver/wms', {
                     layers: "geonode:worli_pincodes_30_25_18",
                     format: 'image/png',
-                    opacity: 0.8,
-
+                    opacity:0.8,
+                    
                 });
 
-                wms_layer1.addTo(mymap);
-                // wms_layer.addTo(mymap);
-                mymap.setView([19.022, 72.817], 17);
-                newLayerList.push(wms_layer);
+            wms_layer1.addTo(mymap);
+            // wms_layer.addTo(mymap);
+            mymap.setView([19.022, 72.817], 17);
+            newLayerList.push(wms_layer);
 
-                mymap.on('click', function(e) {
-                    currentPos = [e.latlng.lat, e.latlng.lng];
-                    //console.log("current",currentPos);
+            mymap.on('click', function(e) {
+            currentPos = [e.latlng.lat, e.latlng.lng];
+            //console.log("current",currentPos);
+            
+            });
+            querykioskImage(currentPos);
 
-                });
-                querykioskImage(currentPos);
-
-            }
-
+            } 
+            
             //info window for images
             function querykioskImage(currentPos) {
                 let url_sc;
                 // let keys = Object.keys(activatedHealthFacility);
-
+               
                 url_sc = 'https://makerghat.urbansciences.in/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=json&typename=geonode:kiosk_24nov';
-
+              
                 newurl = url_sc;
 
                 function onEachFeatureForPointBB(feature, layer) {
-
-                    var str1 = "<img class = 'popupimage' src='../static/images/176_photos/".concat(feature.properties.filename).concat(".jpg");
-                    // var str1 = "<img class = 'popupimage' src='../static/images/GPS_Photos/prerana/".concat("Copy of GPSe-0.jpg");
-                    var str2 = str1.concat("' alt='image not found'>").concat(`Name:${feature.properties.filename}`);
-                    // console.log(str2);
-
-                    layer.bindPopup(str2);
+                    
+                        var str1 = "<img class = 'popupimage' src='../static/images/176_photos/".concat(feature.properties.filename).concat(".jpg");
+                        // var str1 = "<img class = 'popupimage' src='../static/images/GPS_Photos/prerana/".concat("Copy of GPSe-0.jpg");
+                        var str2 = str1.concat("' alt='image not found'>").concat(`Name:${feature.properties.filename}`);
+                        // console.log(str2);
+                      
+                        layer.bindPopup(str2);
                 }
                 fetch(newurl).then(
                     function(response) {
@@ -589,8 +567,8 @@
                             let kioskimageLoc = L.geoJson(geojsonData.features, {
                                 pointToLayer: function(feature, latlng) {
                                     return L.circleMarker(latlng, {
-                                        fillColor: "#07f2cf",
-                                        color: "#000",
+                                       fillColor: "#07f2cf",
+                                       color:"#000",
                                         weight: 8,
                                         opacity: .3,
                                         fillOpacity: 0.8
@@ -614,19 +592,19 @@
             function queryspotImage(currentPos) {
                 let url_sc;
                 // let keys = Object.keys(activatedHealthFacility);
-
+               
                 url_sc = 'https://makerghat.urbansciences.in/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=json&typename=geonode:spots_3december';
-
+              
                 newurl = url_sc;
 
                 function onEachFeatureForPointBB(feature, layer) {
-
-                    var str1 = "<img class = 'popupimage' src='../static/images/SPOT/".concat(feature.properties.Name);
-                    // var str1 = "<img class = 'popupimage' src='../static/images/GPS_Photos/prerana/".concat("Copy of GPSe-0.jpg");
-                    var str2 = str1.concat("' alt='image not found'>").concat(`<br><br>Date of Image:${feature.properties.Date}`);
-                    // console.log(str2);
-
-                    layer.bindPopup(str2);
+                    
+                        var str1 = "<img class = 'popupimage' src='../static/images/SPOT/".concat(feature.properties.Name);
+                        // var str1 = "<img class = 'popupimage' src='../static/images/GPS_Photos/prerana/".concat("Copy of GPSe-0.jpg");
+                        var str2 = str1.concat("' alt='image not found'>").concat(`<br><br>Date of Image:${feature.properties.Date}`);
+                        // console.log(str2);
+                      
+                        layer.bindPopup(str2);
                 }
                 fetch(newurl).then(
                     function(response) {
@@ -642,9 +620,9 @@
                             let spotimageLoc = L.geoJson(geojsonData.features, {
                                 pointToLayer: function(feature, latlng) {
                                     return L.circleMarker(latlng, {
-                                        fillColor: "blue",
-                                        color: "green",
-                                        weight: 5,
+                                       fillColor: "blue",
+                                       color:"green",
+                                        weight:5,
                                         opacity: .3,
                                         fillOpacity: 0.8
                                     });
@@ -686,7 +664,7 @@
                     expanded = false;
                 }
             }
-
+            
             function showCheckboxes4() {
                 var checkboxes = document.getElementById("checkboxes4");
                 if (!expanded) {
@@ -697,22 +675,21 @@
                     expanded = false;
                 }
             }
-
-            function showcheckboxeszone() {
+            function showcheckboxeszone(){
                 var checkboxes = document.getElementById("checkboxeszone");
                 // var checkboxes1 = document.getElementById("checkboxesgraph");
 
                 if (!expanded) {
                     checkboxeszone.style.display = "block";
-
+                   
                     expanded = true;
                 } else {
                     checkboxeszone.style.display = "none";
-
+                    
                     expanded = false;
                 }
             }
-
+            
             function showradiobutt() {
                 var radiobuttons = document.getElementById("radiobutt");
                 if (!expanded) {
@@ -723,7 +700,6 @@
                     expanded = false;
                 }
             }
-
             function showDatePicker() {
                 var widget_datepick = document.getElementById("datepick");
                 datepick.style.display = "block";
@@ -745,30 +721,36 @@
                         putWMSru("geonode:worli_hand_drawn_update_26oct");
                     else if (boundary == "{corbound}")
                         putWMSru("geonode:ward_193_updated_3nov");
-                    else if (boundary == "{zones}")
-                        putWMSru("geonode:zone_polygon_4_12_2020");
-                    else if (boundary == "{spot}") {
+                    else if (boundary == "{zones}")    
+                        putWMSru("geonode:zone_polygon300121");   
+                    else if (boundary == "{bubble}")    
+                        putWMSru("geonode:bubbles_2_9dec2020");   
+                 
+                    else if (boundary == "{spot}"){    
                         //putWMSru("geonode:spots_3december");
-                        tempParameter.typeName = 'geonode:spots_3december';
+                        tempParameter.typeName = 'geonode:spots_3december'; 
                         displayPoints(tempParameter);
-                    }
-
+                    }   
+                       
 
                 } else {
-                    //                    alert('in removeWM'+obj.value);
+//                    alert('in removeWM'+obj.value);
                     if (boundary == "{admin}")
                         removeWMS("geonode:worli_pincodes_30_25_18");
-                    else if (boundary == "{lanes}")
+                    else if (boundary == "{lanes}")                        
                         removeWMS("geonode:worli_hand_drawn_update_26oct");
-                    else if (boundary == "{corbound}")
+                    else if (boundary == "{corbound}")                        
                         removeWMS("geonode:ward_193_updated_3nov");
-                    else if (boundary == "{zones}")
-                        removeWMS("geonode:zone_polygon_4_12_2020");
-                    else if (boundary == "{spot}") {
-                        removeWMS("geonode:spots_3december");
-                        imageloca.forEach(layer => mymap.removeLayer(layer));
+                    else if (boundary == "{zones}")                        
+                        removeWMS("geonode:zone_polygon300121");
+                    else if (boundary == "{bubble}")    
+                        removeWMS("geonode:bubbles_2_9dec2020");  
+                    else if (boundary == "{spot}")                        
+                        {
+                            removeWMS("geonode:spots_3december");
+                            imageloca.forEach(layer => mymap.removeLayer(layer));
 
-                    }
+                        }
                 };
 
 
@@ -782,99 +764,118 @@
 
                     else if (boundary == "{blue_kiosk}")
                         putWMStrib("geonode:maha_tribal_villages_and_towns", "m");
-
+                    
                 } else {
                     if (boundary == "{green_kiosk}")
                         removeWMStrib("category='green_kiosk'");
 
                     else if (boundary == "{blue_kiosk}")
                         removeWMStrib("category='blue_kiosk'");
-
+                   
                 }
             }
 
 
 
             function putWMSru(layer) {
+               
+               if (layer == "geonode:worli_pincodes_30_25_18") {
+                //alert("Reached ad map");
+                
+                   var wms_layer = L.tileLayer.wms('https://makerghat.urbansciences.in/geoserver/wms', {
+                       layers: layer,
+                       format: 'image/png',
+                       opacity:0.5,
+                   });
+                wms_layer.addTo(mymap);
+                mymap.setView([19.003, 72.8168], 14);
+                newLayerList.push(wms_layer);
+               } 
+               else if (layer == "geonode:worli_hand_drawn_update_26oct") {
+                   console.log(layer)
+                   var wms_layer = L.tileLayer.wms('https://makerghat.urbansciences.in/geoserver/wms', {
+                       layers: layer,
+                       format: 'image/png',
+                       transparent: 'true',
+                       
+                   });
+               wms_layer.addTo(mymap);
+               mymap.setView([19.02, 72.818], 17);
+               newLayerList.push(wms_layer);
+               console.log(wms_layer);
+               }
+               else if (layer == "geonode:ward_193_updated_3nov") {
+                   console.log(layer)
+                   var wms_layer = L.tileLayer.wms('https://makerghat.urbansciences.in/geoserver/wms', {
+                       layers: layer,
+                       format: 'image/png',
+                       transparent: 'true',
+                       
+                   });
 
-                if (layer == "geonode:worli_pincodes_30_25_18") {
-                    //alert("Reached ad map");
-
-                    var wms_layer = L.tileLayer.wms('https://makerghat.urbansciences.in/geoserver/wms', {
-                        layers: layer,
-                        format: 'image/png',
-                        opacity: 0.5,
-                    });
-                    wms_layer.addTo(mymap);
-                    mymap.setView([19.003, 72.8168], 14);
-                    newLayerList.push(wms_layer);
-                } else if (layer == "geonode:worli_hand_drawn_update_26oct") {
-                    console.log(layer)
-                    var wms_layer = L.tileLayer.wms('https://makerghat.urbansciences.in/geoserver/wms', {
-                        layers: layer,
-                        format: 'image/png',
-                        transparent: 'true',
-
-                    });
-                    wms_layer.addTo(mymap);
-                    mymap.setView([19.02, 72.818], 17);
-                    newLayerList.push(wms_layer);
-                    console.log(wms_layer);
-                } else if (layer == "geonode:ward_193_updated_3nov") {
-                    console.log(layer)
-                    var wms_layer = L.tileLayer.wms('https://makerghat.urbansciences.in/geoserver/wms', {
-                        layers: layer,
-                        format: 'image/png',
-                        transparent: 'true',
-
-                    });
-
-                    wms_layer.addTo(mymap);
-                    mymap.setView([19.02, 72.818], 14);
-                    newLayerList.push(wms_layer);
-                    console.log(wms_layer);
-                } else if (layer == "geonode:zone_polygon_4_12_2020") {
-                    console.log(layer)
-                    var wms_layer = L.tileLayer.wms('https://makerghat.urbansciences.in/geoserver/wms', {
-                        layers: layer,
-                        format: 'image/png',
+               wms_layer.addTo(mymap);
+               mymap.setView([19.02, 72.818], 14);
+               newLayerList.push(wms_layer);
+               console.log(wms_layer);
+               }else if (layer == "geonode:zone_polygon300121") {
+                   console.log(layer)
+                   var wms_layer = L.tileLayer.wms('https://makerghat.urbansciences.in/geoserver/wms', {
+                       layers: layer,
+                       format: 'image/png',
                         opacity: .7,
-
-                    });
-                    wms_layer.addTo(mymap);
-                    mymap.setView([19.02, 72.818], 16);
-                    newLayerList.push(wms_layer);
-                    popup_layer = "https://makerghat.urbansciences.in/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;
-                    console.log("popupzone", popup_layer);
-                    console.log(wms_layer);
-                } else if (layer == "geonode:spots_3december") {
-                    console.log(layer)
-                    var wms_layer = L.tileLayer.wms('https://makerghat.urbansciences.in/geoserver/wms', {
-                        layers: layer,
-                        format: 'image/png',
-                        transparent: 'true',
-
-                    });
-                    wms_layer.addTo(mymap);
-
-
-                    mymap.setView([19.02, 72.818], 16);
-                    newLayerList.push(wms_layer);
-                    //popup_layer="https://makerghat.urbansciences.in/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
-
-                    console.log(wms_layer);
-                    mymap.on('click', function(e) {
-                        currentPos = [e.latlng.lat, e.latlng.lng];
-
-
-                    });
-                    queryspotImage(currentPos);
-
+                       
+                   });
+               wms_layer.addTo(mymap);
+               mymap.setView([19.02, 72.818], 16);
+               newLayerList.push(wms_layer);
+               popup_layer="https://makerghat.urbansciences.in/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
+               console.log("popupzone",popup_layer);
+               console.log(wms_layer);
+               }
+               
+               else if (layer == "geonode:bubbles_2_9dec2020") {
+                console.log(layer)
+                var wms_layer = L.tileLayer.wms('https://makerghat.urbansciences.in/geoserver/wms', {
+                    layers: layer,
+                    format: 'image/png',
+                     opacity: .7,
+                    
+                });
+                wms_layer.addTo(mymap);
+                mymap.setView([19.02, 72.818], 16);
+                newLayerList.push(wms_layer);
+                popup_layer="https://makerghat.urbansciences.in/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
+                console.log("popupzone",popup_layer);
+                console.log(wms_layer);
                 }
+                else if (layer == "geonode:spots_3december") {
+                console.log(layer)
+                var wms_layer = L.tileLayer.wms('https://makerghat.urbansciences.in/geoserver/wms', {
+                    layers: layer,
+                    format: 'image/png',
+                    transparent: 'true',
+                    
+                });
+                wms_layer.addTo(mymap);
+
+
+                mymap.setView([19.0182, 72.8168], 19);
+                newLayerList.push(wms_layer);
+                //popup_layer="https://makerghat.urbansciences.in/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
+                
+                console.log(wms_layer);
+                mymap.on('click', function(e) {
+                currentPos = [e.latlng.lat, e.latlng.lng];
+                
+                
+                });
+                queryspotImage(currentPos);
+                
             }
+            } 
 
             function removeWMS(unchecked_layer) {
-                //  alert(unchecked_layer);
+                    //  alert(unchecked_layer);
                 newLayerList.forEach((layer, index) => {
                     if (layer.options.layers === unchecked_layer) {
                         mymap.removeLayer(layer);
@@ -886,136 +887,124 @@
 
 
 
-            // function for displaying spots
+        // function for displaying spots
 
-            function onEachFeaturePoint(feature, layer) {
-                // does this feature have a property named popupContent?
+        function onEachFeaturePoint(feature, layer) {
+	    // does this feature have a property named popupContent?
+		
+        var str1 = "<img class = 'popupimage' src='../static/images/SPOT/".concat(feature.properties.Name);
+                        // var str1 = "<img class = 'popupimage' src='../static/images/GPS_Photos/prerana/".concat("Copy of GPSe-0.jpg");
+                        var str2 = str1.concat("' alt='image not found'>").concat(`<br><br>Date of Image:${feature.properties.Date}`);
+                        // console.log(str2);
+                      
+                        layer.bindPopup(str2);
+	
+    }
 
-                var str1 = "<img class = 'popupimage' src='../static/images/SPOT/".concat(feature.properties.Name);
-                // var str1 = "<img class = 'popupimage' src='../static/images/GPS_Photos/prerana/".concat("Copy of GPSe-0.jpg");
-                var str2 = str1.concat("' alt='image not found'>").concat(`<br><br>Date of Image:${feature.properties.Date}`);
-                // console.log(str2);
 
-                layer.bindPopup(str2);
+        var markerClusters = L.markerClusterGroup({"chunkedLoading": true});
 
-            }
+        function displayPoints(param){
+            //console.log("Ireached in displaypoints");
+            mymap.spin(true,{lines: 9, length: 2, width: 20, scale: 60,radius: 70, color: "grey"});
+            mymap.setView([19.0182, 72.8168], 14.7);
+            var parameters = L.Util.extend(param);
+            point_url = rootUrl + L.Util.getParamString(parameters)
+            // var geojsonMarkerOptions = {
+            //     radius: 7,
+            //     fillColor: "#3700ff",
+            //     color: "#a86c32",
+            //     weight: 2,
+            //     opacity: 1,
+            //     fillOpacity: 0.8
+            // };
 
+            var greenIcon = L.icon({
+            iconUrl: "{% static 'images/trash.png' %}",
+            iconSize:     [28, 60], // size of the icon
+            //shadowSize:   [50, 64], // size of the shadow
+            iconAnchor:   [20,50], // point of the icon which will correspond to marker's location
+            // shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor:  [0, 0] // point from which the popup should open relative to the iconAnchor
+        });
 
-            var markerClusters = L.markerClusterGroup({
-                "chunkedLoading": true
+            fetch(point_url)
+            .then(
+                function(response) {
+                if (response.status !== 200) {
+                    console.log('Looks like there was a problem. Status Code: ' +
+                    response.status);
+                    return;
+                }
+
+                // Examine the text in the response
+                response.json().then(function(stressData) {
+                    geojson = L.geoJson(stressData.features,{
+                    pointToLayer: function (feature, latlng) {
+                    return L.marker(latlng, {icon:greenIcon});
+                },onEachFeature: onEachFeaturePoint
             });
 
-            function displayPoints(param) {
-                //console.log("Ireached in displaypoints");
-                mymap.spin(true, {
-                    lines: 9,
-                    length: 2,
-                    width: 20,
-                    scale: 60,
-                    radius: 70,
-                    color: "grey"
-                });
-                mymap.setView([19.003, 72.8168], 9);
-                var parameters = L.Util.extend(param);
-                point_url = rootUrl + L.Util.getParamString(parameters)
-                    // var geojsonMarkerOptions = {
-                    //     radius: 7,
-                    //     fillColor: "#3700ff",
-                    //     color: "#a86c32",
-                    //     weight: 2,
-                    //     opacity: 1,
-                    //     fillOpacity: 0.8
-                    // };
-
-                var greenIcon = L.icon({
-                    iconUrl: "{% static 'images/trash.png' %}",
-                    iconSize: [28, 60], // size of the icon
-                    //shadowSize:   [50, 64], // size of the shadow
-                    iconAnchor: [20, 50], // point of the icon which will correspond to marker's location
-                    // shadowAnchor: [4, 62],  // the same for the shadow
-                    popupAnchor: [0, 0] // point from which the popup should open relative to the iconAnchor
+                markerClusters.addLayer(geojson);
+                mymap.addLayer(markerClusters);
+                LayerList.push(markerClusters);
+                pointLayerList.push(geojson);
+                mymap.spin(false);
+                url = "";
                 });
 
-                fetch(point_url)
-                    .then(
-                        function(response) {
-                            if (response.status !== 200) {
-                                console.log('Looks like there was a problem. Status Code: ' +
-                                    response.status);
-                                return;
-                            }
 
-                            // Examine the text in the response
-                            response.json().then(function(stressData) {
-                                geojson = L.geoJson(stressData.features, {
-                                    pointToLayer: function(feature, latlng) {
-                                        return L.marker(latlng, {
-                                            icon: greenIcon
-                                        });
-                                    },
-                                    onEachFeature: onEachFeaturePoint
-                                });
+                }
+            )
+            .catch(function(err) {
+                console.log('Fetch Error :-S', err);
+            });
+            // }
 
-                                markerClusters.addLayer(geojson);
-                                mymap.addLayer(markerClusters);
-                                LayerList.push(markerClusters);
-                                pointLayerList.push(geojson);
-                                mymap.spin(false);
-                                url = "";
-                            });
-
-
-                        }
-                    )
-                    .catch(function(err) {
-                        console.log('Fetch Error :-S', err);
-                    });
-                // }
-
-
-            }
+    
+}    
 
 
 
-            //     //Cholorpleth maps functions  
+        //     //Cholorpleth maps functions  
 
-            // function gfg() { 
-            //     var date =  
-            //         document.getElementById('date').value; 
-
-            //     var inpDate = new Date(date); 
-            //     var currDate = new Date(); 
-
-            //     if(inpDate.setHours(0, 0, 0, 0) ==  
-            //             currDate.setHours(0, 0, 0, 0)) 
-            //     { 
-            //         down.innerHTML =  
-            //             "The input date is today's date"; 
-            //     }  
-            //     else { 
-            //         down.innerHTML = "The input date is" 
-            //             + " different from today's date"; 
-            //     }          
-            // } 
-
+        // function gfg() { 
+        //     var date =  
+        //         document.getElementById('date').value; 
+              
+        //     var inpDate = new Date(date); 
+        //     var currDate = new Date(); 
+              
+        //     if(inpDate.setHours(0, 0, 0, 0) ==  
+        //             currDate.setHours(0, 0, 0, 0)) 
+        //     { 
+        //         down.innerHTML =  
+        //             "The input date is today's date"; 
+        //     }  
+        //     else { 
+        //         down.innerHTML = "The input date is" 
+        //             + " different from today's date"; 
+        //     }          
+        // } 
+        
             function putWFSChoro(date) {
                 var date_sel = document.getElementById("chorodate");
-                if (document.getElementById('dryradio').checked) {
+                if(document.getElementById('dryradio').checked) {
                     var radio_sel = "dryradio";
                 }
-                if (document.getElementById('wetradio').checked) {
+                if(document.getElementById('wetradio').checked) {
                     var radio_sel = "wetradio";
                 }
-                if (document.getElementById('rejdryradio').checked) {
+                if(document.getElementById('rejdryradio').checked) {
                     var radio_sel = "rejdryradio";
                 }
-                if (document.getElementById('rejwetradio').checked) {
+                if(document.getElementById('rejwetradio').checked) {
                     var radio_sel = "rejwetradio";
                 }
-
-
+                   
+                
                 // alert(radio_sel);
-
+              
                 var defaultParameters = {
                     service: 'WFS',
                     version: '1.0.0',
@@ -1031,434 +1020,422 @@
                 let parameters = L.Util.extend(defaultParameters);
                 layer_url = rootUrl + L.Util.getParamString(parameters);
                 console.log(layer_url);
-
-                if (radio_sel == 'dryradio') {
-                    displayPolygon(defaultParameters, 19.018227, 72.816833, radio_sel);
+                
+                if(radio_sel == 'dryradio'){
+                    displayPolygon(defaultParameters, 19.018227,72.816833,radio_sel);
                 }
-                if (radio_sel == 'wetradio') {
-                    displayPolygon(defaultParameters, 19.018227, 72.816833, radio_sel);
+                if(radio_sel == 'wetradio'){
+                    displayPolygon(defaultParameters, 19.018227,72.816833,radio_sel);
                 }
-                if (radio_sel == 'rejdryradio') {
-                    displayPolygon(defaultParameters, 19.018227, 72.816833, radio_sel);
+                if(radio_sel == 'rejdryradio'){
+                    displayPolygon(defaultParameters, 19.018227,72.816833,radio_sel);
                 }
-                if (radio_sel == 'rejwetradio') {
-                    displayPolygon(defaultParameters, 19.018227, 72.816833, radio_sel);
+                if(radio_sel == 'rejwetradio'){
+                    displayPolygon(defaultParameters, 19.018227,72.816833,radio_sel);
                 }
                 legend.addTo(mymap);
                 info.addTo(mymap);
                 // myWorliLayerList.push(demoLayerCode[index]);
-
-            }
+                
+            } 
 
 
             function getColor(d) {
-                if (document.getElementById('dryradio').checked) {
+                if(document.getElementById('dryradio').checked) {
                     var radio_sel = "dryradio";
                 }
-                if (document.getElementById('wetradio').checked) {
+                if(document.getElementById('wetradio').checked) {
                     var radio_sel = "wetradio";
                 }
-                if (document.getElementById('rejdryradio').checked) {
+                if(document.getElementById('rejdryradio').checked) {
                     var radio_sel = "rejdryradio";
                 }
-                if (document.getElementById('rejwetradio').checked) {
+                if(document.getElementById('rejwetradio').checked) {
                     var radio_sel = "rejwetradio";
                 }
-                if (radio_sel == 'dryradio') {
+                if(radio_sel == 'dryradio'){ 
                     return d > 9.5 ? '#02b234' :
                         d > 9 ? '#2cab03' :
                         d > 8.5 ? '#c4fe00' :
-                        d > 8 ? '#ccfe00' :
-                        d > 7 ? '#fee700' :
+                        d > 8  ? '#ccfe00' :
+                        d > 7  ? '#fee700' :
                         d > 6 ? '#fe8b00' :
-                        d > 5 ? '#fe3a00' :
-                        d > 3 ? '#fe1b00' :
-                        d > 1 ? '#fe0000' :
-                        '#780e01';
-                }
-                if (radio_sel == 'wetradio') {
+                        d > 5   ? '#fe3a00' :
+                        d >  3  ? '#fe1b00' :
+                        d > 1  ? '#fe0000' :
+                                    '#780e01';
+                 }
+                if(radio_sel == 'wetradio'){ 
                     return d > 99 ? '#02b234' :
                         d > 90 ? '#2cab03' :
                         d > 80 ? '#c4fe00' :
                         d > 70 ? '#ccfe00' :
-                        d > 60 ? '#fee700' :
-                        d > 50 ? '#fe8b00' :
-                        d > 40 ? '#fe3a00' :
-                        d > 30 ? '#fe1b00' :
-                        d > 15 ? '#fe0000' :
-                        '#780e01';
+                        d > 60  ? '#fee700' :
+                        d > 50? '#fe8b00' :
+                        d > 40  ? '#fe3a00' :
+                        d > 30  ? '#fe1b00' :
+                        d > 15  ? '#fe0000' :
+                                    '#780e01';
                 }
-                if (radio_sel == 'rejdryradio') {
+                if(radio_sel == 'rejdryradio'){ 
                     return d > 99 ? '#780e01' :
                         d > 90 ? '#fe0000' :
                         d > 80 ? '#fe1b00' :
                         d > 70 ? '#fe3a00' :
-                        d > 60 ? '#fe8b00' :
-                        d > 50 ? '#fee700' :
-                        d > 40 ? '#ccfe00' :
-                        d > 30 ? '#c4fe00' :
-                        d > 15 ? '#2cab03' :
-                        '#02b234';
+                        d > 60  ? '#fe8b00' :
+                        d > 50? '#fee700' :
+                        d > 40  ? '#ccfe00' :
+                        d > 30  ? '#c4fe00' :
+                        d > 15  ? '#2cab03' :
+                                    '#02b234';
                 }
-                if (radio_sel == 'rejwetradio') {
+                if(radio_sel == 'rejwetradio'){ 
                     return d > 99 ? '#780e01' :
                         d > 90 ? '#fe0000' :
                         d > 80 ? '#fe1b00' :
                         d > 70 ? '#fe3a00' :
-                        d > 60 ? '#fe8b00' :
-                        d > 50 ? '#fee700' :
-                        d > 40 ? '#ccfe00' :
-                        d > 30 ? '#c4fe00' :
-                        d > 15 ? '#2cab03' :
-                        '#02b234';
+                        d > 60  ? '#fe8b00' :
+                        d > 50? '#fee700' :
+                        d > 40  ? '#ccfe00' :
+                        d > 30  ? '#c4fe00' :
+                        d > 15  ? '#2cab03' :
+                                    '#02b234';
                 }
             }
 
+            
 
+        // L.geoJson(statesData, {style: style}).addTo(map);
 
-            // L.geoJson(statesData, {style: style}).addTo(map);
+        function highlightFeature(e) {
+            var layer = e.target;
 
-            function highlightFeature(e) {
-                var layer = e.target;
-
-                layer.setStyle({
-                    weight: 5,
-                    color: '#666',
-                    dashArray: '',
-                    fillOpacity: 0.7
-                });
-                // alert(layer.geojsonData.houses_reached);
-                if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-                    layer.bringToFront();
-                }
-                info.update(layer.feature.properties);
+            layer.setStyle({
+                weight: 5,
+                color: '#666',
+                dashArray: '',
+                fillOpacity: 0.7
+            });
+            // alert(layer.geojsonData.houses_reached);
+            if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                layer.bringToFront();
             }
+            info.update(layer.feature.properties);
+        }
+        
 
+        function resetHighlight(e) {
+            geojson.resetStyle(e.target);
+        }
 
-            function resetHighlight(e) {
-                geojson.resetStyle(e.target);
-            }
+        
 
-
-
-            function zoomToFeature(e) {
+        function zoomToFeature(e) {
                 mymap.fitBounds(e.target.getBounds());
-            }
+        }
 
-            function displayPolygon(param_obj, lat, long, radio_selected) {
+        function displayPolygon(param_obj,lat,long,radio_selected){
 
-                // var radiobutton_sel = radio_selected;
-                console.log(radio_selected);
-                var parameters = L.Util.extend(param_obj);
-                layer_url = rootUrl + L.Util.getParamString(parameters)
-                mymap.spin(true, {
-                    lines: 15,
-                    length: 1,
-                    width: 50,
-                    scale: 200,
-                    radius: 200,
-                    color: "grey"
+            // var radiobutton_sel = radio_selected;
+            console.log(radio_selected);
+            var parameters = L.Util.extend(param_obj);
+            layer_url = rootUrl + L.Util.getParamString(parameters)
+            mymap.spin(true,{lines: 15, length: 1, width: 50, scale: 200,radius: 200, color: "grey"});
+            fetch(layer_url)
+            .then(
+                function(response) {
+                if (response.status !== 200) {
+                    console.log('Looks like there was a problem. Status Code: ' +
+                    response.status);
+                    return;
+                }
+                // console.log(radio_selected);
+                // Examine the text in the response
+                response.json().then(function(geojsonData) {
+                    console.log(geojsonData.features.length);
+                    mymap.setView([lat, long], 17);
+                    geojson = L.geoJson(geojsonData.features, {
+                    style : style,
+                    onEachFeature: onEachFeature
+                }).addTo(mymap);
+                LayerList.push(geojson);
+                mymap.spin(false);
+
                 });
-                fetch(layer_url)
-                    .then(
-                        function(response) {
-                            if (response.status !== 200) {
-                                console.log('Looks like there was a problem. Status Code: ' +
-                                    response.status);
-                                return;
-                            }
-                            // console.log(radio_selected);
-                            // Examine the text in the response
-                            response.json().then(function(geojsonData) {
-                                console.log(geojsonData.features.length);
-                                mymap.setView([lat, long], 17);
-                                geojson = L.geoJson(geojsonData.features, {
-                                    style: style,
-                                    onEachFeature: onEachFeature
-                                }).addTo(mymap);
-                                LayerList.push(geojson);
-                                mymap.spin(false);
-
-                            });
 
 
-                        }
-                    )
-                    .catch(function(err) {
-                        console.log('Fetch Error :-S', err);
-                    });
+                }
+            )
+            .catch(function(err) {
+                console.log('Fetch Error :-S', err);
+            });
+        }
+
+                var legend = L.control({position: 'bottomright'});
+                var info = L.control({position:"bottomright"});
+
+        info.onAdd = function (mymap) {
+                    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+                    // this.update();
+                    return this._div;
+        };
+
+        legend.onAdd = function (mymap) {
+            if(document.getElementById('dryradio').checked) {
+                var radio_sel = "dryradio";
             }
-
-            var legend = L.control({
-                position: 'bottomright'
-            });
-            var info = L.control({
-                position: "bottomright"
-            });
-
-            info.onAdd = function(mymap) {
-                this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
-                // this.update();
-                return this._div;
-            };
-
-            legend.onAdd = function(mymap) {
-                if (document.getElementById('dryradio').checked) {
-                    var radio_sel = "dryradio";
-                }
-                if (document.getElementById('wetradio').checked) {
-                    var radio_sel = "wetradio";
-                }
-                if (document.getElementById('rejdryradio').checked) {
-                    var radio_sel = "rejdryradio";
-                }
-                if (document.getElementById('rejwetradio').checked) {
-                    var radio_sel = "rejwetradio";
-                }
-
+            if(document.getElementById('wetradio').checked) {
+                var radio_sel = "wetradio";
+            }
+            if(document.getElementById('rejdryradio').checked) {
+                var radio_sel = "rejdryradio";
+            }
+            if(document.getElementById('rejwetradio').checked) {
+                var radio_sel = "rejwetradio";
+            }
+                
 
                 // loop through our density intervals and generate a label with a colored square for each interval
-                if (radio_sel == 'dryradio') {
+                if(radio_sel == 'dryradio'){
                     var div = L.DomUtil.create('div', 'info legend'),
-                        grades = [1, 3, 5, 6, 7, 8, 8.5, 9, 9.5],
-                        labels = [];
+                    grades = [1,3,5,6,7,8,8.5,9,9.5],
+                    labels = [];
                     div.innerHTML += "<h5>Dry Waste <br>(after removing non-recyclable) <br> per household reached.</h6><hr>";
                     for (var i = 0; i < grades.length; i++) {
                         div.innerHTML +=
                             '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
-                            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+                            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] +'<br>' : '+');
                     }
                 }
-                if (radio_sel == 'wetradio') {
+                if(radio_sel == 'wetradio'){
                     var div = L.DomUtil.create('div', 'info legend'),
-                        grades = [1, 15, 30, 40, 50, 60, 70, 80, 90, 95, 99],
-                        labels = [];
+                    grades = [1,15,30,40,50,60,70,80,90,95,99],
+                    labels = [];
                     div.innerHTML += "<h5>Wet Waste <br>after removing non-compostable <br> per household reached.</h6><hr>";
                     for (var i = 0; i < grades.length; i++) {
                         div.innerHTML +=
                             '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
-                            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+                            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] +'<br>' : '+');
                     }
                 }
-                if (radio_sel == 'rejdryradio') {
+                if(radio_sel == 'rejdryradio'){
                     var div = L.DomUtil.create('div', 'info legend'),
-                        grades = [1, 15, 30, 40, 50, 60, 70, 80, 90, 95, 99],
-                        labels = [];
+                    grades = [1,15,30,40,50,60,70,80,90,95,99],
+                    labels = [];
                     div.innerHTML += "<h5>Rejected Dry Waste <br>per household reached.</h6><hr>";
                     for (var i = 0; i < grades.length; i++) {
                         div.innerHTML +=
                             '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
-                            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+                            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] +'<br>' : '+');
                     }
                 }
-                if (radio_sel == 'rejwetradio') {
+                if(radio_sel == 'rejwetradio'){
                     var div = L.DomUtil.create('div', 'info legend'),
-                        grades = [1, 15, 30, 40, 50, 60, 70, 80, 90, 95, 99],
-                        labels = [];
+                    grades = [1,15,30,40,50,60,70,80,90,95,99],
+                    labels = [];
                     div.innerHTML += "<h5>Rejected Wet Waste <br> per household reached.</h6><hr>";
                     for (var i = 0; i < grades.length; i++) {
                         div.innerHTML +=
                             '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
-                            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+                            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] +'<br>' : '+');
                     }
                 }
 
                 return div;
-            };
+        };
 
-            info.update = function(props) {
+        info.update = function (props) {
 
-                if (document.getElementById('dryradio').checked) {
-                    var radio_sel = "dryradio";
-                }
-                if (document.getElementById('wetradio').checked) {
-                    var radio_sel = "wetradio";
-                }
-                if (document.getElementById('rejdryradio').checked) {
-                    var radio_sel = "rejdryradio";
-                }
-                if (document.getElementById('rejwetradio').checked) {
-                    var radio_sel = "rejwetradio";
-                }
-
-                var total_houses = props.num_hous_3;
-                var houses_reached = props.num_houses;
-                if (radio_sel == 'dryradio') {
-                    var drywaste_recd = props.drywaste_a;
-                    var drywaste_comp = ((drywaste_recd / houses_reached) * 100).toFixed(2);
-
-                    this._div.innerHTML = '<h4 class= "text-center">Waste Information</h4><hr>' + (props ?
-                        "<table><tr><td>Route</td><td><b>" + props.lane_name + "<b></td></tr>" +
-                        "<tr><td>Total Houses</td><td>" + props.num_hous_3 + "</td></tr>" +
-                        "<tr><td>Houses Reached</td><td>" + props.num_houses + "</td></tr>" +
-                        "<tr><td>Houses giving Seggregated Waste</td><td>" + props.num_hous_1 + "</td></tr>" +
-                        "<tr><td>Dry Waste before Segg.(Kg.)</td><td>" + props.drywaste_b + "</td></tr>" +
-                        "<tr><td>Dry waste after Segg.(Kg.)</td><td>" + props.drywaste_a + "</tr>" +
-                        "<tr><td>Dry waste Percentage Per houselhold</td><td>" + drywaste_comp + "%" + "</tr>" +
-                        "<tr><td>Rejected Dry Waste(Kg.)</td><td>" + props.rejected_d + "</tr></table>" :
-                        'Please hover over the Area');
-                }
-                if (radio_sel == 'wetradio') {
-                    var wetwaste_recd = props.wetwaste_a;
-                    var wetwaste_comp = ((wetwaste_recd / houses_reached) * 100).toFixed(2);
-
-                    this._div.innerHTML = '<h4 class= "text-center">Wet Waste Information</h4><hr>' + (props ?
-                        "<table><tr><td>Route</td><td><b>" + props.lane_name + "<b></td></tr>" +
-                        "<tr><td>Total Houses</td><td>" + props.num_hous_3 + "</td></tr>" +
-                        "<tr><td>Houses Reached</td><td>" + props.num_houses + "</td></tr>" +
-                        "<tr><td>Houses giving Seggregated Waste</td><td>" + props.num_hous_1 + "</td></tr>" +
-                        "<tr><td>Wet Waste before Segg.(Kg.)</td><td>" + props.wetwaste_b + "</td></tr>" +
-                        "<tr><td>Wet waste after Segg.(Kg.)</td><td>" + props.wetwaste_a + "</tr>" +
-                        "<tr><td>Wet waste Percentage Per houselhold</td><td>" + wetwaste_comp + "%" + "</tr>" +
-                        "<tr><td>Rejected Wet Waste(Kg.)</td><td>" + props.rejected_w + "</tr></table>" :
-                        'Please hover over the Area');
-                }
-                if (radio_sel == 'rejdryradio') {
-                    var rejected_d = props.rejected_d;
-                    var rejected_d_comp = (rejected_d / houses_reached) * 100;
-
-                    this._div.innerHTML = '<h4 class= "text-center">Waste Information</h4><hr>' + (props ?
-                        "<table><tr><td>Route</td><td><b>" + props.lane_name + "<b></td></tr>" +
-                        "<tr><td>Total Houses</td><td>" + props.num_hous_3 + "</td></tr>" +
-                        "<tr><td>Houses Reached</td><td>" + props.num_houses + "</td></tr>" +
-                        "<tr><td>Houses giving Seggregated Waste</td><td>" + props.num_hous_1 + "</td></tr>" +
-                        "<tr><td>Rejected Dry Waste</td><td>" + props.rejected_d + "</td></tr>" +
-                        "<tr><td>Rejected Dry waste Percentage Per houselhold</td><td>" + rejected_d_comp + "%" + "</tr></table>" :
-                        'Please hover over the Area');
-                }
-                if (radio_sel == 'rejwetradio') {
-                    var rejected_w = props.rejected_w;
-                    var rejected_w_comp = (rejected_w / houses_reached) * 100;
-
-                    this._div.innerHTML = '<h4 class= "text-center">Waste Information</h4><hr>' + (props ?
-                        "<table><tr><td>Route</td><td><b>" + props.lane_name + "<b></td></tr>" +
-                        "<tr><td>Total Houses</td><td>" + props.num_hous_3 + "</td></tr>" +
-                        "<tr><td>Houses Reached</td><td>" + props.num_houses + "</td></tr>" +
-                        "<tr><td>Houses giving Seggregated Waste</td><td>" + props.num_hous_1 + "</td></tr>" +
-                        "<tr><td>Rejected Wet Waste</td><td>" + props.rejected_w + "</td></tr>" +
-                        "<tr><td>Rejected Wet waste Percentage Per houselhold</td><td>" + rejected_w_comp + "%" + "</tr></table>" :
-                        'Please hover over the Area');
-                }
+            if(document.getElementById('dryradio').checked) {
+                var radio_sel = "dryradio";
+            }
+            if(document.getElementById('wetradio').checked) {
+                var radio_sel = "wetradio";
+            }
+            if(document.getElementById('rejdryradio').checked) {
+                var radio_sel = "rejdryradio";
+            }
+            if(document.getElementById('rejwetradio').checked) {
+                var radio_sel = "rejwetradio";
             }
 
-            function style(feature) {
-                console.log(feature);
-                // console.log(selection);
+            var total_houses = props.num_hous_3;
+            var houses_reached = props.num_houses;
+            if(radio_sel == 'dryradio'){
+                var drywaste_recd = props.drywaste_a;
+                var drywaste_comp = ((drywaste_recd / houses_reached) * 100).toFixed(2);
 
-                var total_houses = feature.properties.num_hous_3;
-                var houses_reached = feature.properties.num_houses;
-                var drywaste_recd = feature.properties.drywaste_a;
-                var drywaste_comp = (drywaste_recd / houses_reached) * 100;
+                this._div.innerHTML = '<h4 class= "text-center">Waste Information</h4><hr>' +  (props ?
+                "<table><tr><td>Route</td><td><b>"+props.lane_name+"<b></td></tr>"+
+                "<tr><td>Total Houses</td><td>"+props.num_hous_3+"</td></tr>"+
+                "<tr><td>Houses Reached</td><td>"+props.num_houses+"</td></tr>"+
+                "<tr><td>Houses giving Seggregated Waste</td><td>"+props.num_hous_1+"</td></tr>"+
+                "<tr><td>Dry Waste before Segg.(Kg.)</td><td>"+props.drywaste_b+"</td></tr>"+
+                "<tr><td>Dry waste after Segg.(Kg.)</td><td>"+props.drywaste_a+"</tr>"+
+                "<tr><td>Dry waste Percentage Per houselhold</td><td>"+drywaste_comp+"%"+"</tr>"+
+                "<tr><td>Rejected Dry Waste(Kg.)</td><td>"+props.rejected_d+"</tr></table>"
+                : 'Please hover over the Area');
+            }
+            if(radio_sel == 'wetradio'){
+                var wetwaste_recd = props.wetwaste_a;
+                var wetwaste_comp = ((wetwaste_recd / houses_reached) * 100).toFixed(2);
 
-                var wetwaste_recd = feature.properties.wetwaste_a;
-                var wetwaste_comp = (wetwaste_recd / houses_reached) * 100;
-
-                var rejected_d = feature.properties.rejected_d;
+                this._div.innerHTML = '<h4 class= "text-center">Wet Waste Information</h4><hr>' +  (props ?
+                "<table><tr><td>Route</td><td><b>"+props.lane_name+"<b></td></tr>"+
+                "<tr><td>Total Houses</td><td>"+props.num_hous_3+"</td></tr>"+
+                "<tr><td>Houses Reached</td><td>"+props.num_houses+"</td></tr>"+
+                "<tr><td>Houses giving Seggregated Waste</td><td>"+props.num_hous_1+"</td></tr>"+
+                "<tr><td>Wet Waste before Segg.(Kg.)</td><td>"+props.wetwaste_b+"</td></tr>"+
+                "<tr><td>Wet waste after Segg.(Kg.)</td><td>"+props.wetwaste_a+"</tr>"+
+                "<tr><td>Wet waste Percentage Per houselhold</td><td>"+wetwaste_comp+"%"+"</tr>"+
+                "<tr><td>Rejected Wet Waste(Kg.)</td><td>"+props.rejected_w+"</tr></table>"
+                : 'Please hover over the Area');
+            }
+            if(radio_sel == 'rejdryradio'){
+                var rejected_d = props.rejected_d;
                 var rejected_d_comp = (rejected_d / houses_reached) * 100;
 
-                var rejected_w = feature.properties.rejected_w;
+                this._div.innerHTML = '<h4 class= "text-center">Waste Information</h4><hr>' +  (props ?
+                "<table><tr><td>Route</td><td><b>"+props.lane_name+"<b></td></tr>"+
+                "<tr><td>Total Houses</td><td>"+props.num_hous_3+"</td></tr>"+
+                "<tr><td>Houses Reached</td><td>"+props.num_houses+"</td></tr>"+
+                "<tr><td>Houses giving Seggregated Waste</td><td>"+props.num_hous_1+"</td></tr>"+
+                "<tr><td>Rejected Dry Waste</td><td>"+props.rejected_d+"</td></tr>"+
+                "<tr><td>Rejected Dry waste Percentage Per houselhold</td><td>"+rejected_d_comp+"%"+"</tr></table>"
+                : 'Please hover over the Area');
+            }
+            if(radio_sel == 'rejwetradio'){
+                var rejected_w = props.rejected_w;
                 var rejected_w_comp = (rejected_w / houses_reached) * 100;
-                // alert(drywaste_comp);
-                if (document.getElementById('dryradio').checked) {
-                    var radio_sel = "dryradio";
-                    return {
-                        // fillColor: getColor(feature.properties.drywaste_a),
-                        fillColor: getColor(drywaste_comp),
-                        weight: 2,
-                        opacity: 1,
-                        color: 'white',
-                        dashArray: '3',
-                        fillOpacity: 0.7
-                    };
-                }
-                if (document.getElementById('wetradio').checked) {
-                    var radio_sel = "wetradio";
-                    return {
-                        // fillColor: getColor(feature.properties.drywaste_a),
-                        fillColor: getColor(wetwaste_comp),
-                        weight: 2,
-                        opacity: 1,
-                        color: 'white',
-                        dashArray: '3',
-                        fillOpacity: 0.7
-                    };
-                }
-                if (document.getElementById('rejdryradio').checked) {
-                    var radio_sel = "rejdryradio";
-                    return {
-                        // fillColor: getColor(feature.properties.drywaste_a),
-                        fillColor: getColor(rejected_d_comp),
-                        weight: 2,
-                        opacity: 1,
-                        color: 'white',
-                        dashArray: '3',
-                        fillOpacity: 0.7
-                    };
-                }
-                if (document.getElementById('rejwetradio').checked) {
-                    var radio_sel = "rejwetradio";
-                    return {
-                        // fillColor: getColor(feature.properties.drywaste_a),
-                        fillColor: getColor(rejected_w_comp),
-                        weight: 2,
-                        opacity: 1,
-                        color: 'white',
-                        dashArray: '3',
-                        fillOpacity: 0.7
-                    };
-                }
 
+                this._div.innerHTML = '<h4 class= "text-center">Waste Information</h4><hr>' +  (props ?
+                "<table><tr><td>Route</td><td><b>"+props.lane_name+"<b></td></tr>"+
+                "<tr><td>Total Houses</td><td>"+props.num_hous_3+"</td></tr>"+
+                "<tr><td>Houses Reached</td><td>"+props.num_houses+"</td></tr>"+
+                "<tr><td>Houses giving Seggregated Waste</td><td>"+props.num_hous_1+"</td></tr>"+
+                "<tr><td>Rejected Wet Waste</td><td>"+props.rejected_w+"</td></tr>"+
+                "<tr><td>Rejected Wet waste Percentage Per houselhold</td><td>"+rejected_w_comp+"%"+"</tr></table>"
+                : 'Please hover over the Area');
             }
+        }
 
-            function onEachFeature(feature, layer) {
-                //alert("oneachfeature"+feature+layer);    
-                layer.on({
-                    mouseover: highlightFeature,
-                    mouseout: resetHighlight,
-                    click: zoomToFeature
-                });
+        function style(feature) {
+            console.log(feature);
+            // console.log(selection);
+
+            var total_houses = feature.properties.num_hous_3;
+            var houses_reached = feature.properties.num_houses;
+            var drywaste_recd = feature.properties.drywaste_a;
+            var drywaste_comp = (drywaste_recd / houses_reached) * 100;
+
+            var wetwaste_recd = feature.properties.wetwaste_a;
+            var wetwaste_comp = (wetwaste_recd / houses_reached) * 100;
+
+            var rejected_d = feature.properties.rejected_d;
+            var rejected_d_comp = (rejected_d / houses_reached) * 100;
+
+            var rejected_w = feature.properties.rejected_w;
+            var rejected_w_comp = (rejected_w / houses_reached) * 100;
+            // alert(drywaste_comp);
+            if(document.getElementById('dryradio').checked) {
+                var radio_sel = "dryradio";
+                return {
+            // fillColor: getColor(feature.properties.drywaste_a),
+                fillColor: getColor(drywaste_comp),
+                weight: 2,
+                opacity: 1,
+                color: 'white',
+                dashArray: '3',
+                fillOpacity: 0.7
+            };
             }
+            if(document.getElementById('wetradio').checked) {
+                var radio_sel = "wetradio";
+                return {
+            // fillColor: getColor(feature.properties.drywaste_a),
+                fillColor: getColor(wetwaste_comp),
+                weight: 2,
+                opacity: 1,
+                color: 'white',
+                dashArray: '3',
+                fillOpacity: 0.7
+            };
+            }
+            if(document.getElementById('rejdryradio').checked) {
+                var radio_sel = "rejdryradio";
+                return {
+            // fillColor: getColor(feature.properties.drywaste_a),
+                fillColor: getColor(rejected_d_comp),
+                weight: 2,
+                opacity: 1,
+                color: 'white',
+                dashArray: '3',
+                fillOpacity: 0.7
+            };
+            }
+            if(document.getElementById('rejwetradio').checked) {
+                var radio_sel = "rejwetradio";
+                return {
+            // fillColor: getColor(feature.properties.drywaste_a),
+                    fillColor: getColor(rejected_w_comp),
+                    weight: 2,
+                    opacity: 1,
+                    color: 'white',
+                    dashArray: '3',
+                    fillOpacity: 0.7
+                };
+            }
+            
+        }   
+        function onEachFeature(feature, layer) {
+            //alert("oneachfeature"+feature+layer);    
+            layer.on({
+                mouseover: highlightFeature,
+                mouseout: resetHighlight,
+                click: zoomToFeature
+            });                
+        }
 
 
-            function Identify(e) {
+        function Identify(e) {
 
-                console.log("Identify", e);
-                // set parameters needed for GetFeatureInfo WMS request
-                var sw = mymap.options.crs.project(mymap.getBounds().getSouthWest());
-                var ne = mymap.options.crs.project(mymap.getBounds().getNorthEast());
-                var BBOX = sw.x + "," + sw.y + "," + ne.x + "," + ne.y;
-                var WIDTH = mymap.getSize().x;
-                var HEIGHT = mymap.getSize().y;
+            console.log("Identify",e);
+            // set parameters needed for GetFeatureInfo WMS request
+            var sw = mymap.options.crs.project(mymap.getBounds().getSouthWest());
+            var ne = mymap.options.crs.project(mymap.getBounds().getNorthEast());
+            var BBOX = sw.x + "," + sw.y + "," + ne.x + "," + ne.y;
+            var WIDTH = mymap.getSize().x;
+            var HEIGHT = mymap.getSize().y;
 
-                var X = Math.trunc(mymap.layerPointToContainerPoint(e.layerPoint).x);
-                var Y = Math.trunc(mymap.layerPointToContainerPoint(e.layerPoint).y);
+            var X = Math.trunc(mymap.layerPointToContainerPoint(e.layerPoint).x);
+            var Y = Math.trunc(mymap.layerPointToContainerPoint(e.layerPoint).y);
 
-                // compose the URL for the request
+            // compose the URL for the request
+          
 
+            var URL = popup_layer + '&BBOX=' + BBOX + '&FEATURE_COUNT=1&HEIGHT=' + HEIGHT + '&WIDTH=' + WIDTH + '&INFO_FORMAT=application%2Fjson&TILED=false&CRS=EPSG%3A3857&I=' + X + '&J=' + Y;
+            // console.log(URL);
+            //send GetFeatureInfo as asynchronous HTTP request using jQuery $.ajax
+            $.ajax({
+                url: URL,
+                dataType: "json",
+                type: "GET",
+                success: function(data) {
+                    if (data.features.length !== 0) { // at least one feature returned in response
+                        var feature = data.features[0]; // first feature from response
+                        console.log(feature);
+                        // Set up popup for clicked feature and open it
+                        var popup = new L.Popup({
+                            maxWidth: 300
+                        });
+                        if (feature.properties.zono_numbe) {
+                            console.log("I reached at");
+                            insti_content = "<table class = 'popupclass' ><tr><td><b>Zones</b></td><td></td></tr>" +
+                                "<tr><td><b>Zone Name</b></td><td>" + feature.properties.zone_name + "</td></tr>" +
+                                "<tr><td><b>Zone Number</b></td><td>" + feature.properties.zono_numbe+ "</td></tr>" + "</table>";
+                        } 
 
-                var URL = popup_layer + '&BBOX=' + BBOX + '&FEATURE_COUNT=1&HEIGHT=' + HEIGHT + '&WIDTH=' + WIDTH + '&INFO_FORMAT=application%2Fjson&TILED=false&CRS=EPSG%3A3857&I=' + X + '&J=' + Y;
-                // console.log(URL);
-                //send GetFeatureInfo as asynchronous HTTP request using jQuery $.ajax
-                $.ajax({
-                    url: URL,
-                    dataType: "json",
-                    type: "GET",
-                    success: function(data) {
-                        if (data.features.length !== 0) { // at least one feature returned in response
-                            var feature = data.features[0]; // first feature from response
-                            console.log(feature);
-                            // Set up popup for clicked feature and open it
-                            var popup = new L.Popup({
-                                maxWidth: 300
-                            });
-                            if (feature.properties.zono_numbe) {
-                                console.log("I reached at");
-                                insti_content = "<table class = 'popupclass' ><tr><td><b>Zones</b></td><td></td></tr>" +
-                                    "<tr><td><b>Zone Name</b></td><td>" + feature.properties.zone_name + "</td></tr>" +
-                                    "<tr><td><b>Zone Number</b></td><td>" + feature.properties.zono_numbe + "</td></tr>" + "</table>";
-                            }
-
-                            popup.setContent(insti_content);
+                        popup.setContent(insti_content);
                             popup.setLatLng(e.latlng);
                             mymap.openPopup(popup);
                         }
@@ -1467,5 +1444,7 @@
             }
 
             mymap.addEventListener('click', Identify);
-        </script>
-        {% endblock extra_map_javascript %}
+
+        
+</script>
+{% endblock extra_map_javascript %}
