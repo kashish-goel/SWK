@@ -317,9 +317,9 @@ table, th, td
                           <div class="overSelect"></div>
                       </div>
                       <div id="checkboxes7">
-                          <div class="checkbox" id="boundary">
+                          <!-- <div class="checkbox" id="boundary">
                               <label><input type="checkbox" value="{lane}" onchange="getBoundaryru(this)"><span> Lane(coming up soon...)</span></label>
-                          </div>
+                          </div> -->
                           <div class="checkbox">
                               <label><input type="checkbox" value="{spot}" onchange="getBoundaryru(this)"><span> Spot</span></label>
                           </div>
@@ -333,13 +333,13 @@ table, th, td
                       
                       </div>
                     </div>
-                    <br>
+                    <!-- <br>
                     <div class="multiselect">
                       <div class="selectBox" onclick="putWMSkiosk()">
                           <button type="button" class="btn btn-outline-dark" value="{kisok}" style="width: 90%;font-size:12px; ">Kiosks Location</button>
                           <div class="overSelect"></div>
                       </div>
-                    </div>
+                    </div> -->
                   <br>
                   <div class="multiselect">
                     <div class="selectBox" onclick="showCheckboxes5()">
@@ -507,9 +507,6 @@ table, th, td
             }
 
             function putWMSkiosk() {
-               
-              
-                           
                 var wms_layer = L.tileLayer.wms('https://makerghat.urbansciences.in/geoserver/wms', {
                     layers: "geonode:kiosk_24nov",
                     format: 'image/png',
@@ -725,7 +722,7 @@ table, th, td
                     else if (boundary == "{corbound}")
                         putWMSru("geonode:ward_193_updated_3nov");
                     else if (boundary == "{zones}")    
-                        putWMSru("geonode:zone_polygon_4_12_2020");   
+                        putWMSru("geonode:zone_polygon300121");   
                     else if (boundary == "{bubble}")    
                         putWMSru("geonode:bubbles_2_9dec2020");   
                  
@@ -745,10 +742,9 @@ table, th, td
                     else if (boundary == "{corbound}")                        
                         removeWMS("geonode:ward_193_updated_3nov");
                     else if (boundary == "{zones}")                        
-                        removeWMS("geonode:zone_polygon_4_12_2020");
-                    else if (boundary == "{bubbles}")    
-                        putWMSru("geonode:bubbles_2_9dec2020");   
-                 
+                        removeWMS("geonode:zone_polygon300121");
+                    else if (boundary == "{bubble}")    
+                        removeWMS("geonode:bubbles_2_9dec2020");  
                     else if (boundary == "{spot}")                        
                         {
                             removeWMS("geonode:spots_3december");
@@ -821,7 +817,7 @@ table, th, td
                mymap.setView([19.02, 72.818], 14);
                newLayerList.push(wms_layer);
                console.log(wms_layer);
-               }else if (layer == "geonode:zone_polygon_4_12_2020") {
+               }else if (layer == "geonode:zone_polygon300121") {
                    console.log(layer)
                    var wms_layer = L.tileLayer.wms('https://makerghat.urbansciences.in/geoserver/wms', {
                        layers: layer,

@@ -1,23 +1,25 @@
 from django import forms
-from .models import Tracksheet,DutyEntry,Zones
+from .models import Tracksheet,DutyEntry,Zones #,Feedback
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Submit, Row, Column
+from crispy_forms.layout import Layout, Submit, Row, Column, ButtonHolder
 import datetime
+# from phonenumber_field.formfields import PhoneNumberField
+from django.contrib.gis import forms
 
             
-demarcated_lane = [('none','Select Lane'),
-        ('Hira Seth Chawl to Waras Lane','Hira Seth Chawl - Waras Lane'),
-        ('Navneet Lane to Tare Galli','Navneet Lane - Tare Galli'),
-        ('Bhandar Wada to Amar Prem Chowk','Bhandar Wada - Amar Prem Chowk'),
-        ('Shankar Mandir to Bhagat Galli ','Shankar Mandir - Bhagat Galli '),
-        ('Gonta Galli to Kranti Galli','Gonta Galli - Kranti Galli'),
-        ('Kranti Galli to Navjeevan Chowk','Kranti Galli - Navjeevan Chowk'),
+demarcated_lane = [('none','Select Zone'),
+        ('Hira Seth Chawl to Waras Lane','Hira Seth Chawl to Waras Lane'),
+        ('Navneet Lane to Tare Galli','Navneet Lane to Tare Galli'),
+        ('Bhandar Wada to Amar Prem Chowk','Bhandar Wada to Amar Prem Chowk'),
+        ('Shankar Mandir to Bhagat Galli ','Shankar Mandir to Bhagat Galli '),
+        ('Gonta Galli to Kranti Galli','Gonta Galli to Kranti Galli'),
+        ('Kranti Galli to Navjeevan Chowk','Kranti Galli to Navjeevan Chowk'),
         ('Pakhari Galli ','Pakhari Galli '),
-        ('Bazar Galli to Fish market','Bazar Galli - Fish market'),
-        ('Maval maratha', 'Maval Maratha'),
-        ('Sonapur to Dukkur Galli','Sonapur - Dukkur Galli'),
-        ('Dukkur Galli to Taak Galli','Dukkur Galli - Taak Galli'),
-        ('Nagoba Ghumat to Achanak','Nagoba Ghumat - Achanak'),
+        ('Bazar Galli to Fish market','Bazar Galli to Fish market'),
+        ('Maval Maratha (Payari)', 'Maval Maratha'),
+        ('Sonapur to Dukkur Galli','Sonapur to Dukkur Galli'),
+        ('Dukkur Galli to Taak Galli','Dukkur Galli to Taak Galli'),
+        ('Nagoba Ghumat to Achanak','Nagoba Ghumat to Achanak'),
         ('Golfadevi','Golfadevi'),
         
     ]
@@ -77,7 +79,7 @@ supervisor_name = [
 class TracksheetForm(forms.ModelForm):
     
     date= forms.DateField(required=True,widget=forms.TextInput(attrs={'type': 'date'}),initial=datetime.date.today)
-    lane_name = forms.CharField(label = 'Name of the Route',widget=forms.Select(choices=demarcated_lane))
+    lane_name = forms.CharField(label = 'Name of the Zone',widget=forms.Select(choices=demarcated_lane))
     first_attendants_name = forms.CharField(label = 'Name of First Attendant',widget=forms.Select(choices=Fatten_name))
     second_attendants_name = forms.CharField(label = 'Name of Second Attendant',widget=forms.Select(choices=Satten_name))
     supervisor_name = forms.CharField(label = 'Name of Supervisor',widget=forms.Select(choices=supervisor_name))
@@ -177,4 +179,56 @@ class DutyEntryForm(forms.ModelForm):
     class Meta:
         model = DutyEntry
         fields = '__all__'
+
+
+    # name = forms.CharField(required=True)
+    # email = forms.EmailField(required=False)
+    # mobile = PhoneNumberField(required=True)
+    
+    # point = forms.PointField(required=True, widget=
+    #     forms.OSMWidget(attrs={'map_width': 500, 'map_height': 300}))
+    # feedback = forms.CharField(
+    #     required=True,
+    #     widget=forms.Textarea
+    # )
+# class FeedbackForm(forms.ModelForm):
+#     # latitude = forms.CharField()
+#     # longitude = forms.CharField()
+#     name= forms.CharField()
+#     email = forms.CharField()
+#     mobile = forms.IntegerField()
+#     feedback = forms.CharField(widget=forms.Textarea(attrs={"rows":5, "cols":20})
+# )
+#     def __init__(self, *args, **kwargs):
+#         super().__init__(*args, **kwargs)
+#         self.helper = FormHelper()
+#         self.helper.layout = Layout(
+            
+#             Row(
+#                 Column('latitude', css_class='form-group col-md-5 mb-0'),
+#                 Column('longitude', css_class='form-group col-md-5 mb-0'),
+#                 css_class='form-row'
+#             ),
+            
+#             Row(
+#                 Column('name', css_class='form-group col-md-5 mb-0'),                
+#                 Column('email', css_class='form-group col-md-5 mb-0'),
+#                 Column('mobile', css_class='form-group col-md-5 mb-0'),
+#                 css_class='form-row'
+#             ),
+#              Row(
+#                 Column('feedback', css_class='form-group col-md-5 mb-0'),
+               
+#                 css_class='form-row'
+#             ),
+#             Submit('submit', 'Save')
+#         )
+
+#     class Meta:
+#         model = Feedback
+#         fields = '__all__'
+#         exclude = ['latitude','longitude']
+
+    
+ 
  
