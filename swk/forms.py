@@ -11,15 +11,15 @@ demarcated_lane = [('none','Select Zone'),
         ('Hira Seth Chawl to Waras Lane','Hira Seth Chawl to Waras Lane'),
         ('Navneet Lane to Tare Galli','Navneet Lane to Tare Galli'),
         ('Bhandar Wada to Amar Prem Chowk','Bhandar Wada to Amar Prem Chowk'),
-        ('Shankar Mandir to Bhagat Galli ','Shankar Mandir to Bhagat Galli '),
+        ('Pakhari Galli','Pakhari Galli'),
+        ('Shankar Mandir to Bhagat Galli','Shankar Mandir to Bhagat Galli'),
         ('Gonta Galli to Kranti Galli','Gonta Galli to Kranti Galli'),
-        ('Kranti Galli to Navjeevan Chowk','Kranti Galli to Navjeevan Chowk'),
-        ('Pakhari Galli ','Pakhari Galli '),
+        ('Kranti galli to Navjeevan wasahat','Kranti galli to Navjeevan wasahat'),
         ('Bazar Galli to Fish market','Bazar Galli to Fish market'),
-        ('Maval Maratha (Payari)', 'Maval Maratha'),
+        ('Maval Maratha (Payari)', 'Maval Maratha (Payari)'),
         ('Sonapur to Dukkur Galli','Sonapur to Dukkur Galli'),
         ('Dukkur Galli to Taak Galli','Dukkur Galli to Taak Galli'),
-        ('Nagoba Ghumat to Achanak','Nagoba Ghumat to Achanak'),
+        ('Nagobacha Ghumat to Achanak','Nagobacha Ghumat to Achanak'),
         ('Golfadevi','Golfadevi'),
         
     ]
@@ -80,9 +80,9 @@ class TracksheetForm(forms.ModelForm):
     
     date= forms.DateField(required=True,widget=forms.TextInput(attrs={'type': 'date'}),initial=datetime.date.today)
     lane_name = forms.CharField(label = 'Name of the Zone',widget=forms.Select(choices=demarcated_lane))
-    first_attendants_name = forms.CharField(label = 'Name of First Attendant',widget=forms.Select(choices=Fatten_name))
-    second_attendants_name = forms.CharField(label = 'Name of Second Attendant',widget=forms.Select(choices=Satten_name))
-    supervisor_name = forms.CharField(label = 'Name of Supervisor',widget=forms.Select(choices=supervisor_name))
+    first_attendants_name = forms.CharField(label = 'Name of First Attendant')
+    second_attendants_name = forms.CharField(label = 'Name of Second Attendant')
+    supervisor_name = forms.CharField(label = 'Name of Supervisor')
     num_houses_reached = forms.IntegerField(label = 'Houses Reached')
     time_of_visit = forms.CharField(label = "Morning /Evening Visit",widget=forms.Select(choices=timeslot))
     drywaste_bf = forms.IntegerField(label = "Dry waste before(kgs)")
