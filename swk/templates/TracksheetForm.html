@@ -67,7 +67,9 @@
         function handleFormSuccess(data) {
             console.log(data.zone_id);
             $("#id_zone_id_id").val(data.zone_id);
-            // $("#ward").val(data.unit);
+            $("#id_first_attendants_name").val(data.attendant1);
+            $("#id_second_attendants_name").val(data.attendant2);
+            $("#id_supervisor_name").val(data.supervisor);
         }
 
         function handleFormError(jqXHR, textStatus, errorThrown) {

@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.template import loader
 from .forms import TracksheetForm, DutyEntryForm
-from .models import DutyEntry,Tracksheet,Zones
+from .models import DutyEntry,Tracksheet,Zones ,SwkAttendants
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User,auth
 from django.contrib.auth import logout
@@ -107,9 +107,13 @@ def TracksheetPage(request):
     if request.is_ajax():
         selected_field = request.GET['name']
         print(selected_field)
-        docinfo = list(Zones.objects.filter(zone_name=selected_field).values()); 
-        # print(docinfo)
+        docinfo = list(SwkAttendants.objects.filter(zone_name=selected_field).values()); 
+        print(docinfo)
         jsondata =docinfo[0]
+        # field=docinfo[0]["zone_id"]
+        # print(field)
+        # docinfo1 = list(SwkAttendants.objects.filter(zone_id=field).values()); 
+        # jsondata1=docinfo1[0]
         return JsonResponse(jsondata)
 
     # if request.is_ajax():

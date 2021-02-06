@@ -747,8 +747,7 @@ table, th, td
                         removeWMS("geonode:bubbles_2_9dec2020");  
                     else if (boundary == "{spot}")                        
                         {
-                            removeWMS("geonode:spots_3december");
-                            imageloca.forEach(layer => mymap.removeLayer(layer));
+                            LayerList.forEach(layer => mymap.removeLayer(layer));
 
                         }
                 };

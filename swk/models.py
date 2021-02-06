@@ -30,6 +30,16 @@ class Zones(models.Model):
 class TracksheetModel(Page):
 
     template = "TracksheetForm.html"
+class SwkAttendants(models.Model):
+    attendant1 = models.CharField(max_length=50, blank=True, null=True)
+    attendant2 = models.CharField(max_length=50, blank=True, null=True)
+    supervisor = models.CharField(max_length=50, blank=True, null=True)
+    zone_name = models.CharField(max_length=100, blank=True, null=True)
+    zone_id = models.CharField(max_length=10, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'swk_attendants'
 
 class Tracksheet(models.Model):
     date =models.DateField()
@@ -79,4 +89,3 @@ class SwkTracksheetReport(models.Model):
     class Meta:
         managed = False
         db_table = 'swk_tracksheet_report'
-
