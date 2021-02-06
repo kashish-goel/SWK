@@ -39,7 +39,7 @@ export const calcTotalWaste = (data,selLane,cases) =>{
 }
 
 export const calMonthlyData = (data,selLane,selCategory) =>{
-  const month = {9:'Sep',10:'Oct',11:'Nov',12:'Dec'}; 
+  const month = {9:'Sep-2020',10:'Oct-2020',11:'Nov-2020',12:'Dec-2020',1:'Jan-2021'}; 
   const colName = {'dry':'drywaste_af','wet':'wetwaste_af','rejected':'rejected'};
   let selLaneData;
   if(selLane === 'all')
@@ -66,7 +66,7 @@ export const calMonthlyData = (data,selLane,selCategory) =>{
   //   for(let key in month){
   //     console.log(key);
   // }
-    // console.log(groupedData,calcData,calcLabels);
+    console.log(groupedData,calcData,calcLabels);
     const barData = {
         chartData:{
           labels: calcLabels,
