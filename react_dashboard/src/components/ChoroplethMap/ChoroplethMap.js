@@ -11,11 +11,16 @@ import { legendColor } from 'd3-svg-legend'
 import {format} from 'd3-format'
 
 import {extent} from 'd3-array'
+// import * as d3 from 'd3';
 
 import 'd3-transition'
 import L from 'leaflet';
-import { sliderLeft, sliderVertical } from 'd3-simple-slider';
+// import { sliderLeft, sliderVertical } from 'd3-simple-slider';
 import {FormControl,InputLabel,MenuItem, Select} from '@material-ui/core'
+// import * as d3 from 'd3';
+import { sliderLeft, sliderVertical } from 'd3-simple-slider';
+
+
 
 
 
@@ -46,11 +51,20 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
     legend.append("g")
     .attr("class", "svg-color-legend")
     .attr("transform", "translate(50,15)");
-
-
+    console.log(selCategory)
+    let newtitle;
+    if(selCategory=='dry'){
+      newtitle=`Recyclable Dry Waste`
+    }
+    else if(selCategory=='wet'){
+      newtitle=`Compostable Wet Waste`
+    }
+    else if(selCategory=='rejected'){
+        newtitle=`Rejected Waste`
+      }
     let colorLegend = legendColor()
         .labelFormat(format(".2f"))
-        .title(`Legend : ${selCategory} waste`)
+        .title(`Legend : ${newtitle}(in Kgs)`)
         .scale(colorScale);
 
     
@@ -63,27 +77,48 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
 
 
 // slider
-
 var sliderVertical = sliderLeft()
-                        .min(1)
-                        .max(30)
-                        .step(1)
-                        .height(300)
-                        // .tickFormat(format('.2%'))
-                        .ticks(5)
-                        .default(0.015)
-                        .on('onchange', val => {
-                            setSelDay(val)
-                        // d3.select('p#value-vertical').text(d3.format('.2%')(val));
-                        });
+    .min(1)
+    .max(30)
+    .step(1)
+    .height(300)
+    // .tickFormat(d3.format('.2%'))
+    .ticks(5)
+    .default(0.015)
+    .on('onchange', val => {
+        setSelDay(val)
+    });
 
-const slider = select(svgSliderRef.current)
-            .attr('width', 100)
-            .attr('height', 350)
-            .append('g')
-            .attr('transform', 'translate(60,30)');
+  var gVertical = select(svgSliderRef.current)
+    // .append('svg')
+    .attr('width', 100)
+    .attr('height', 400)
+    .append('g')
+    .attr('transform', 'translate(60,30)');
 
-slider.call(sliderVertical);
+  gVertical.call(sliderVertical);
+
+//   d3.select('p#value-vertical').text(d3.format('.2%')(sliderVertical.value()));
+// var sliderVertical = sliderLeft()
+//                         .min(1)
+//                         .max(30)
+//                         .step(1)
+//                         .height(300)
+//                         // .tickFormat(format('.2%'))
+//                         .ticks(5)
+//                         .default(0.015)
+//                         .on('onchange', val => {
+//                             setSelDay(val)
+//                         // d3.select('p#value-vertical').text(d3.format('.2%')(val));
+//                         });
+
+// const slider = select(svgSliderRef.current)
+//             .attr('width', 100)
+//             .attr('height', 350)
+//             .append('g')
+//             .attr('transform', 'translate(60,30)');
+
+// slider.call(sliderVertical);
 
 
 
@@ -152,7 +187,7 @@ if(true){
     zoneControlDiv =  <Control position="bottomleft" className="legend-div">
 
     <div className="info">
-        <h4 style={{fontSize:"15px",fontWeight:"bold"}}>Click on polygon to select lane</h4>
+        <h4 style={{fontSize:"15px",fontWeight:"bold",marginLeft:"120px"}}>Click on polygon to select lane</h4>
     </div>
     <svg className = "svg-legend" ref={svgLegRef} id="svg-color-scale"></svg>
 
@@ -175,15 +210,16 @@ return (
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-    <Control position="bottomright">
-        <FormControl variant="outlined" >
-            <InputLabel id="demo-simple-select-outlined-label">Month</InputLabel>
+    <Control position="topright">
+        <FormControl variant="filled" >
+            <InputLabel id="demo-simple-select-filled-label">Month</InputLabel>
                 <Select
                     labelId="demo-simple-select-outlined-label"
                     id="demo-simple-select-outlined"
                     value={selMonth}
                     onChange={handleDropdownChange}
                     label="Month"
+                    className="month-drop"
                     >
                     <MenuItem value="">
                         <em>None</em>
@@ -192,7 +228,7 @@ return (
                     <MenuItem value={'10'}>October</MenuItem>
                     <MenuItem value={'11'}>November</MenuItem>
                     <MenuItem value={'12'}>December</MenuItem>
-                                            
+                    <MenuItem value={'01'}>January</MenuItem>
                 </Select>
     </FormControl>
     </Control>
