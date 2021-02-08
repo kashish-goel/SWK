@@ -20,7 +20,14 @@ def show(request):
     wardetail= DutyEntry.objects.all()
     # data= User.objects.all()
     return render(request,'show_data.html',{'datas':datas})
-
+def download(request,year,month,day):
+    print(year)
+    print(month)
+    print(day)
+    new_date=year+'-'+ month +'-'+day
+    datas= Tracksheet.objects.filter(date=new_date)
+    # print(datas)
+    return render(request,'download_data.html',{'datas':datas})
 def edit(request, id):  
     data = Tracksheet.objects.get(track_id=id)
     # docdata  = doctor.objects.get(id=id)  

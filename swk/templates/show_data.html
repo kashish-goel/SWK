@@ -60,6 +60,12 @@
               <option value="50">50</option>
             </select>
         </div>
+        <div class="input col-md-6">
+           
+           <input type="date" id="date">Filter data by date
+<a href="" onclick = "this.href='/download_data/' + document.getElementById('date').value" class="btn btn-primary">Get Data</a>
+
+        </div>
         <h2>Tracksheet Form Details</h2>
 
         <div class="table-responsive">
@@ -126,59 +132,14 @@
 
         <center><a href="/trackform/" class="btn btn-primary">Add New Record</a></center>
         <p></p>
-        <!-- <hr> {% for row in excel_data %} {% for cell in row %} {{ cell }}&nbsp;&nbsp; {% endfor %}
-        <br> {% endfor %}
-        <h2>Update Details</h2>
-
-
-        <table class="table table-striped table-bordered table-sm">
-            <thead class="thead-dark">
-
-                <tr>
-                    <th>Date </th>
-                    <th>Time </th>
-                    <th>Updated By</th>
-                    <th>Contact Number</th>
-        <th>Ward Number </th>
-        <th>Ward Type</th>
-        <th>Beds with ventilator</th>
-        <th>Beds with oxygen cylinder</th>
-        </tr>
-        </thead>
-        <tbody>
-            {% for i in wardetail %}
-
-            <tr id="somerow">
-                <td>{{i.date}}</td>
-                <td id="tme">{{i.tme}}</td>
-                <td>{{i.upby}}</td>
-                <td>{{i.contnum}}</td>
-                <td>{{i.wardnum}}</td>
-                <td>{{i.wardtype}}</td>
-                <td>{{i.ventbed}}</td>
-                <td>{{i.oxybed}}</td>
-                <td>
-                    <a href="/edit/{{ i.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
-                    <a href="/delete/{{ i.id }}">Delete</a>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-        </table>
-    </form>
-</div>
-<!-- </form> -->
-
+   
 
 
         <script>
-            // $(document).ready(function() {
-            //     $('#myTable').DataTable({
-            //         responsive: true,
-            //         "pageLength": 10
-            //     });
-            // });
+            
             $(document).ready(function() {
+
+
                 $('#maxRows').on('change', function() {
                     getPagination('#myTable', $(this).val());
                 });
