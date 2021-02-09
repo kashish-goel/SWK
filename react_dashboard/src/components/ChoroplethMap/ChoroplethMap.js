@@ -60,11 +60,11 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
       newtitle=`Compostable Wet Waste`
     }
     else if(selCategory=='rejected'){
-        newtitle=`Rejected Waste`
+        newtitle=`Seggregated Rejected Waste`
       }
     let colorLegend = legendColor()
         .labelFormat(format(".2f"))
-        .title(`Legend : ${newtitle}(in Kgs)`)
+        .title(`Legend : ${newtitle}(Kgs)`)
         .scale(colorScale);
 
     
@@ -187,9 +187,9 @@ if(true){
     zoneControlDiv =  <Control position="bottomleft" className="legend-div">
 
     <div className="info">
-        <h4 style={{fontSize:"15px",fontWeight:"bold",marginLeft:"120px"}}>Click on polygon to select lane</h4>
+        <h4 style={{fontSize:"15px",fontWeight:"bold",marginLeft:"100px"}}>Click on polygon to select lane</h4>
     </div>
-    <svg className = "svg-legend" ref={svgLegRef} id="svg-color-scale"></svg>
+    <svg className = "svg-legend" ref={svgLegRef} id="svg-color-scale" style={{fontSize:"13px",marginLeft:"50px"}}></svg>
 
 </Control>
 }else{

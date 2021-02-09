@@ -19,7 +19,7 @@ function Barchart({data,selLane,selCategory}) {
       newtitle=`Compostable Wet Waste`
     }
     else if(upperCaseSelCategory=='Rejected'){
-      newtitle=`Rejected Waste`
+      newtitle=`Segregated Rejected Waste`
     }
     let titleText = `${upperCaseSelLane} Monthly ${newtitle}`;
 
