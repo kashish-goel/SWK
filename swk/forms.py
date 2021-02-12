@@ -90,7 +90,7 @@ class TracksheetForm(forms.ModelForm):
     wetwaste_bf = forms.IntegerField(label = "Wet waste before(kgs)")
     wetwaste_af = forms.IntegerField(label = "Wet waste after(kgs)")
     num_houses_doing_segg = forms.IntegerField(label = "No. of houses doing segregation")
-    num_houses_giving_mixwaste = forms.IntegerField(label = "Houses giving mixed waste")
+    num_houses_giving_mixwaste = forms.IntegerField(label = "Houses giving mixed waste",widget=forms.HiddenInput(),required=False)
     rejected = forms.IntegerField(label="Rejected Waste:",widget=forms.HiddenInput(),required=False)
     zone_id_id=forms.CharField(max_length=10, label="Zone ID",widget=forms.HiddenInput(),required=False)
     def __init__(self, *args, **kwargs):
