@@ -1,4 +1,4 @@
-import React,{useRef,useState} from 'react'
+import React,{useEffect, useRef,useState} from 'react'
 import { Map, TileLayer , GeoJSON,LayersControl} from "react-leaflet";
 import Control from 'react-leaflet-control';
 
@@ -29,15 +29,28 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
     const dataByCategory = groupDataByCategory(data,selCategory);
     const [zoneControl,setZoneControl] = useState(false);
     const svgLegRef = useRef();
-    const svgSliderRef = useRef();
-    const [selMonth, setSelMonth] = useState('10');
+    const svgSliderRef = useRef(); 
+    
+    
+      
+    
     const [selDay, setSelDay] = useState(1);
+    const [selYear, setSelYear] = useState('2020');
+    var [selMonth, setSelMonth]=useState('10');
 
-    const dataByDateCategory = groupDataByDateCategory(data,selCategory,selMonth,selDay)
+    // defaultmonth(selYear);
+    // function defaultmonth(data) {
+    //     console.log(data)
+        // if(selYear==='2020'){  setSelMonth('10');}
+        // else if(selYear==='2021'){  setSelMonth('01');}
+    //   }
+    const dataByDateCategory = groupDataByDateCategory(data,selCategory,selYear,selMonth,selDay)
     console.log(dataByDateCategory)
     const geojsonWithData = mergeGeomData(geojson,dataByDateCategory);
     console.log(geojsonWithData)
+    
 
+    console.log([selMonth, setSelMonth])
     const domain = []
     for( let key in dataByDateCategory){
         domain.push(dataByDateCategory[key])
@@ -201,6 +214,56 @@ let geojsonMap =  <GeoJSON key='my-geojson' style={zoneStyle} data={geojsonWithD
 const handleDropdownChange = (e) =>{
     setSelMonth(e.target.value)
 }
+const handleYearDropdownChange = (e) =>{
+    setSelYear(e.target.value)
+    console.log(e.target.value)
+    if (e.target.value==='2020') {
+setSelMonth('10');  
+console.log('its 2020')      
+    }
+    else{setSelMonth('01')}
+}
+console.log(selYear)
+let menuItems;
+
+    if(selYear === '2020'){
+        menuItems =<Select
+        labelId="demo-simple-select-outlined-label"
+        id="demo-simple-select-outlined"
+        value={selMonth}
+        onChange={handleDropdownChange}
+        label="Month"
+        className="month-drop"
+        >
+        <MenuItem value="">
+            <em>None</em>
+        </MenuItem>
+        
+        
+         <MenuItem value={'09'}>September</MenuItem>
+        <MenuItem value={'10'}>October</MenuItem>
+        <MenuItem value={'11'}>November</MenuItem>
+        <MenuItem value={'12'}>December</MenuItem> 
+    </Select>
+    }else{
+        menuItems = <Select
+        labelId="demo-simple-select-outlined-label"
+        id="demo-simple-select-outlined"
+        value={selMonth}
+        onChange={handleDropdownChange}
+        label="Month"
+        className="month-drop"
+        >
+        <MenuItem value="">
+            <em>None</em>
+        </MenuItem>
+        
+        
+         <MenuItem value={'01'}>January</MenuItem>
+        
+    </Select>
+    }
+
 return (
     <div className="map">
 
@@ -213,23 +276,24 @@ return (
     <Control position="topright">
         <FormControl variant="filled" >
             <InputLabel id="demo-simple-select-filled-label">Month</InputLabel>
-                <Select
+            <Select
                     labelId="demo-simple-select-outlined-label"
                     id="demo-simple-select-outlined"
-                    value={selMonth}
-                    onChange={handleDropdownChange}
-                    label="Month"
-                    className="month-drop"
+                    value={selYear}
+                    onChange={handleYearDropdownChange}
+                    label="Year"
+                    className="year-drop"
                     >
                     <MenuItem value="">
                         <em>None</em>
                     </MenuItem>
-                    <MenuItem value={'09'}>September</MenuItem>
-                    <MenuItem value={'10'}>October</MenuItem>
-                    <MenuItem value={'11'}>November</MenuItem>
-                    <MenuItem value={'12'}>December</MenuItem>
-                    <MenuItem value={'01'}>January</MenuItem>
-                </Select>
+                    <MenuItem value={'2020'}>2020</MenuItem>
+                    <MenuItem value={'2021'}>2021</MenuItem>
+                </Select>    
+                
+                    {menuItems}
+              
+               
     </FormControl>
     </Control>
     <Control position="bottomright">
