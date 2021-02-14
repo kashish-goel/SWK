@@ -17,9 +17,11 @@ from django.http import HttpResponseRedirect
 def show(request):
     datas= Tracksheet.objects.all().order_by('-date')
     print(datas[0])
+    # datas1= Tracksheet.objects.all().order_by('-lane_name')
     wardetail= DutyEntry.objects.all()
     # data= User.objects.all()
     return render(request,'show_data.html',{'datas':datas})
+
 def download(request,year,month,day):
     print(year)
     print(month)
@@ -28,6 +30,20 @@ def download(request,year,month,day):
     datas= Tracksheet.objects.filter(date=new_date)
     # print(datas)
     return render(request,'download_data.html',{'datas':datas})
+
+def downloadzone(request,year,month,day,lane_name):
+    print(lane_name) 
+    print(year)
+    print(month)
+    print(day)  
+    new_date=year+'-'+ month +'-'+day
+    if(lane_name=='ALL'):
+        datas= Tracksheet.objects.filter(date=new_date)
+    else:
+        datas= Tracksheet.objects.filter(lane_name=lane_name, date=new_date)
+    # print(datas)
+    return render(request,'download_data_zone.html',{'datas':datas})
+
 def edit(request, id):  
     data = Tracksheet.objects.get(track_id=id)
     # docdata  = doctor.objects.get(id=id)  
@@ -161,7 +177,8 @@ def TracksheetPage(request):
                 instance = form.save(commit=False)
                 instance.num_houses_lane = 100
                 instance.rejected = ((instance.drywaste_bf +instance.wetwaste_bf) - (instance.drywaste_af + instance.wetwaste_af))
-                print(instance.rejected)
+                instance.num_houses_giving_mixwaste = (instance.num_houses_reached - instance.num_houses_doing_segg)
+                print(instance.num_houses_giving_mixwaste)
                 instance.zone_id_id=zone
                 print(instance.zone_id_id)
 
