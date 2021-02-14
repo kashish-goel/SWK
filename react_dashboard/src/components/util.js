@@ -184,12 +184,12 @@ export const mergeGeomData = (geojson,dataByCategory) =>{
 // const sliceCategoryData = (data,selCategory) =>{
 //   data.filter(d => data.)
 // }
-export const groupDataByDateCategory = (data,selCategory,selMonth,selDay) =>{
+export const groupDataByDateCategory = (data,selCategory,selYear,selMonth,selDay) =>{
   console.log(data[0])
   // let date = `${selDay}/${selMonth}/20`; 
   selDay = ((""+selDay).length === 1)?"0"+selDay:selDay;
   // selDay=30
-  let date = `2020-${selMonth}-${selDay}`; 
+  let date = `${selYear}-${selMonth}-${selDay}`; 
   // data.map(d=>console.log(d.date))
   let newData = data.filter(d => d.date === date).map(d => {
     const obj={}
