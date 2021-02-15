@@ -62,17 +62,6 @@
     <!-- <a href="/xyz/">Update Duty Chart</a> -->
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <!-- <input type="file" name="document">
-        <button type="submit">Upload file</button>
-    </form>
-    {% if url %}
-    <p>Uploaded file: <a href="{{ url }}">{{ url }}</a></p>
-    {% endif %} -->
-        <!-- <h3 style="font-weight: bolder; color:darkslategrey; margin-top:200px; text-align: center;">Hello! {{user.username}}</h3> -->
-
-        <!-- <h2>Vacant Beds Report</h2> -->
-
-
         <p></p>
         <hr> {% for row in excel_data %} {% for cell in row %} {{ cell }}&nbsp;&nbsp; {% endfor %}
         <br> {% endfor %}
@@ -85,38 +74,7 @@
             Download list</button>
         <div class="table-responsive">
             <table id="tblStocks" cellpadding="0" cellspacing="0">
-                <!-- <tr>
-                    <th>Company</th>
-                    <th>Group</th>
-                    <th>Prev Close($)</th>
-                    <th>Current Price($)</th>
-                    <th>Change(%)</th>
-                  </tr>
-                  <tr>
-                    <td>Life HealthCare INC</td>
-                    <td>A</td>
-                    <td>35.58</td>
-                    <td>38.45</td>
-                    <td>+8.06</td>
-                  </tr>
-                  <tr>
-                    <td>Den Networks Ltd</td>
-                    <td>A</td>
-                    <td>72.55</td>
-                    <td>77.60</td>
-                    <td>+6.96</td>
-                  </tr>
-                  <tr>
-                    <td>RMG Cements</td>
-                    <td>B</td>
-                    <td>140</td>
-                    <td>135</td>
-                    <td>-3.57</td>
-                  </tr>
-            </table>
-            <table class="table table-striped table-bordered table-sm" id="myTable"> -->
                 <thead class="thead-dark">
-
                     <tr>
                         <th>Houses Reached </th>
                         <th>Houses Doing Segregation</th>
@@ -169,14 +127,9 @@
         </div>
         <br>
         <br>
-
-
-        <!-- <center><a href="/trackform/" class="btn btn-primary">Add New Record</a></center> -->
         <p></p>
-   
 
-
-        <script>
+    <script>
             
             $(document).ready(function() {
 
