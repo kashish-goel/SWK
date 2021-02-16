@@ -52,12 +52,12 @@
                     <li><a href="{% url 'swk_map' %}">Maps</a></li>
                     <!-- <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#team">Team</a></li> -->
-                    {% if request.user|has_group:"Editor" %}
+                    {% if request.user|has_group:"supervisor" %}
 
                     <li class="drop-down"><a href="">Enter/View Data</a>
                         <ul>
                             <li><a href="{% url 'trackform' %}">Daily Entry Form</a></li>
-                            <li><a href="{% url 'dutyentryform' %}">Duty Entry Form</a>
+                            <!-- <li><a href="{% url 'dutyentryform' %}">Duty Entry Form</a> -->
                                 <!-- <ul>
                                     <li><a href="#">Deep Drop Down 1</a></li>
                                     <li><a href="#">Deep Drop Down 2</a></li>

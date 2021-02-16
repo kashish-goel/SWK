@@ -1,4 +1,4 @@
-{% extends 'new.html' %} {% load static%} {% block content %}
+{% extends 'new.html' %} {% load static%} {% load has_group %}{% block content %}
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,20 +34,10 @@
 <!-- <form action="coordinator" method="POST">
     {% csrf_token %} -->
 <div id="wrapper">
+    <h2>Tracksheet Filtered Details</h2></centre> 
     <!-- <a href="/xyz/">Update Duty Chart</a> -->
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <!-- <input type="file" name="document">
-        <button type="submit">Upload file</button>
-    </form>
-    {% if url %}
-    <p>Uploaded file: <a href="{{ url }}">{{ url }}</a></p>
-    {% endif %} -->
-        <!-- <h3 style="font-weight: bolder; color:darkslategrey; margin-top:200px; text-align: center;">Hello! {{user.username}}</h3> -->
-
-        <!-- <h2>Vacant Beds Report</h2> -->
-
-
         <p></p>
         <hr> {% for row in excel_data %} {% for cell in row %} {{ cell }}&nbsp;&nbsp; {% endfor %}
         <br> {% endfor %}
@@ -64,32 +54,38 @@
         <br>
         <div class="input col-md-6">
      
-            <b>Filter data</b> by <b>Date  </b><input type="date" id="date"> 
-                
-        and by <b>Zone  </b>    
-        <select id="zone">
-        <option value="ALL">All</option>
-        <option value="Hira Seth Chawl to Waras Lane">Hira Seth Chawl to Waras Lane</option>
-        <option value="Navneet Lane to Tare Galli">Navneet Lane to Tare Galli</option>
-        <option value="fBhandar Wada to Amar Prem Chowk">Bhandar Wada to Amar Prem Chowk</option>
-        <option value="Pakhari Galli">Pakhari Galli</option>
-        <option value="Shankar Mandir to Bhagat Galli">Shankar Mandir to Bhagat Galli</option>
-        <option value="Gonta Galli to Kranti Galli">Gonta Galli to Kranti Galli</option>
-        <option value="Kranti galli to Navjeevan wasahat">Kranti galli to Navjeevan wasahat</option>
-        <option value="Bazar Galli to Fish market">Bazar Galli to Fish market</option>
-        <option value="Maval Maratha (Payari)">Maval Maratha (Payari)</option>
-        <option value="Sonapur to Dukkur Galli">Sonapur to Dukkur Galli</option>
-        <option value="Dukkur Galli to Taak Galli">Dukkur Galli to Taak Galli</option>
-        <option value="Nagobacha Ghumat to Achanak">Nagobacha Ghumat to Achanak</option>
-        <option value="Golfadevi">Golfadevi</option>
-        </select>
- <a href="" onclick = "this.href='/download_data_zone/' +document.getElementById('date').value +'&'+document.getElementById('zone').value" class="btn btn-primary">Get Data</a>
+            <!-- <b>Filter data by</b><br>
+            <b>From Date  </b><input type="date" id="date"><b>To Date  </b>  <input type="date" id="date1"> 
+              <br>and by <b>Zone  </b>     -->
+            <b>Filter data by</b><br>
+            <b>Date  </b><input type="date" id="date">and by <b>Zone  </b>    
+            <select id="zone">
+            <option value="ALL">All</option>
+            <option value="Hira Seth Chawl to Waras Lane">Hira Seth Chawl to Waras Lane</option>
+            <option value="Navneet Lane to Tare Galli">Navneet Lane to Tare Galli</option>
+            <option value="Bhandar Wada to Amar Prem Chowk">Bhandar Wada to Amar Prem Chowk</option>
+            <option value="Pakhari Galli">Pakhari Galli</option>
+            <option value="Shankar Mandir to Bhagat Galli">Shankar Mandir to Bhagat Galli</option>
+            <option value="Gonta Galli to Kranti Galli">Gonta Galli to Kranti Galli</option>
+            <option value="Kranti galli to Navjeevan wasahat">Kranti galli to Navjeevan wasahat</option>
+            <option value="Bazar Galli to Fish market">Bazar Galli to Fish market</option>
+            <option value="Maval Maratha (Payari)">Maval Maratha (Payari)</option>
+            <option value="Sonapur to Dukkur Galli">Sonapur to Dukkur Galli</option>
+            <option value="Dukkur Galli to Taak Galli">Dukkur Galli to Taak Galli</option>
+            <option value="Nagobacha Ghumat to Achanak">Nagobacha Ghumat to Achanak</option>
+            <option value="Golfadevi">Golfadevi</option>
+            </select>
+            <!-- <input type="radio" id="ALL" name="ALL" value="ALL">
+            <label for="ALL">ALL</label><br>
+            <input type="radio" id="HW" name="Hira Seth Chawl to Waras Lane" value="Hira Seth Chawl to Waras Lane"> -->
+            <!-- <label for="HW">Hira Seth Chawl to Waras Lane</label><br> -->
+            <a href="" onclick = "this.href='/download_data_zone/' +document.getElementById('date').value +'&'+document.getElementById('zone').value" class="btn btn-primary">Get Data</a>
+            <!-- <a href="" onclick = "this.href='/download_data_zone/' +document.getElementById('date').value +'to'+document.getElementById('date1').value+'&'+document.getElementById('zone').value" class="btn btn-primary">Get Data</a> -->
  
-         </div>
+        </div><br>
 
         <br>
-        <br><centre>
-        <h2>Tracksheet Filtered Details</h2></centre> 
+        <br>     
 
         <div class="table-responsive">
             <table class="table table-striped table-bordered table-sm" id="myTable">
@@ -113,7 +109,9 @@
                         <th>Supervisor Name</th>
                         <th>Rejected</th>
                         <th>Zone ID</th>
-                        <th>Update</th>
+                        {% if request.user|has_group:"Editor" %}
+                            <th>Update</th>
+                        {% endif %}
                     </tr>
                 </thead>
                 <tbody>
@@ -137,10 +135,12 @@
                         <td>{{i.supervisor_name}}</td>
                         <td>{{i.rejected}}</td>
                         <td>{{i.zone_id_id}}</td>
+                        {% if request.user|has_group:"Editor" %}
                         <td>
                             <a href="/edit/{{ i.track_id }}" style="color: rgb(168, 4, 4);"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
                             <a href="/delete/{{ i.track_id }}" style="color: rgb(122, 23, 23);">Delete</a>
                         </td>
+                        {% endif %}
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -153,7 +153,7 @@
         <br>
 
 
-        <center><a href="/trackform/" class="btn btn-primary">Add New Record</a></center>
+        <centre><a href="/trackform/" class="btn btn-primary">Add New Record</a></centre>
         <p></p>
    
 

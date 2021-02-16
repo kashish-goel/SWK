@@ -10,16 +10,18 @@
     }
 </style>
 {% endblock %}
-<div class="container mb-7 text-center" style="margin-top: 100px;">
-    <h1 class='text-center mt-5'>Houses providing segregated Waste</h1>
+<div class="container mb-7" style="margin-top: 100px;">
+    <h2>Houses providing segregated Waste</h2><hr><br>
 
-    <form method="post" data-url="{{ request.build_absolute_uri|safe }}" style="margin-left: 350px;" class="myform">
+    <form method="post" data-url="{{ request.build_absolute_uri|safe }}"  class="form-group" style="text-align:left;">
         {% csrf_token %}
         <!-- {{ form|crispy }}
         <button type="submit" class="btn btn-primary">Sign in</button> -->
         <!-- {% crispy form %} -->
 
-        <table>{{ form.as_table }}</table> <button type="submit" style="align-items: center;" class="btn btn-primary">Submit</button>
+        <table style="margin-right: 10px";>{{ form.as_table }}</table> 
+        <br>
+        <centre><button type="submit" style="align-items: center;" class="btn btn-primary">Submit</button></centre>
     </form>
     <!-- <form>
         {{ tracksheetoutput_form.as_ul }}
