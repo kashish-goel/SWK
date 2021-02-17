@@ -275,7 +275,7 @@ return (
         />
     <Control position="topright">
         <FormControl variant="filled" >
-            <InputLabel id="demo-simple-select-filled-label">Month</InputLabel>
+            <InputLabel id="demo-simple-select-filled-label">Select Year</InputLabel>
             <Select
                     labelId="demo-simple-select-outlined-label"
                     id="demo-simple-select-outlined"
