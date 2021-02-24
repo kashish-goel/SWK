@@ -1,4 +1,5 @@
 {% load static %} {% load has_group %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +35,7 @@
 </head>
 
 <body>
-
+    
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
@@ -72,7 +73,7 @@
                         </ul>
                     </li>
                     {% endif %}
-                    <li><a href="https://makerghat.urbansciences.in/layers/?limit=5&offset=0">Upload Layer</a></li>
+                    <li><a href="https://communitygis.net/layers/?limit=5&offset=0">Upload Layer</a></li>
 
                     <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
                     {% if user.is_authenticated %}
@@ -87,13 +88,38 @@
             </nav>
             <!-- .nav-menu -->
 
-        </div>
+<!--         
+        <div class="header-content">
+            
+                <form action="{% url 'set_language' %}" method="post">
+                    {% csrf_token %}
+                    <input name="next" type="hidden" value="{{ redirect_to }}" />
+            
+                    <select name="language" style="width: auto;" id="">
+                      {% get_current_language as LANGUAGE_CODE %}
+                      {% get_available_languages as LANGUAGES %}
+                      {% get_language_info_list for LANGUAGES as languages %}
+                      {% for language in languages %}
+            
+                          <option value="{{ language.code }}"
+                            {% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+                                {{ language.name_local }} ({{ language.code }})
+                          </option>         
+                      {% endfor %}
+                    </select>
+                    <input type = "submit" value ="Go">
+                </form>
+            
+            </div> -->
+            </div>
+        
     </header>
     <!-- End #header -->
 
     <!-- ======= Hero Section ======= -->
 
     <!-- #hero -->
+    
     <main>{% block content%} {% endblock%}
     </main>
 
