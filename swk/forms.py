@@ -5,6 +5,7 @@ from crispy_forms.layout import Layout, Submit, Row, Column, ButtonHolder
 import datetime
 # from phonenumber_field.formfields import PhoneNumberField
 from django.contrib.gis import forms
+from django.utils.translation import ugettext_lazy as _
 
             
 demarcated_lane = [('none','Select Zone'),
@@ -78,69 +79,72 @@ supervisor_name = [
 
 class TracksheetForm(forms.ModelForm):
     
-    date= forms.DateField(required=True,widget=forms.TextInput(attrs={'type': 'date'}),initial=datetime.date.today)
-    lane_name = forms.CharField(label = 'Zone',widget=forms.Select(choices=demarcated_lane))
-    first_attendants_name = forms.CharField(label = 'First Attendant')
-    second_attendants_name = forms.CharField(label = 'Second Attendant')
-    supervisor_name = forms.CharField(label = 'Supervisor')
-    num_houses_reached = forms.IntegerField(label = 'Houses Reached')
-    time_of_visit = forms.CharField(label = "Time of Visit",widget=forms.Select(choices=timeslot))
-    drywaste_bf = forms.IntegerField(label = "Dry waste before(kgs)")
-    drywaste_af = forms.IntegerField(label = "Dry waste after(kgs)")
-    wetwaste_bf = forms.IntegerField(label = "Wet waste before(kgs)")
-    wetwaste_af = forms.IntegerField(label = "Wet waste after(kgs)")
-    num_houses_doing_segg = forms.IntegerField(label = "Houses doing segregation")
-    num_houses_giving_mixwaste = forms.IntegerField(label = "Houses giving mixed waste",widget=forms.HiddenInput(),required=False)
-    rejected = forms.IntegerField(label="Rejected Waste:",widget=forms.HiddenInput(),required=False)
-    zone_id_id=forms.CharField(max_length=10, label="Zone ID",widget=forms.HiddenInput(),required=False)
+    date= forms.DateField(label = _(u'Date'),required=True,widget=forms.TextInput(attrs={'type': 'date'}),initial=datetime.date.today)
+    lane_name = forms.CharField(label = _(u'Zone'),widget=forms.Select(choices=demarcated_lane), localize=True)
+    num_attendants = forms.CharField(label = _(u'Attendants Number'),widget=forms.HiddenInput(),required=False)
+    first_attendants_name = forms.CharField(label = _(u'First Attendant'),widget=forms.HiddenInput(),required=False)
+    second_attendants_name = forms.CharField(label = _(u'Second Attendant'),widget=forms.HiddenInput(),required=False)
+    supervisor_name = forms.CharField(label = _(u'Supervisor'))
+    num_houses_reached = forms.IntegerField(label = _(u'Houses Reached'))
+    # time_of_visit = forms.CharField(label = _(u'Time of Visit'),widget=forms.Select(choices=timeslot))
+    time_of_visit = forms.CharField(label = _(u'Time of Visit'),widget=forms.HiddenInput(),required=False)
+    drywaste_bf = forms.IntegerField(label = _(u"Dry waste before(kgs)"))
+    drywaste_af = forms.IntegerField(label = _(u"Dry waste after(kgs)"))
+    wetwaste_bf = forms.IntegerField(label = _(u"Wet waste before(kgs)"))
+    wetwaste_af = forms.IntegerField(label = _(u"Wet waste after(kgs)"))
+    num_houses_doing_segg = forms.IntegerField(label = _(u"Houses doing segregation"))
+    num_houses_giving_mixwaste = forms.IntegerField(label = _(u"Houses giving mixed waste"),widget=forms.HiddenInput(),required=False)
+    rejected = forms.IntegerField(label=_(u"Rejected Waste"),widget=forms.HiddenInput(),required=False)
+    zone_id_id=forms.CharField(max_length=10, label=_(u"Zone ID"),widget=forms.HiddenInput(),required=False)
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        # self.fields['date'].localize = True
         # self.fields['zone_id']=forms.ModelChoiceField(queryset=Zones.objects.filter(zone_name=user))
 
         self.helper = FormHelper()
-        self.helper.layout = Layout(
-            Row(
-                Column('date', css_class='form-group col-md-3 mb-0'),
-                Column('time_of_visit', css_class='form-group col-md-3 mb-0'),
-                Column('lane_name', css_class='form-group col-md-6 mb-0'),
-                css_class='form-row'
-            ),
-            # 'address_1',
-            # 'address_2',
-            Row(
-                Column('num_attendants', css_class='form-group col-md-3 mb-0'),
-                Column('first_attendants_name', css_class='form-group col-md-3 mb-0'),
-                Column('second_attendants_name', css_class='form-group col-md-3 mb-0'),
-                Column('supervisor_name', css_class='form-group col-md-3 mb-0'),
-                css_class='form-row'
-            ),
-            # 'check_me_out',
-            Row(
-                Column('num_houses_reached', css_class='form-group col-md-4 mb-0'),
-                Column('num_houses_doing_segg', css_class='form-group col-md-4 mb-0'),
-                Column('num_houses_giving_mixwaste', css_class='form-group col-md-4 mb-0'),
+        # self.helper.layout = Layout(
+        #     Row(
+        #         Column('date', css_class='form-group col-md-3 mb-0'),
+        #         Column('time_of_visit', css_class='form-group col-md-3 mb-0'),
+        #         Column('lane_name', css_class='form-group col-md-6 mb-0'),
+        #         css_class='form-row'
+        #     ),
+        #     # 'address_1',
+        #     # 'address_2',
+        #     Row(
+        #         Column('num_attendants', css_class='form-group col-md-3 mb-0'),
+        #         Column('first_attendants_name', css_class='form-group col-md-3 mb-0'),
+        #         Column('second_attendants_name', css_class='form-group col-md-3 mb-0'),
+        #         Column('supervisor_name', css_class='form-group col-md-3 mb-0'),
+        #         css_class='form-row'
+        #     ),
+        #     # 'check_me_out',
+        #     Row(
+        #         Column('num_houses_reached', css_class='form-group col-md-4 mb-0'),
+        #         Column('num_houses_doing_segg', css_class='form-group col-md-4 mb-0'),
+        #         Column('num_houses_giving_mixwaste', css_class='form-group col-md-4 mb-0'),
                       
-                css_class='form-row'
-            ),
-            Row(
-                Column('drywaste_bf', css_class='form-group col-md-3 mb-0'),
-                Column('drywaste_af', css_class='form-group col-md-3 mb-0'),
-                Column('wetwaste_bf', css_class='form-group col-md-3 mb-0'),
-                Column('wetwaste_af', css_class='form-group col-md-3 mb-0'),
-                css_class='form-row'
-            ),
-            Row(
-                Column('rejected', css_class='form-group col-md-3 mb-0'),
-                Column('zone_id_id', css_class='form-group col-md-3 mb-0'),
-                css_class='form-row'
-            ),
-            # rejected = forms.IntegerField(   
-            #                             widget=forms.TextInput(attrs={'readonly':'readonly'})
-            # ),
-            # UneditableField('text_input', css_id="rejected"),
+        #         css_class='form-row'
+        #     ),
+        #     Row(
+        #         Column('drywaste_bf', css_class='form-group col-md-3 mb-0'),
+        #         Column('drywaste_af', css_class='form-group col-md-3 mb-0'),
+        #         Column('wetwaste_bf', css_class='form-group col-md-3 mb-0'),
+        #         Column('wetwaste_af', css_class='form-group col-md-3 mb-0'),
+        #         css_class='form-row'
+        #     ),
+        #     Row(
+        #         Column('rejected', css_class='form-group col-md-3 mb-0'),
+        #         Column('zone_id_id', css_class='form-group col-md-3 mb-0'),
+        #         css_class='form-row'
+        #     ),
+        #     # rejected = forms.IntegerField(   
+        #     #                             widget=forms.TextInput(attrs={'readonly':'readonly'})
+        #     # ),
+        #     # UneditableField('text_input', css_id="rejected"),
             
-            Submit('submit', 'Save')
-        )
+        #     Submit('submit', 'Save')
+        # )
        
 
     class Meta:

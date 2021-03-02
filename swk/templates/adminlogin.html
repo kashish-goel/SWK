@@ -1,5 +1,5 @@
 {% extends 'new.html' %} {% load static%}
-
+{% load i18n %}
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,17 +35,17 @@
     <form action="{% url 'login' %}" method="POST" class="form-group">
         {% csrf_token %}
         <div class="myform">
-            <h3>SWK Portal Login</h3>
+            <h3>{% trans "SWK Portal Login" %}</h3>
 
             <div class="card-panel">
-                <input type="text" class="form-control" name="username" aria-describedby="emailHelp" placeholder="Enter Username" id="name">
+                <input type="text" class="form-control" name="username" aria-describedby="emailHelp" placeholder={% trans "EnterUsername" %} id="name">
             </div>
 
             <div class="card-panel">
-                <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
+                <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder={% trans "Password" %}>
             </div>
 
-            <button type="submit" class="btn btn-success btn-lg">Login </button>
+            <button type="submit" class="btn btn-success btn-lg">{% trans "Login" %} </button>
         </div>
 
     </form>

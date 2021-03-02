@@ -66,6 +66,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -162,6 +163,18 @@ USE_L10N = True
 
 USE_TZ = True
 
+LOCALE_PATHS =[
+    os.path.join(BASE_DIR,'locale'),
+    
+
+]
+
+LANGUAGES =[
+    ('en', 'English'),
+    ('hi','Hindi'),
+    ('mr', 'Marathi')
+]
+
 DATE_INPUT_FORMATS = ('%d-%m-%Y','%Y-%m-%d')
 
 # Static files (CSS, JavaScript, Images)
@@ -170,3 +183,5 @@ DATE_INPUT_FORMATS = ('%d-%m-%Y','%Y-%m-%d')
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
 ]
+
+# print("base dir path", BASE_DIR)

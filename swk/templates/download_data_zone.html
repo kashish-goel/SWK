@@ -1,37 +1,11 @@
-{% extends 'new.html' %} {% load static%} {% block content %}
-
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Registration</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="">
-<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-
-<link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
-<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+{% extends 'new.html' %} {% load static%} {% block content %}{% block extra_css %}
+{% load i18n %}
 <style>
     #wrapper {
         margin-top: 100px;
         margin-left: 40px;
-        margin-right: 50px;
+        margin-right: 0px;
     }
-/*     
-    table {
-        border: 1px solid black;
-        border-collapse: collapse;
-        /* margin-left: 40px; 
-        margin-right: 400px;
-    }
-    
-    th,
-    td {
-        border: 1px solid black;
-        border-collapse: collapse;
-        width: 10%;
-    }*/
     #tblStocks { 
           font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
           border-collapse: collapse;
@@ -56,23 +30,13 @@
           }
 
 </style>
+{% endblock %}
 <!-- <form action="coordinator" method="POST">
     {% csrf_token %} -->
 <div id="wrapper">
     <!-- <a href="/xyz/">Update Duty Chart</a> -->
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <!-- <input type="file" name="document">
-        <button type="submit">Upload file</button>
-    </form>
-    {% if url %}
-    <p>Uploaded file: <a href="{{ url }}">{{ url }}</a></p>
-    {% endif %} -->
-        <!-- <h3 style="font-weight: bolder; color:darkslategrey; margin-top:200px; text-align: center;">Hello! {{user.username}}</h3> -->
-
-        <!-- <h2>Vacant Beds Report</h2> -->
-
-
         <p></p>
         <hr> {% for row in excel_data %} {% for cell in row %} {{ cell }}&nbsp;&nbsp; {% endfor %}
         <br> {% endfor %}
@@ -89,23 +53,24 @@
                 <thead class="thead-dark">
 
                     <tr>
-                        <th>Houses Reached </th>
-                        <th>Houses Doing Segregation</th>
-                        <th>Houses Giving Mixed Waste</th>
-                        <th>Dry Waste BF</th>
-                        <th>Dry Waste AF </th>
-                        <th>Wet Waste BF</th>
-                        <th>Wet Waste AF</th>
-                        <th>Zone Name</th>
-                        <th>Attendants</th>
-                        <th>First Attendant </th>
-                        <th>Second Attendant</th>
-                        <th>Time of Visit</th>
-                        <th>Track ID</th>
-                        <th>Date</th>
-                        <th>Supervisor Name</th>
-                        <th>Rejected</th>
-                        <th>Zone ID</th>
+                <input type="text" class="form-control" name="username" aria-describedby="emailHelp" placeholder={% trans "EnterUsername" %} id="name">
+                        <th>{% trans "Houses Reached" %} </th>
+                        <th>{% trans "Houses Doing Segregation" %}</th>
+                        <th>{% trans "Houses Giving Mixed Waste" %}</th>
+                        <th>{% trans "Dry Waste BF" %}</th>
+                        <th>{% trans "Dry Waste AF" %}</th>
+                        <th>{% trans "Wet Waste BF" %}</th>
+                        <th>{% trans "Wet Waste AF" %}</th>
+                        <th>{% trans "Zone Name" %}</th>
+                        <th>{% trans "Attendants" %}</th>
+                        <th>{% trans "First Attendant" %}</th>
+                        <th>{% trans "Second Attendant" %}</th>
+                        <th>{% trans "Time of Visit" %}</th>
+                        <th>{% trans "Track ID" %}</th>
+                        <th>{% trans "Date" %}</th>
+                        <th>{% trans "Supervisor Name" %}</th>
+                        <th>{% trans "Rejected" %}</th>
+                        <th>{% trans "Zone ID" %}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -138,15 +103,8 @@
                 <ul class="pagination"></ul>
             </nav>
         </div>
-        <br>
-        <br>
-
-
-        <!-- <center><a href="/trackform/" class="btn btn-primary">Add New Record</a></center> -->
-        <p></p>
-   
-
-
+       
+    {% endblock %}{% block extra_javascript %}
         <script>
             
             $(document).ready(function() {

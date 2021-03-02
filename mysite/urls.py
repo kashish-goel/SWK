@@ -29,6 +29,7 @@ from wagtail.documents import urls as wagtaildocs_urls
 
 
 urlpatterns = [
+    path('i18n/', include('django.conf.urls.i18n')),
     path('admin/', admin.site.urls),
     path('',include('swk.urls')),
     path('',include('swkapi.urls')),
