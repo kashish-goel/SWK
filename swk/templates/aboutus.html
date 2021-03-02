@@ -1,15 +1,9 @@
-{% extends 'new.html' %} {% block content %}
-<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"> -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  
+{% extends 'new.html' %} {% block content %}{% block extra_css %}
+{% load i18n %}
 
-    <div class="container" style=" margin-top:130px ;">
-        <h2>About Swachh Worli Koliwada</h2>
+  {% endblock %}
+    <div class="container mb-7" style="margin-top: 100px;">
+        <h2>{% trans "About Swachh Worli Koliwada" %}</h2>
         <br>
         <br>
     </div>      
@@ -19,19 +13,19 @@
                 <h2>Background</h2>
                 <hr>
                 <h4>
-                    <p style="text-align:justify">IDFC FIRST Bank in partnership with Stree Mukti Sanghatana and Municipal Corporation of Greater Mumbai launched project 'Swachh Worli Koliwada' with an aim to create awareness and bring about behavior change about community driven solid waste
-                        management practices and segregation at source through a participatory process within the Worli Koliwada community. The aim of this program is to build a zero waste neighborhood with self-sustainable zones that are equipped to manage solid
-                        waste they generate with a model where community participation will be a key at every stage, thereby ensuring sustainability of this program in the long run.</p>
+                    <p style="text-align:justify">{% blocktrans %}IDFC FIRST Bank in partnership with Stree Mukti Sanghatana and Municipal Corporation of Greater Mumbai launched project Swachh Worli Koliwada with an aim to create awareness and bring about behavior change about community driven solid waste 
+                        management practices and segregation at source through a participatory process within the Worli Koliwada community.The aim of this program is to build a zero waste neighborhood with " %}self-sustainable zones that are equipped to manage solid
+                        waste they generate with a model where community participation will be a key at every stage, thereby ensuring sustainability of this program in the long run.{% endblocktrans %}</p>
                     </h4>
                 <br>
                 <br>
-                <h2>About Stree Mukti Sanghatana</h2>
+                <h2>{% trans "About Stree Mukti Sanghatana" %}</h2>
                 <hr>
                 <h4>
-                    <p style="text-align:justify">SMS established in 1975 is a non profit organisation set up to empower women through activities like Theater, Family Counselling centres, Adolescent sensitization program etc.. Since 1999 SMS has been working for the cause of women waste pickers
+                    <p style="text-align:justify">{% blocktrans %}SMS established in 1975 is a non profit organisation set up to empower women through activities like Theater, Family Counselling centres, Adolescent sensitization program etc.. Since 1999 SMS has been working for the cause of women waste pickers
                         and offering solutions for Solid Waste Management. SMS is a trust registered under Bombay Public Trusts Act and Societies registration act and has 80-G and 12 A certificates under the Income Tax Act, 1961. About IDFC FIRST Bank IDFC FIRST
                         Bank provides a range of financial solutions primarily aimed at individuals, small businesses and corporates. The Bank offers savings and current accounts, NRI accounts, salary accounts, demat accounts, fixed and recurring deposits, home and
-                        personal loans, small business loans, forex products, payment solutions and wealth management services. IDFC FIRST Bank has a nationwide presence and operates in the Retail Banking, Wholesale Banking and other banking segments.
+                        personal loans, small business loans, forex products, payment solutions and wealth management services. IDFC FIRST Bank has a nationwide presence and operates in the Retail Banking, Wholesale Banking and other banking segments.{% endblocktrans %}
                 </h4>
                 </p>
             </div>

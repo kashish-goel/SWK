@@ -1,4 +1,7 @@
 {% extends 'new.html' %} {% load crispy_forms_tags %} {% block content %} {% block extra_css %}
+{% load i18n %}
+{% load l10n %}
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <style>
     .form-row {
@@ -11,7 +14,7 @@
 </style>
 {% endblock %}
 <div class="container mb-7" style="margin-top: 100px;">
-    <h2>Houses providing segregated Waste</h2><hr><br>
+    <h2>{% trans "Houses providing segregated Waste "%}</h2><hr><br>
 
     <form method="post" data-url="{{ request.build_absolute_uri|safe }}"  class="form-group" style="text-align:left;">
         {% csrf_token %}
@@ -19,9 +22,11 @@
         <button type="submit" class="btn btn-primary">Sign in</button> -->
         <!-- {% crispy form %} -->
 
-        <table style="margin-right: 10px";>{{ form.as_table }}</table> 
+        <!-- <table style="margin-right: 10px";>{% localize on %}{{ form.as_table }} {% endlocalize %}</table>  -->
+        <table style="margin-right: 10px";>{{ form.as_table }} </table> 
         <br>
-        <centre><button type="submit" style="align-items: center;" class="btn btn-primary">Submit</button></centre>
+    <!--<h2>{% trans "Houses providing segregated Waste "%}</h2><hr><br> -->
+    <centre><button type="submit" style="align-items: center;" class="btn btn-primary">{% trans "Submit" %}</button></centre>
     </form>
     <!-- <form>
         {{ tracksheetoutput_form.as_ul }}

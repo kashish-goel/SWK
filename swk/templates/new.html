@@ -30,7 +30,12 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-    {% block extra_css %} {% endblock %}
+    {% block extra_css %} 
+    .logo-container {
+        display: flex;
+        justify-content: space-between;
+      }
+    {% endblock %}
 
 </head>
 
@@ -38,26 +43,23 @@
     
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top">
-        <div class="container d-flex align-items-center">
-
-            <div class="logo me-auto">
-                <img class="logo" style="margin-left: 10px; height: 80px; width: 120px;" src="{% static 'images/Logo-Unit.jpg' %}" alt="My image">
-                <!-- Uncomment below if you prefer to use an image logo -->
-                <!-- <a href="index.html"><img src="{% static 'assets/img/logo.png' %}" alt="" class="img-fluid"></a>-->
-            </div>
-
+            
+        <div class="container d-flex align-items-center">  
+            <!-- <div id="header-wrap"> -->
+                <img class="header-left" src="{% static 'images/IDFC_FIRST_Bank_logo.jpg' %}" style="float:left;height: 80px; width: 80px;">
+                <img class="header-center" src="{% static 'images/sms_logo.jpg' %}" style="margin: 0 auto !important;height: 80px; width: 80px;">
+                <img class="header-right" src="{% static 'images/mcgm_logo.jpg' %}" style="float:right;height: 80px; width: 80px;">              
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
-                    <li class="active"><a href="{% url 'homepage' %}">Home</a></li>
-                    <li><a href="{% url 'aboutus' %}">About Us</a></li>
-                    <li><a href="{% url 'swk_map' %}">Maps</a></li>
-                    <!-- <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#team">Team</a></li> -->
+                    <li class="active"><a href="{% url 'homepage' %}">{% trans "Home" %}</a></li>
+                    <li><a href="{% url 'aboutus' %}">{% trans "About Us" %}</a></li>
+                    <li><a href="{% url 'swk_map' %}">{% trans "Maps" %}</a></li>
+                    
                     {% if request.user|has_group:"supervisor" %}
 
-                    <li class="drop-down"><a href="">Enter/View Data</a>
+                    <li class="drop-down"><a href="">{% trans "Enter/View Data" %}</a>
                         <ul>
-                            <li><a href="{% url 'trackform' %}">Daily Entry Form</a></li>
+                            <li><a href="{% url 'trackform' %}">{% trans "Daily Entry Form" %}</a></li>
                             <!-- <li><a href="{% url 'dutyentryform' %}">Duty Entry Form</a> -->
                                 <!-- <ul>
                                     <li><a href="#">Deep Drop Down 1</a></li>
@@ -67,20 +69,22 @@
                                     <li><a href="#">Deep Drop Down 5</a></li>
                                 </ul> -->
                             </li>
-                            <li><a href="https://ee.humanitarianresponse.info/x/dwsYkgyQ">Kobo Form</a></li>
-                            <li><a href="{% url 'show' %}">View Daily Entry Data</a></li>
+                            <li><a href="https://ee.humanitarianresponse.info/x/dwsYkgyQ">{% trans "Kobo Form" %}</a></li>
+                            <li><a href="{% url 'show' %}">{% trans "View Daily Entry Data" %}</a></li>
                             <!-- <li><a href="#">Drop Down 5</a></li> -->
                         </ul>
                     </li>
                     {% endif %}
-                    <li><a href="https://communitygis.net/layers/?limit=5&offset=0">Upload Layer</a></li>
+                    <li><a href="https://communitygis.net/layers/?limit=5&offset=0">{% trans "Upload Layer" %}</a></li>
 
-                    <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                    <li><a href="{% url 'dashboard' %}">{% trans "Dashboard" %}</a></li>
+                    <li><a href="{% url 'report' %}">{% trans "Report" %}</a></li>
+
                     {% if user.is_authenticated %}
-                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                    <li><a href="{% url 'logout' %}">{% trans "Logout" %}</a></li>
                     {% else %}
 
-                    <li><a href="{% url 'login' %}">Login</a></li>
+                    <li><a href="{% url 'login' %}">{% trans "Login" %}</a></li>
                     {% endif %}
 
 
@@ -88,8 +92,31 @@
             </nav>
             <!-- .nav-menu -->
 
-
+        
+        <div class="header-content">
+            
+                <form action="{% url 'set_language' %}" method="post">
+                    {% csrf_token %}
+                    <input name="next" type="hidden" value="{{ redirect_to }}" />
+            
+                    <select name="language" style="width: auto;" id="">
+                      {% get_current_language as LANGUAGE_CODE %}
+                      {% get_available_languages as LANGUAGES %}
+                      {% get_language_info_list for LANGUAGES as languages %}
+                      {% for language in languages %}
+            
+                          <option value="{{ language.code }}"
+                            {% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+                                {{ language.name_local }} ({{ language.code }})
+                          </option>         
+                      {% endfor %}
+                    </select>
+                    <input type = "submit" value ="Go">
+                </form>
+            
             </div>
+        </div>
+            
         
     </header>
     <!-- End #header -->
@@ -99,15 +126,23 @@
     <!-- #hero -->
     
     <main>{% block content%} {% endblock%}
+       
     </main>
-
+   
 
     <!-- End #main -->
 
     <!-- ======= Footer ======= -->
+    
     <footer>
-        <div id="footer">
-            {% block footer %}developed by RESPIRER LIVING SCIENCES PRIVATE LIMITED {% endblock %}
+        <div id="footer" style="height: auto; width:fit-content;"> 
+            <div class="logo me-auto">
+                <img class="logo" style="margin-left: 10px; height: 80px; width: 120px;" src="{% static 'images/Logo-Unit_SWK.jpg' %}" alt="My image">
+            </div>
+                       
+            {% block footer %}
+                     
+            developed by RESPIRER LIVING SCIENCES PRIVATE LIMITED {% endblock %}
         </div>
     </footer>
     <!-- End #footer -->

@@ -1,4 +1,5 @@
 {% extends 'new.html' %} {% load crispy_forms_tags %} {% block content %} {% block extra_css %}
+{% load l10n %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <style>
     /* .myform>* {
@@ -20,7 +21,8 @@
     <form method="post" style="margin-left: 350px;">
         {% csrf_token %}
 
-        <table>{{ form.as_table }}</table> <button type="submit" class="btn btn-primary">Submit</button>
+        <table>
+            {% localize on %} {{ form.as_table }} {% endlocalize %}</table> <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
 </div>

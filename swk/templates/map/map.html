@@ -1,6 +1,7 @@
 {% extends 'map/map_base.html' %}
 {% load static%}
 {% block extra_map_css %}
+{% load i18n %}
 <!-- import psycopg2 -->
 <style>
 
@@ -292,18 +293,18 @@ table, th, td
                 <form>
                     <div class="multiselect">
                         <div class="selectBox" onclick="showCheckboxes3()">
-                            <button type="button" class="btn btn-outline-dark" style="width: 90%;font-size:12px; "> Geographical Hierarchy</button>
+                            <button type="button" class="btn btn-outline-dark" style="width: 90%;font-size:12px; "> {% trans "Geographical Hierarchy" %}</button>
                             <div class="overSelect"></div>
                         </div>
                         <div id="checkboxes3">
                             <div class="checkbox" id="boundary">
-                                <label><input type="checkbox" value="{admin}" onchange="getBoundaryru(this)"><span> Admin Boundary</span></label>
+                                <label><input type="checkbox" value="{admin}" onchange="getBoundaryru(this)"><span> {% trans "Admin Boundary" %}</span></label>
                             </div>
                             <div class="checkbox">
-                                <label><input type="checkbox" value="{lanes}" onchange="getBoundaryru(this)"><span> Worli Koliwada Lanes</span></label>
+                                <label><input type="checkbox" value="{lanes}" onchange="getBoundaryru(this)"><span> {% trans "Worli Koliwada Lanes" %}</span></label>
                             </div>
                             <div class="checkbox">
-                              <label><input type="checkbox" value="{corbound}" onchange="getBoundaryru(this)"><span> Corporator Ward Boundary</span></label>
+                              <label><input type="checkbox" value="{corbound}" onchange="getBoundaryru(this)"><span> {% trans "Corporator Ward Boundary" %}</span></label>
                             </div>
                            
                         </div>
@@ -313,7 +314,7 @@ table, th, td
                       
                     <div class="multiselect">
                       <div class="selectBox" onclick="showCheckboxes7()">
-                          <button type="button" class="btn btn-outline-dark" style="width: 90%;font-size:12px; "> Zonal Geometry</button>
+                          <button type="button" class="btn btn-outline-dark" style="width: 90%;font-size:12px; "> {% trans "Zonal Geometry" %}</button>
                           <div class="overSelect"></div>
                       </div>
                       <div id="checkboxes7">
@@ -321,13 +322,13 @@ table, th, td
                               <label><input type="checkbox" value="{lane}" onchange="getBoundaryru(this)"><span> Lane(coming up soon...)</span></label>
                           </div> -->
                           <div class="checkbox">
-                              <label><input type="checkbox" value="{spot}" onchange="getBoundaryru(this)"><span> Spot</span></label>
+                              <label><input type="checkbox" value="{spot}" onchange="getBoundaryru(this)"><span> {% trans "Spot" %}</span></label>
                           </div>
                           <div class="checkbox">
-                              <label><input type="checkbox" value="{bubble}" onchange="getBoundaryru(this)"><span> Bubble</span></label>
+                              <label><input type="checkbox" value="{bubble}" onchange="getBoundaryru(this)"><span> {% trans "Bubble" %}</span></label>
                           </div>
                           <div class="checkbox">
-                              <label><input type="checkbox" value="{zones}" onchange="getBoundaryru(this)"><span> Zones</span></label>
+                              <label><input type="checkbox" value="{zones}" onchange="getBoundaryru(this)"><span> {% trans "Zones" %}</span></label>
                           </div>
                          
                       
@@ -343,19 +344,19 @@ table, th, td
                   <br>
                   <div class="multiselect">
                     <div class="selectBox" onclick="showCheckboxes5()">
-                        <button type="button" class="btn btn-outline-dark" style="width: 90%;font-size:12px; "> Seggregation Centres and Pits</button>
+                        <button type="button" class="btn btn-outline-dark" style="width: 90%;font-size:12px; "> {% trans "Seggregation Centres and Pits" %}</button>
                         <div class="overSelect"></div>
                     </div>
                     <div id="checkboxes5">
 
                         <div class="checkbox" id="boundary">
-                            <label><input type="checkbox" value="{jany}" onchange="getBoundarytrib(this)"><span> Compost Pit 1(coming up soon...) </span></label>
+                            <label><input type="checkbox" value="{jany}" onchange="getBoundarytrib(this)"><span>{% trans " Compost Pit 1(coming up soon...) " %}</span></label>
                         </div>
                         <div class="checkbox" id="boundary">
-                            <label><input type="checkbox" value="{}" onchange="getBoundarytrib(this)" disabled=""><span> Compost Pit 2(coming up soon...)</span></label>
+                            <label><input type="checkbox" value="{}" onchange="getBoundarytrib(this)" disabled=""><span> {% trans "Compost Pit 2(coming up soon...)" %}</span></label>
                         </div>
                         <div class="checkbox">
-                            <label><input type="checkbox" value="{}" onchange="getBoundarytrib(this)" disabled=""><span> Seggregation Centres(coming up soon...)</span></label>
+                            <label><input type="checkbox" value="{}" onchange="getBoundarytrib(this)" disabled=""><span> {% trans "Seggregation Centres(coming up soon...)" %}</span></label>
                         </div>
                         
 
@@ -364,60 +365,60 @@ table, th, td
                 <br>
                 <div class="multiselect">
                   <div class="selectBox" onclick="showCheckboxes4()">
-                      <button type="button" class="btn btn-outline-dark" style="width: 90%;font-size:12px; "> Public Places and Amenities</button>
+                      <button type="button" class="btn btn-outline-dark" style="width: 90%;font-size:12px; ">{% trans " Public Places and Amenities" %}</button>
                       <div class="overSelect"></div>
                   </div>
                   <div id="checkboxes4">
                       <div class="checkbox" id="boundary">
-                          <label><input type="checkbox" value="{Gsc}" onchange="GetSelectedfac(this);buffer(this);"><span> Public Toilets(coming up soon...)</span></label>
+                          <label><input type="checkbox" value="{Gsc}" onchange="GetSelectedfac(this);buffer(this);"><span>{% trans " Public Toilets(coming up soon...)" %}</span></label>
                       </div>
                       <div class="checkbox">
-                          <label><input type="checkbox" value="{ASch}" onchange="GetSelectedfac(this);buffer(this);"><span> Schools(coming up soon...)</span></label>
+                          <label><input type="checkbox" value="{ASch}" onchange="GetSelectedfac(this);buffer(this);"><span>{% trans " Schools(coming up soon...)" %}</span></label>
                       </div>
                       <div class="checkbox">
-                          <label><input type="checkbox" value="{iti}" onchange="GetSelectedfac(this);buffer(this);"><span> Educational Institutes(coming up soon...)</span></label>
+                          <label><input type="checkbox" value="{iti}" onchange="GetSelectedfac(this);buffer(this);"><span> {% trans "Educational Institutes(coming up soon...)" %}</span></label>
                       </div>
                       <div class="checkbox">
-                          <label><input type="checkbox" value="{bif}" onchange="GetSelectedfac(this);buffer(this);"><span> Terrace Garden (coming up soon...)</span></label>
+                          <label><input type="checkbox" value="{bif}" onchange="GetSelectedfac(this);buffer(this);"><span>{% trans " Terrace Garden (coming up soon...)" %}</span></label>
                       </div>
                       <div class="checkbox">
-                        <label><input type="checkbox" value="{iti}" onchange="GetSelectedfac(this);buffer(this);"><span> Nutri Gardens(coming up soon...)</span></label>
+                        <label><input type="checkbox" value="{iti}" onchange="GetSelectedfac(this);buffer(this);"><span> {% trans "Nutri Gardens(coming up soon...)" %}</span></label>
                       </div>
                     <div class="checkbox">
-                        <label><input type="checkbox" value="{bif}" onchange="GetSelectedfac(this);buffer(this);"><span> Open Space (coming up soon...)</span></label>
+                        <label><input type="checkbox" value="{bif}" onchange="GetSelectedfac(this);buffer(this);"><span> {% trans "Open Space (coming up soon...)" %}</span></label>
                     </div>
                   </div>
                 </div>
                 <br>
                 <div class="multiselect">
                     <div class="selectBox" onclick="showcheckboxeszone()">
-                        <button type="button" class="btn btn-outline-dark" style="width: 90%;font-size:12px; ">Zone-wise trends in waste generation</button>
+                        <button type="button" class="btn btn-outline-dark" style="width: 90%;font-size:12px; ">{% trans "Zone-wise trends in waste generation" %}</button>
                     <div class="overSelect"></div>
                     </div>
                     
                     <div id="checkboxeszone">
                         <div class="checkbox">
-                            <label><input type="checkbox" value ="{choro}" onclick="showradiobutt();"><span> Choropleth (color coded) zones</span></label>
+                            <label><input type="checkbox" value ="{choro}" onclick="showradiobutt();"><span> {% trans "Choropleth (color coded) zones" %}</span></label>
                             <div id="radiobutt">
                                 <div class="checkbox" id="boundary">
-                                    <label><input type="radio" name = "radiogrp" id = "dryradio" value="{dryradio}" onchange="showDatePicker();"><span> Dry Waste Trend</span></label>
+                                    <label><input type="radio" name = "radiogrp" id = "dryradio" value="{dryradio}" onchange="showDatePicker();"><span>{% trans " Dry Waste Trend" %}</span></label>
                                 </div>
                                 <div class="checkbox">
-                                    <label><input type="radio" name = "radiogrp" id = "wetradio" value="{wetradio}" onchange="showDatePicker();"><span> Wet Waste Trend</span></label>
+                                    <label><input type="radio" name = "radiogrp" id = "wetradio" value="{wetradio}" onchange="showDatePicker();"><span> {% trans "Wet Waste Trend" %}</span></label>
                                 </div>
                                 <div class="checkbox">
-                                    <label><input type="radio" name = "radiogrp" id = "rejdryradio" value="{rejdryradio}" onchange="showDatePicker();"><span> Rejected Dry Waste Trend</span></label>
+                                    <label><input type="radio" name = "radiogrp" id = "rejdryradio" value="{rejdryradio}" onchange="showDatePicker();"><span>{% trans " Rejected Dry Waste Trend" %}</span></label>
                                 </div>
                                 <div class="checkbox">
-                                    <label><input type="radio" name = "radiogrp" id = "rejwetradio" value="{rejwetradio}" onchange="showDatePicker();"><span>Rejected Wet Waste Trend</span></label>
+                                    <label><input type="radio" name = "radiogrp" id = "rejwetradio" value="{rejwetradio}" onchange="showDatePicker();"><span>{% trans "Rejected Wet Waste Trend" %}</span></label>
                                 </div>
                             </div>
                         </div>
-                        <div class="checkbox"></div>
+                        <!-- <div class="checkbox"></div>
                             <div class="checkbox">
                                 <label><input type="checkbox" value ="{graph}" onchange=""><span> Graphs (Coming Soon..)</span></label>
                             </div>
-                        </div>
+                        </div> -->
                         
                     </div>
                           
@@ -1016,10 +1017,11 @@ table, th, td
                     // cql_filter: `${cqlfilquery}`,
                     propertyName: 'the_geom,lane_name,drywaste_b,drywaste_a,wetwaste_b,wetwaste_a,rejected_t,rejected_d,rejected_w,num_houses,num_hous_3,num_hous_1,rejected_d',
                 };
-
+                
                 let parameters = L.Util.extend(defaultParameters);
                 layer_url = rootUrl + L.Util.getParamString(parameters);
                 console.log(layer_url);
+                alert(layer_url);
                 
                 if(radio_sel == 'dryradio'){
                     displayPolygon(defaultParameters, 19.018227,72.816833,radio_sel);
@@ -1138,6 +1140,7 @@ table, th, td
 
             // var radiobutton_sel = radio_selected;
             console.log(radio_selected);
+            
             var parameters = L.Util.extend(param_obj);
             layer_url = rootUrl + L.Util.getParamString(parameters)
             mymap.spin(true,{lines: 15, length: 1, width: 50, scale: 200,radius: 200, color: "grey"});
@@ -1151,6 +1154,7 @@ table, th, td
                 }
                 // console.log(radio_selected);
                 // Examine the text in the response
+                console.log(geojsonData.features.length);
                 response.json().then(function(geojsonData) {
                     console.log(geojsonData.features.length);
                     mymap.setView([lat, long], 17);
@@ -1200,7 +1204,7 @@ table, th, td
                     var div = L.DomUtil.create('div', 'info legend'),
                     grades = [1,3,5,6,7,8,8.5,9,9.5],
                     labels = [];
-                    div.innerHTML += "<h5>Dry Waste <br>(after removing non-recyclable) <br> per household reached.</h6><hr>";
+                    div.innerHTML += "<h5>Recyclable Dry Waste <br>per household reached.</h6><hr>";
                     for (var i = 0; i < grades.length; i++) {
                         div.innerHTML +=
                             '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
@@ -1211,7 +1215,7 @@ table, th, td
                     var div = L.DomUtil.create('div', 'info legend'),
                     grades = [1,15,30,40,50,60,70,80,90,95,99],
                     labels = [];
-                    div.innerHTML += "<h5>Wet Waste <br>after removing non-compostable <br> per household reached.</h6><hr>";
+                    div.innerHTML += "<h5>Compostable Wet Waste <br> per household reached.</h6><hr>";
                     for (var i = 0; i < grades.length; i++) {
                         div.innerHTML +=
                             '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +

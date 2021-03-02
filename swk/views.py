@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,HttpResponse,HttpResponseRedirect
 from django.template import loader
 from .forms import TracksheetForm, DutyEntryForm
 from .models import DutyEntry,Tracksheet,Zones ,SwkAttendants
@@ -9,6 +9,7 @@ from django.contrib import messages
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
+from django.utils.translation import gettext_lazy as _
 
 
 # Create your views here.form
@@ -31,17 +32,29 @@ def download(request,year,month,day):
     # print(datas)
     return render(request,'download_data.html',{'datas':datas})
 
-def downloadzone(request,year,month,day,lane_name):
-    print(lane_name) 
+def downloadzone(request,year,month,day,year1,month1,day1,zone_name):
+    print(zone_name) 
     print(year)
     print(month)
     print(day)  
+    print(year1)
+    print(month1)
+    print(day1)
     new_date=year+'-'+ month +'-'+day
-    if(lane_name=='ALL'):
-        datas= Tracksheet.objects.filter(date=new_date)
+    new_date1=year1+'-'+ month1 +'-'+day1
+    
+    # zone_name = lane_name.split(',')
+    # zone_count = lane_name.count(',')
+    # print(zone_name)
+    # for count in zone_count:
+    #     zone_name = 'lane_name='+zone_name[count]
+
+    if(zone_name=='ALL'):
+        datas= Tracksheet.objects.filter(date__range=(new_date, new_date1))
     else:
-        datas= Tracksheet.objects.filter(lane_name=lane_name, date=new_date)
-    # print(datas)
+        # datas= Tracksheet.objects.filter(lane_name__in=zone_name, date__range=(new_date, new_date1))
+        datas= Tracksheet.objects.filter(lane_name=zone_name, date__range=(new_date, new_date1))
+        print(datas)
     return render(request,'download_data_zone.html',{'datas':datas})
 
 def edit(request, id):  
@@ -81,17 +94,17 @@ def user_login(request):
                     login(request, user)
                     # Redirect to index page.
                     # messages.info(request,"login sucessfully")
-                    messages.info(request,"login sucessfully. Please check navigation bar on top to fill reqired forms")
+                    messages.info(request,_(u"loggedin sucessfully. Please check navigation bar on top to fill required forms."))
                     return render(request,"HomePage.html")
                 else:
                     # Return a 'disabled account' error message
-                    messages.info(request,"You're account is disabled")
-                    return HttpResponseRedirect("You're account is disabled.")
+                    messages.info(request,"Your account is disabled")
+                    return HttpResponseRedirect("Your account is disabled.")
         else:
                 # Return an 'invalid login' error message.
-                print ("invalid login details for " + username)
+                print (_(u"invalid login details for " + username))
                 # messages.info(request,"Invalid login details"+ username )
-                messages.error(request, "Invalid username or password.")
+                messages.error(request, _(u"Invalid username or password."))
                 return render(request,'adminlogin.html')
     else:
         # the login is a  GET request, so just show the user the login form.
@@ -183,19 +196,19 @@ def TracksheetPage(request):
                 print(instance.zone_id_id)
 
                 instance.save()
-                messages.success(request, 'Your data is saved for {} dated {}'.format(laneName,date)) 
+                messages.success(request, _(u'Your data is saved for {} dated {}').format(laneName,date))
                 # form.save()
                 # messages.success(request, 'Your data is saved')
                 return HttpResponseRedirect(request.path_info)
      
         else:
-            messages.warning(request, 'Please check your form') 
+            messages.warning(request, _(u'Please check your form'))
     else:
         
         form = TracksheetForm(request.POST or None)
     context= {
         'form': form,
-        
+               
         'test': 'test',
     }
 
@@ -219,5 +232,8 @@ def MapPage(request):
 
 def AboutUs(request):
     return render(request,"aboutus.html")
+
+def report(request):
+        return HttpResponseRedirect('/report_builder/report/5')
 
         
