@@ -3,6 +3,7 @@ from django import forms
 from django.forms import ModelForm
 
 from wagtail.core.models import Page
+from django.utils.translation import gettext_lazy as _
 
 class DutyEntry(models.Model):
     lane_name = models.CharField(primary_key = True, max_length=200, blank = False)
@@ -42,14 +43,15 @@ class SwkAttendants(models.Model):
         db_table = 'swk_attendants'
 
 class Tracksheet(models.Model):
-    date =models.DateField()
+    # date =models.DateField()
+    date =models.DateField(help_text=_('Enter Date'))
     lane_name = models.CharField(max_length=200, blank = False)
     # lane_name = models.ForeignKey(DutyEntry,default = 1, on_delete=models.SET_DEFAULT)
     num_attendants = models.IntegerField(default = 2 )
     first_attendants_name = models.CharField(max_length=100)
     second_attendants_name = models.CharField(max_length=100)
     supervisor_name = models.CharField(max_length=100,default = 'Zaheer')
-    num_houses_reached = models.IntegerField(default= 20)
+    num_houses_reached = models.IntegerField(default= 20,help_text=_('Enter Houses Reached'))
     num_houses_doing_segg = models.IntegerField()
     num_houses_giving_mixwaste = models.IntegerField()
     drywaste_bf = models.IntegerField()

@@ -1,15 +1,12 @@
 {% extends 'new.html' %} {% load static%} {% load has_group %}{% block content %}
 
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Registration</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="">
-<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+{% block extra_css %}
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> -->
+<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
 <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
 <style>
     #wrapper {
         margin-top: 100px;
@@ -31,6 +28,7 @@
         width: 10%;
     }
 </style>
+{% endblock %}
 <!-- <form action="coordinator" method="POST">
     {% csrf_token %} -->
 <div id="wrapper">
@@ -54,11 +52,11 @@
         <br>
         <div class="input col-md-6">
      
-            <!-- <b>Filter data by</b><br>
-            <b>From Date  </b><input type="date" id="date"><b>To Date  </b>  <input type="date" id="date1"> 
-              <br>and by <b>Zone  </b>     -->
             <b>Filter data by</b><br>
-            <b>Date  </b><input type="date" id="date">and by <b>Zone  </b>    
+            <b>From Date  </b><input type="date" id="date"><b>To Date  </b>  <input type="date" id="date1"> 
+              <br>and by <b>Zone  </b>    
+            <!-- <b>Filter data by</b><br>
+            <b>Date  </b><input type="date" id="date">and by <b>Zone  </b>     -->
             <select id="zone">
             <option value="ALL">All</option>
             <option value="Hira Seth Chawl to Waras Lane">Hira Seth Chawl to Waras Lane</option>
@@ -79,10 +77,10 @@
             <label for="ALL">ALL</label><br>
             <input type="radio" id="HW" name="Hira Seth Chawl to Waras Lane" value="Hira Seth Chawl to Waras Lane"> -->
             <!-- <label for="HW">Hira Seth Chawl to Waras Lane</label><br> -->
-            <a href="" onclick = "this.href='/download_data_zone/' +document.getElementById('date').value +'&'+document.getElementById('zone').value" class="btn btn-primary">Get Data</a>
-            <!-- <a href="" onclick = "this.href='/download_data_zone/' +document.getElementById('date').value +'to'+document.getElementById('date1').value+'&'+document.getElementById('zone').value" class="btn btn-primary">Get Data</a> -->
+            <!-- <a href="" onclick = "this.href='/download_data_zone/' +document.getElementById('date').value +'&'+document.getElementById('zone').value" class="btn btn-primary">Get Data</a> -->
+            <a href="" onclick = "this.href='/download_data_zone/' +document.getElementById('date').value +'to'+document.getElementById('date1').value+'&'+document.getElementById('zone').value" class="btn btn-primary">Get Data</a>
  
-        </div><br>
+        </div><br><br><br><br><br><br>
 
         <br>
         <br>     
