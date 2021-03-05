@@ -39,7 +39,7 @@ export const calcTotalWaste = (data,selLane,cases) =>{
 }
 
 export const calMonthlyData = (data,selLane,selCategory) =>{
-  const month = {9:'Sep-2020',10:'Oct-2020',11:'Nov-2020',12:'Dec-2020',1:'Jan-2021',2:'Feb-2021'}; 
+  const month = {9:'Sep-2020',10:'Oct-2020',11:'Nov-2020',12:'Dec-2020',1:'Jan-2021',2:'Feb-2021',3:'Mar-2021'}; 
   const colName = {'dry':'drywaste_af','wet':'wetwaste_af','rejected':'rejected'};
   let selLaneData;
   if(selLane === 'all')
