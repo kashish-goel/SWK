@@ -1,4 +1,5 @@
 {% extends 'new.html' %} {% load static%} {% block content %}
+{% load i18n %}
 
 <div class="container mb-5 text-center">
 
@@ -15,7 +16,7 @@
         <div>
             <label> {% trans "Track ID" %}:</label>
             <div>
-                <input type="text" name="id" id="id_track_id" required value="{{ data.track_id }}" />
+                <input type="text" name="id" id="id_track_id" required value="{{ data.track_id }}" disabled =True />
             </div>
         </div>
         <div>
@@ -66,34 +67,11 @@
                 <input type="text" name="lane_name" id="id_lane_name" required value="{{ data.lane_name }}" />
             </div>
         </div>
-        <div>
-            <label>{% trans "Attendants:" %}</label>
-            <div>
-                <input type="text" name="num_attendants" id="id_num_attendants" required value="{{ data.num_attendants }}" />
-            </div>
-        </div>
-        <div>
-            <label>{% trans "First Attendant:" %}</label>
-            <div>
-                <input type="text" name="first_attendants_name" id="id_first_attendants_name" required value="{{ data.first_attendants_name }}" />
-            </div>
-        </div>
-        <div>
-            <label>{% trans "Second Attendant:" %}</label>
-            <div>
-                <input type="text" name="second_attendants_name" id="id_second_attendants_name" required value="{{ data.second_attendants_name }}" />
-            </div>
-        </div>
-        <div>
-            <label>{% trans "Time of Visit:" %}</label>
-            <div>
-                <input type="text" name="time_of_visit" id="id_time_of_visit" required value="{{ data.time_of_visit }}" />
-            </div>
-        </div>
+        
         <div>
             <label>{% trans "Date:" %}</label>
             <div>
-                <input type="date" name="date" id="id_date" required value="{{ data.date }}" />
+                <input type="text" name="date" id="id_date" required value="{{ data.date|date:'d M,Y' }}" />
             </div>
         </div>
         <div>
