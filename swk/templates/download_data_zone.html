@@ -1,5 +1,5 @@
 {% extends 'new.html' %} {% load static%} {% block content %}{% block extra_css %}
-{% load i18n %}
+{% load i18n %}{% load has_group %}
 <style>
     #wrapper {
         margin-top: 100px;
@@ -62,15 +62,14 @@
                         <th>{% trans "Wet Waste BF" %}</th>
                         <th>{% trans "Wet Waste AF" %}</th>
                         <th>{% trans "Zone Name" %}</th>
-                        <th>{% trans "Attendants" %}</th>
-                        <th>{% trans "First Attendant" %}</th>
-                        <th>{% trans "Second Attendant" %}</th>
-                        <th>{% trans "Time of Visit" %}</th>
                         <th>{% trans "Track ID" %}</th>
                         <th>{% trans "Date" %}</th>
                         <th>{% trans "Supervisor Name" %}</th>
                         <th>{% trans "Rejected" %}</th>
                         <th>{% trans "Zone ID" %}</th>
+                        {% if request.user|has_group:"Editor" %}
+                        <th>Update</th>
+                    {% endif %}
                     </tr>
                 </thead>
                 <tbody>
@@ -85,15 +84,17 @@
                         <td>{{i.wetwaste_bf}}</td>
                         <td>{{i.wetwaste_af}}</td>
                         <td>{{i.lane_name}}</td>
-                        <td>{{i.num_attendants}}</td>
-                        <td>{{i.first_attendants_name}}</td>
-                        <td>{{i.second_attendants_name}}</td>
-                        <td>{{i.time_of_visit}}</td>
                         <td>{{i.track_id}}</td>
                         <td>{{i.date}}</td>
                         <td>{{i.supervisor_name}}</td>
                         <td>{{i.rejected}}</td>
                         <td>{{i.zone_id_id}}</td>
+                        {% if request.user|has_group:"Editor" %}
+                        <td>
+                            <a href="/edit/{{ i.track_id }}" style="color: rgb(168, 4, 4);"><span class="glyphicon glyphicon-pencil" >Edit | </span></a>
+                            <a href="/delete/{{ i.track_id }}" style="color: rgb(122, 23, 23);">Delete</a>
+                        </td>
+                        {% endif %}
                         
                     </tr>
                     {% endfor %}

@@ -30,12 +30,12 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-    {% block extra_css %} 
+    <!-- {% block extra_css %} 
     .logo-container {
         display: flex;
         justify-content: space-between;
       }
-    {% endblock %}
+    {% endblock %} -->
 
 </head>
 
@@ -46,9 +46,9 @@
             
         <div class="container d-flex align-items-center">  
             <!-- <div id="header-wrap"> -->
-                <img class="header-left" src="{% static 'images/IDFC_FIRST_Bank_logo.jpg' %}" style="float:left;height: 80px; width: 80px;">
-                <img class="header-center" src="{% static 'images/sms_logo.jpg' %}" style="margin: 0 auto !important;height: 80px; width: 80px;">
-                <img class="header-right" src="{% static 'images/mcgm_logo.jpg' %}" style="float:right;height: 80px; width: 80px;">              
+                <img class="header-left" src="{% static 'images/IDFC_FIRST_Bank_logo.jpg' %}" style="float:left;height: 80px; width: 80px;overflow: hidden;">
+                <img class="header-center" src="{% static 'images/sms_logo.jpg' %}" style="margin: 0 auto !important;height: 80px; width: 80px;overflow: hidden;">
+                <img class="header-right" src="{% static 'images/mcgm_logo.jpg' %}" style="float:right;height: 80px; width: 80px;overflow: hidden;">              
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
                     <li class="active"><a href="{% url 'homepage' %}">{% trans "Home" %}</a></li>
@@ -140,9 +140,7 @@
                 <img class="logo" style="margin-left: 10px; height: 80px; width: 120px;" src="{% static 'images/Logo-Unit_SWK.jpg' %}" alt="My image">
             </div>
                        
-            {% block footer %}
-                     
-            developed by RESPIRER LIVING SCIENCES PRIVATE LIMITED {% endblock %}
+            {% block footer %}Derived from FOSS project Communitygis.net supported by CTARA IITB {% endblock %}
         </div>
     </footer>
     <!-- End #footer -->

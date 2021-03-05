@@ -116,6 +116,12 @@
                         <td>{{i.supervisor_name}}</td>
                         <td>{{i.rejected}}</td>
                         <td>{{i.zone_id_id}}</td>
+                        {% if request.user|has_group:"Editor" %}
+                        <td>
+                            <a href="/edit/{{ i.track_id }}" style="color: rgb(168, 4, 4);"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
+                            <a href="/delete/{{ i.track_id }}" style="color: rgb(122, 23, 23);">Delete</a>
+                        </td>
+                        {% endif %}
                         
                     </tr>
                     {% endfor %}
