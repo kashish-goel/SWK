@@ -4,7 +4,7 @@
 
 ### Django ###
 *.log
-*.pot
+# *.pot
 *.pyc
 __pycache__/
 swk/static/images/GPS_Photos/
