@@ -47,7 +47,7 @@ class Tracksheet(models.Model):
     date =models.DateField(help_text=_('Enter Date'))
     lane_name = models.CharField(max_length=200, blank = False)
     # lane_name = models.ForeignKey(DutyEntry,default = 1, on_delete=models.SET_DEFAULT)
-    num_attendants = models.IntegerField(default = 2 )
+    num_attendants = models.CharField(default = 2,max_length= 10 )
     first_attendants_name = models.CharField(max_length=100)
     second_attendants_name = models.CharField(max_length=100)
     supervisor_name = models.CharField(max_length=100,default = 'Zaheer')

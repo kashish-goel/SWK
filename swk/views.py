@@ -50,10 +50,10 @@ def downloadzone(request,year,month,day,year1,month1,day1,zone_name):
     #     zone_name = 'lane_name='+zone_name[count]
 
     if(zone_name=='ALL'):
-        datas= Tracksheet.objects.filter(date__range=(new_date, new_date1))
+        datas= Tracksheet.objects.filter(date__range=(new_date, new_date1)).order_by('date','lane_name')
     else:
         # datas= Tracksheet.objects.filter(lane_name__in=zone_name, date__range=(new_date, new_date1))
-        datas= Tracksheet.objects.filter(lane_name=zone_name, date__range=(new_date, new_date1))
+        datas= Tracksheet.objects.filter(lane_name=zone_name, date__range=(new_date, new_date1).order_by('date'))
         print(datas)
     return render(request,'download_data_zone.html',{'datas':datas})
 
@@ -98,8 +98,8 @@ def user_login(request):
                     return render(request,"HomePage.html")
                 else:
                     # Return a 'disabled account' error message
-                    messages.info(request,"Your account is disabled")
-                    return HttpResponseRedirect("Your account is disabled.")
+                    messages.info(request,_(u"Your account is disabled"))
+                    return HttpResponseRedirect_(u"Your account is disabled.")
         else:
                 # Return an 'invalid login' error message.
                 print (_(u"invalid login details for " + username))
@@ -117,7 +117,7 @@ def HomePage(request):
 
 def logout_request(request):
     logout(request)
-    messages.info(request, "Logged out successfully!")
+    messages.info(request, _(u"Logged out successfully!"))
     return render(request,"HomePage.html")
 
 def DutyEntryPage(request):
@@ -127,7 +127,7 @@ def DutyEntryPage(request):
         form = DutyEntryForm(request.POST or None)       
         if form.is_valid():
             form.save()
-            messages.success(request, 'Your data is saved')
+            messages.success(request, _(u'Your data is saved'))
         return HttpResponseRedirect(request.path_info)
     else:
         form = DutyEntryForm(request.POST or None)
@@ -184,7 +184,7 @@ def TracksheetPage(request):
             print(zone)
             laneName = form.cleaned_data['lane_name']
             if  Tracksheet.objects.filter(date=date, lane_name=laneName).exists():
-                messages.warning(request, 'Data already exists')
+                messages.warning(request, _(u'Data already exists'))
             else:
 
                 instance = form.save(commit=False)
