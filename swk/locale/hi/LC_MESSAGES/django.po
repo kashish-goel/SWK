@@ -1,0 +1,494 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-05 06:40+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: swk/forms.py:82 swk/templates/download_data_zone.html:70
+msgid "Date"
+msgstr "दिनांक"
+
+#: swk/forms.py:83
+msgid "Zone"
+msgstr "झोन"
+
+#: swk/forms.py:84
+msgid "Attendants Number"
+msgstr "अटेंडेंट"
+
+#: swk/forms.py:85 swk/templates/download_data_zone.html:66
+msgid "First Attendant"
+msgstr "पहला अटेंडेंट"
+
+#: swk/forms.py:86 swk/templates/download_data_zone.html:67
+msgid "Second Attendant"
+msgstr "दूसरा अटेंडेंट"
+
+#: swk/forms.py:87
+msgid "Supervisor"
+msgstr "पर्यवेक्षक"
+
+#: swk/forms.py:88 swk/templates/download_data_zone.html:57
+msgid "Houses Reached"
+msgstr "घरों की गिनती"
+
+#: swk/forms.py:90 swk/templates/download_data_zone.html:68
+msgid "Time of Visit"
+msgstr "यात्रा का समय"
+
+#: swk/forms.py:91
+msgid "Dry waste before(kgs)"
+msgstr "पहले सूखा (किलो)"
+
+#: swk/forms.py:92
+msgid "Dry waste after(kgs)"
+msgstr "सूखा कचरा (किलो)"
+
+#: swk/forms.py:93
+msgid "Wet waste before(kgs)"
+msgstr "पहले गीला (किलो)"
+
+#: swk/forms.py:94
+msgid "Wet waste after(kgs)"
+msgstr "गीले कचरे के बाद (किलोग्राम)"
+
+#: swk/forms.py:95
+msgid "Houses doing segregation"
+msgstr "अलग-अलग कूड़ेदान मुहैया कराने वाले घर"
+
+#: swk/forms.py:96
+#, fuzzy
+#| msgid "Houses providing segregated Waste "
+msgid "Houses giving mixed waste"
+msgstr "अलग-अलग कूड़ेदान मुहैया कराने वाले घर"
+
+#: swk/forms.py:97
+msgid "Rejected Waste"
+msgstr "रिजेक्टेड वेस्ट"
+
+#: swk/forms.py:98 swk/templates/download_data_zone.html:73
+msgid "Zone ID"
+msgstr "झोन आईडी"
+
+#: swk/models.py:47
+msgid "Enter Date"
+msgstr "दिनांक दर्ज करें"
+
+#: swk/models.py:54
+msgid "Enter Houses Reached"
+msgstr "घरों की गिनती"
+
+#: swk/templates/HomePage.html:22
+msgid "Swachh Worli Koliwada"
+msgstr "स्वच्छ वरली कोलीवाड़ा"
+
+#: swk/templates/HomePage.html:24
+msgid "A Project by Stree Mukti Sanghatana, sponsored by IDFC FIRST Bank"
+msgstr "परियोजना - स्त्री मुक्ति संघटन द्वारा, प्रायोजित - IDFC FIRST Bank"
+
+#: swk/templates/TracksheetForm.html:17 swk/templates/TracksheetForm.html:28
+msgid "Houses providing segregated Waste "
+msgstr "अलग-अलग कूड़ेदान मुहैया कराने वाले घर"
+
+#: swk/templates/TracksheetForm.html:29
+msgid "Submit"
+msgstr "प्रस्तुत"
+
+#: swk/templates/aboutus.html:6
+msgid "About Swachh Worli Koliwada"
+msgstr "स्वच्छ वरली कोलीवाड़ा के बारे में"
+
+#: swk/templates/aboutus.html:13
+msgid "Background"
+msgstr "पृष्ठभूमि"
+
+#: swk/templates/aboutus.html:16
+msgid ""
+"IDFC FIRST Bank in partnership with Stree Mukti Sanghatana and Municipal "
+"Corporation of Greater Mumbai launched project Swachh Worli Koliwada with an "
+"aim to create awareness and bring about behavior change about community "
+"driven solid waste \n"
+"                        management practices and segregation at source "
+"through a participatory process within the Worli Koliwada community.The aim "
+"of this program is to build a zero waste neighborhood with self-sustainable "
+"zones that are equipped to manage solid\n"
+"                        waste they generate with a model where community "
+"participation will be a key at every stage, thereby ensuring sustainability "
+"of this program in the long run."
+msgstr ""
+
+#: swk/templates/aboutus.html:23
+msgid "About Stree Mukti Sanghatana"
+msgstr "स्त्री मुक्ति संघटन के बारे में"
+
+#: swk/templates/aboutus.html:26
+msgid ""
+"SMS established in 1975 is a non profit organisation set up to empower women "
+"through activities like Theater, Family Counselling centres, Adolescent "
+"sensitization program etc.. Since 1999 SMS has been working for the cause of "
+"women waste pickers\n"
+"                        and offering solutions for Solid Waste Management. "
+"SMS is a trust registered under Bombay Public Trusts Act and Societies "
+"registration act and has 80-G and 12 A certificates under the Income Tax "
+"Act, 1961. About IDFC FIRST Bank IDFC FIRST\n"
+"                        Bank provides a range of financial solutions "
+"primarily aimed at individuals, small businesses and corporates. The Bank "
+"offers savings and current accounts, NRI accounts, salary accounts, demat "
+"accounts, fixed and recurring deposits, home and\n"
+"                        personal loans, small business loans, forex "
+"products, payment solutions and wealth management services. IDFC FIRST Bank "
+"has a nationwide presence and operates in the Retail Banking, Wholesale "
+"Banking and other banking segments."
+msgstr ""
+
+#: swk/templates/adminlogin.html:38
+msgid "SWK Portal Login"
+msgstr "SWK पोर्टल लॉगिन करें"
+
+#: swk/templates/adminlogin.html:41 swk/templates/download_data_zone.html:56
+#, fuzzy
+msgid "EnterUsername"
+msgstr "दिनांक दर्ज करें"
+
+#: swk/templates/adminlogin.html:45
+msgid "Password"
+msgstr "कुंजिका"
+
+#: swk/templates/adminlogin.html:48 swk/templates/new.html:87
+msgid "Login"
+msgstr "लॉग इन करें"
+
+#: swk/templates/base.html:40 swk/templates/new.html:54
+msgid "Home"
+msgstr "मुख्यपृष्ठ"
+
+#: swk/templates/base.html:43 swk/templates/new.html:56
+msgid "Maps"
+msgstr "नक्शा"
+
+#: swk/templates/base.html:46 swk/templates/new.html:55
+msgid "About Us"
+msgstr "हमारे बारे में"
+
+#: swk/templates/base.html:83 swk/templates/new.html:81
+#: swk/templates/report.html:5
+msgid "Report"
+msgstr "रिपोर्ट"
+
+#: swk/templates/download_data_zone.html:58
+#, fuzzy
+#| msgid "Houses providing segregated Waste "
+msgid "Houses Doing Segregation"
+msgstr "अलग-अलग कूड़ेदान मुहैया कराने वाले घर"
+
+#: swk/templates/download_data_zone.html:59
+#, fuzzy
+#| msgid "Houses providing segregated Waste "
+msgid "Houses Giving Mixed Waste"
+msgstr "अलग-अलग कूड़ेदान मुहैया कराने वाले घर"
+
+#: swk/templates/download_data_zone.html:60
+msgid "Dry Waste BF"
+msgstr "शुष्क अपशिष्ट BF"
+
+#: swk/templates/download_data_zone.html:61
+msgid "Dry Waste AF"
+msgstr "ड्राई वेस्ट ए.एफ."
+
+#: swk/templates/download_data_zone.html:62
+msgid "Wet Waste BF"
+msgstr "वेट वेस्ट BF"
+
+#: swk/templates/download_data_zone.html:63
+msgid "Wet Waste AF"
+msgstr "वेट वेस्ट ए.एफ."
+
+#: swk/templates/download_data_zone.html:64
+msgid "Zone Name"
+msgstr "झोन का नाम"
+
+#: swk/templates/download_data_zone.html:65
+#, fuzzy
+#| msgid "First Attendant"
+msgid "Attendants"
+msgstr "अटेंडेंट"
+
+#: swk/templates/download_data_zone.html:69 swk/templates/edit.html:16
+msgid "Track ID"
+msgstr "ट्रैक आईडी"
+
+#: swk/templates/download_data_zone.html:71
+msgid "Supervisor Name"
+msgstr "पर्यवेक्षक का नाम"
+
+#: swk/templates/download_data_zone.html:72
+msgid "Rejected"
+msgstr "ठुकरा दिया"
+
+#: swk/templates/edit.html:12
+msgid "Update Details"
+msgstr "अद्यतन विवरण"
+
+#: swk/templates/edit.html:22
+#, fuzzy
+#| msgid "Enter Houses Reached"
+msgid "Houses Reached:"
+msgstr "घरों की गिनती"
+
+#: swk/templates/edit.html:28
+#, fuzzy
+#| msgid "Houses providing segregated Waste "
+msgid "Houses Doing Seggregation:"
+msgstr "अलग-अलग कूड़ेदान मुहैया कराने वाले घर"
+
+#: swk/templates/edit.html:34
+#, fuzzy
+#| msgid "Houses providing segregated Waste "
+msgid "Houses Giving Mixed Wasted:"
+msgstr "अलग-अलग कूड़ेदान मुहैया कराने वाले घर"
+
+#: swk/templates/edit.html:40
+msgid "Dry Waste BF:"
+msgstr "सूखी अपशिष्ट BF:"
+
+#: swk/templates/edit.html:46
+msgid "Dry Waste AF:"
+msgstr "सूखी अपशिष्ट वायुसेना:"
+
+#: swk/templates/edit.html:52
+msgid "Wet Waste BF:"
+msgstr "गीले अपशिष्ट BF:"
+
+#: swk/templates/edit.html:58
+msgid "Wet Waste AF:"
+msgstr "गीला अपशिष्ट वायुसेना:"
+
+#: swk/templates/edit.html:64
+msgid "Zone Name:"
+msgstr "झोन का नाम:"
+
+#: swk/templates/edit.html:70
+#, fuzzy
+#| msgid "First Attendant"
+msgid "Attendants:"
+msgstr " अटेंडेंट"
+
+#: swk/templates/edit.html:76
+#, fuzzy
+#| msgid "First Attendant"
+msgid "First Attendant:"
+msgstr "पहला अटेंडेंट"
+
+#: swk/templates/edit.html:82
+#, fuzzy
+#| msgid "First Attendant"
+msgid "Second Attendant:"
+msgstr "दूसरा अटेंडेंट"
+
+#: swk/templates/edit.html:88
+msgid "Time of Visit:"
+msgstr "यात्रा का समय:"
+
+#: swk/templates/edit.html:94
+#, fuzzy
+#| msgid "Date"
+msgid "Date:"
+msgstr "दिनांक"
+
+#: swk/templates/edit.html:100
+msgid "Supervisor Name:"
+msgstr "पर्यवेक्षक का नाम:"
+
+#: swk/templates/edit.html:106
+msgid "Rejected:"
+msgstr "ठुकरा दिया:"
+
+#: swk/templates/edit.html:112
+msgid "Zone ID:"
+msgstr "झोन आईडी:"
+
+#: swk/templates/edit.html:120
+msgid "Update"
+msgstr "अपडेट करें"
+
+#: swk/templates/map/map.html:296
+msgid "Geographical Hierarchy"
+msgstr "भौगोलिक पदानुक्रम"
+
+#: swk/templates/map/map.html:301
+msgid "Admin Boundary"
+msgstr "व्यवस्थापक सीमा"
+
+#: swk/templates/map/map.html:304
+msgid "Worli Koliwada Lanes"
+msgstr "स्वच्छ वरली कोलीवाड़ा"
+
+#: swk/templates/map/map.html:307
+msgid "Corporator Ward Boundary"
+msgstr "निगमायुक्त वार्ड की सीमा"
+
+#: swk/templates/map/map.html:317
+msgid "Zonal Geometry"
+msgstr "आंचलिक ज्यामिति"
+
+#: swk/templates/map/map.html:325
+msgid "Spot"
+msgstr "स्थान"
+
+#: swk/templates/map/map.html:328
+msgid "Bubble"
+msgstr "बुलबुला"
+
+#: swk/templates/map/map.html:331
+msgid "Zones"
+msgstr "क्षेत्र"
+
+#: swk/templates/map/map.html:347
+msgid "Seggregation Centres and Pits"
+msgstr "सेग्रेगेशन सेंटर और गड्ढे"
+
+#: swk/templates/map/map.html:353
+msgid " Compost Pit 1(coming up soon...) "
+msgstr "खाद गड्ढे 1 (जल्द ही आ रहा है ...)"
+
+#: swk/templates/map/map.html:356
+msgid "Compost Pit 2(coming up soon...)"
+msgstr "खाद गड्ढे 2 (जल्द ही आ रहा है ...)"
+
+#: swk/templates/map/map.html:359
+msgid "Seggregation Centres(coming up soon...)"
+msgstr "सेग्रीगेशन सेंटर (जल्द ही आ रहा है ...)"
+
+#: swk/templates/map/map.html:368
+msgid " Public Places and Amenities"
+msgstr "सार्वजनिक स्थल और सुविधाएं"
+
+#: swk/templates/map/map.html:373
+msgid " Public Toilets(coming up soon...)"
+msgstr "सार्वजनिक शौचालय (जल्द ही आ रहा है ...)"
+
+#: swk/templates/map/map.html:376
+msgid " Schools(coming up soon...)"
+msgstr "स्कूलों (जल्द ही आ रहा है ...)"
+
+#: swk/templates/map/map.html:379
+msgid "Educational Institutes(coming up soon...)"
+msgstr "शैक्षिक संस्थान (जल्द ही आ रहा है ...)"
+
+#: swk/templates/map/map.html:382
+msgid " Terrace Garden (coming up soon...)"
+msgstr "टेरेस गार्डन (जल्द ही आ रहा है ...)"
+
+#: swk/templates/map/map.html:385
+msgid "Nutri Gardens(coming up soon...)"
+msgstr "न्यूट्री गार्डन (जल्द ही आ रहा है ...)"
+
+#: swk/templates/map/map.html:388
+msgid "Open Space (coming up soon...)"
+msgstr "खुली जगह (जल्द ही आ रहा है ...)"
+
+#: swk/templates/map/map.html:395
+msgid "Zone-wise trends in waste generation"
+msgstr "कचरे के उत्पादन में झोनवार रुझान"
+
+#: swk/templates/map/map.html:401
+msgid "Choropleth (color coded) zones"
+msgstr "कोरोप्लेथ (रंग कोडित) क्षेत्र"
+
+#: swk/templates/map/map.html:404
+msgid " Dry Waste Trend"
+msgstr "सूखी अपशिष्ट प्रवृत्ति"
+
+#: swk/templates/map/map.html:407
+msgid "Wet Waste Trend"
+msgstr "वेट वेस्ट ट्रेंड"
+
+#: swk/templates/map/map.html:410
+msgid " Rejected Dry Waste Trend"
+msgstr "सूखी अपशिष्ट प्रवृत्ति को खारिज कर दिया"
+
+#: swk/templates/map/map.html:413
+msgid "Rejected Wet Waste Trend"
+msgstr "गीले अपशिष्ट प्रवृत्ति को खारिज कर दिया"
+
+#: swk/templates/new.html:60
+msgid "Enter/View Data"
+msgstr "डेटा दर्ज करें / देखें"
+
+#: swk/templates/new.html:62
+msgid "Daily Entry Form"
+msgstr "दैनिक प्रवेश फार्म"
+
+#: swk/templates/new.html:72
+msgid "Kobo Form"
+msgstr "कोबो रूप"
+
+#: swk/templates/new.html:73
+msgid "View Daily Entry Data"
+msgstr "दैनिक प्रवेश डेटा देखें"
+
+#: swk/templates/new.html:78
+msgid "Upload Layer"
+msgstr "परत अपलोड करें"
+
+#: swk/templates/new.html:80
+msgid "Dashboard"
+msgstr "डैशबोर्ड"
+
+#: swk/templates/new.html:84
+msgid "Logout"
+msgstr "लॉग आउट"
+
+#: swk/views.py:97
+msgid ""
+"loggedin sucessfully. Please check navigation bar on top to fill required "
+"forms."
+msgstr "सफलतापूर्वक लॉग इन हो चुका है|कृपया आवश्यक भरने के लिए शीर्ष पर नेविगेशन बार जांचें|"
+
+#: swk/views.py:101
+msgid "Your account is disabled"
+msgstr ""
+
+#: swk/views.py:105
+msgid "invalid login details for "
+msgstr "अवैध प्रवेश जानकारी"
+
+#: swk/views.py:107
+msgid "Invalid username or password."
+msgstr "अमान्य उपयोगकर्ता नाम या पासवर्ड"
+
+#: swk/views.py:120
+msgid "Logged out successfully!"
+msgstr ""
+
+#: swk/views.py:130
+#, fuzzy
+#| msgid "Your data is saved for {} dated {}"
+msgid "Your data is saved"
+msgstr "आपका डेटा {} दिनांक {} के लिए सहेजा गया है"
+
+#: swk/views.py:187
+msgid "Data already exists"
+msgstr ""
+
+#: swk/views.py:199
+msgid "Your data is saved for {} dated {}"
+msgstr "आपका डेटा {} दिनांक {} के लिए सहेजा गया है"
+
+#: swk/views.py:205
+msgid "Please check your form"
+msgstr "कृपया अपना फ़ॉर्म जांचें"
