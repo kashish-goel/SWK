@@ -1,11 +1,17 @@
 #mapdiv {
-    margin-top: 20px;
+    /* margin-top: 20px; */
     height: 85vh;
+   
 }
 
 #side-bar {
     background-color: #ffffff;
-    margin-top: 70px;
+    margin-top: 95px;
+    /* min-height: 400px; */
+    height: auto;
+    /* height: 50%; 
+    max-height: 100%;  */
+    
     /* text-decoration-color: red; */
 }
 

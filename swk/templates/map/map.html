@@ -341,7 +341,7 @@ table, th, td
                           <div class="overSelect"></div>
                       </div>
                     </div> -->
-                  <br>
+                  <!-- <br>
                   <div class="multiselect">
                     <div class="selectBox" onclick="showCheckboxes5()">
                         <button type="button" class="btn btn-outline-dark" style="width: 90%;font-size:12px; "> {% trans "Seggregation Centres and Pits" %}</button>
@@ -413,25 +413,22 @@ table, th, td
                                     <label><input type="radio" name = "radiogrp" id = "rejwetradio" value="{rejwetradio}" onchange="showDatePicker();"><span>{% trans "Rejected Wet Waste Trend" %}</span></label>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- <div class="checkbox"></div>
                             <div class="checkbox">
                                 <label><input type="checkbox" value ="{graph}" onchange=""><span> Graphs (Coming Soon..)</span></label>
                             </div>
                         </div> -->
                         
-                    </div>
-                          
-                   
-                    
-                                        
+                    <!-- </div>
+                                       
                     <br>
                     <div id="datepick">
                       <div class="wid_datepick" id="boundary">
                           <label>Date  <input type="date" id="chorodate" name="chorodate" onchange="putWFSChoro(this);"></label>
                       </div>
-                    </div>
-                </div>
+                    </div>  
+                </div> -->
                       
             </form>
 
@@ -725,7 +722,7 @@ table, th, td
                     else if (boundary == "{zones}")    
                         putWMSru("geonode:zone_polygon300121");   
                     else if (boundary == "{bubble}")    
-                        putWMSru("geonode:bubbles_2_9dec2020");   
+                        putWMSru("geonode:bubble_6march");   
                  
                     else if (boundary == "{spot}"){    
                         //putWMSru("geonode:spots_3december");
@@ -745,7 +742,7 @@ table, th, td
                     else if (boundary == "{zones}")                        
                         removeWMS("geonode:zone_polygon300121");
                     else if (boundary == "{bubble}")    
-                        removeWMS("geonode:bubbles_2_9dec2020");  
+                        removeWMS("geonode:bubble_6march");  
                     else if (boundary == "{spot}")                        
                         {
                             LayerList.forEach(layer => mymap.removeLayer(layer));
@@ -834,7 +831,7 @@ table, th, td
                console.log(wms_layer);
                }
                
-               else if (layer == "geonode:bubbles_2_9dec2020") {
+               else if (layer == "geonode:bubble_6march") {
                 console.log(layer)
                 var wms_layer = L.tileLayer.wms('https://communitygis.net/geoserver/wms', {
                     layers: layer,
@@ -1438,6 +1435,14 @@ table, th, td
                                 "<tr><td><b>Zone Name</b></td><td>" + feature.properties.zone_name + "</td></tr>" +
                                 "<tr><td><b>Zone Number</b></td><td>" + feature.properties.zono_numbe+ "</td></tr>" + "</table>";
                         } 
+                        if (feature.properties.bubble_nm) {
+                            console.log("I reached at");
+                            insti_content = "<table class = 'popupclass' ><tr><td><b>Zones</b></td><td></td></tr>" +
+                                "<tr><td><b>Bubble Name: </b></td><td>" + feature.properties.bubble_nm + "</td></tr>" +
+                                "<tr><td><b>Zone Name: </b></td><td>" + feature.properties.zone_name + "</td></tr>" +
+                                "<tr><td><b>Zone Number: </b></td><td>" + feature.properties.zone_id+ "</td></tr>" + "</table>";
+                        } 
+                        
 
                         popup.setContent(insti_content);
                             popup.setLatLng(e.latlng);

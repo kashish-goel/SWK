@@ -200,9 +200,9 @@ if(true){
     zoneControlDiv =  <Control position="bottomleft" className="legend-div">
 
     <div className="info">
-        <h4 style={{fontSize:"15px",fontWeight:"bold",marginLeft:"100px"}}>Click on polygon to select lane</h4>
+        <h4 style={{fontSize:"15px",fontWeight:"bold"}}>Click on polygon to select lane</h4>
     </div>
-    <svg className = "svg-legend" ref={svgLegRef} id="svg-color-scale" style={{fontSize:"13px",marginLeft:"50px"}}></svg>
+    <svg className = "svg-legend" ref={svgLegRef} id="svg-color-scale" style={{fontSize:"13px"}}></svg>
 
 </Control>
 }else{
