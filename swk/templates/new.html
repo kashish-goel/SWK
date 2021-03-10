@@ -78,7 +78,10 @@
                     <li><a href="https://communitygis.net/layers/?limit=5&offset=0">{% trans "Upload Layer" %}</a></li>
 
                     <li><a href="{% url 'dashboard' %}">{% trans "Dashboard" %}</a></li>
+
+                    {% if request.user|has_group:"supervisor" %}
                     <li><a href="{% url 'report' %}">{% trans "Report" %}</a></li>
+                    {% endif %}
 
                     {% if user.is_authenticated %}
                     <li><a href="{% url 'logout' %}">{% trans "Logout" %}</a></li>
@@ -134,15 +137,18 @@
 
     <!-- ======= Footer ======= -->
     
-    <footer>
-        <div id="footer" style="height: auto; width:fit-content;"> 
-            <div class="logo me-auto">
-                <img class="logo" style="margin-left: 10px; height: 80px; width: 120px;" src="{% static 'images/Logo-Unit_SWK.jpg' %}" alt="My image">
-            </div>
-                       
-            {% block footer %}Derived from FOSS project Communitygis.net supported by CTARA IITB {% endblock %}
-        </div>
-    </footer>
+   <!-- <footer class="text-center text-white fixed-bottom" style="background-color: #21081a;bottom: 0px;"> -->
+    <footer class="text-center text-white" style="background-color: #21081a;bottom: 0px;">
+
+  <!-- Copyright -->
+  <div class="text-justify p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    <img class="logo" style="margin-top: 5px; height: 80px; width: 120px;" src="{% static 'images/Logo-Unit_SWK.jpg' %}" alt="My image">
+    <a class="text-white"><p>Developed by Respirer Living Sciences Pvt. Ltd using FOSS project Communitygis.net supported by CTARA IITB.</p>
+        <p>Software Developer  Team: Monika Shah ( Respirer Living Science Ltd ), Shweta Panwar from CTARA ,  Animesh Nautiyal from CTARA <br>under guidance of Prof. Jitendra Shah (CTARA).</p>
+        </a>
+  </div>
+  <!-- Copyright -->
+</footer>
     <!-- End #footer -->
     {% block extra_javascript %} {% endblock %}
 
