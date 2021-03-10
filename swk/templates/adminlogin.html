@@ -34,16 +34,16 @@
 <div class='container mt-5' style="text-align: center; margin-top: 500px;">
     <form action="{% url 'login' %}" method="POST" class="form-group">
         {% csrf_token %}
-        <div class="myform">
+        <div class="myform"><br><br><br><br>
             <h3>{% trans "SWK Portal Login" %}</h3>
 
             <div class="card-panel">
                 <input type="text" class="form-control" name="username" aria-describedby="emailHelp" placeholder={% trans "EnterUsername" %} id="name">
             </div>
-
+            <br>
             <div class="card-panel">
                 <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder={% trans "Password" %}>
-            </div>
+            </div><br><br>
 
             <button type="submit" class="btn btn-success btn-lg">{% trans "Login" %} </button>
         </div>

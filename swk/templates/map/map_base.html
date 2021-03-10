@@ -1,5 +1,8 @@
-{% extends '../new.html' %} {% load static wagtailuserbar %} {% load wagtailcore_tags %} {% load static %} {% block extra_css %}
-{% load i18n %}
+{% extends '../new.html' %} 
+<!-- {% load static wagtailuserbar %} {% load wagtailcore_tags %} -->
+ {% load static %} {% load i18n %}
+ {% block extra_css %}
+
 <!-- Bootstrap CSS -->
 
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -171,12 +174,6 @@
         $(this).toggleClass('highlight')
     })
 </script>
-
-
-
-
-
-
 <script>
     $("#closebutton").click(function() {
         ctlSidebar.toggle();
