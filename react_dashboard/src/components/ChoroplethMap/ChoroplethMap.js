@@ -167,7 +167,8 @@ layer.on({
     click: e => {
         let zone_id = e.target.feature.properties.zone_id;
         console.log(zone_id)
-        if(zone_id !== 'zone_4' && zone_id !=='zone_5' && zone_id !== 'zone_9' && zone_id !=='' )
+        // if(zone_id !== 'zone_4' && zone_id !=='zone_5' && zone_id !== 'zone_9' && zone_id !=='' )
+        if(zone_id !=='' )
             setSelLane(zone_id)
     },
     mouseover: e => {
@@ -260,6 +261,8 @@ let menuItems;
         
         
          <MenuItem value={'01'}>January</MenuItem>
+         <MenuItem value={'02'}>February</MenuItem>
+         <MenuItem value={'03'}>March</MenuItem>
         
     </Select>
     }
