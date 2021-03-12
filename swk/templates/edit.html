@@ -71,7 +71,7 @@
         <div>
             <label>{% trans "Date:" %}</label>
             <div>
-                <input type="text" name="date" id="id_date" required value="{{ data.date|date:'d M,Y' }}" />
+                <input type="text" name="date" id="id_date" required value="{{ data.date|date:'Y-m-d' }}" />
             </div>
         </div>
         <div>

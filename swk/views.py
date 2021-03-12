@@ -60,6 +60,7 @@ def downloadzone(request,year,month,day,year1,month1,day1,zone_name):
 def edit(request, id):  
     data = Tracksheet.objects.get(track_id=id)
     # docdata  = doctor.objects.get(id=id)  
+    print(data.date)
     return render(request,'edit.html', {'data':data}) 
 
 def update(request, id):
