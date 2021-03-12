@@ -47,7 +47,39 @@
             var value3;            
             var total_rejected = 0;
             var value4;
+            var total_house_reach = 0;
+            var value5;
+            var total_house_segre = 0;
+            var value6;            
+            var total_house_mix = 0;
+            var value7;
+
+            $("td:nth-child(2)").each(function(){
+                value5 = $(this).html();
+                // alert(value);
+                total_house_reach += parseInt(value5);
+                // alert(total_drybf);
+            
+                $('#result_house_reach').text(total_house_reach);
+            });
+            $("td:nth-child(3)").each(function(){
+                value6 = $(this).html();
+                // alert(value);
+                total_house_segre += parseInt(value6);
+                // alert(total_drybf);
+            
+                $('#result_house_segre').text(total_house_segre);
+            });
             $("td:nth-child(4)").each(function(){
+                value7 = $(this).html();
+                // alert(value);
+                total_house_mix += parseInt(value7);
+                // alert(total_drybf);
+            
+                $('#result_house_mix').text(total_house_mix);
+            });
+
+            $("td:nth-child(5)").each(function(){
                 value = $(this).html();
                 // alert(value);
                 total_drybf += parseInt(value);
@@ -56,7 +88,7 @@
                 $('#result_drybf').text(total_drybf);
             });
             
-            $("td:nth-child(5)").each(function(){
+            $("td:nth-child(6)").each(function(){
                 value1 = $(this).html();
                 // alert(value);
                 total_dryaf += parseInt(value1);
@@ -64,7 +96,7 @@
                 $('#result_dryaf').text(total_dryaf);
             });
 
-            $("td:nth-child(6)").each(function(){
+            $("td:nth-child(7)").each(function(){
                 value2 = $(this).html();
                 // alert(value);
                 total_wetbf += parseInt(value2);
@@ -72,7 +104,7 @@
                 $('#result_wetbf').text(total_wetbf);
             });
 
-            $("td:nth-child(7)").each(function(){
+            $("td:nth-child(8)").each(function(){
                 value3 = $(this).html();
                 // alert(value);
                 total_wetaf += parseInt(value3);
@@ -80,18 +112,22 @@
                 $('#result_wetaf').text(total_wetaf);
             });
 
-            $("td:nth-child(12)").each(function(){
+            $("td:nth-child(13)").each(function(){
                 value4 = $(this).html();
                 // alert(value);
                 total_rejected += parseInt(value4);
                 // alert(total_drybf);
                 $('#result_rejected').text(total_rejected);
             });
+            $('#total').text('Total');
             $('#result_drybf').text(total_drybf/2);
             $('#result_dryaf').text(total_dryaf/2);
             $('#result_wetbf').text(total_wetbf/2);
             $('#result_wetaf').text(total_wetaf/2);
             $('#result_rejected').text(total_rejected/2);
+            $('#result_house_reach').text(total_house_reach/2);
+            $('#result_house_segre').text(total_house_segre/2);
+            $('#result_house_mix').text(total_house_mix/2);
             
 
         });
@@ -119,7 +155,7 @@
                 <thead class="thead-dark">
 
                     <tr>
-                
+                        <th ></th>
                         <th>{% trans "Houses Reached" %} </th>
                         <th>{% trans "Houses Doing Segregation" %}</th>
                         <th>{% trans "Houses Giving Mixed Waste" %}</th>
@@ -145,6 +181,7 @@
                    
 
                     <tr id="somerow">
+                        <td></td>
                         <td>{{i.num_houses_reached}}</td>
                         <td>{{i.num_houses_doing_segg}}</td>
                         <td>{{i.num_houses_giving_mixwaste}}</td>
@@ -168,7 +205,11 @@
                     {% endfor %}
                     
                 </tbody>
-                <tr><th>Total</th><td>-</td><td>-</td>
+                <tr style="color:midnightblue">
+                    <td id="total" style="font-weight: bold;"></td>
+                    <td id ="result_house_reach" style="font-weight: bold;"></td>
+                    <td id ="result_house_segre" style="font-weight: bold;"></td>
+                    <td id ="result_house_mix" style="font-weight: bold;"></td>
                     <td id ="result_drybf" style="font-weight: bold;"></td>
                     <td id ="result_dryaf" style="font-weight: bold;"></td>
                     <td id ="result_wetbf" style="font-weight: bold;"></td>
