@@ -235,6 +235,6 @@ def AboutUs(request):
     return render(request,"aboutus.html")
 
 def report(request):
-        return HttpResponseRedirect('/report_builder/report/5')
+        return HttpResponseRedirect('/report_builder/report/9')
 
         
