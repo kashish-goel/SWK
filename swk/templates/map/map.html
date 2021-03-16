@@ -322,7 +322,13 @@ table, th, td
                               <label><input type="checkbox" value="{lane}" onchange="getBoundaryru(this)"><span> Lane(coming up soon...)</span></label>
                           </div> -->
                           <div class="checkbox">
-                              <label><input type="checkbox" value="{spot}" onchange="getBoundaryru(this)"><span> {% trans "Spot" %}</span></label>
+                            <label><input type="checkbox" value="{binpath}" onchange="getBoundaryru(this)"><span> {% trans "Bin Paths " %}</span></label>
+                         </div>
+                          <div class="checkbox">
+                            <label><input type="checkbox" value="{spots}" onchange="getBoundaryru(this)"><span> {% trans "Spots " %}</span></label>
+                         </div>
+                          <div class="checkbox">
+                              <label><input type="checkbox" value="{spot}" onchange="getBoundaryru(this)"><span> {% trans "Spot Images" %}</span></label>
                           </div>
                           <div class="checkbox">
                               <label><input type="checkbox" value="{bubble}" onchange="getBoundaryru(this)"><span> {% trans "Bubble" %}</span></label>
@@ -462,18 +468,11 @@ table, th, td
             var pointLayerList = [];
 
             var myWorliLayerList = [];
-            var popup_layer, insti_content;           
+            var popup_layer, content;           
             let  imageloca= [];
             let currentPos = null;
 
-            // var pointLayerList = [];
-            // var newLayerList = [];
-            // var faciLayerList = [];
-            // var tribLayerList = [];
-            
-            // let tableurl;
-            // var searchControl;
-            
+                       
 
         // <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -591,7 +590,7 @@ table, th, td
                 let url_sc;
                 // let keys = Object.keys(activatedHealthFacility);
                
-                url_sc = 'https://communitygis.net/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typename=geonode%3Aspots_3december&outputFormat=json&srs=EPSG%3A4326&srsName=EPSG%3A4326';
+                url_sc = 'https://communitygis.net/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typename=geonode%3Aworli_spot_updated_10march&outputFormat=json&srs=EPSG%3A4326&srsName=EPSG%3A4326';
               
                 newurl = url_sc;
 
@@ -719,14 +718,20 @@ table, th, td
                         putWMSru("geonode:worli_hand_drawn_update_26oct");
                     else if (boundary == "{corbound}")
                         putWMSru("geonode:ward_193_updated_3nov");
+                    else if (boundary == "{binpath}")    
+                        putWMSru("geonode:binpath_worli_merged_10march_updated"); 
                     else if (boundary == "{zones}")    
                         putWMSru("geonode:zone_polygon300121");   
                     else if (boundary == "{bubble}")    
-                        putWMSru("geonode:bubble_6march");   
-                 
+                        putWMSru("geonode:worli_bubble_updated_15march");   
+                    else if (boundary == "{spots}"){    
+                        putWMSru("geonode:worli_spot_updated_10march"); 
+                        // displayPoints(tempParameter);
+                    }   
                     else if (boundary == "{spot}"){    
                         //putWMSru("geonode:spots_3december");
                         tempParameter.typeName = 'geonode:spots_3december'; 
+                        // tempParameter.typeName = 'geonode:worli_spot_updated_10march'; 
                         displayPoints(tempParameter);
                     }   
                        
@@ -739,10 +744,14 @@ table, th, td
                         removeWMS("geonode:worli_hand_drawn_update_26oct");
                     else if (boundary == "{corbound}")                        
                         removeWMS("geonode:ward_193_updated_3nov");
+                    else if (boundary == "{binpath}")                        
+                        removeWMS("geonode:binpath_worli_merged_10march_updated");
                     else if (boundary == "{zones}")                        
                         removeWMS("geonode:zone_polygon300121");
                     else if (boundary == "{bubble}")    
-                        removeWMS("geonode:bubble_6march");  
+                        removeWMS("geonode:worli_bubble_updated_15march");  
+                    else if (boundary == "{spots}")    
+                        removeWMS("geonode:worli_spot_updated_10march");
                     else if (boundary == "{spot}")                        
                         {
                             LayerList.forEach(layer => mymap.removeLayer(layer));
@@ -815,7 +824,23 @@ table, th, td
                mymap.setView([19.0220, 72.8110], 14);
                newLayerList.push(wms_layer);
                console.log(wms_layer);
-               }else if (layer == "geonode:zone_polygon300121") {
+               }
+               else if (layer == "geonode:binpath_worli_merged_10march_updated") {
+                   console.log(layer)
+                   var wms_layer = L.tileLayer.wms('https://communitygis.net/geoserver/wms', {
+                       layers: layer,
+                       format: 'image/png',
+                        opacity: .7,
+                       
+                   });
+               wms_layer.addTo(mymap);
+               mymap.setView([19.02, 72.818], 16);
+               newLayerList.push(wms_layer);
+               popup_layer="https://communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
+               console.log("popupzone",popup_layer);
+               console.log(wms_layer);
+               }
+               else if (layer == "geonode:zone_polygon300121") {
                    console.log(layer)
                    var wms_layer = L.tileLayer.wms('https://communitygis.net/geoserver/wms', {
                        layers: layer,
@@ -831,7 +856,7 @@ table, th, td
                console.log(wms_layer);
                }
                
-               else if (layer == "geonode:bubble_6march") {
+               else if (layer == "geonode:worli_bubble_updated_15march") {
                 console.log(layer)
                 var wms_layer = L.tileLayer.wms('https://communitygis.net/geoserver/wms', {
                     layers: layer,
@@ -846,7 +871,7 @@ table, th, td
                 console.log("popupzone",popup_layer);
                 console.log(wms_layer);
                 }
-                else if (layer == "geonode:spots_3december") {
+                else if (layer == "geonode:worli_spot_updated_10march") {
                 console.log(layer)
                 var wms_layer = L.tileLayer.wms('https://communitygis.net/geoserver/wms', {
                     layers: layer,
@@ -857,18 +882,11 @@ table, th, td
                 wms_layer.addTo(mymap);
 
 
-                mymap.setView([19.0182, 72.8168], 19);
+                mymap.setView([19.0213, 72.8172], 17);
                 newLayerList.push(wms_layer);
-                //popup_layer="https://communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
+                popup_layer="https://communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
                 
                 console.log(wms_layer);
-                mymap.on('click', function(e) {
-                currentPos = [e.latlng.lat, e.latlng.lng];
-                
-                
-                });
-                queryspotImage(currentPos);
-                
             }
             } 
 
@@ -1431,20 +1449,35 @@ table, th, td
                         });
                         if (feature.properties.zono_numbe) {
                             console.log("I reached at");
-                            insti_content = "<table class = 'popupclass' ><tr><td><b>Zones</b></td><td></td></tr>" +
+                            content = "<table class = 'popupclass' ><tr><td><b>Zone Information</b></td><td></td></tr>" +
                                 "<tr><td><b>Zone Name</b></td><td>" + feature.properties.zone_name + "</td></tr>" +
                                 "<tr><td><b>Zone Number</b></td><td>" + feature.properties.zono_numbe+ "</td></tr>" + "</table>";
+                        }
+                        if (feature.properties.layer) {
+                            console.log("I reached at");
+                            content = "<table class = 'popupclass' ><tr><td><b>BinPath Information</b></td><td></td></tr>" +
+                                "<tr><td><b>Zone Name</b></td><td>" + feature.properties.zone_name + "</td></tr>" +
+                                "<tr><td><b>Zone Id</b></td><td>" + feature.properties.zone_id+ "</td></tr>" + "</table>";
                         } 
                         if (feature.properties.bubble_nm) {
                             console.log("I reached at");
-                            insti_content = "<table class = 'popupclass' ><tr><td><b>Zones</b></td><td></td></tr>" +
+                            content = "<table class = 'popupclass' ><tr><td><b>Bubble Information</b></td><td></td></tr>" +
+                                "<tr><td><b>Bubble Id: </b></td><td>" + feature.properties.bubble_id + "</td></tr>" +
                                 "<tr><td><b>Bubble Name: </b></td><td>" + feature.properties.bubble_nm + "</td></tr>" +
                                 "<tr><td><b>Zone Name: </b></td><td>" + feature.properties.zone_name + "</td></tr>" +
                                 "<tr><td><b>Zone Number: </b></td><td>" + feature.properties.zone_id+ "</td></tr>" + "</table>";
                         } 
+                        if (feature.properties.spot_id) {
+                            console.log("I reached at");
+                            content = "<table class = 'popupclass' ><tr><td><b>Spots Information</b></td><td></td></tr>" +
+                                "<tr><td><b>Spot Number: </b></td><td>" + feature.properties.spot_id + "</td></tr>" +
+                                "<tr><td><b>Spot Name: </b></td><td>" + feature.properties.spot_name + "</td></tr>" +
+                                "<tr><td><b>Zone Name: </b></td><td>" + feature.properties.zone_id + "</td></tr>" +
+                                "<tr><td><b>Zone Number: </b></td><td>" + feature.properties.zone_name+ "</td></tr>" + "</table>";
+                        } 
                         
 
-                        popup.setContent(insti_content);
+                        popup.setContent(content);
                             popup.setLatLng(e.latlng);
                             mymap.openPopup(popup);
                         }
