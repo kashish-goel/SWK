@@ -256,10 +256,13 @@
         column12 = row.cells[11].innerText;
         column13 = row.cells[12].innerText;
         column14 = row.cells[13].innerText;
-        column15 = row.cells[14].innerText;
-        column16 = row.cells[15].innerText;
-        column17 = row.cells[16].innerText;
-    /* add a new records in the array */
+        // alert(column11);
+        // column15 = row.cells[14].innerText;
+        // column16 = row.cells[15].innerText;
+        // column17 = row.cells[16].innerText;
+    /* add a new records in the array */  
+        column11 = column11.replace(/,/g, '.') 
+
         rows.push(
             [
                 column1,
@@ -268,7 +271,8 @@
                 column4,
                 column5,
                 column6,
-                column7,column8,column9,column10,column11,column12,column13,column14,column15,column16,column17
+                column7,column8,column9,column10,column11,column12,column13,column14
+                // column15,column16,column17
             ]
         );
  
