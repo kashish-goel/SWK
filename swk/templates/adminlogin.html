@@ -8,11 +8,11 @@
 <link rel="stylesheet" href=""> {% block extra_css %}
 <style>
     .myform {
-        margin: 250px 0px;
+        margin: 0px 0px;
     }
     
     .card-panel {
-        margin-bottom: 20px;
+        margin-bottom: 0px;
     }
 </style>
 {% endblock %} {% block content %} {% if messages %}
@@ -31,7 +31,7 @@
 {% endif %}
 
 
-<div class='container mt-5' style="text-align: center; margin-top: 500px;">
+<div class='container' style="text-align: center;">
     <form action="{% url 'login' %}" method="POST" class="form-group">
         {% csrf_token %}
         <div class="myform"><br><br><br><br>
