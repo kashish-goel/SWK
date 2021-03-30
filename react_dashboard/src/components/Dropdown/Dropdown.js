@@ -15,9 +15,9 @@ export default function Dropdown({data, selLane,setSelLane}) {
                <MenuItem key={zone.zone_id} value={zone.zone_id}>{zone.lane_name}</MenuItem> 
             ))}
                {/* <MenuItem key={zone.zone_id} value={zone.zone_id}>{zone.lane_name}</MenuItem>  */}
-               <MenuItem key="Nagoba Ghumat- Achanak" value="Nagoba Ghumat- Achanak" disabled={true} >Nagoba Ghumat- Achanak</MenuItem> 
+               {/* <MenuItem key="Nagoba Ghumat- Achanak" value="Nagoba Ghumat- Achanak" disabled={true} >Nagoba Ghumat- Achanak</MenuItem> 
                <MenuItem key="Golfadevi" value="Golfadevi" disabled={true} >Golfadevi</MenuItem> 
-               <MenuItem key="Sonapur - Dukkur Galli" value="Sonapur - Dukkur Galli" disabled={true} >Sonapur - Dukkur Galli</MenuItem> 
+               <MenuItem key="Sonapur - Dukkur Galli" value="Sonapur - Dukkur Galli" disabled={true} >Sonapur - Dukkur Galli</MenuItem>  */}
           </Select>
       </FormControl>
     )

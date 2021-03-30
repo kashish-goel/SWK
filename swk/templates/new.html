@@ -16,11 +16,12 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Lato:400,300,700,900" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"> -->
     <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
     <link href="{% static 'assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
     <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
-
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> -->
     <!-- Template Main CSS File -->
     <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
 
@@ -30,125 +31,133 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-    <!-- {% block extra_css %} 
-    .logo-container {
+    {% block extra_css %} 
+    <!-- .logo-container {
         display: flex;
         justify-content: space-between;
-      }
-    {% endblock %} -->
+      } -->
+    .navbar .navbar-collapse {
+        text-align: center;
+        width:20%;
+        justify-content: center;
+    }
+    .navbar{
+        justify-content: center;
+    }
+     
+    {% endblock %}
+
 
 </head>
 
 <body>
     
-    <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top">
-            
-        <div class="container d-flex align-items-center">  
-            <!-- <div id="header-wrap"> -->
-                <img class="header-left" src="{% static 'images/IDFC_FIRST_Bank_logo.jpg' %}" style="float:left;height: 80px; width: 80px;overflow: hidden;">
-                <img class="header-center" src="{% static 'images/sms_logo.jpg' %}" style="margin: 0 auto !important;height: 80px; width: 80px;overflow: hidden;">
-                <img class="header-right" src="{% static 'images/mcgm_logo.jpg' %}" style="float:right;height: 80px; width: 80px;overflow: hidden;">              
-            <nav class="nav-menu d-none d-lg-block">
-                <ul>
-                    <li class="active"><a href="{% url 'homepage' %}">{% trans "Home" %}</a></li>
-                    <li><a href="{% url 'aboutus' %}">{% trans "About Us" %}</a></li>
-                    <li><a href="{% url 'swk_map' %}">{% trans "Maps" %}</a></li>
-                    
-                    {% if request.user|has_group:"supervisor" %}
-
-                    <li class="drop-down"><a href="">{% trans "Enter/View Data" %}</a>
-                        <ul>
-                            <li><a href="{% url 'trackform' %}">{% trans "Daily Entry Form" %}</a></li>
-                            <!-- <li><a href="{% url 'dutyentryform' %}">Duty Entry Form</a> -->
-                                <!-- <ul>
-                                    <li><a href="#">Deep Drop Down 1</a></li>
-                                    <li><a href="#">Deep Drop Down 2</a></li>
-                                    <li><a href="#">Deep Drop Down 3</a></li>
-                                    <li><a href="#">Deep Drop Down 4</a></li>
-                                    <li><a href="#">Deep Drop Down 5</a></li>
-                                </ul> -->
-                            </li>
-                            <li><a href="https://ee.humanitarianresponse.info/x/dwsYkgyQ">{% trans "Kobo Form" %}</a></li>
-                            <li><a href="{% url 'show' %}">{% trans "View Daily Entry Data" %}</a></li>
-                            <!-- <li><a href="#">Drop Down 5</a></li> -->
-                        </ul>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark flex-column align-items-stretch">
+        
+        <div class=" d-flex align-items-center" style="justify-content: space-evenly;">
+            <img class="header-left" src="{% static 'images/IDFC_FIRST_Bank_logo.jpg' %}" style="height: 60px; width: 120px;overflow: hidden;">
+            <img class="header-center" src="{% static 'images/sms_logo.jpg' %}" style="height: 60px; width: 80px;overflow: hidden;">
+            <img class="header-right" src="{% static 'images/mcgm_logo.jpg' %}" style="height: 60px; width: 60px;overflow: hidden;">              
+        </div>
+        <!-- <div class="container d-flex align-items-center">
+            <img class="header-left" src="{% static 'images/IDFC_FIRST_Bank_logo.jpg' %}" style="float:left;height: 60px; width: 120px;overflow: hidden;">
+            <img class="header-center" src="{% static 'images/sms_logo.jpg' %}" style="margin: 0 auto !important;height: 60px; width: 80px;overflow: hidden;">
+            <img class="header-right" src="{% static 'images/mcgm_logo.jpg' %}" style="float:right;height: 60px; width: 60px;overflow: hidden;">              
+        </div> -->
+        <!-- <nav class="navbar navbar-expand-lg bg-dark navbar-dark"> -->
+            <nav class ="nav-menu d-none d-lg-block">
+            <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            <div class="collapse navbar-collapse"> -->
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                    <a href="{% url 'homepage' %}" class="nav-link text-white" >{% trans "Home" %}</a>
                     </li>
-                    {% endif %}
-                    <li><a href="https://communitygis.net/layers/?limit=5&offset=0">{% trans "Upload Layer" %}</a></li>
-
-                    <li><a href="{% url 'dashboard' %}">{% trans "Dashboard" %}</a></li>
-
+                    <li class="nav-item">
+                        <a href="{% url 'aboutus' %}" class="nav-link text-white">{% trans "About Us" %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'swk_map' %}" class="nav-link text-white">{% trans "Maps" %}</a>
+                    </li>
                     {% if request.user|has_group:"supervisor" %}
-                    <li><a href="{% url 'report' %}">{% trans "Report" %}</a></li>
+                        <!-- <li class="nav-item drop-down">
+                            <a href=""class="nav-link dropdown-toggle text-white" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{% trans "Enter/View Data" %}</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item text-white" href="{% url 'trackform' %}">{% trans "Daily Entry Form" %}</a>
+                                <a class="dropdown-item" href="https://ee.humanitarianresponse.info/x/Y3Ji0ej7">{% trans "Kobo Form" %}</a>
+                                <a class="dropdown-item" href="{% url 'show' %}">{% trans "View Daily Entry Data" %}</a>
+                            </div>
+                        </li> -->
+
+                        <li class="nav-item">
+                            <a href="{% url 'trackform' %}" class="nav-link text-white">{% trans "Daily Entry Form" %}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://ee.humanitarianresponse.info/x/Y3Ji0ej7" class="nav-link text-white">{% trans "Kobo Form" %}</a>
+                        </li>
+                        <li class="nav-item" >
+                            <a href="{% url 'show' %}" class="nav-link text-white">{% trans "View Daily Entry Data" %}</a>
+                        </li>
+                    {% endif %}
+                        <li class="nav-item">
+                            <a href="https://communitygis.net/layers/?limit=5&offset=0" class="nav-link text-white">{% trans "Upload Layer" %}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'dashboard' %}"class="nav-link text-white">{% trans "Dashboard" %}</a>
+                        </li>
+                    {% if request.user|has_group:"supervisor" %}
+                        <li class="nav-item">
+                            <a href="{% url 'report' %}" class="nav-link text-white">{% trans "Report" %}</a>
+                        </li>
                     {% endif %}
 
                     {% if user.is_authenticated %}
-                    <li><a href="{% url 'logout' %}">{% trans "Logout" %}</a></li>
-                    {% else %}
+                        <li class="nav-item">
+                            <a href="{% url 'logout' %}" class="nav-link text-white">{% trans "Logout" %}</a>
+                        </li>
+                        {% else %}
 
-                    <li><a href="{% url 'login' %}">{% trans "Login" %}</a></li>
+                        <li class="nav-item">
+                            <a href="{% url 'login' %}" class="nav-link text-white">{% trans "Login" %}</a>
+                        </li>
                     {% endif %}
 
-
                 </ul>
-            </nav>
-            <!-- .nav-menu -->
-
-        
-        <div class="header-content">
-            
-                <form action="{% url 'set_language' %}" method="post">
-                    {% csrf_token %}
-                    <input name="next" type="hidden" value="{{ redirect_to }}" />
-            
-                    <select name="language" style="width: auto;" id="">
-                      {% get_current_language as LANGUAGE_CODE %}
-                      {% get_available_languages as LANGUAGES %}
-                      {% get_language_info_list for LANGUAGES as languages %}
-                      {% for language in languages %}
-            
-                          <option value="{{ language.code }}"
-                            {% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
-                                {{ language.name_local }} ({{ language.code }})
-                          </option>         
-                      {% endfor %}
-                    </select>
-                    <input type = "submit" value ="Go">
-                </form>
-            
             </div>
-        </div>
-            
-        
-    </header>
+        </nav>
+    </nav>
     <!-- End #header -->
 
     <!-- ======= Hero Section ======= -->
 
     <!-- #hero -->
     
-    <main>{% block content%} {% endblock%}
+    <main>
+        {% block content%}
+        {% endblock%}
        
     </main>
-   
+
 
     <!-- End #main -->
 
     <!-- ======= Footer ======= -->
     
-   <!-- <footer class="text-center text-white fixed-bottom" style="background-color: #21081a;bottom: 0px;"> -->
-    <footer class="text-center text-white" style="background-color: #21081a;bottom: 0px;">
-
+   <!-- <footer class="text-center text-white " style="background-color: #21081a;bottom: 0px;"> -->
+       <!-- <footer class="text-center text-white fixed-bottom" style="background-color: #21081a;bottom: 0px;"> -->
+        <footer class="text-center text-white style="background-color: #21081a;bottom: 0px;">
+       
   <!-- Copyright -->
-  <div class="text-justify p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    <img class="logo" style="margin-top: 5px; height: 80px; width: 120px;" src="{% static 'images/Logo-Unit_SWK.jpg' %}" alt="My image">
-    <a class="text-white"><p>Developed by Respirer Living Sciences Pvt. Ltd using FOSS project Communitygis.net supported by CTARA IITB.</p>
-        <p>Software Developer  Team: Monika Shah ( Respirer Living Science Ltd ), Shweta Panwar from CTARA ,  Animesh Nautiyal from CTARA <br>under guidance of Prof. Jitendra Shah (CTARA).</p>
+    <div class="text-justify p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        <img class="logo" style="margin-top: 5px; height: 80px; width: 120px;" src="{% static 'images/Logo-Unit_SWK.jpg' %}" alt="My image">
+        <a class="text-white"><p>Developed by Respirer Living Sciences Pvt. Ltd using FOSS project Communitygis.net supported by CTARA IITB.</p>
+            <p>Software Developer  Team: Monika Shah ( Respirer Living Science Ltd ), Shweta Panwar from CTARA ,  Animesh Nautiyal from CTARA <br>under guidance of Prof. Jitendra Shah (CTARA).</p>
         </a>
-  </div>
-  <!-- Copyright -->
-</footer>
+    </div>
+    <!-- Copyright -->
+    </footer>
     <!-- End #footer -->
     {% block extra_javascript %} {% endblock %}
 
@@ -166,6 +175,6 @@
     <!-- Template Main JS File -->
     <script src="{% static 'assets/js/main.js' %}"></script>
 
-</body>
 
+</body>
 </html>
