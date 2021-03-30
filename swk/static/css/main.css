@@ -13,7 +13,7 @@ h3 {
     color: blue;
     font-size: large;
 }
-#footer {
+/* #footer {
     background-color: bisque;
     height: 50px;
     padding-top: 10px;
@@ -30,7 +30,7 @@ footer li spam, footer li a, footer li a:hover{
     color:white;
     font-size: 12px;
     margin-right: 40px;
-}
+} */
 .save btn btn-default{
     color:black;
 }

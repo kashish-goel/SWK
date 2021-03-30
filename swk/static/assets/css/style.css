@@ -13,6 +13,8 @@
 body {
     font-family: "Open Sans", sans-serif;
     color: #777;
+    
+    height: 100%;
 }
 
 #footer {
@@ -169,7 +171,7 @@ h6,
     color: #181818;
     padding: 5px 15px;
     transition: 0.3s;
-    font-size: 14px;
+    font-size: 17px;
     font-family: "Open Sans", sans-serif;
     font-weight: bolder;
 }
@@ -376,8 +378,8 @@ h6,
     background: url("../img/SWK_Boats_Sealink2.jpg") top center;
     background-size: cover;
     position: relative;
-    margin-bottom: -80px;
-    /* overflow: hidden; */
+    /* margin-bottom: -80px; */
+    /* overflow: scroll; */
 }
 
 #hero:before {
