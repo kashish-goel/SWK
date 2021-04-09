@@ -59,73 +59,82 @@
             <img class="header-center" src="{% static 'images/sms_logo.jpg' %}" style="height: 60px; width: 80px;overflow: hidden;">
             <img class="header-right" src="{% static 'images/mcgm_logo.jpg' %}" style="height: 60px; width: 60px;overflow: hidden;">              
         </div>
-        <!-- <div class="container d-flex align-items-center">
-            <img class="header-left" src="{% static 'images/IDFC_FIRST_Bank_logo.jpg' %}" style="float:left;height: 60px; width: 120px;overflow: hidden;">
-            <img class="header-center" src="{% static 'images/sms_logo.jpg' %}" style="margin: 0 auto !important;height: 60px; width: 80px;overflow: hidden;">
-            <img class="header-right" src="{% static 'images/mcgm_logo.jpg' %}" style="float:right;height: 60px; width: 60px;overflow: hidden;">              
-        </div> -->
-        <!-- <nav class="navbar navbar-expand-lg bg-dark navbar-dark"> -->
-            <nav class ="nav-menu d-none d-lg-block">
-            <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-            <div class="collapse navbar-collapse"> -->
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                    <a href="{% url 'homepage' %}" class="nav-link text-white" >{% trans "Home" %}</a>
+        
+        <nav class ="nav-menu d-none d-lg-block">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                <a href="{% url 'homepage' %}" class="nav-link text-white" >{% trans "Home" %}</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'aboutus' %}" class="nav-link text-white">{% trans "About Us" %}</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'swk_map' %}" class="nav-link text-white">{% trans "Maps" %}</a>
+                </li>
+                {% if request.user|has_group:"supervisor" %}
+                    <!-- <li class="nav-item drop-down">
+                        <a href=""class="nav-link dropdown-toggle text-white" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{% trans "Enter/View Data" %}</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item text-white" href="{% url 'trackform' %}">{% trans "Daily Entry Form" %}</a>
+                            <a class="dropdown-item" href="https://ee.humanitarianresponse.info/x/Y3Ji0ej7">{% trans "Kobo Form" %}</a>
+                            <a class="dropdown-item" href="{% url 'show' %}">{% trans "View Daily Entry Data" %}</a>
+                        </div>
+                    </li> -->
+
+                    <li class="nav-item">
+                        <a href="{% url 'trackform' %}" class="nav-link text-white">{% trans "Daily Entry Form" %}</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{% url 'aboutus' %}" class="nav-link text-white">{% trans "About Us" %}</a>
+                        <a href="https://ee.humanitarianresponse.info/x/Y3Ji0ej7" class="nav-link text-white">{% trans "Kobo Form" %}</a>
+                    </li>
+                    <li class="nav-item" >
+                        <a href="{% url 'show' %}" class="nav-link text-white">{% trans "View Daily Entry Data" %}</a>
+                    </li>
+                {% endif %}
+                    <li class="nav-item">
+                        <a href="https://communitygis.net/layers/?limit=5&offset=0" class="nav-link text-white">{% trans "Upload Layer" %}</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{% url 'swk_map' %}" class="nav-link text-white">{% trans "Maps" %}</a>
+                        <a href="{% url 'dashboard' %}"class="nav-link text-white">{% trans "Dashboard" %}</a>
                     </li>
-                    {% if request.user|has_group:"supervisor" %}
-                        <!-- <li class="nav-item drop-down">
-                            <a href=""class="nav-link dropdown-toggle text-white" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{% trans "Enter/View Data" %}</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item text-white" href="{% url 'trackform' %}">{% trans "Daily Entry Form" %}</a>
-                                <a class="dropdown-item" href="https://ee.humanitarianresponse.info/x/Y3Ji0ej7">{% trans "Kobo Form" %}</a>
-                                <a class="dropdown-item" href="{% url 'show' %}">{% trans "View Daily Entry Data" %}</a>
-                            </div>
-                        </li> -->
+                {% if request.user|has_group:"supervisor" %}
+                    <li class="nav-item">
+                        <a href="{% url 'report' %}" class="nav-link text-white">{% trans "Report" %}</a>
+                    </li>
+                {% endif %}
 
-                        <li class="nav-item">
-                            <a href="{% url 'trackform' %}" class="nav-link text-white">{% trans "Daily Entry Form" %}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="https://ee.humanitarianresponse.info/x/Y3Ji0ej7" class="nav-link text-white">{% trans "Kobo Form" %}</a>
-                        </li>
-                        <li class="nav-item" >
-                            <a href="{% url 'show' %}" class="nav-link text-white">{% trans "View Daily Entry Data" %}</a>
-                        </li>
-                    {% endif %}
-                        <li class="nav-item">
-                            <a href="https://communitygis.net/layers/?limit=5&offset=0" class="nav-link text-white">{% trans "Upload Layer" %}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{% url 'dashboard' %}"class="nav-link text-white">{% trans "Dashboard" %}</a>
-                        </li>
-                    {% if request.user|has_group:"supervisor" %}
-                        <li class="nav-item">
-                            <a href="{% url 'report' %}" class="nav-link text-white">{% trans "Report" %}</a>
-                        </li>
-                    {% endif %}
+                <li class="nav-item">
+                    <a href="{% url 'faq' %}" class="nav-link text-white">{% trans "FAQ" %}</a>
+                </li>
 
-                    {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <a href="{% url 'logout' %}" class="nav-link text-white">{% trans "Logout" %}</a>
-                        </li>
-                        {% else %}
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a href="{% url 'logout' %}" class="nav-link text-white">{% trans "Logout" %}</a>
+                    </li>
+                    {% else %}
 
-                        <li class="nav-item">
-                            <a href="{% url 'login' %}" class="nav-link text-white">{% trans "Login" %}</a>
-                        </li>
-                    {% endif %}
+                    <li class="nav-item">
+                        <a href="{% url 'login' %}" class="nav-link text-white">{% trans "Login" %}</a>
+                    </li>
+                {% endif %}
 
-                </ul>
-            </div>
+            
+            <form action="{% url 'set_language' %}" method="post">
+                {% csrf_token %}
+                <input name="next" type="hidden" value="{{ redirect_to }}" />            
+                <select name="language" style="width: auto;" id="">
+                  {% get_current_language as LANGUAGE_CODE %}
+                  {% get_available_languages as LANGUAGES %}
+                  {% get_language_info_list for LANGUAGES as languages %}
+                  {% for language in languages %} 
+                      <option value="{{ language.code }}"
+                        {% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+                            {{ language.name_local }} ({{ language.code }})
+                      </option>    {% endfor %}
+                </select>  <input type = "submit" value ="Go">
+            </form>
+
+        </ul>
         </nav>
     </nav>
     <!-- End #header -->
@@ -147,10 +156,11 @@
     
    <!-- <footer class="text-center text-white " style="background-color: #21081a;bottom: 0px;"> -->
        <!-- <footer class="text-center text-white fixed-bottom" style="background-color: #21081a;bottom: 0px;"> -->
-        <footer class="text-center text-white style="background-color: #21081a;bottom: 0px;">
+        <footer class="text-center text-white" style="background-color: #21081a;bottom: 0px;">
        
   <!-- Copyright -->
-    <div class="text-justify p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    <!-- <div class="text-justify p-3" style="background-color: rgba(0, 0, 0, 0.2);"raj> -->
+    <div class="p-3" style="background-color: rgba(0, 0, 0, 0.2);">
         <img class="logo" style="margin-top: 5px; height: 80px; width: 120px;" src="{% static 'images/Logo-Unit_SWK.jpg' %}" alt="My image">
         <a class="text-white"><p>Developed by Respirer Living Sciences Pvt. Ltd using FOSS project Communitygis.net supported by CTARA IITB.</p>
             <p>Software Developer  Team: Monika Shah ( Respirer Living Science Ltd ), Shweta Panwar from CTARA ,  Animesh Nautiyal from CTARA <br>under guidance of Prof. Jitendra Shah (CTARA).</p>
