@@ -52,8 +52,8 @@ def downloadzone(request,year,month,day,year1,month1,day1,zone_name):
     if(zone_name=='ALL'):
         datas= Tracksheet.objects.filter(date__range=(new_date, new_date1)).order_by('date','lane_name')
     else:
-        # datas= Tracksheet.objects.filter(lane_name__in=zone_name, date__range=(new_date, new_date1))
-        datas= Tracksheet.objects.filter(lane_name=zone_name, date__range=(new_date, new_date1)).order_by('date','lane_name')
+        datas= Tracksheet.objects.filter(lane_name__in=zone_name, date__range=(new_date, new_date1))
+        # datas= Tracksheet.objects.filter(lane_name=zone_name, date__range=(new_date, new_date1)).order_by('date','lane_name')
         print(datas)
     return render(request,'download_data_zone.html',{'datas':datas})
 
@@ -184,6 +184,11 @@ def TracksheetPage(request):
             zone = form.cleaned_data['zone_id_id']
             print(zone)
             laneName = form.cleaned_data['lane_name']
+            print(laneName)
+            if laneName =="none":
+                messages.warning(request, _(u'Please select Zone'))
+                
+
             if  Tracksheet.objects.filter(date=date, lane_name=laneName).exists():
                 messages.warning(request, _(u'Data already exists'))
             else:
@@ -236,5 +241,8 @@ def AboutUs(request):
 
 def report(request):
         return HttpResponseRedirect('/report_builder/report/9')
+
+def FAQ(request):
+        return render(request,"faq.html")
 
         
