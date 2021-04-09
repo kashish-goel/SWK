@@ -11,7 +11,7 @@ import { legendColor } from 'd3-svg-legend'
 import {format} from 'd3-format'
 
 import {extent} from 'd3-array'
-// import * as d3 from 'd3';
+import * as d3 from 'd3';
 
 import 'd3-transition'
 import L from 'leaflet';
@@ -35,8 +35,8 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
       
     
     const [selDay, setSelDay] = useState(1);
-    const [selYear, setSelYear] = useState('2020');
-    var [selMonth, setSelMonth]=useState('10');
+    const [selYear, setSelYear] = useState('2021');
+    var [selMonth, setSelMonth]=useState('02');
 
     // defaultmonth(selYear);
     // function defaultmonth(data) {
@@ -92,7 +92,7 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
 // slider
 var sliderVertical = sliderLeft()
     .min(1)
-    .max(30)
+    .max(31)
     .step(1)
     .height(300)
     // .tickFormat(d3.format('.2%'))
@@ -218,9 +218,9 @@ const handleDropdownChange = (e) =>{
 const handleYearDropdownChange = (e) =>{
     setSelYear(e.target.value)
     console.log(e.target.value)
-    if (e.target.value==='2020') {
-setSelMonth('10');  
-console.log('its 2020')      
+    if (e.target.value==='2021') {
+setSelMonth('02');  
+console.log('its 2021')      
     }
     else{setSelMonth('01')}
 }
@@ -263,6 +263,7 @@ let menuItems;
          <MenuItem value={'01'}>January</MenuItem>
          <MenuItem value={'02'}>February</MenuItem>
          <MenuItem value={'03'}>March</MenuItem>
+         <MenuItem value={'04'}>April</MenuItem>
         
     </Select>
     }

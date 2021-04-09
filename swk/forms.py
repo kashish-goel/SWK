@@ -6,6 +6,8 @@ import datetime
 # from phonenumber_field.formfields import PhoneNumberField
 from django.contrib.gis import forms
 from django.utils.translation import ugettext_lazy as _
+from django.core.exceptions import ValidationError
+from datetime import timedelta
 
             
 demarcated_lane = [('none','Select Zone'),
@@ -77,6 +79,7 @@ supervisor_name = [
     ('Akash','Akash'),
 ]
 
+
 class TracksheetForm(forms.ModelForm):
     
     date= forms.DateField(label = _(u'Date'),required=True,widget=forms.TextInput(attrs={'type': 'date'}),initial=datetime.date.today)
@@ -101,51 +104,20 @@ class TracksheetForm(forms.ModelForm):
         # self.fields['date'].localize = True
         # self.fields['zone_id']=forms.ModelChoiceField(queryset=Zones.objects.filter(zone_name=user))
 
-        self.helper = FormHelper()
-        # self.helper.layout = Layout(
-        #     Row(
-        #         Column('date', css_class='form-group col-md-3 mb-0'),
-        #         Column('time_of_visit', css_class='form-group col-md-3 mb-0'),
-        #         Column('lane_name', css_class='form-group col-md-6 mb-0'),
-        #         css_class='form-row'
-        #     ),
-        #     # 'address_1',
-        #     # 'address_2',
-        #     Row(
-        #         Column('num_attendants', css_class='form-group col-md-3 mb-0'),
-        #         Column('first_attendants_name', css_class='form-group col-md-3 mb-0'),
-        #         Column('second_attendants_name', css_class='form-group col-md-3 mb-0'),
-        #         Column('supervisor_name', css_class='form-group col-md-3 mb-0'),
-        #         css_class='form-row'
-        #     ),
-        #     # 'check_me_out',
-        #     Row(
-        #         Column('num_houses_reached', css_class='form-group col-md-4 mb-0'),
-        #         Column('num_houses_doing_segg', css_class='form-group col-md-4 mb-0'),
-        #         Column('num_houses_giving_mixwaste', css_class='form-group col-md-4 mb-0'),
-                      
-        #         css_class='form-row'
-        #     ),
-        #     Row(
-        #         Column('drywaste_bf', css_class='form-group col-md-3 mb-0'),
-        #         Column('drywaste_af', css_class='form-group col-md-3 mb-0'),
-        #         Column('wetwaste_bf', css_class='form-group col-md-3 mb-0'),
-        #         Column('wetwaste_af', css_class='form-group col-md-3 mb-0'),
-        #         css_class='form-row'
-        #     ),
-        #     Row(
-        #         Column('rejected', css_class='form-group col-md-3 mb-0'),
-        #         Column('zone_id_id', css_class='form-group col-md-3 mb-0'),
-        #         css_class='form-row'
-        #     ),
-        #     # rejected = forms.IntegerField(   
-        #     #                             widget=forms.TextInput(attrs={'readonly':'readonly'})
-        #     # ),
-        #     # UneditableField('text_input', css_id="rejected"),
-            
-        #     Submit('submit', 'Save')
-        # )
-       
+    def clean(self):
+        my_date = self.cleaned_data['date']
+        today = datetime.date.today()
+        yesterday = today - timedelta(days = 1)
+        # my_time = self.cleaned_data['my_time']
+        # my_date_time = (my_date + ' ' + my_time + ':00')
+        # my_date_time = datetime.strptime(my_date_time, '%m/%d/%Y %H:%M:%S')
+        # console.log(date.today())
+        if my_date > datetime.date.today():
+            raise forms.ValidationError('Future Dates are not allowed.!!')
+        if my_date < yesterday:
+            raise forms.ValidationError('You can only enter todays and yesterdays date.!!')
+            return my_date
+        
 
     class Meta:
 
@@ -234,5 +206,3 @@ class DutyEntryForm(forms.ModelForm):
 #         exclude = ['latitude','longitude']
 
     
- 
- 
