@@ -11,7 +11,7 @@ import { legendColor } from 'd3-svg-legend'
 import {format} from 'd3-format'
 
 import {extent} from 'd3-array'
-import * as d3 from 'd3';
+//import * as d3 from 'd3';
 
 import 'd3-transition'
 import L from 'leaflet';
