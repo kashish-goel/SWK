@@ -44,7 +44,7 @@ a:hover {
 }
 
 h1,
-h2,
+
 h3,
 h4,
 h5,
@@ -53,6 +53,17 @@ h6,
     font-family: "Lato", sans-serif;
     color: #000;
 }
+h2,
+.font-primary{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(3, 107, 38);
+}
+h3,
+.font-primary{
+    font-family: "Lato", sans-serif;
+    color: rgb(8, 165, 60);
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
      :root {
