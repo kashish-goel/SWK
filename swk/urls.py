@@ -7,6 +7,7 @@ urlpatterns = [
     path('aboutus/', views.AboutUs, name = 'aboutus'),
     path('formlayout/',views.formLayout,name='formlayout'),
     path('trackform/', views.TracksheetPage, name = "trackform"),
+    path('trackform_det/',views.TrackformPageDetail, name ="trackform_det"),
     path('dutyentryform/', views.DutyEntryPage, name = "dutyentryform"),
     path('login/', views.user_login, name='login'),
     path("logout", views.logout_request, name="logout"),
