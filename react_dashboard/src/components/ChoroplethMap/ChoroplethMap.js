@@ -36,7 +36,7 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
     
     const [selDay, setSelDay] = useState(1);
     const [selYear, setSelYear] = useState('2021');
-    var [selMonth, setSelMonth]=useState('02');
+    var [selMonth, setSelMonth]=useState('03');
 
     // defaultmonth(selYear);
     // function defaultmonth(data) {
