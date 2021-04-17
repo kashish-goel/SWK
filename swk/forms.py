@@ -1,5 +1,5 @@
 from django import forms
-from .models import Tracksheet,DutyEntry,Zones #,Feedback
+from .models import Tracksheet,DutyEntry,Zones,auth_user #,Feedback
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit, Row, Column, ButtonHolder
 import datetime
@@ -8,6 +8,7 @@ from django.contrib.gis import forms
 from django.utils.translation import ugettext_lazy as _
 from django.core.exceptions import ValidationError
 from datetime import timedelta
+
 
             
 demarcated_lane = [('none','Select Zone'),
@@ -99,6 +100,7 @@ class TracksheetForm(forms.ModelForm):
     num_houses_giving_mixwaste = forms.IntegerField(label = _(u"Houses giving mixed waste"),widget=forms.HiddenInput(),required=False)
     rejected = forms.IntegerField(label=_(u"Rejected Waste"),widget=forms.HiddenInput(),required=False)
     zone_id_id=forms.CharField(max_length=10, label=_(u"Zone ID"),widget=forms.HiddenInput(),required=False)
+    
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         # self.fields['date'].localize = True
@@ -125,6 +127,41 @@ class TracksheetForm(forms.ModelForm):
         fields = '__all__'
         exclude = ['zone_id']
 
+class TracksheetForm1(forms.ModelForm):
+    
+    date= forms.DateField(label = _(u'Date'),required=True,widget=forms.TextInput(attrs={'type': 'date'}),initial=datetime.date.today)
+    lane_name = forms.CharField(label = _(u'Zone'),widget=forms.Select(choices=demarcated_lane), localize=True)
+    num_attendants = forms.CharField(label = _(u'Attendants Number'),widget=forms.HiddenInput(),required=False)
+    first_attendants_name = forms.CharField(label = _(u'First Attendant'),widget=forms.HiddenInput(),required=False)
+    second_attendants_name = forms.CharField(label = _(u'Second Attendant'),widget=forms.HiddenInput(),required=False)
+    supervisor_name = forms.CharField(label = _(u'Supervisor'))
+    num_houses_reached = forms.IntegerField(label = _(u'Houses Reached'))
+    # time_of_visit = forms.CharField(label = _(u'Time of Visit'),widget=forms.Select(choices=timeslot))
+    time_of_visit = forms.CharField(label = _(u'Time of Visit'),widget=forms.HiddenInput(),required=False)
+    drywaste_bf = forms.IntegerField(label = _(u"Dry waste before(kgs)"))
+    drywaste_af = forms.IntegerField(label = _(u"Dry waste after(kgs)"))
+    wetwaste_bf = forms.IntegerField(label = _(u"Wet waste before(kgs)"))
+    wetwaste_af = forms.IntegerField(label = _(u"Wet waste after(kgs)"))
+    num_houses_doing_segg = forms.IntegerField(label = _(u"Houses doing segregation"))
+    num_houses_giving_mixwaste = forms.IntegerField(label = _(u"Houses giving mixed waste"),widget=forms.HiddenInput(),required=False)
+    rejected = forms.IntegerField(label=_(u"Rejected Waste"),widget=forms.HiddenInput(),required=False)
+    zone_id_id=forms.CharField(max_length=10, label=_(u"Zone ID"),widget=forms.HiddenInput(),required=False)
+    
+    def __init__(self, *args, **kwargs):
+        # self.user = kwargs.pop('user',None)
+        # super(TracksheetForm, self).__init__(*args, **kwargs)
+
+        super().__init__(*args, **kwargs)
+
+        # self.fields['date'].localize = True
+        # self.fields['zone_id']=forms.ModelChoiceField(queryset=Zones.objects.filter(zone_name=user))
+     
+
+    class Meta:
+
+        model = Tracksheet
+        fields = '__all__'
+        exclude = ['zone_id']
 
 
 class DutyEntryForm(forms.ModelForm):

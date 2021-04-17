@@ -8,11 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-<<<<<<< HEAD
-"POT-Creation-Date: 2021-03-05 06:40+0000\n"
-=======
-"POT-Creation-Date: 2021-04-12 12:37+0530\n"
->>>>>>> 8ff2734f02092e806e47bd54df3272a81054917d
+"POT-Creation-Date: 2021-04-16 13:58+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,138 +18,74 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-<<<<<<< HEAD
-#: swk/forms.py:82 swk/templates/download_data_zone.html:70
+#: swk/forms.py:86 swk/forms.py:132 swk/templates/download_data_zone.html:168
+#: swk/templates/show_data.html:101
 msgid "Date"
 msgstr "तारीख"
 
-#: swk/forms.py:83
+#: swk/forms.py:87 swk/forms.py:133
 msgid "Zone"
 msgstr "झोन"
 
-#: swk/forms.py:84
-=======
-#: swk/forms.py:85 swk/templates/download_data_zone.html:168
-#: swk/templates/show_data.html:103
-msgid "Date"
-msgstr "तारीख"
-
-#: swk/forms.py:86
-msgid "Zone"
-msgstr "झोन"
-
-#: swk/forms.py:87
->>>>>>> 8ff2734f02092e806e47bd54df3272a81054917d
+#: swk/forms.py:88 swk/forms.py:134
 #, fuzzy
 #| msgid "First Attendant"
 msgid "Attendants Number"
 msgstr "प्रथम अटेंडंट"
 
-<<<<<<< HEAD
-#: swk/forms.py:85 swk/templates/download_data_zone.html:66
+#: swk/forms.py:89 swk/forms.py:135
 msgid "First Attendant"
 msgstr "प्रथम अटेंडंट"
 
-#: swk/forms.py:86 swk/templates/download_data_zone.html:67
-=======
-#: swk/forms.py:88
-msgid "First Attendant"
-msgstr "प्रथम अटेंडंट"
-
-#: swk/forms.py:89
->>>>>>> 8ff2734f02092e806e47bd54df3272a81054917d
+#: swk/forms.py:90 swk/forms.py:136
 #, fuzzy
 #| msgid "First Attendant"
 msgid "Second Attendant"
 msgstr "द्वितीय अटेंडंट"
 
-<<<<<<< HEAD
-#: swk/forms.py:87
+#: swk/forms.py:91 swk/forms.py:137
 msgid "Supervisor"
 msgstr "पर्यवेक्षक"
 
-#: swk/forms.py:88 swk/templates/download_data_zone.html:57
+#: swk/forms.py:92 swk/forms.py:138 swk/templates/download_data_zone.html:159
+#: swk/templates/show_data.html:92
 msgid "Houses Reached"
 msgstr "घरे पोहोचली"
 
-#: swk/forms.py:90 swk/templates/download_data_zone.html:68
+#: swk/forms.py:94 swk/forms.py:140
 msgid "Time of Visit"
 msgstr "भेट देण्याची वेळ"
 
-#: swk/forms.py:91
+#: swk/forms.py:95 swk/forms.py:141
 msgid "Dry waste before(kgs)"
 msgstr "आधी सुका कचरा (किलो)"
 
-#: swk/forms.py:92
+#: swk/forms.py:96 swk/forms.py:142
 msgid "Dry waste after(kgs)"
 msgstr "सुका कचरा (किलोग्राम) नंतर"
 
-#: swk/forms.py:93
+#: swk/forms.py:97 swk/forms.py:143
 msgid "Wet waste before(kgs)"
 msgstr "आधी ओला कचरा (किलोग्राम)"
 
-#: swk/forms.py:94
+#: swk/forms.py:98 swk/forms.py:144
 msgid "Wet waste after(kgs)"
 msgstr "ओला कचरा (किलोग्राम) नंतर"
 
-#: swk/forms.py:95
+#: swk/forms.py:99 swk/forms.py:145
 msgid "Houses doing segregation"
 msgstr "घरे वेगळी करत आहेत"
 
-#: swk/forms.py:96
+#: swk/forms.py:100 swk/forms.py:146
 msgid "Houses giving mixed waste"
 msgstr "मिश्र कचरा देणारी घरे"
 
-#: swk/forms.py:97
+#: swk/forms.py:101 swk/forms.py:147
 msgid "Rejected Waste"
 msgstr "नाकारलेला कचरा"
 
-#: swk/forms.py:98 swk/templates/download_data_zone.html:73
-=======
-#: swk/forms.py:90
-msgid "Supervisor"
-msgstr "पर्यवेक्षक"
-
-#: swk/forms.py:91 swk/templates/download_data_zone.html:159
-#: swk/templates/show_data.html:94
-msgid "Houses Reached"
-msgstr "घरे पोहोचली"
-
-#: swk/forms.py:93
-msgid "Time of Visit"
-msgstr "भेट देण्याची वेळ"
-
-#: swk/forms.py:94
-msgid "Dry waste before(kgs)"
-msgstr "आधी सुका कचरा (किलो)"
-
-#: swk/forms.py:95
-msgid "Dry waste after(kgs)"
-msgstr "सुका कचरा (किलोग्राम) नंतर"
-
-#: swk/forms.py:96
-msgid "Wet waste before(kgs)"
-msgstr "आधी ओला कचरा (किलोग्राम)"
-
-#: swk/forms.py:97
-msgid "Wet waste after(kgs)"
-msgstr "ओला कचरा (किलोग्राम) नंतर"
-
-#: swk/forms.py:98
-msgid "Houses doing segregation"
-msgstr "घरे वेगळी करत आहेत"
-
-#: swk/forms.py:99
-msgid "Houses giving mixed waste"
-msgstr "मिश्र कचरा देणारी घरे"
-
-#: swk/forms.py:100
-msgid "Rejected Waste"
-msgstr "नाकारलेला कचरा"
-
-#: swk/forms.py:101 swk/templates/download_data_zone.html:171
-#: swk/templates/show_data.html:106
->>>>>>> 8ff2734f02092e806e47bd54df3272a81054917d
+#: swk/forms.py:102 swk/forms.py:148 swk/templates/download_data_zone.html:171
+#: swk/templates/show_data.html:104
 msgid "Zone ID"
 msgstr "झोन आयडी"
 
@@ -173,29 +105,18 @@ msgstr "स्वच्छ वरळी कोळीवाडा"
 msgid "A Project by Stree Mukti Sanghatana, sponsored by IDFC FIRST Bank"
 msgstr "प्रकल्प - स्त्री मुक्ति संघटनेचा, प्रायोजित - IDFC FIRST बँकेद्वारे "
 
-<<<<<<< HEAD
-#: swk/templates/TracksheetForm.html:17 swk/templates/TracksheetForm.html:28
-msgid "Houses providing segregated Waste "
+#: swk/templates/TrackformPageDetail.html:18
+#, fuzzy
+#| msgid "Houses providing segregated Waste "
+msgid "Houses providing segregated Waste (For DataManager)"
 msgstr "घरे वेगळी कचरा पुरवित आहेत"
 
-#: swk/templates/TracksheetForm.html:29
-msgid "Submit"
-msgstr "प्रस्तुत करणे"
-
-#: swk/templates/aboutus.html:6
-msgid "About Swachh Worli Koliwada"
-msgstr "बद्दल स्वच्छ वरळी कोळीवाडा"
-
-#: swk/templates/aboutus.html:13
-msgid "Background"
-msgstr "पार्श्वभूमी"
-
-#: swk/templates/aboutus.html:16
-=======
+#: swk/templates/TrackformPageDetail.html:29
 #: swk/templates/TracksheetForm.html:18 swk/templates/TracksheetForm.html:29
 msgid "Houses providing segregated Waste "
 msgstr "घरे वेगळी कचरा पुरवित आहेत"
 
+#: swk/templates/TrackformPageDetail.html:30
 #: swk/templates/TracksheetForm.html:30
 msgid "Submit"
 msgstr "प्रस्तुत करणे"
@@ -209,41 +130,17 @@ msgid "Background"
 msgstr "पार्श्वभूमी"
 
 #: swk/templates/aboutus.html:18
->>>>>>> 8ff2734f02092e806e47bd54df3272a81054917d
 msgid ""
 "IDFC FIRST Bank in partnership with Stree Mukti Sanghatana and Municipal "
 "Corporation of Greater Mumbai launched project Swachh Worli Koliwada with an "
 "aim to create awareness and bring about behavior change about community "
 "driven solid waste \n"
 "                        management practices and segregation at source "
-<<<<<<< HEAD
-"through a participatory process within the Worli Koliwada community.The aim "
-=======
 "through a participatory process within the Worli Koliwada community. The aim "
->>>>>>> 8ff2734f02092e806e47bd54df3272a81054917d
 "of this program is to build a zero waste neighborhood with self-sustainable "
 "zones that are equipped to manage solid\n"
 "                        waste they generate with a model where community "
 "participation will be a key at every stage, thereby ensuring sustainability "
-<<<<<<< HEAD
-"of this program in the long run."
-msgstr ""
-
-#: swk/templates/aboutus.html:23
-msgid "About Stree Mukti Sanghatana"
-msgstr "बद्दल एसडब्ल्यूके"
-
-#: swk/templates/aboutus.html:26
-msgid ""
-"SMS established in 1975 is a non profit organisation set up to empower women "
-"through activities like Theater, Family Counselling centres, Adolescent "
-"sensitization program etc.. Since 1999 SMS has been working for the cause of "
-"women waste pickers\n"
-"                        and offering solutions for Solid Waste Management. "
-"SMS is a trust registered under Bombay Public Trusts Act and Societies "
-"registration act and has 80-G and 12 A certificates under the Income Tax "
-"Act, 1961. About IDFC FIRST Bank IDFC FIRST\n"
-=======
 "of this program in the long run. "
 msgstr ""
 
@@ -254,7 +151,6 @@ msgstr ""
 #: swk/templates/aboutus.html:28
 msgid ""
 " IDFC FIRST\n"
->>>>>>> 8ff2734f02092e806e47bd54df3272a81054917d
 "                        Bank provides a range of financial solutions "
 "primarily aimed at individuals, small businesses and corporates. The Bank "
 "offers savings and current accounts, NRI accounts, salary accounts, demat "
@@ -265,8 +161,6 @@ msgid ""
 "Banking and other banking segments."
 msgstr ""
 
-<<<<<<< HEAD
-=======
 #: swk/templates/aboutus.html:35
 #, fuzzy
 #| msgid "About Stree Mukti Sanghatana"
@@ -289,16 +183,11 @@ msgstr ""
 msgid "About Community GIS"
 msgstr ""
 
->>>>>>> 8ff2734f02092e806e47bd54df3272a81054917d
 #: swk/templates/adminlogin.html:38
 msgid "SWK Portal Login"
 msgstr "एसडब्ल्यूके पोर्टल लॉगिन"
 
-<<<<<<< HEAD
-#: swk/templates/adminlogin.html:41 swk/templates/download_data_zone.html:56
-=======
 #: swk/templates/adminlogin.html:41
->>>>>>> 8ff2734f02092e806e47bd54df3272a81054917d
 msgid "EnterUsername"
 msgstr "वापरकर्तानाव"
 
@@ -306,151 +195,7 @@ msgstr "वापरकर्तानाव"
 msgid "Password"
 msgstr "संकेतशब्द"
 
-<<<<<<< HEAD
-#: swk/templates/adminlogin.html:48 swk/templates/new.html:87
-msgid "Login"
-msgstr "लॉगिन"
-
-#: swk/templates/base.html:40 swk/templates/new.html:54
-msgid "Home"
-msgstr "मुख्यपृष्ठ"
-
-#: swk/templates/base.html:43 swk/templates/new.html:56
-msgid "Maps"
-msgstr "नकाशे"
-
-#: swk/templates/base.html:46 swk/templates/new.html:55
-msgid "About Us"
-msgstr "आमच्याबद्दल"
-
-#: swk/templates/base.html:83 swk/templates/new.html:81
-#: swk/templates/report.html:5
-msgid "Report"
-msgstr "अहवाल"
-
-#: swk/templates/download_data_zone.html:58
-msgid "Houses Doing Segregation"
-msgstr "घरे विभाजन करीत आहेत"
-
-#: swk/templates/download_data_zone.html:59
-msgid "Houses Giving Mixed Waste"
-msgstr "मिश्रित कचरा देणारी घरे"
-
-#: swk/templates/download_data_zone.html:60
-msgid "Dry Waste BF"
-msgstr "आधी ड्राय वेस्ट"
-
-#: swk/templates/download_data_zone.html:61
-msgid "Dry Waste AF"
-msgstr "नंतर सुका कचरा"
-
-#: swk/templates/download_data_zone.html:62
-msgid "Wet Waste BF"
-msgstr "आधी ओला कचरा"
-
-#: swk/templates/download_data_zone.html:63
-msgid "Wet Waste AF"
-msgstr "नंतर ओला कचरा"
-
-#: swk/templates/download_data_zone.html:64
-msgid "Zone Name"
-msgstr "झोन नाव"
-
-#: swk/templates/download_data_zone.html:65
-#, fuzzy
-#| msgid "First Attendant"
-msgid "Attendants"
-msgstr "प्रथम अटेंडंट"
-
-#: swk/templates/download_data_zone.html:69 swk/templates/edit.html:16
-msgid "Track ID"
-msgstr "ट्रॅक आयडी"
-
-#: swk/templates/download_data_zone.html:71
-msgid "Supervisor Name"
-msgstr "पर्यवेक्षकाचे नाव"
-
-#: swk/templates/download_data_zone.html:72
-msgid "Rejected"
-msgstr "नाकारले"
-
-#: swk/templates/edit.html:12
-msgid "Update Details"
-msgstr "तपशील अद्यतनित करा"
-
-#: swk/templates/edit.html:22
-msgid "Houses Reached:"
-msgstr "घरे पोहोचली:"
-
-#: swk/templates/edit.html:28
-msgid "Houses Doing Seggregation:"
-msgstr "घरे एकत्रीकरण करीत आहेत:"
-
-#: swk/templates/edit.html:34
-msgid "Houses Giving Mixed Wasted:"
-msgstr "मिश्र वाया घालणारी घरे:"
-
-#: swk/templates/edit.html:40
-msgid "Dry Waste BF:"
-msgstr "ड्राय वेस्ट बीएफ:"
-
-#: swk/templates/edit.html:46
-msgid "Dry Waste AF:"
-msgstr "सुका कचरा वायफळ वायू:"
-
-#: swk/templates/edit.html:52
-msgid "Wet Waste BF:"
-msgstr "ओला कचरा बीएफ:"
-
-#: swk/templates/edit.html:58
-msgid "Wet Waste AF:"
-msgstr "ओला कचरा वायू:"
-
-#: swk/templates/edit.html:64
-msgid "Zone Name:"
-msgstr "झोन नाव:"
-
-#: swk/templates/edit.html:70
-#, fuzzy
-#| msgid "First Attendant"
-msgid "Attendants:"
-msgstr "प्रथम अटेंडंट"
-
-#: swk/templates/edit.html:76
-#, fuzzy
-#| msgid "First Attendant"
-msgid "First Attendant:"
-msgstr "प्रथम परिचर"
-
-#: swk/templates/edit.html:82
-#, fuzzy
-#| msgid "First Attendant"
-msgid "Second Attendant:"
-msgstr "दुसरी परिचर"
-
-#: swk/templates/edit.html:88
-msgid "Time of Visit:"
-msgstr "भेट देण्याची वेळः"
-
-#: swk/templates/edit.html:94
-msgid "Date:"
-msgstr "तारीख:"
-
-#: swk/templates/edit.html:100
-msgid "Supervisor Name:"
-msgstr "पर्यवेक्षकाचे नाव:"
-
-#: swk/templates/edit.html:106
-msgid "Rejected:"
-msgstr "नाकारलेले:"
-
-#: swk/templates/edit.html:112
-msgid "Zone ID:"
-msgstr "झोन आयडी:"
-
-#: swk/templates/edit.html:120
-=======
-#: swk/templates/adminlogin.html:48 swk/templates/new.html:117
+#: swk/templates/adminlogin.html:48 swk/templates/new.html:119
 #: swk/templates/test.html:47
 msgid "Login"
 msgstr "लॉगिन"
@@ -470,49 +215,49 @@ msgstr "नकाशे"
 msgid "About Us"
 msgstr "आमच्याबद्दल"
 
-#: swk/templates/base.html:83 swk/templates/new.html:102
+#: swk/templates/base.html:83 swk/templates/new.html:104
 #: swk/templates/report.html:5 swk/templates/test.html:40
 msgid "Report"
 msgstr "अहवाल"
 
-#: swk/templates/download_data_zone.html:160 swk/templates/show_data.html:95
+#: swk/templates/download_data_zone.html:160 swk/templates/show_data.html:93
 msgid "Houses Doing Segregation"
 msgstr "घरे विभाजन करीत आहेत"
 
-#: swk/templates/download_data_zone.html:161 swk/templates/show_data.html:96
+#: swk/templates/download_data_zone.html:161 swk/templates/show_data.html:94
 msgid "Houses Giving Mixed Waste"
 msgstr "मिश्रित कचरा देणारी घरे"
 
-#: swk/templates/download_data_zone.html:162 swk/templates/show_data.html:97
+#: swk/templates/download_data_zone.html:162 swk/templates/show_data.html:95
 msgid "Dry Waste BF"
 msgstr "आधी ड्राय वेस्ट"
 
-#: swk/templates/download_data_zone.html:163 swk/templates/show_data.html:98
+#: swk/templates/download_data_zone.html:163 swk/templates/show_data.html:96
 msgid "Dry Waste AF"
 msgstr "नंतर सुका कचरा"
 
-#: swk/templates/download_data_zone.html:164 swk/templates/show_data.html:99
+#: swk/templates/download_data_zone.html:164 swk/templates/show_data.html:97
 msgid "Wet Waste BF"
 msgstr "आधी ओला कचरा"
 
-#: swk/templates/download_data_zone.html:165 swk/templates/show_data.html:100
+#: swk/templates/download_data_zone.html:165 swk/templates/show_data.html:98
 msgid "Wet Waste AF"
 msgstr "नंतर ओला कचरा"
 
-#: swk/templates/download_data_zone.html:166 swk/templates/show_data.html:101
+#: swk/templates/download_data_zone.html:166 swk/templates/show_data.html:99
 msgid "Zone Name"
 msgstr "झोन नाव"
 
 #: swk/templates/download_data_zone.html:167 swk/templates/edit.html:17
-#: swk/templates/show_data.html:102
+#: swk/templates/show_data.html:100
 msgid "Track ID"
 msgstr "ट्रॅक आयडी"
 
-#: swk/templates/download_data_zone.html:169 swk/templates/show_data.html:104
+#: swk/templates/download_data_zone.html:169 swk/templates/show_data.html:102
 msgid "Supervisor Name"
 msgstr "पर्यवेक्षकाचे नाव"
 
-#: swk/templates/download_data_zone.html:170 swk/templates/show_data.html:105
+#: swk/templates/download_data_zone.html:170 swk/templates/show_data.html:103
 msgid "Rejected"
 msgstr "नाकारले"
 
@@ -569,7 +314,6 @@ msgid "Zone ID:"
 msgstr "झोन आयडी:"
 
 #: swk/templates/edit.html:98
->>>>>>> 8ff2734f02092e806e47bd54df3272a81054917d
 msgid "Update"
 msgstr "अद्यतनित करा"
 
@@ -594,116 +338,6 @@ msgid "Zonal Geometry"
 msgstr "क्षेत्रीय भूमिती"
 
 #: swk/templates/map/map.html:325
-<<<<<<< HEAD
-msgid "Spot"
-msgstr "स्पॉट"
-
-#: swk/templates/map/map.html:328
-msgid "Bubble"
-msgstr "बबल"
-
-#: swk/templates/map/map.html:331
-msgid "Zones"
-msgstr "झोन"
-
-#: swk/templates/map/map.html:347
-msgid "Seggregation Centres and Pits"
-msgstr "एकत्रीकरण केंद्रे आणि खड्डे"
-
-#: swk/templates/map/map.html:353
-msgid " Compost Pit 1(coming up soon...) "
-msgstr "कंपोस्ट पिट 1 (लवकरच येत आहे ...)"
-
-#: swk/templates/map/map.html:356
-msgid "Compost Pit 2(coming up soon...)"
-msgstr "कंपोस्ट पिट 2 (लवकरच येत आहे ...)"
-
-#: swk/templates/map/map.html:359
-msgid "Seggregation Centres(coming up soon...)"
-msgstr "एकत्रीकरण केंद्रे (लवकरच येत आहे ...)"
-
-#: swk/templates/map/map.html:368
-msgid " Public Places and Amenities"
-msgstr "सार्वजनिक ठिकाणे आणि सुविधा"
-
-#: swk/templates/map/map.html:373
-msgid " Public Toilets(coming up soon...)"
-msgstr "सार्वजनिक शौचालय (लवकरच येत आहे ...)"
-
-#: swk/templates/map/map.html:376
-msgid " Schools(coming up soon...)"
-msgstr "शाळा (लवकरच येत आहे ...)"
-
-#: swk/templates/map/map.html:379
-msgid "Educational Institutes(coming up soon...)"
-msgstr "शैक्षणिक संस्था(लवकरच येत आहे ...)"
-
-#: swk/templates/map/map.html:382
-msgid " Terrace Garden (coming up soon...)"
-msgstr "टेरेस गार्डन(लवकरच येत आहे ...)"
-
-#: swk/templates/map/map.html:385
-msgid "Nutri Gardens(coming up soon...)"
-msgstr "न्यूट्री गार्डन (लवकरच येत आहे ...)"
-
-#: swk/templates/map/map.html:388
-msgid "Open Space (coming up soon...)"
-msgstr "मोकळी जागा(लवकरच येत आहे ...)"
-
-#: swk/templates/map/map.html:395
-msgid "Zone-wise trends in waste generation"
-msgstr "कचरा निर्मितीतील झोननिहाय ट्रेंड"
-
-#: swk/templates/map/map.html:401
-msgid "Choropleth (color coded) zones"
-msgstr "कोरोप्लेथ (रंग कोड केलेले) झोन"
-
-#: swk/templates/map/map.html:404
-msgid " Dry Waste Trend"
-msgstr "ड्राय वेस्ट ट्रेंड"
-
-#: swk/templates/map/map.html:407
-msgid "Wet Waste Trend"
-msgstr "ओला कचरा ट्रेंड"
-
-#: swk/templates/map/map.html:410
-msgid " Rejected Dry Waste Trend"
-msgstr "नाकारलेला सुका कचरा ट्रेंड"
-
-#: swk/templates/map/map.html:413
-msgid "Rejected Wet Waste Trend"
-msgstr "नाकारलेला ओला कचरा ट्रेंड"
-
-#: swk/templates/new.html:60
-msgid "Enter/View Data"
-msgstr "डेटा प्रविष्ट करा / पहा"
-
-#: swk/templates/new.html:62
-msgid "Daily Entry Form"
-msgstr "दैनिक प्रवेश फॉर्म"
-
-#: swk/templates/new.html:72
-msgid "Kobo Form"
-msgstr "कोबो फॉर्म"
-
-#: swk/templates/new.html:73
-msgid "View Daily Entry Data"
-msgstr "दैनिक प्रविष्टी डेटा पहा"
-
-#: swk/templates/new.html:78
-msgid "Upload Layer"
-msgstr "स्तर अपलोड करा"
-
-#: swk/templates/new.html:80
-msgid "Dashboard"
-msgstr "डॅशबोर्ड"
-
-#: swk/templates/new.html:84
-msgid "Logout"
-msgstr "लॉग आउट"
-
-#: swk/views.py:97
-=======
 msgid "Bin Paths "
 msgstr ""
 
@@ -793,68 +427,55 @@ msgstr "नाकारलेला सुका कचरा ट्रेंड
 msgid "Rejected Wet Waste Trend"
 msgstr "नाकारलेला ओला कचरा ट्रेंड"
 
-#: swk/templates/new.html:76 swk/templates/test.html:17
-msgid "Enter/View Data"
-msgstr "डेटा प्रविष्ट करा / पहा"
+#: swk/templates/new.html:76
+#, fuzzy
+msgid "DataManager-EntryForm"
+msgstr "डेटा व्यवस्थापक प्रविष्टी फॉर्म"
 
-#: swk/templates/new.html:78 swk/templates/new.html:85
-#: swk/templates/test.html:19
-msgid "Daily Entry Form"
-msgstr "दैनिक प्रवेश फॉर्म"
+#: swk/templates/new.html:79 swk/templates/new.html:90
+msgid "OneTimeSurvey Form"
+msgstr "एक वेळ सर्वेक्षण फॉर्म"
 
-#: swk/templates/new.html:79 swk/templates/new.html:88
-#: swk/templates/test.html:29
-msgid "Kobo Form"
-msgstr "कोबो फॉर्म"
-
-#: swk/templates/new.html:80 swk/templates/new.html:91
+#: swk/templates/new.html:82 swk/templates/new.html:93
 #: swk/templates/test.html:30
 msgid "View Daily Entry Data"
 msgstr "दैनिक प्रविष्टी डेटा पहा"
 
-#: swk/templates/new.html:95 swk/templates/test.html:35
+#: swk/templates/new.html:87 swk/templates/test.html:19
+msgid "Daily Entry Form"
+msgstr "दैनिक प्रवेश फॉर्म"
+
+#: swk/templates/new.html:97 swk/templates/test.html:35
 msgid "Upload Layer"
 msgstr "स्तर अपलोड करा"
 
-#: swk/templates/new.html:98 swk/templates/test.html:37
+#: swk/templates/new.html:100 swk/templates/test.html:37
 msgid "Dashboard"
 msgstr "डॅशबोर्ड"
 
-#: swk/templates/new.html:107
+#: swk/templates/new.html:109
 msgid "FAQ"
 msgstr "सामान्य प्रश्न"
 
-#: swk/templates/new.html:112 swk/templates/test.html:44
+#: swk/templates/new.html:114 swk/templates/test.html:44
 msgid "Logout"
 msgstr "लॉग आउट"
 
+#: swk/templates/test.html:17
+msgid "Enter/View Data"
+msgstr "डेटा प्रविष्ट करा / पहा"
+
+#: swk/templates/test.html:29
+msgid "Kobo Form"
+msgstr "कोबो फॉर्म"
+
 #: swk/views.py:98
->>>>>>> 8ff2734f02092e806e47bd54df3272a81054917d
 #, fuzzy
 msgid ""
 "loggedin sucessfully. Please check navigation bar on top to fill required "
 "forms."
 msgstr "यशस्वीरित्या लॉग इन केले| कृपया भरण्यासाठी नेव्हिगेशन बार तपासा|"
 
-<<<<<<< HEAD
-#: swk/views.py:101
-msgid "Your account is disabled"
-msgstr ""
-
-#: swk/views.py:105
-msgid "invalid login details for "
-msgstr "यासाठी अवैध लॉगिन तपशील"
-
-#: swk/views.py:107
-msgid "Invalid username or password."
-msgstr "अवैध वापरकर्तानाव किंवा संकेतशब्द"
-
-#: swk/views.py:120
-msgid "Logged out successfully!"
-msgstr ""
-
-#: swk/views.py:130
-=======
 #: swk/views.py:102
 msgid "Your account is disabled"
 msgstr ""
@@ -872,38 +493,24 @@ msgid "Logged out successfully!"
 msgstr ""
 
 #: swk/views.py:131
->>>>>>> 8ff2734f02092e806e47bd54df3272a81054917d
 #, fuzzy
 #| msgid "Your data is saved for {} dated {}"
 msgid "Your data is saved"
 msgstr "आपला डेटा {} दिनांकित {} साठी जतन केला आहे"
 
-<<<<<<< HEAD
-#: swk/views.py:187
-msgid "Data already exists"
-msgstr ""
-
-#: swk/views.py:199
-msgid "Your data is saved for {} dated {}"
-msgstr "आपला डेटा {} दिनांकित {} साठी जतन केला आहे"
-
-#: swk/views.py:205
-msgid "Please check your form"
-msgstr "कृपया आपला फॉर्म तपासा"
-=======
-#: swk/views.py:189
+#: swk/views.py:174 swk/views.py:241
 msgid "Please select Zone"
 msgstr ""
 
-#: swk/views.py:193
+#: swk/views.py:178 swk/views.py:245
 msgid "Data already exists"
 msgstr ""
 
-#: swk/views.py:205
+#: swk/views.py:190 swk/views.py:257
 msgid "Your data is saved for {} dated {}"
 msgstr "आपला डेटा {} दिनांकित {} साठी जतन केला आहे"
 
-#: swk/views.py:211
+#: swk/views.py:196 swk/views.py:263
 msgid "Please check your form"
 msgstr "कृपया आपला फॉर्म तपासा"
 
@@ -929,4 +536,3 @@ msgstr "कृपया आपला फॉर्म तपासा"
 
 #~ msgid "Time of Visit:"
 #~ msgstr "भेट देण्याची वेळः"
->>>>>>> 8ff2734f02092e806e47bd54df3272a81054917d
