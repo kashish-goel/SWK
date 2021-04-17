@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect,HttpResponse,HttpResponseRedirect
 from django.template import loader
-from .forms import TracksheetForm, DutyEntryForm
+from .forms import TracksheetForm, DutyEntryForm, TracksheetForm1
 from .models import DutyEntry,Tracksheet,Zones ,SwkAttendants
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User,auth
@@ -91,7 +91,7 @@ def user_login(request):
         user = authenticate(username=username, password=password)
         
         if user is not None:
-                if user.is_active:
+                if user.is_active: 
                     login(request, user)
                     # Redirect to index page.
                     # messages.info(request,"login sucessfully")
@@ -153,24 +153,8 @@ def TracksheetPage(request):
         # jsondata1=docinfo1[0]
         return JsonResponse(jsondata)
 
-    # if request.is_ajax():
-    #     selected_drywaste_bf = request.GET['drywaste_bf']
-    #     selected_wetwaste_bf = request.GET['wetwaste_bf']
-    #     selected_drywaste_af = request.GET['drywaste_af']
-    #     selected_wetwaste_af = request.GET['wetwaste_af']
-    #     selcted_lane_name = request.GET['lane_name']
-        
-    #     rejected_waste = ((selected_drywaste_bf + selected_wetwaste_bf) - (selected_drywaste_af + selected_wetwaste_af))
-    #     num_houses = DutyEntry.objects.raw('select  num_houses_lane from DutyEntry'.format(selcted_lane_name))
-    #     # min = Corporatorward.objects.raw('select 1 as id,min({}) from corporatorward'.format(selected_field))[0].min
-
-    #     jsondata = {
-    #         'num_houses': num_houses, 'rejected_waste': rejected_waste
-    #     }
-    #     return JsonResponse(jsondata)
-        
     if request.method == "POST":
-                 
+         
         form = TracksheetForm(request.POST or None)
         print(form)
         if form.is_valid():
@@ -183,6 +167,7 @@ def TracksheetPage(request):
             date = form.cleaned_data['date']
             zone = form.cleaned_data['zone_id_id']
             print(zone)
+            # print(request.POST['username'])
             laneName = form.cleaned_data['lane_name']
             print(laneName)
             if laneName =="none":
@@ -219,6 +204,74 @@ def TracksheetPage(request):
     }
 
     return render(request,'TracksheetForm.html',context)
+
+
+def TrackformPageDetail(request):
+    form = TracksheetForm1(request.POST or None)
+    if request.is_ajax():
+        selected_field = request.GET['name']
+        print(selected_field)
+        docinfo = list(SwkAttendants.objects.filter(zone_name=selected_field).values()); 
+        print(docinfo)
+        jsondata =docinfo[0]
+        # field=docinfo[0]["zone_id"]
+        # print(field)
+        # docinfo1 = list(SwkAttendants.objects.filter(zone_id=field).values()); 
+        # jsondata1=docinfo1[0]
+        return JsonResponse(jsondata)
+
+    if request.method == "POST":
+         
+        form = TracksheetForm1(request.POST or None)
+        print(form)
+        if form.is_valid():
+            query_column = form.cleaned_data['lane_name']
+            # operator = form.cleaned_data['operator']
+            # value = form.cleaned_data['value']
+            query="""select num_houses_lane from DutyEntry where lane_name = '{}'""".format(query_column)
+            raw = DutyEntry.objects.raw(query)
+            context = {'form':form,'data':raw}
+            date = form.cleaned_data['date']
+            zone = form.cleaned_data['zone_id_id']
+            print(zone)
+            # print(request.POST['username'])
+            laneName = form.cleaned_data['lane_name']
+            print(laneName)
+            if laneName =="none":
+                messages.warning(request, _(u'Please select Zone'))
+                
+
+            if  Tracksheet.objects.filter(date=date, lane_name=laneName).exists():
+                messages.warning(request, _(u'Data already exists'))
+            else:
+
+                instance = form.save(commit=False)
+                instance.num_houses_lane = 100
+                instance.rejected = ((instance.drywaste_bf +instance.wetwaste_bf) - (instance.drywaste_af + instance.wetwaste_af))
+                instance.num_houses_giving_mixwaste = (instance.num_houses_reached - instance.num_houses_doing_segg)
+                print(instance.num_houses_giving_mixwaste)
+                instance.zone_id_id=zone
+                print(instance.zone_id_id)
+
+                instance.save()
+                messages.success(request, _(u'Your data is saved for {} dated {}').format(laneName,date))
+                # form.save()
+                # messages.success(request, 'Your data is saved')
+                return HttpResponseRedirect(request.path_info)
+     
+        else:
+            messages.warning(request, _(u'Please check your form'))
+    else:
+        
+        form = TracksheetForm(request.POST or None)
+    context= {
+        'form': form,
+               
+        'test': 'test',
+    }
+
+    return render(request,'TrackformPageDetail.html',context)
+
 
 
 def MapPage(request):

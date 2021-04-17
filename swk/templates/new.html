@@ -71,21 +71,23 @@
                 <li class="nav-item">
                     <a href="{% url 'swk_map' %}" class="nav-link text-white">{% trans "Maps" %}</a>
                 </li>
+                {% if request.user|has_group:"DataManager" %}
+                <li class="nav-item">
+                    <a href="{% url 'trackform_det' %}" class="nav-link text-white">{% trans "DataManager-EntryForm" %}</a>
+                </li>
+                <li class="nav-item">
+                    <a href="httpsfrom django.contrib.auth.models import User://ee.humanitarianresponse.info/x/Y3Ji0ej7" class="nav-link text-white">{% trans "OneTimeSurvey Form" %}</a>
+                </li>
+                <li class="nav-item" >
+                    <a href="{% url 'show' %}" class="nav-link text-white">{% trans "View Daily Entry Data" %}</a>
+                </li>
+                {% endif %}
                 {% if request.user|has_group:"supervisor" %}
-                    <!-- <li class="nav-item drop-down">
-                        <a href=""class="nav-link dropdown-toggle text-white" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{% trans "Enter/View Data" %}</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item text-white" href="{% url 'trackform' %}">{% trans "Daily Entry Form" %}</a>
-                            <a class="dropdown-item" href="https://ee.humanitarianresponse.info/x/Y3Ji0ej7">{% trans "Kobo Form" %}</a>
-                            <a class="dropdown-item" href="{% url 'show' %}">{% trans "View Daily Entry Data" %}</a>
-                        </div>
-                    </li> -->
-
                     <li class="nav-item">
                         <a href="{% url 'trackform' %}" class="nav-link text-white">{% trans "Daily Entry Form" %}</a>
                     </li>
                     <li class="nav-item">
-                        <a href="https://ee.humanitarianresponse.info/x/Y3Ji0ej7" class="nav-link text-white">{% trans "Kobo Form" %}</a>
+                        <a href="httpsfrom django.contrib.auth.models import User://ee.humanitarianresponse.info/x/Y3Ji0ej7" class="nav-link text-white">{% trans "OneTimeSurvey Form" %}</a>
                     </li>
                     <li class="nav-item" >
                         <a href="{% url 'show' %}" class="nav-link text-white">{% trans "View Daily Entry Data" %}</a>
