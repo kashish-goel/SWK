@@ -49,6 +49,7 @@ table, th, td
     color: #555;
 }
 .legend i {
+   
     width: 18px;
     height: 18px;
     float: left;
@@ -327,9 +328,9 @@ table, th, td
                           <div class="checkbox">
                             <label><input type="checkbox" value="{spots}" onchange="getBoundaryru(this)"><span> {% trans "Spots " %}</span></label>
                          </div>
-                          <div class="checkbox">
+                          <!-- <div class="checkbox">
                               <label><input type="checkbox" value="{spot}" onchange="getBoundaryru(this)"><span> {% trans "Spot Images" %}</span></label>
-                          </div>
+                          </div> -->
                           <div class="checkbox">
                               <label><input type="checkbox" value="{bubble}" onchange="getBoundaryru(this)"><span> {% trans "Bubble" %}</span></label>
                           </div>
@@ -594,15 +595,6 @@ table, th, td
               
                 newurl = url_sc;
 
-                function onEachFeatureForPointBB(feature, layer) {
-                    
-                        var str1 = "<img class = 'popupimage' src='../static/images/SPOT/".concat(feature.properties.Name);
-                        // var str1 = "<img class = 'popupimage' src='../static/images/GPS_Photos/prerana/".concat("Copy of GPSe-0.jpg");
-                        var str2 = str1.concat("' alt='image not found'>").concat(`<br><br>Date of Image:${feature.properties.Date}`);
-                        // console.log(str2);
-                      
-                        layer.bindPopup(str2);
-                }
                 fetch(newurl).then(
                     function(response) {
                         if (response.status !== 200) {
@@ -796,7 +788,7 @@ table, th, td
                 wms_layer.addTo(mymap);
                 mymap.setView([19.0066, 72.8100], 14);
                 newLayerList.push(wms_layer);
-               } 
+                           } 
                else if (layer == "geonode:worli_hand_drawn_update_26oct") {
                    console.log(layer)
                    var wms_layer = L.tileLayer.wms('https://communitygis.net/geoserver/wms', {
@@ -830,7 +822,8 @@ table, th, td
                    var wms_layer = L.tileLayer.wms('https://communitygis.net/geoserver/wms', {
                        layers: layer,
                        format: 'image/png',
-                        opacity: .7,
+                       opacity: .7,
+                       
                        
                    });
                wms_layer.addTo(mymap);
@@ -840,6 +833,8 @@ table, th, td
                popup_layer="https://communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
                console.log("popupzone",popup_layer);
                console.log(wms_layer);
+               legend.addTo(mymap);
+
                }
                else if (layer == "geonode:zone_polygon300121") {
                    console.log(layer)
@@ -855,6 +850,7 @@ table, th, td
                popup_layer="https://communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
                console.log("popupzone",popup_layer);
                console.log(wms_layer);
+               legend.addTo(mymap);
                }
                
                else if (layer == "geonode:worli_bubble_updated_15march") {
@@ -871,6 +867,7 @@ table, th, td
                 popup_layer="https://communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
                 console.log("popupzone",popup_layer);
                 console.log(wms_layer);
+                legend.addTo(mymap);
                 }
                 else if (layer == "geonode:worli_spot_updated_10march") {
                 console.log(layer)
@@ -888,6 +885,8 @@ table, th, td
                 popup_layer="https://communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
                 
                 console.log(wms_layer);
+                legend.addTo(mymap);
+                // addWMSLegend(wms_layer.options.layers);
             }
             } 
 
@@ -909,9 +908,9 @@ table, th, td
         function onEachFeaturePoint(feature, layer) {
 	    // does this feature have a property named popupContent?
 		
-        var str1 = "<img class = 'popupimage' src='../static/images/SPOT/".concat(feature.properties.Name);
+        var str1 = "<img class = 'popupimage' src='../static/images/SPOT21.4.2021/".concat(feature.properties.Name);
                         // var str1 = "<img class = 'popupimage' src='../static/images/GPS_Photos/prerana/".concat("Copy of GPSe-0.jpg");
-                        var str2 = str1.concat("' alt='image not found'>").concat(`<br><br>Date of Image:${feature.properties.Date}`);
+                        var str2 = str1.concat("' alt='image not found'>").concat(`<br><br>Date of Image:${feature.properties.Date}`).concat(`<br><br>Name of Image:${feature.properties.Name}`);
                         // console.log(str2);
                       
                         layer.bindPopup(str2);
@@ -1445,12 +1444,23 @@ table, th, td
                                 "<tr><td><b>Zone Number: </b></td><td>" + feature.properties.zone_id+ "</td></tr>" + "</table>";
                         } 
                         if (feature.properties.spot_id) {
-                            console.log("I reached at");
-                            content = "<table class = 'popupclass' ><tr><td><b>Spots Information</b></td><td></td></tr>" +
-                                "<tr><td><b>Spot Number: </b></td><td>" + feature.properties.spot_id + "</td></tr>" +
-                                "<tr><td><b>Spot Name: </b></td><td>" + feature.properties.spot_name + "</td></tr>" +
-                                "<tr><td><b>Zone Name: </b></td><td>" + feature.properties.zone_id + "</td></tr>" +
-                                "<tr><td><b>Zone Number: </b></td><td>" + feature.properties.zone_name+ "</td></tr>" + "</table>";
+                            // console.log("I reached at");
+                        
+                            str1 = feature.properties.zone_id
+                            items = str1.split('_')
+                            spot_num = items[items.length - 1]
+                            fn = feature.properties.spot_name.trim()
+                            // console.log(items[items.length - 1]);
+                            // console.log(items);
+                            // console.log
+                            filename = spot_num + '.' + feature.properties.spot_id +fn+'.jpg';
+                            console.log(filename)
+                            content = "<table border = 2 class = 'popupclass' ><tr><td colspan='4'><b>Spot Information</b></td></tr>"+
+                                "<tr><td colSpan='5'><b>Spot Number: </b></td><td>" + feature.properties.spot_id + "</td></tr>" +
+                                "<tr><td colSpan='5'><b>Spot Name: </b></td><td>" + feature.properties.spot_name + "</td></tr>" +
+                                "<tr><td colSpan='5'><b>Zone ID: </b></td><td>" + feature.properties.zone_id + "</td></tr>" +
+                                "<tr><td colSpan='5'><b>Zone Name: </b></td><td>" + feature.properties.zone_name+ "</td></tr>" +
+                                "<tr><td colSpan='5 '><b>Image: </b></td><td><img class = 'popupimage' src='../static/images/SPOT/".concat(filename)+"' alt='image not found - '>"+filename+"</a></td></tr>" + "</table>";
                         } 
                         
 
@@ -1463,6 +1473,45 @@ table, th, td
             }
 
             mymap.addEventListener('click', Identify);
+
+            var legend = L.control({position: 'bottomright'});
+
+            legend.onAdd = function (mymap) {
+
+                var div = L.DomUtil.create('div', 'info legend'),
+                    grades = [1,2,3,4,5,6,7,8,9,10,11,12,13],
+                    labels = ['HiraSeth Chawl to Waras Lane','Navneet Lane to Tare Galli','BhandarVada to Amar Prem Chowk','Pakhari Galli','Shankar Mandir to Bhagat Galli','Gonta Galli to Kranti Galli','Kranti Galli to Navjeevan Wasahat','Bazar Galli to Fish Market','Maval Maratha(Payari)','Sonapur to Dukkar Galli','Dukkar Galli to Taak Galli', 'Nagobacha Ghumat to Achanak','GolfaDevi'];
+
+                // loop through our density intervals and generate a label with a colored square for each interval
+                div.innerHTML += "<h4>Legend</h4><hr>";
+                for (var i = 0; i < grades.length; i++) {
+                    div.innerHTML +=
+                        '<i class="circle" style="background:' + getColor(grades[i]) + ';opacity:1;"></i>Zone ' +
+                       grades[i] + ':' + (labels[i]) + '<br>';
+                }
+                
+                function getColor(d) {
+                    return d ==1 ? '#f373ed' :
+                           d ==2 ? '#1ee221' :
+                           d ==3  ? '#8978db' :
+                           d ==4  ? '#cab371' :
+                           d ==5  ? '#27e0cb':
+                           d == 6 ? '#d35018':
+                           d == 7 ? '#c9626e':
+                           d == 8 ? '#b7d811':
+                           d == 9 ? '#b97ae3':
+                           d == 10 ? '#6eb9db':
+                           d == 11 ? '#18f079':
+                           d == 12 ? '#71e71d':
+                           d == 13 ? '#c976c8':
+                           '#FFEDA0';
+
+
+                }
+
+                
+            return div;
+};
 
         
 </script>
