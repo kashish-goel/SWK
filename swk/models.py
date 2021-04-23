@@ -67,6 +67,8 @@ class Tracksheet(models.Model):
         return self.lane_name
 
 
+
+
 class SwkTracksheetReport(models.Model):
     num_houses_reached = models.IntegerField()
     num_houses_doing_segg = models.IntegerField()
@@ -91,3 +93,21 @@ class SwkTracksheetReport(models.Model):
     class Meta:
         managed = False
         db_table = 'swk_tracksheet_report'
+
+class Feedback(models.Model):
+    # location = models.PointField(geography=True, default=Point(0.0, 0.0))
+    # position = GeopositionField()
+    # latitude = models.DecimalField(max_digits=11, decimal_places=8)
+    # longitude = models.DecimalField(max_digits=11, decimal_places=8)
+    name = models.CharField(max_length=100)
+    email = models.EmailField(blank=True, null=True)
+    mobile = models.IntegerField(blank=True, null=True)
+    feedback = models.TextField(blank=False, null=False)
+
+    class Meta:
+        managed = False
+        db_table = 'swk_feedback'
+
+class UploadPicture(models.Model):
+    picture = models.FileField(upload_to='uploadPics/', blank=True, null=True)
+    date = models.DateField()

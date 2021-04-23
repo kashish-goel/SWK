@@ -1,5 +1,6 @@
 from django import forms
-from .models import Tracksheet,DutyEntry,Zones #,Feedback
+from .models import Tracksheet,DutyEntry,Zones,Feedback,UploadPicture
+
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit, Row, Column, ButtonHolder
 import datetime
@@ -8,6 +9,7 @@ from django.contrib.gis import forms
 from django.utils.translation import ugettext_lazy as _
 from django.core.exceptions import ValidationError
 from datetime import timedelta
+
 
 
             
@@ -204,42 +206,49 @@ class DutyEntryForm(forms.ModelForm):
     #     required=True,
     #     widget=forms.Textarea
     # )
-# class FeedbackForm(forms.ModelForm):
-#     # latitude = forms.CharField()
-#     # longitude = forms.CharField()
-#     name= forms.CharField()
-#     email = forms.CharField()
-#     mobile = forms.IntegerField()
-#     feedback = forms.CharField(widget=forms.Textarea(attrs={"rows":5, "cols":20})
-# )
-#     def __init__(self, *args, **kwargs):
-#         super().__init__(*args, **kwargs)
-#         self.helper = FormHelper()
-#         self.helper.layout = Layout(
+
+
+class FeedbackForm(forms.ModelForm):
+    # latitude = forms.CharField()
+    # longitude = forms.CharField()
+    name= forms.CharField()
+    email = forms.CharField()
+    mobile = forms.IntegerField()
+    feedback = forms.CharField(widget=forms.Textarea(attrs={"rows":15, "cols":50})
+)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # self.helper = FormHelper()
+        # self.helper.layout = Layout(
             
-#             Row(
-#                 Column('latitude', css_class='form-group col-md-5 mb-0'),
-#                 Column('longitude', css_class='form-group col-md-5 mb-0'),
-#                 css_class='form-row'
-#             ),
+        #     Row(
+        #         Column('latitude', css_class='form-group col-md-5 mb-0'),
+        #         Column('longitude', css_class='form-group col-md-5 mb-0'),
+        #         css_class='form-row'
+        #     ),
             
-#             Row(
-#                 Column('name', css_class='form-group col-md-5 mb-0'),                
-#                 Column('email', css_class='form-group col-md-5 mb-0'),
-#                 Column('mobile', css_class='form-group col-md-5 mb-0'),
-#                 css_class='form-row'
-#             ),
-#              Row(
-#                 Column('feedback', css_class='form-group col-md-5 mb-0'),
+        #     Row(
+        #         Column('name', css_class='form-group col-md-5 mb-0'),                
+        #         Column('email', css_class='form-group col-md-5 mb-0'),
+        #         Column('mobile', css_class='form-group col-md-5 mb-0'),
+        #         css_class='form-row'
+        #     ),
+        #      Row(
+        #         Column('feedback', css_class='form-group col-md-5 mb-0'),
                
-#                 css_class='form-row'
-#             ),
-#             Submit('submit', 'Save')
-#         )
+        #         css_class='form-row'
+        #     ),
+        #     Submit('submit', 'Save')
+        # )
 
-#     class Meta:
-#         model = Feedback
-#         fields = '__all__'
-#         exclude = ['latitude','longitude']
+    class Meta:
+        model = Feedback
+        fields = '__all__'
+        exclude = ['latitude','longitude','id']
 
-    
+class UploadPictureForm(forms.ModelForm):
+    picture = forms.ImageField(label='')
+    date = forms.DateField(label = 'Date')
+    class Meta:
+            model = UploadPicture
+            fields = '__all__'
