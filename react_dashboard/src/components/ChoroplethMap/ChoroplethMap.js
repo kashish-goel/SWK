@@ -3,7 +3,7 @@ import { Map, TileLayer , GeoJSON,LayersControl} from "react-leaflet";
 import Control from 'react-leaflet-control';
 
 import "./ChoroplethMap.css";
-import { groupDataByCategory, mergeGeomData , groupDataByDateCategory} from "./../util";
+import { groupDataByCategory, mergeGeomData , groupDataByDateCategory,getDays,getMonth,getYear} from "./../util";
 import { scaleSequential } from "d3-scale";
 import { interpolateRdYlGn} from "d3-scale-chromatic";
 import {select} from "d3-selection";
@@ -28,9 +28,11 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
     const dataByCategory = groupDataByCategory(data,selCategory);
     const [zoneControl,setZoneControl] = useState(false);
     const svgLegRef = useRef();
-    const svgSliderRef = useRef(); 
-    
-    
+    const svgSliderRef = useRef();
+
+  
+
+   
       
     
     const [selDay, setSelDay] = useState(1);
@@ -44,17 +46,13 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
         // else if(selYear==='2021'){  setSelMonth('01');}
     //   }
     const dataByDateCategory = groupDataByDateCategory(data,selCategory,selYear,selMonth,selDay)
-    console.log(dataByDateCategory)
     const geojsonWithData = mergeGeomData(geojson,dataByDateCategory);
-    console.log(geojsonWithData)
     
 
-    console.log([selMonth, setSelMonth])
     const domain = []
     for( let key in dataByDateCategory){
         domain.push(dataByDateCategory[key])
     }
-     console.log(domain)
     const [min,max] = extent(domain);
 
     let colorScale= scaleSequential().domain([min,max]).interpolator(interpolateRdYlGn);
@@ -63,7 +61,6 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
     legend.append("g")
     .attr("class", "svg-color-legend")
     .attr("transform", "translate(50,15)");
-    console.log(selCategory)
     let newtitle;
     if(selCategory=='dry'){
       newtitle=`Recyclable Dry Waste`
@@ -89,50 +86,35 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
 
 
 // slider
+let minimumDay = Math.min(...getDays(data,selYear,selMonth));
+let maximumDay = Math.max(...getDays(data,selYear,selMonth));
 var sliderVertical = sliderLeft()
     .min(1)
-    .max(31)
+    .max(30)
     .step(1)
     .height(300)
     // .tickFormat(d3.format('.2%'))
     .ticks(5)
     .default(0.015)
     .on('onchange', val => {
-        setSelDay(val)
-    });
+        setSelDay(val);
 
-  var gVertical = select(svgSliderRef.current)
+    });
+    
+
+  var gVertical = select('#svg-time-slider')
     // .append('svg')
     .attr('width', 100)
     .attr('height', 400)
     .append('g')
+
     .attr('transform', 'translate(60,30)');
+    // gVertical.remove();
 
-  gVertical.call(sliderVertical);
-
-//   d3.select('p#value-vertical').text(d3.format('.2%')(sliderVertical.value()));
-// var sliderVertical = sliderLeft()
-//                         .min(1)
-//                         .max(30)
-//                         .step(1)
-//                         .height(300)
-//                         // .tickFormat(format('.2%'))
-//                         .ticks(5)
-//                         .default(0.015)
-//                         .on('onchange', val => {
-//                             setSelDay(val)
-//                         // d3.select('p#value-vertical').text(d3.format('.2%')(val));
-//                         });
-
-// const slider = select(svgSliderRef.current)
-//             .attr('width', 100)
-//             .attr('height', 350)
-//             .append('g')
-//             .attr('transform', 'translate(60,30)');
-
-// slider.call(sliderVertical);
-
-
+    // useEffect(() => {
+    gVertical.call(sliderVertical);
+     
+    // }, [maximumDay])
 
 const zoneStyle = (e) =>{
     if(typeof e.properties.dataValue !== "undefined")
@@ -206,7 +188,7 @@ if(true){
 
 </Control>
 }else{
-    zoneControlDiv
+    // zoneControlDiv
 }
        
 let geojsonMap =  <GeoJSON key='my-geojson' style={zoneStyle} data={geojsonWithData} onEachFeature={onEachLane}  />
@@ -216,18 +198,14 @@ const handleDropdownChange = (e) =>{
 }
 const handleYearDropdownChange = (e) =>{
     setSelYear(e.target.value)
-    console.log(e.target.value)
     if (e.target.value==='2021') {
 setSelMonth('02');  
-console.log('its 2021')      
     }
     else{setSelMonth('01')}
 }
-console.log(selYear)
-let menuItems;
+const monthName = {'09':'Sep','10':'Oct','11':'Nov','12':'Dec','01':'Jan','02':'Feb','03':'Mar','04':'April','05':'May','06':'June','07':'July','08':'Aug'}; 
 
-    if(selYear === '2020'){
-        menuItems =<Select
+let menuItems =<Select
         labelId="demo-simple-select-outlined-label"
         id="demo-simple-select-outlined"
         value={selMonth}
@@ -238,34 +216,13 @@ let menuItems;
         <MenuItem value="">
             <em>None</em>
         </MenuItem>
-        
-        
-         <MenuItem value={'09'}>September</MenuItem>
-        <MenuItem value={'10'}>October</MenuItem>
-        <MenuItem value={'11'}>November</MenuItem>
-        <MenuItem value={'12'}>December</MenuItem> 
+        {getMonth(data,selYear).map((month)=>{
+             return <MenuItem value={month}>{monthName[month]}</MenuItem>
+        })
+        }
+         
+       
     </Select>
-    }else{
-        menuItems = <Select
-        labelId="demo-simple-select-outlined-label"
-        id="demo-simple-select-outlined"
-        value={selMonth}
-        onChange={handleDropdownChange}
-        label="Month"
-        className="month-drop"
-        >
-        <MenuItem value="">
-            <em>None</em>
-        </MenuItem>
-        
-        
-         <MenuItem value={'01'}>January</MenuItem>
-         <MenuItem value={'02'}>February</MenuItem>
-         <MenuItem value={'03'}>March</MenuItem>
-         <MenuItem value={'04'}>April</MenuItem>
-        
-    </Select>
-    }
 
 return (
     <div className="map">
@@ -290,8 +247,12 @@ return (
                     <MenuItem value="">
                         <em>None</em>
                     </MenuItem>
-                    <MenuItem value={'2020'}>2020</MenuItem>
-                    <MenuItem value={'2021'}>2021</MenuItem>
+                    {
+                        getYear(data).map(year =>{
+                            return <MenuItem value={year}>{year}</MenuItem>
+                        })
+                    }
+                   
                 </Select>    
                 
                     {menuItems}

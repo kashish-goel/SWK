@@ -9,7 +9,6 @@ function Barchart({data,selLane,selCategory}) {
     const barData = calMonthlyData(data,selLane,selCategory);
     const upperCaseSelCategory = selCategory.charAt(0).toUpperCase() + selCategory.slice(1)
     const zone_name = ZONES.filter(zone => zone.zone_id === selLane)[0]['lane_name']
-    console.log(upperCaseSelCategory)
     const upperCaseSelLane = zone_name.charAt(0).toUpperCase() + zone_name.slice(1)
     let newtitle;
     if(upperCaseSelCategory=='Dry'){
