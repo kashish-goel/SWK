@@ -8,12 +8,15 @@ export default function InfoBoxes({data,selLane,selCategory,setSelCategory}) {
     let wet = calcTotalWaste(data,selLane,'wetwaste_af');
     let rejected = calcTotalWaste(data,selLane,'rejected');
 
+    let date_array = data[data.length - 1].date.split('-');
+    let latest_date= `${date_array[2]}-${date_array[1]}-${date_array[0]}`;
+
     // const [dry,setDry] = useState();
     return (
         <div className="infoboxes">
-        <InfoBox active={selCategory === 'dry' } onClick={() => setSelCategory("dry")} title={"Recyclable Dry Waste(till date)"} value={`${dry} kg`} description=""/>
-        <InfoBox active={selCategory === 'wet' } onClick={() => setSelCategory("wet")} title={"Compostable Wet Waste(till date)"} value={`${wet} kg`} description=""/>
-        <InfoBox active={selCategory === 'rejected' } onClick={() => setSelCategory("rejected")} title={"Segregated Rejected Waste(till date)"} value={`${rejected} kg`} description=""/>
+        <InfoBox active={selCategory === 'dry' } onClick={() => setSelCategory("dry")} title={`Recyclable Dry Waste`} value={`${dry} kg`} date={`till ${latest_date}`}/>
+        <InfoBox active={selCategory === 'wet' } onClick={() => setSelCategory("wet")} title={`Compostable Wet Waste(till ${latest_date})`} value={`${wet} kg`} date={`till ${latest_date}`}/>
+        <InfoBox active={selCategory === 'rejected' } onClick={() => setSelCategory("rejected")} title={`Segregated Rejected Waste(till ${latest_date})`} value={`${rejected} kg`} date={`till ${latest_date}`}/>
         </div>
     )
 }
