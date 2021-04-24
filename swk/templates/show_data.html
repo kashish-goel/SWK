@@ -50,6 +50,7 @@
         </div><br>
         <br>
         <br>
+        <div id ="selected_zone"></div>
         <div class="input col-md-6">
      
             <b>Filter data by</b><br>
@@ -57,6 +58,7 @@
               <br>and by <b>Zone  </b>    
             <!-- <b>Filter data by</b><br>
             <b>Date  </b><input type="date" id="date">and by <b>Zone  </b>     -->
+            <!-- <select id="zone" multiple onclick = "zoneclick()"> -->
             <select id="zone">
             <option value="ALL">All</option>
             <option value="Hira Seth Chawl to Waras Lane">Hira Seth Chawl to Waras Lane</option>
@@ -79,8 +81,11 @@
             <!-- <label for="HW">Hira Seth Chawl to Waras Lane</label><br> -->
             <!-- <a href="" onclick = "this.href='/download_data_zone/' +document.getElementById('date').value +'&'+document.getElementById('zone').value" class="btn btn-primary">Get Data</a> -->
             <a href="" onclick = "this.href='/download_data_zone/' +document.getElementById('date').value +'to'+document.getElementById('date1').value+'&'+document.getElementById('zone').value" class="btn btn-primary">Get Data</a>
+            <!-- <a href="" onclick = "this.href='/download_data_zone/' +document.getElementById('date').value +'to'+document.getElementById('date1').value+'&'+document.getElementById('selected_zone').innerHTML" class="btn btn-primary">Get Data</a> -->
  
-        </div><br><br><br><br><br><br>
+        </div>
+        
+        <br><br><br><br><br><br>
 
         <br>
         <br>     
@@ -356,5 +361,24 @@ $(function() {
                         } //else fade in 
                     }); // end of for each tr in table
                 }); // end of on click pagination list
+            }
+
+
+
+
+          function zoneclick(){
+              var selected = [];
+              var selected_zone = document.getElementById('selected_zone')
+              for (var option of document.getElementById('zone').options){
+                if(option.selected){
+                  // selected.push("'")
+                  selected.push("'"+option.value+"'");
+                  // selected.push("'")
+                  selected_zone.innerHTML =  selected;
+                }
+              }
+              alert(selected);
+              
+              
             }
         </script> {% endblock %}

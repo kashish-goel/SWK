@@ -267,6 +267,11 @@ table, th, td
 .form-control {
   width: 160px;
 }
+
+.circle {
+        /* background-color: red; */
+        border-radius: 50%;
+    }
 </style>
 
 {% endblock extra_map_css%}
@@ -323,19 +328,19 @@ table, th, td
                               <label><input type="checkbox" value="{lane}" onchange="getBoundaryru(this)"><span> Lane(coming up soon...)</span></label>
                           </div> -->
                           <div class="checkbox">
-                            <label><input type="checkbox" value="{binpath}" onchange="getBoundaryru(this)"><span> {% trans "Bin Paths " %}</span></label>
+                            <label><input type="checkbox" value="{binpath}" id ="binpath" onchange="getBoundaryru(this)"><span> {% trans "Lanes / Bin Paths " %}</span></label>
                          </div>
                           <div class="checkbox">
-                            <label><input type="checkbox" value="{spots}" onchange="getBoundaryru(this)"><span> {% trans "Spots " %}</span></label>
+                            <label><input type="checkbox" value="{spots}" id ="spots"onchange="getBoundaryru(this)"><span> {% trans "Spots " %}</span></label>
                          </div>
                           <!-- <div class="checkbox">
                               <label><input type="checkbox" value="{spot}" onchange="getBoundaryru(this)"><span> {% trans "Spot Images" %}</span></label>
                           </div> -->
                           <div class="checkbox">
-                              <label><input type="checkbox" value="{bubble}" onchange="getBoundaryru(this)"><span> {% trans "Bubble" %}</span></label>
+                              <label><input type="checkbox" value="{bubble}" id ="bubble" onchange="getBoundaryru(this)"><span> {% trans "Bubble" %}</span></label>
                           </div>
                           <div class="checkbox">
-                              <label><input type="checkbox" value="{zones}" onchange="getBoundaryru(this)"><span> {% trans "Zones" %}</span></label>
+                              <label><input type="checkbox" value="{zones}" id ="zone" onchange="getBoundaryru(this)"><span> {% trans "Zones" %}</span></label>
                           </div>
                          
                       
@@ -834,6 +839,7 @@ table, th, td
                console.log("popupzone",popup_layer);
                console.log(wms_layer);
                legend.addTo(mymap);
+               
 
                }
                else if (layer == "geonode:zone_polygon300121") {
@@ -867,6 +873,7 @@ table, th, td
                 popup_layer="https://communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
                 console.log("popupzone",popup_layer);
                 console.log(wms_layer);
+                mymap.removeControl(legend);
                 legend.addTo(mymap);
                 }
                 else if (layer == "geonode:worli_spot_updated_10march") {
@@ -1474,9 +1481,16 @@ table, th, td
 
             mymap.addEventListener('click', Identify);
 
+
+            //Legends for bin path, spots, bubbles and zone
+
             var legend = L.control({position: 'bottomright'});
 
             legend.onAdd = function (mymap) {
+                if(document.getElementById('binpath').checked) {
+                         var selection=  "binpath";
+                }
+
 
                 var div = L.DomUtil.create('div', 'info legend'),
                     grades = [1,2,3,4,5,6,7,8,9,10,11,12,13],

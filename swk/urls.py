@@ -21,5 +21,8 @@ urlpatterns = [
     url(r'^download_data_zone/(?P<year>\d{4})-(?P<month>\d{2})-(?P<day>\d{2})to(?P<year1>\d{4})-(?P<month1>\d{2})-(?P<day1>\d{2})&(?P<zone_name>\D+)/$', views.downloadzone),
     path('report/',views.report,name='report'),
     path('faq/',views.FAQ, name = 'faq'),
+    path('feedback/',views.Feedback, name = 'feedback'),
+    path('contact/',views.Contact, name = 'contact'),
+    path('uploadimage/',views.UploadImage, name = 'uploadimage'),
 ]
 

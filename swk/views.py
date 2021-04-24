@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect,HttpResponse,HttpResponseRedirect
 from django.template import loader
-from .forms import TracksheetForm, DutyEntryForm, TracksheetForm1
+from .forms import TracksheetForm, DutyEntryForm, TracksheetForm1,FeedbackForm,UploadPictureForm
 from .models import DutyEntry,Tracksheet,Zones ,SwkAttendants
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User,auth
@@ -10,6 +10,7 @@ from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.utils.translation import gettext_lazy as _
+from django.core.mail import send_mail, get_connection
 
 
 # Create your views here.form
@@ -43,16 +44,16 @@ def downloadzone(request,year,month,day,year1,month1,day1,zone_name):
     new_date=year+'-'+ month +'-'+day
     new_date1=year1+'-'+ month1 +'-'+day1
     
-    # zone_name = lane_name.split(',')
-    # zone_count = lane_name.count(',')
-    # print(zone_name)
+    # zone_name = zone_name.split(',')
+    # zone_count = zone_name.count(',')
+    # print(zone_count)
     # for count in zone_count:
     #     zone_name = 'lane_name='+zone_name[count]
 
     if(zone_name=='ALL'):
         datas= Tracksheet.objects.filter(date__range=(new_date, new_date1)).order_by('date','lane_name')
     else:
-        # datas= Tracksheet.objects.filter(lane_name__in=zone_name, date__range=(new_date, new_date1))
+        # datas= Tracksheet.objects.filter(lane_name__in=(zone_name), date__range=(new_date, new_date1)).order_by('date','lane_name')
         datas= Tracksheet.objects.filter(lane_name=zone_name, date__range=(new_date, new_date1)).order_by('date','lane_name')
         print(datas)
     return render(request,'download_data_zone.html',{'datas':datas})
@@ -298,4 +299,92 @@ def report(request):
 def FAQ(request):
         return render(request,"faq.html")
 
+def Contact(request):
+        return render(request,"contact.html")
+
+def Feedback(request):
+    # form_class = FeedbackForm
+    # return render(request,"feedback_form.html", { 'form': form_class,})
+
+    form = FeedbackForm(request.POST or None)
+    if request.method == 'POST':
+        form = FeedbackForm(request.POST or None)
+        if form.is_valid():
+            latitude = request.POST.get('latitude')
+            longitude = request.POST.get('longitude')
+            cd = form.cleaned_data
+            name = form.cleaned_data['name']
+            mobile = form.cleaned_data['mobile']
+            feedback = form.cleaned_data['feedback']
+            print("feedabck is"+cd['feedback'])
+            print("email is"+ cd['email'])
+            from_email = form.cleaned_data['email']
+            message_mail = 'Senders Name -  '+ name + "\n" + 'Senders Mobile - '+ str(mobile) + "\n" + 'Senders Email Id - ' +from_email + "\n" + 'Feedback Received - '+ feedback
+
+            # print(latitude)
+            # print(request.POST.get('lat'))
+            print(from_email)
+            print(request.POST)
+            form.save()
+            
+
+            # con = get_connection('django.core.mail.backends.console.EmailBackend')
+            con = get_connection('django.core.mail.backends.smtp.EmailBackend')
+            # if (send_mail('Feedback (SWK)', cd['feedback'],cd.get('email', 'noreply@example.com'),
+            # ['monikapatira@gmail.com'],connection=con)):
+            if(send_mail('Feedback received for swk.communitygis.net', message_mail,from_email,['sms.swk@gmail.com'],fail_silently=False,)):
+            # if(send_mail('Feedback (SWK)', message_mail,from_email,['monikapatira@gmail.com'],fail_silently=False,)):
+                print("message sent")
+            else :
+                console.log(message_mail)
+                print("Failure")
+            messages.success(request, 'Your feedback is saved and email is sent.') 
+            return HttpResponseRedirect(request.path_info)
+        else:
+            # latitude = request.POST.get('latitude')
+            # longitude = request.POST.get('longitude','')
+            # print(latitude)
+            # print(longitude)
+            # print(request.POST.get('lat'))
+            # print(request.POST)
+            cd = form.cleaned_data
+            print(cd)
+            print(form.errors)
+            messages.warning(request, 'Please check your form') 
+            return render(request, 'feedback_form.html',{'form': FeedbackForm})
+    else: 
+        form_class = FeedbackForm
+        return render(request,"feedback_form.html", { 'form': form_class,})
+
+
+
+def UploadImage(request):
+    form = UploadPictureForm()
+    global datauri
+    if request.is_ajax():
+        datauri = request.POST['picture']
+    
+
+    if request.method == 'POST' and not request.is_ajax():
+        form = UploadPictureForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+        # lat = request.POST.get('lat')
+        # lng = request.POST.get('lng')
+
+        # try:
+        #     imgstr = re.search(r'base64,(.*)', datauri).group(1)
+        #     data = ContentFile(base64.b64decode(imgstr))
+        #     myfile = "profile-"+time.strftime("%Y%m%d-%H%M%S")+".png"
+        #     fs = FileSystemStorage()
+        #     filename = fs.save(myfile, data)
+        #     picLocation = PictureLocation.objects.create(user=request.user,picture_name=filename,lat=lat,lng=lng)
+        #     picLocation.save()
+        #     datauri = False
+        #     del datauri
+        # except NameError:
+        #     print("Image is not captured")
+       
         
+
+    return render(request,"upload_image.html",{'form':form})
