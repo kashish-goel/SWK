@@ -21,9 +21,14 @@
     <link href="{% static 'assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
     <link href="{% static 'assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
     <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> -->
     <!-- Template Main CSS File -->
     <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+    <script src="{% static 'assets/js/popper.js' %}"></script>
+
 
     <!-- =======================================================
   * Template Name: Amoeba - v3.0.0
@@ -72,25 +77,37 @@
                     <a href="{% url 'swk_map' %}" class="nav-link text-white">{% trans "Maps" %}</a>
                 </li>
                 {% if request.user|has_group:"DataManager" %}
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                      Forms
+                    </a>
+                  
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <li><a class="dropdown-item" href="{% url 'trackform_det' %}">{% trans "DataManager-EntryForm" %}</a></li>
+                      <li><a class="dropdown-item" href="{% url 'show' %}">{% trans "View Daily Entry Data" %}</a></li>
+                      <li><a class="dropdown-item" href="https://ee.humanitarianresponse.info/x/Y3Ji0ej7">{% trans "OneTimeSurvey Form" %}</a></li>
+                    </ul>
+                  </div>
+                
                 <li class="nav-item">
-                    <a href="{% url 'trackform_det' %}" class="nav-link text-white">{% trans "DataManager-EntryForm" %}</a>
-                </li>
-                <li class="nav-item">
-                    <a href="https://ee.humanitarianresponse.info/x/Y3Ji0ej7" class="nav-link text-white">{% trans "OneTimeSurvey Form" %}</a>
-                </li>
-                <li class="nav-item" >
-                    <a href="{% url 'show' %}" class="nav-link text-white">{% trans "View Daily Entry Data" %}</a>
+                    <a href="{% url 'report' %}" class="nav-link text-white">{% trans "Report" %}</a>
                 </li>
                 {% endif %}
                 {% if request.user|has_group:"supervisor" %}
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                      Forms
+                    </a>
+                  
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <li><a class="dropdown-item" href="{% url 'trackform' %}"class="nav-link text-white">{% trans "Daily Entry Form" %}</a></li>
+                      <li><a class="dropdown-item" href="{% url 'show' %}"class="nav-link text-white">{% trans "View Daily Entry Data" %}</a></li>
+                      <li><a class="dropdown-item" href="https://ee.humanitarianresponse.info/x/Y3Ji0ej7" class="nav-link text-white">{% trans "OneTimeSurvey Form" %}</a></li>
+                    </ul>
+                  </div>
+                   
                     <li class="nav-item">
-                        <a href="{% url 'trackform' %}" class="nav-link text-white">{% trans "Daily Entry Form" %}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://ee.humanitarianresponse.info/x/Y3Ji0ej7" class="nav-link text-white">{% trans "OneTimeSurvey Form" %}</a>
-                    </li>
-                    <li class="nav-item" >
-                        <a href="{% url 'show' %}" class="nav-link text-white">{% trans "View Daily Entry Data" %}</a>
+                        <a href="{% url 'report' %}" class="nav-link text-white">{% trans "Report" %}</a>
                     </li>
                 {% endif %}
                     <!-- <li class="nav-item">
@@ -99,18 +116,19 @@
                     <li class="nav-item">
                         <a href="{% url 'dashboard' %}"class="nav-link text-white">{% trans "Dashboard" %}</a>
                     </li>
-                {% if request.user|has_group:"supervisor" %}
-                    <li class="nav-item">
-                        <a href="{% url 'report' %}" class="nav-link text-white">{% trans "Report" %}</a>
-                    </li>
-                {% endif %}
+                
 
                 <li class="nav-item">
                     <a href="{% url 'faq' %}" class="nav-link text-white">{% trans "FAQ" %}</a>
                 </li>
                 <li>
-                    <a href="{% url 'feedback' %}" class="nav-link text-white">{% trans "Feedback" %}</a>
+                    <a href="{% url 'feedback' %}" class="nav-link text-white">{% trans "Grievance" %}</a>
                 </li>
+                {% if request.user|has_group:"supervisor" %}
+                <li>
+                    <a href="{% url 'rating' %}" class="nav-link text-white">{% trans "Mock-Feedback" %}</a>
+                </li>
+                {% endif %}
                 <li>
                     <a href="{% url 'contact' %}" class="nav-link text-white">{% trans "Contact Us" %}</a>
                 </li>
@@ -176,10 +194,12 @@
     <!-- Copyright -->
     </footer>
     <!-- End #footer -->
-    {% block extra_javascript %} {% endblock %}
+    {% block extra_javascript %} 
+    
+    {% endblock %}
 
     <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
-
+    
     <!-- Vendor JS Files -->
     <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
     <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>

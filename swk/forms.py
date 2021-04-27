@@ -196,51 +196,28 @@ class DutyEntryForm(forms.ModelForm):
         fields = '__all__'
 
 
-    # name = forms.CharField(required=True)
-    # email = forms.EmailField(required=False)
-    # mobile = PhoneNumberField(required=True)
-    
-    # point = forms.PointField(required=True, widget=
-    #     forms.OSMWidget(attrs={'map_width': 500, 'map_height': 300}))
-    # feedback = forms.CharField(
-    #     required=True,
-    #     widget=forms.Textarea
-    # )
-
-
 class FeedbackForm(forms.ModelForm):
     # latitude = forms.CharField()
     # longitude = forms.CharField()
+    YESNO_CHOICES = ((0, 'No'), (1, 'Yes'))
     name= forms.CharField()
     email = forms.CharField()
     mobile = forms.IntegerField()
-    feedback = forms.CharField(widget=forms.Textarea(attrs={"rows":15, "cols":50})
-)
+    # q1 = forms.CharField(label ="how do you find overall  daily collection service of SWK ?")
+    # fw_once =forms.ChoiceField(choices=YESNO_CHOICES, widget=forms.RadioSelect,label ="Is collecting food waste once a day enough?")
+    # fw_twice =forms.ChoiceField(choices=YESNO_CHOICES, widget=forms.RadioSelect,label ="Would you like to collect food waste twice a day enough?")
+    # fw_container = forms.ChoiceField(choices=YESNO_CHOICES, widget=forms.RadioSelect,label ="Do you have container for food waste?")
+    # dw_container = forms.ChoiceField(choices=YESNO_CHOICES, widget=forms.RadioSelect,label ="Do you have container for dry waste?")
+    # mw_container = forms.ChoiceField(choices=YESNO_CHOICES, widget=forms.RadioSelect,label ="Do you have container for menstrual waste?")
+    # ew_container = forms.ChoiceField(choices=YESNO_CHOICES, widget=forms.RadioSelect,label ="Do you have container for e-waste waste?")
+    # req_dw_cont = forms.ChoiceField(choices=YESNO_CHOICES, widget=forms.RadioSelect,label ="Do you like container for food waste?")
+    # req_ww_cont = forms.ChoiceField(choices=YESNO_CHOICES, widget=forms.RadioSelect,label ="Do you have container for food waste?")
+    feedback = forms.CharField(widget=forms.Textarea(attrs={"rows":15, "cols":50}))
+    
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        # self.helper = FormHelper()
-        # self.helper.layout = Layout(
-            
-        #     Row(
-        #         Column('latitude', css_class='form-group col-md-5 mb-0'),
-        #         Column('longitude', css_class='form-group col-md-5 mb-0'),
-        #         css_class='form-row'
-        #     ),
-            
-        #     Row(
-        #         Column('name', css_class='form-group col-md-5 mb-0'),                
-        #         Column('email', css_class='form-group col-md-5 mb-0'),
-        #         Column('mobile', css_class='form-group col-md-5 mb-0'),
-        #         css_class='form-row'
-        #     ),
-        #      Row(
-        #         Column('feedback', css_class='form-group col-md-5 mb-0'),
-               
-        #         css_class='form-row'
-        #     ),
-        #     Submit('submit', 'Save')
-        # )
-
+        
     class Meta:
         model = Feedback
         fields = '__all__'
