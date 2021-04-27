@@ -302,6 +302,9 @@ def FAQ(request):
 def Contact(request):
         return render(request,"contact.html")
 
+def Rating(request):
+        return render(request,"rating.html")
+
 def Feedback(request):
     # form_class = FeedbackForm
     # return render(request,"feedback_form.html", { 'form': form_class,})
@@ -316,10 +319,24 @@ def Feedback(request):
             name = form.cleaned_data['name']
             mobile = form.cleaned_data['mobile']
             feedback = form.cleaned_data['feedback']
+            # fw_once =form.cleaned_data['fw_once']
+            # fw_twice = form.cleaned_data['fw_twice']
+            # fw_container = form.cleaned_data['fw_container']
+            # dw_container = form.cleaned_data['dw_container']
+            # mw_container = form.cleaned_data['mw_container']
+            # ew_container = form.cleaned_data['ew_container']
             print("feedabck is"+cd['feedback'])
             print("email is"+ cd['email'])
             from_email = form.cleaned_data['email']
             message_mail = 'Senders Name -  '+ name + "\n" + 'Senders Mobile - '+ str(mobile) + "\n" + 'Senders Email Id - ' +from_email + "\n" + 'Feedback Received - '+ feedback
+            # message_mail = 'Senders Name -  '+ name + "\n" + 'Senders Mobile - '+ str(mobile) + "\n" + 'Senders Email Id - ' +from_email + "\n" 
+            # + 'Is collecting food waste once a day enough? - '+ fw_once + "\n"
+            # + 'Would you like to collect food waste twice a day enough? - '+ str(fw_twice) + "\n"
+            # + 'Do you have container for food waste? - '+ str(fw_container) + "\n"
+            # + 'Do you have container for dry waste? - '+ str(dw_container) + "\n"
+            # + 'Do you have container for menstrual waste? - '+ str(mw_container) + "\n"
+            # + 'Do you have container for e-waste waste? - '+ str(ew_container) + "\n"
+            # + 'Feedback Received - '+ feedback
 
             # print(latitude)
             # print(request.POST.get('lat'))

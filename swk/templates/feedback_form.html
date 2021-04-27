@@ -2,6 +2,8 @@
 {% load static%} {% block content %}{% block extra_css %}
 {% load i18n %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+<script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
 
 <style>
     .form-row {
@@ -19,7 +21,7 @@
 </style>
 {% endblock %}
 <div class="container mb-7" style="margin-top: 10px;">
-    <h2>{% trans "Feedback / Complaint Form "%}</h2><hr><br>
+    <h2>{% trans "Grievance Form "%}</h2><hr><br>
     <!-- <h1 class='text-center mt-5'>Feedback / Complaint Form</h1> -->
 
     <form method="post" data-url="{{ request.build_absolute_uri|safe }}" class="form-group" style="text-align:left;">
