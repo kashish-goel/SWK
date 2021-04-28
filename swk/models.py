@@ -111,3 +111,13 @@ class Feedback(models.Model):
 class UploadPicture(models.Model):
     picture = models.FileField(upload_to='uploadPics/', blank=True, null=True)
     date = models.DateField()
+
+class SwkBubblePopulation(models.Model):
+    zone_id = models.CharField(max_length=50, blank=True, null=True)
+    bubble_id = models.IntegerField(blank=True, null=True)
+    spot_id = models.IntegerField(blank=True, null=True)
+    bubble_population = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'swk_bubble_population'
