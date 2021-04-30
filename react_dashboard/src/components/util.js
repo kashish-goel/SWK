@@ -200,15 +200,22 @@ export const groupDataByCategory = (data,selCategory) =>{
   
 // }
 
-export const mergeGeomData = (geojson,dataByCategory) =>{ 
+export const mergeGeomData = (geojson,dataByCategory,zonePopulation) =>{ 
   const features = geojson.features;
   for(let key in features){
     let zone_id = features[key].properties.zone_id;
-
     for(let z in dataByCategory){
       if (z === zone_id)
         features[key].properties['dataValue'] = dataByCategory[z]; 
     }
+    //adding population
+
+    for(let p in zonePopulation){
+      if(p === zone_id)
+        features[key].properties['population'] = zonePopulation[p];
+        features[key].properties['perCapita'] = +(features[key].properties.dataValue/features[key].properties.population).toFixed(3);
+    }
+
     // if(dataByCategory.length>0){   //if dataBycategory is not empty
     //   console.log(dataByCategory)
     //   let value = dataByCategory.filter(obj => {
@@ -224,7 +231,7 @@ export const mergeGeomData = (geojson,dataByCategory) =>{
   
     //   features[key].properties['dataValue'] = value; 
     // }
-    
+    console.log(geojson)
   }
   return geojson;
   

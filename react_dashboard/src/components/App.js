@@ -26,26 +26,26 @@ export default function App() {
 
     <div className="app__header">
       <h1>SWK Dashboard</h1>
-      <Dropdown data={data} selLane={selLane} setSelLane={setSelLane}/>
+      <Dropdown data={data.track} selLane={selLane} setSelLane={setSelLane}/>
     </div>
 
     
 
     <div className="app__info">
-       <InfoBoxes data={data} selLane={selLane} selCategory={selCategory} setSelCategory={setSelCategory}/>
+       <InfoBoxes data={data.track} selLane={selLane} selCategory={selCategory} setSelCategory={setSelCategory}/>
     </div>
 
     <div className="app__stat">
       <div className="app__stat__map">
-        <ChoroplethMap geojson={geojson} data={data} setSelLane={setSelLane} selCategory={selCategory}/>
+        <ChoroplethMap geojson={geojson} data={data.track} bubblePopulationData={data.population} setSelLane={setSelLane} selCategory={selCategory}/>
       </div>
       <div className="app__stat__barchart">
-        <Barchart data={data} selLane={selLane} selCategory={selCategory}/>
+        <Barchart data={data.track} selLane={selLane} selCategory={selCategory}/>
       </div>
 
     </div>
     
-      <LineCharts data={data} selLane={selLane}/>
+      <LineCharts data={data.track} selLane={selLane}/>
 
   </div>
   

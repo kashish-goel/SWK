@@ -23,13 +23,22 @@ import { sliderLeft, sliderVertical } from 'd3-simple-slider';
 
 
 
-function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
+function ChoroplethMap({geojson,data,bubblePopulationData,setSelLane,selCategory}) {
     const geoJsonRef = useRef();
     const dataByCategory = groupDataByCategory(data,selCategory);
     const [zoneControl,setZoneControl] = useState(false);
     const svgLegRef = useRef();
     const svgSliderRef = useRef();
 
+    const zonePopulation = bubblePopulationData.reduce((obj,elem)=>{
+        let category = elem["zone_id"];
+        if(!obj.hasOwnProperty(category))
+            obj[category] = 0;
+        obj[category] += elem["bubble_population"]
+        return obj;
+    },[])
+    
+    
   
 
    
@@ -46,21 +55,26 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
         // else if(selYear==='2021'){  setSelMonth('01');}
     //   }
     const dataByDateCategory = groupDataByDateCategory(data,selCategory,selYear,selMonth,selDay)
-    const geojsonWithData = mergeGeomData(geojson,dataByDateCategory);
+    const geojsonWithData = mergeGeomData(geojson.zones,dataByDateCategory,zonePopulation);
     
-
+    console.log(geojsonWithData)
     const domain = []
-    for( let key in dataByDateCategory){
-        domain.push(dataByDateCategory[key])
-    }
+        // for( let key in dataByDateCategory){
+        //     domain.push(dataByDateCategory[key])
+        //     console.log(domain)
+        // }
+
+    geojsonWithData.features.map(feature =>{
+        domain.push(feature.properties.perCapita);
+    })
     const [min,max] = extent(domain);
 
-    let colorScale= scaleSequential().domain([min,max]).interpolator(interpolateRdYlGn);
+    let colorScale= scaleSequential().domain([max,min]).interpolator(interpolateRdYlGn);
   
     let legend = select("#svg-color-scale")
     legend.append("g")
     .attr("class", "svg-color-legend")
-    .attr("transform", "translate(50,15)");
+    .attr("transform", "translate(50,20)");
     let newtitle;
     if(selCategory=='dry'){
       newtitle=`Recyclable Dry Waste`
@@ -73,7 +87,7 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
       }
     let colorLegend = legendColor()
         .labelFormat(format(".2f"))
-        .title(`Legend : ${newtitle}(Kgs)`)
+        .title(`Legend:${newtitle}(Kgs/capita)`)
         .scale(colorScale);
 
     
@@ -118,7 +132,7 @@ var sliderVertical = sliderLeft()
 
 const zoneStyle = (e) =>{
     if(typeof e.properties.dataValue !== "undefined")
-    return { fillColor:colorScale(e.properties.dataValue), color:"black" }
+    return { fillColor:colorScale(e.properties.perCapita), color:"black" }
     else
     return { fillColor:"black",color:"black" }
 }
@@ -137,7 +151,7 @@ const onEachLane = (lane,layer) =>{
 
 const setDataValue = value =>{
     if(typeof value !== "undefined")
-        return `<h1 class="text-center">${value} kg</h1>`
+        return `<h1 class="text-center">${value} Kg per capita</h1>`
     else    
         return `<h5 class="text-center">Data not Found</h5>`
 }
@@ -155,7 +169,7 @@ layer.on({
     mouseover: e => {
        L.popup()
         .setLatLng(e.latlng)
-        .setContent(`<b>${e.target.feature.properties.zone_name}</b> <hr> ${setDataValue(e.target.feature.properties.dataValue)}`)
+        .setContent(`<b>${e.target.feature.properties.zone_name}</b> <hr> ${setDataValue(e.target.feature.properties.perCapita)}<br>Total Population:${e.target.feature.properties.population}<br>Total Waste:${e.target.feature.properties.dataValue}Kg`)
         .openOn(layer._map);
     },
     mouseout: e=> layer._map.closePopup()
@@ -269,7 +283,6 @@ return (
       attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
       url='https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png'
     /> */}
-        {geojsonMap}
         
         <LayersControl position="topright">
             
@@ -291,14 +304,14 @@ return (
             <LayersControl.Overlay name="Spots">
                 <GeoJSON key='my-geojson' style={spotsStyle} data={geojson.spots} pointToLayer={pointToLayer} onEachFeature={onEachSpot}/>
             </LayersControl.Overlay>
-            {/* <LayersControl.Overlay name="Zones"  >
+            <LayersControl.Overlay checked name="Zones"  >
               
+            {geojsonMap}
 
-                <FeatureGroup >
-                   {geojsonMap}
+                {/* <FeatureGroup >
                     
-                </FeatureGroup>
-            </LayersControl.Overlay> */}
+                </FeatureGroup> */}
+            </LayersControl.Overlay>
             </LayersControl>
 
 
@@ -312,3 +325,7 @@ return (
 }
 
 export default ChoroplethMap
+
+
+// geonode:worli_bubble_updated_15march
+// geonode:worli_spot_updated_10march
