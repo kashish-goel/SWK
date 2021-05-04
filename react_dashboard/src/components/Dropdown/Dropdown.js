@@ -8,7 +8,7 @@ export default function Dropdown({data, selLane,setSelLane}) {
     const zones = getDropdownLanes(data);
     return (
         
-        <FormControl className="dropdown">
+        <FormControl className="dropdown1">
           <Select id="lane-dropdown" variant="outlined" value={selLane} onChange={e=>{setSelLane(e.target.value)}}>
             <MenuItem key='all' value="all">All</MenuItem>
             {zones.map(zone =>(
