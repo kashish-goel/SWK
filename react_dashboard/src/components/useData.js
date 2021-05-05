@@ -9,8 +9,8 @@ export const FetchData = () => {
         let currentURL = window.location.href.split('/')
        
         // const url =  `${currentURL[0]}//${currentURL[2]}/trackid/`;
-        const url=`http://localhost:8000/trackid/`;
-        const populationURL = `http://localhost:8000/bubblepopulation/`;
+        const url=`https://swk.communitygis.net/trackid/`;
+        const populationURL = `https://swk.communitygis.net/bubblepopulation/`;
         console.log(url)
          
         json(url,d=>{
