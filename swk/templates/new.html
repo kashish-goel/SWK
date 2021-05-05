@@ -146,11 +146,11 @@
                 <li>
                     <a href="{% url 'feedback' %}" class="nav-link text-white">{% trans "Grievance" %}</a>
                 </li>
-                {% if request.user|has_group:"supervisor" %}
+                
                 <li>
-                    <a href="{% url 'rating' %}" class="nav-link text-white">{% trans "Mock-Feedback" %}</a>
+                    <a href="{% url 'rating' %}" class="nav-link text-white">{% trans "Feedback" %}</a>
                 </li>
-                {% endif %}
+                
                 <li>
                     <a href="{% url 'contact' %}" class="nav-link text-white">{% trans "Contact Us" %}</a>
                 </li>

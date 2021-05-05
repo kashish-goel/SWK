@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect,HttpResponse,HttpResponseRedirect
 from django.template import loader
-from .forms import TracksheetForm, DutyEntryForm, TracksheetForm1,FeedbackForm,UploadPictureForm
-from .models import DutyEntry,Tracksheet,Zones ,SwkAttendants
+from .forms import TracksheetForm, DutyEntryForm, TracksheetForm1,FeedbackForm,UploadPictureForm#,RatingForm
+from .models import DutyEntry,Tracksheet,Zones ,SwkAttendants, Rating
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User,auth
 from django.contrib.auth import logout
@@ -302,8 +302,41 @@ def FAQ(request):
 def Contact(request):
         return render(request,"contact.html")
 
-def Rating(request):
-        return render(request,"rating.html")
+def RatingView(request):
+        print(request.method)
+        if request.method == 'POST':
+            name = request.POST.get('name')
+            mobile = request.POST.get('mobile')
+            email = request.POST.get('email')
+            service_swk = request.POST.get('rating1')
+            timing_swk = request.POST.get('rating2')
+            mobile_swk = request.POST.get('rating3')
+            compost_kit_garden = request.POST.get('rating4')
+            communicate_swk = request.POST.get('rating5')
+            food_bin =request.POST.get('yes_no')
+            paper_bin = request.POST.get('yes_no1')
+            ewaste_bin =request.POST.get('yes_no2')
+            pads_bin = request.POST.get('yes_no3')
+            epr_bin= request.POST.get('yes_no4')
+            print(food_bin)
+            print(paper_bin)
+            print(ewaste_bin)
+            print(pads_bin)
+            print(epr_bin)
+
+
+        
+            sub=Rating(name=name,mobile=mobile,email=email,service_swk=service_swk,timing_swk=timing_swk,mobile_swk=mobile_swk,compost_kit_garden=compost_kit_garden,communicate_swk=communicate_swk,food_bin=food_bin,paper_bin=paper_bin, ewaste_bin=ewaste_bin, epr_bin=epr_bin,pads_bin=pads_bin)
+            # if sub.save():
+                # print(sub.save)
+            sub.save()
+            messages.success(request, _(u' Your feedback is saved. '))
+            return HttpResponseRedirect(request.path_info)
+            # else:
+            #     messages.warning(request, _(u'Please check your form'))
+       
+
+        return render(request,"rating.html")  
 
 def Feedback(request):
     # form_class = FeedbackForm
@@ -318,7 +351,7 @@ def Feedback(request):
             cd = form.cleaned_data
             name = form.cleaned_data['name']
             mobile = form.cleaned_data['mobile']
-            feedback = form.cleaned_data['feedback']
+            grievance = form.cleaned_data['grievance']
             # fw_once =form.cleaned_data['fw_once']
             # fw_twice = form.cleaned_data['fw_twice']
             # fw_container = form.cleaned_data['fw_container']
