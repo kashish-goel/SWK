@@ -1,5 +1,5 @@
 from django import forms
-from .models import Tracksheet,DutyEntry,Zones,Feedback,UploadPicture
+from .models import Tracksheet,DutyEntry,Zones,Feedback,UploadPicture#, Rating
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit, Row, Column, ButtonHolder
@@ -9,7 +9,6 @@ from django.contrib.gis import forms
 from django.utils.translation import ugettext_lazy as _
 from django.core.exceptions import ValidationError
 from datetime import timedelta
-
 
 
             
@@ -229,3 +228,14 @@ class UploadPictureForm(forms.ModelForm):
     class Meta:
             model = UploadPicture
             fields = '__all__'
+
+# class RatingForm(forms.Form):
+#     name = forms.CharField(label='Your name', max_length=100)
+# class RatingForm(forms.ModelForm):
+#     name = forms.CharField(label='Your name', max_length=100)
+#     mobile = forms.IntegerField(label = "Contact Number")
+#     email = forms.CharField(label = "Email Id")
+#     service_swk = forms.IntegerField(label = "How do you find service of SWK?")
+#     class Meta:
+#         model = Rating
+#         fields = '__all__'

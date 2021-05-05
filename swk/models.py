@@ -102,8 +102,16 @@ class Feedback(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(blank=True, null=True)
     mobile = models.IntegerField(blank=True, null=True)
+    
+    # fw_once =models.BooleanField(max_length=1)
+    # fw_twice =models.BooleanField()
+    # fw_container =models.BooleanField()
+    # dw_container =models.BooleanField()
+    # mw_container =models.BooleanField()
+    # ew_container = models.BooleanField()
+    # req_dw_cont =models.BooleanField()
+    # req_ww_cont =models.BooleanField()
     feedback = models.TextField(blank=False, null=False)
-
     class Meta:
         managed = False
         db_table = 'swk_feedback'
@@ -112,6 +120,25 @@ class UploadPicture(models.Model):
     picture = models.FileField(upload_to='uploadPics/', blank=True, null=True)
     date = models.DateField()
 
+
+class Rating(models.Model):
+    name = models.CharField(max_length=100)
+    mobile = models.CharField(null=True,max_length=10)
+    email = models.CharField(max_length=100,null=True)
+    service_swk = models.IntegerField(default='yes')
+    timing_swk = models.IntegerField()
+    mobile_swk = models.IntegerField()
+    compost_kit_garden = models.IntegerField()
+    communicate_swk = models.IntegerField()
+    food_bin = models.CharField(default = 'no',max_length=10)
+    paper_bin = models.CharField(default = 'no',max_length=10)
+    ewaste_bin = models.CharField(default = 'no',max_length=10)
+    pads_bin = models.CharField(default = 'no',max_length=10)
+    epr_bin = models.CharField(default = 'no',max_length=10)
+    class Meta:
+        managed = False
+        db_table = 'swk_rating'
+        
 class SwkBubblePopulation(models.Model):
     zone_id = models.CharField(max_length=50, blank=True, null=True)
     bubble_id = models.IntegerField(blank=True, null=True)
@@ -121,3 +148,4 @@ class SwkBubblePopulation(models.Model):
     class Meta:
         managed = False
         db_table = 'swk_bubble_population'
+
