@@ -11,6 +11,43 @@ export const parseInteger = (data) =>{
     })
     return data;
 }
+
+
+
+export const getYear = (data) =>{
+  let years = [];
+  data.map(d => {
+      let date = d.date.split("-");
+      if(!(years.includes(date[0])))
+          years.push(date[0]);
+  });
+  return years;
+}
+
+export const getMonth = (data,year) =>{
+  let months = [];
+  data.map(d =>{
+      let date = d.date.split("-");
+      if(date[0] == year){
+          if(!months.includes(date[1]))
+              months.push(date[1]);
+      }
+  })
+  return months;
+}
+
+export const getDays = (data,year,month) =>{
+  let days = [];
+  data.map(d =>{
+      let date = d.date.split("-");
+      if(date[1] == month && date[0]==year){
+          if(!days.includes(+date[2]))
+              days.push(+date[2]);
+      }
+  })
+  return days;
+}
+
 export let ZONES = [];
 export const getDropdownLanes = (data) =>{
     const zones_with_id = data.map(d => {
@@ -38,35 +75,48 @@ export const calcTotalWaste = (data,selLane,cases) =>{
     return totWaste;
 }
 
+const monthName = {'09':'Sep','10':'Oct','11':'Nov','12':'Dec','01':'Jan','02':'Feb','03':'Mar','04':'April','05':'May','06':'June','07':'July','08':'Aug'}; 
+
 export const calMonthlyData = (data,selLane,selCategory) =>{
-  const month = {9:'Sep-2020',10:'Oct-2020',11:'Nov-2020',12:'Dec-2020',1:'Jan-2021',2:'Feb-2021',3:'Mar-2021',4:'April-2021'}; 
+  const yaxis = {};
   const colName = {'dry':'drywaste_af','wet':'wetwaste_af','rejected':'rejected'};
+  let yearMonth = {};
+  getYear(data).map(year =>{
+    yearMonth[year] = [];
+    getMonth(data,year).map(month =>{
+      yaxis[month] = `${monthName[month]}-${year}`
+      yearMonth[year].push(month);
+    })
+  })
   let selLaneData;
   if(selLane === 'all')
       selLaneData = data;
   else 
       selLaneData = data.filter(d => d.zone_id === selLane)
-  const groupedData = selLaneData.reduce((obj,elem)=>{
-      let category = parseInt(elem.date.split('-')[1]);
+  
+
+  let groupedData = selLaneData.reduce((obj,elem)=>{
+      let category = elem.date.split('-')[1];
       if(!obj.hasOwnProperty(category))
           obj[category] = 0;
       
       obj[category] += elem[colName[selCategory]];
       return obj;
   },[])
-
+  
+    delete groupedData["09"]; // hack not perfect solution
+ 
     let calcLabels = [];
     let calcData = [];
     // console.log(groupedData);
     for(let key in groupedData){
         // console.log(month2[key]);
-        calcLabels.push(month[key]);
+        calcLabels.push(yaxis[key]);
         calcData.push(groupedData[key]);
     }
   //   for(let key in month){
   //     console.log(key);
   // }
-    console.log(groupedData,calcData,calcLabels);
     const barData = {
         chartData:{
           labels: calcLabels,
@@ -150,15 +200,22 @@ export const groupDataByCategory = (data,selCategory) =>{
   
 // }
 
-export const mergeGeomData = (geojson,dataByCategory) =>{ 
+export const mergeGeomData = (geojson,dataByCategory,zonePopulation) =>{ 
   const features = geojson.features;
   for(let key in features){
     let zone_id = features[key].properties.zone_id;
-
     for(let z in dataByCategory){
       if (z === zone_id)
         features[key].properties['dataValue'] = dataByCategory[z]; 
     }
+    //adding population
+
+    for(let p in zonePopulation){
+      if(p === zone_id)
+        features[key].properties['population'] = zonePopulation[p];
+        features[key].properties['perCapita'] = +(features[key].properties.dataValue/features[key].properties.population).toFixed(3);
+    }
+
     // if(dataByCategory.length>0){   //if dataBycategory is not empty
     //   console.log(dataByCategory)
     //   let value = dataByCategory.filter(obj => {
@@ -174,7 +231,7 @@ export const mergeGeomData = (geojson,dataByCategory) =>{
   
     //   features[key].properties['dataValue'] = value; 
     // }
-    
+    console.log(geojson)
   }
   return geojson;
   
@@ -185,7 +242,6 @@ export const mergeGeomData = (geojson,dataByCategory) =>{
 //   data.filter(d => data.)
 // }
 export const groupDataByDateCategory = (data,selCategory,selYear,selMonth,selDay) =>{
-  console.log(data[0])
   // let date = `${selDay}/${selMonth}/20`; 
   selDay = ((""+selDay).length === 1)?"0"+selDay:selDay;
   // selDay=30
