@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-23 16:48+0530\n"
+"POT-Creation-Date: 2021-05-01 16:45+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: swk/forms.py:87 swk/forms.py:133 swk/templates/download_data_zone.html:168
-#: swk/templates/show_data.html:101
+#: swk/templates/show_data.html:106 swk/templates/test.html:187
 msgid "Date"
 msgstr "तारीख"
 
@@ -48,7 +48,7 @@ msgid "Supervisor"
 msgstr "पर्यवेक्षक"
 
 #: swk/forms.py:93 swk/forms.py:139 swk/templates/download_data_zone.html:159
-#: swk/templates/show_data.html:92
+#: swk/templates/show_data.html:97 swk/templates/test.html:178
 msgid "Houses Reached"
 msgstr "घरे पोहोचली"
 
@@ -85,7 +85,7 @@ msgid "Rejected Waste"
 msgstr "नाकारलेला कचरा"
 
 #: swk/forms.py:103 swk/forms.py:149 swk/templates/download_data_zone.html:171
-#: swk/templates/show_data.html:104
+#: swk/templates/show_data.html:109 swk/templates/test.html:190
 msgid "Zone ID"
 msgstr "झोन आयडी"
 
@@ -132,12 +132,17 @@ msgstr "पार्श्वभूमी"
 #: swk/templates/aboutus.html:18
 msgid ""
 "IDFC FIRST Bank in collaboration with Municipal Corporation of Greater "
-"Mumbai (MCGM) and Stree Mukti Sanghatana spearheaded 'Swachh Worli Koliwada' "
+"Mumbai (MCGM) and Stree Mukti Sanghatana spearheaded Swachh Worli Koliwada "
 "project with an aim to create awareness and bring about a behavioural change "
 "in the community on solid waste management practices and adoption of waste "
 "segregation at source. The project plans to drive this change through a "
 "participatory process within the Worli Koliwada community. "
 msgstr ""
+"आयडीएफसी फर्स्ट बँकेतर्फे, बृहन्मुंबई महानगरपालिका (एमसीजीएम) आणि स्त्री मुक्ती संघटना "
+"यांच्या सहकार्याने “स्वच्छ वरळी कोळीवाडा” हा प्रकल्प राबविण्यात येत आहे. या प्रकल्पाचा "
+"मुख्य उद्देश लोकांमध्ये पर्यावरणासंदर्भात जागृति निर्माण करणे, त्यांना कचरा वेगळा ठेवण्याची "
+"सवय लावणे आणि त्यासाठी समाज वर्तनात बदल घडवून आणणे हा आहे. वरळी कोळीवाडा या "
+"वस्तीतील जास्तीत जास्त लोकांच्या सहभागातूनच हा बदल होऊ शकेल असा आम्हाला विश्वास आहे."
 
 #: swk/templates/aboutus.html:19
 msgid ""
@@ -146,14 +151,18 @@ msgid ""
 "generate, with a model where community participation will be a key at every "
 "stage, ensuring sustainability of this program. "
 msgstr ""
+"वरळी कोळीवाड्यात निर्माण होणारा -वेगवेगळा ठेवलेला कचरा म्हणजे ओला व कोरडा कचरा याची "
+"शास्त्रशुद्ध पद्धतीने विल्हेवाट लावून फक्त घातक कचराच  म.न.पा. कडे द्यावा, हे असे आपण "
+"पूर्णपणे केल्यास हा आपला वरळी कोळीवाडा विभाग शून्य कचरा विभाग आपण करू शकू. अशी "
+"स्वच्छतेची सवय आपल्याला एकदा लागली तर निरंतर/शाश्वत विकासाकडे आपली वाटचाल सुरु होईल."
 
 #: swk/templates/aboutus.html:23
 msgid "About IDFC FIRST Bank"
-msgstr ""
+msgstr "आयडीएफसी फर्स्ट बँक बद्दल"
 
-#: swk/templates/aboutus.html:27
+#: swk/templates/aboutus.html:26
 msgid ""
-" IDFC FIRST Bank was founded by the merger of IDFC Bank and Capital First in "
+"IDFC FIRST Bank was founded by the merger of IDFC Bank and Capital First in "
 "December 2018. The Bank provides a range of financial solutions to "
 "individuals, small businesses and corporates. The Bank offers savings and "
 "current accounts, NRI accounts, salary accounts, demat accounts, fixed and "
@@ -162,12 +171,19 @@ msgid ""
 "wealth management services. IDFC FIRST Bank has a nationwide presence and "
 "operates in the Retail Banking, Wholesale Banking and other Banking segments."
 msgstr ""
+"आयडीएफसी बँक आणि कॅपिटल फर्स्टच्या विलीनीकरणानंतर आयडीएफसी फर्स्ट बँकेची डिसेंबर 2018 "
+"मध्ये स्थापना झाली. बँक, व्यक्ती, लघु व्यवसाय आणि कॉर्पोरेट्स यांना अनेक प्रकारे आर्थिक "
+"व्यवहाराचे पर्याय देत आहे.आयडीएफसी फर्स्ट बँकेकडे बचत आणि चालू खाते, एनआरआय खाते, पगार "
+"खाते, डिमॅट खाते, निश्चित व आवर्ती ठेवी, गृह व वैयक्तिक कर्ज, दुचाकी कर्ज, ग्राहक टिकाऊ "
+"कर्ज, छोटे व्यवसाय कर्ज, विदेशी मुद्रा उत्पादने, पेमेंट सोल्यूशन्स आणि संपत्ती व्यवस्थापन अशा "
+"अनेक सेवा उपलब्ध आहेत. आयडीएफसी फर्स्ट बँकेचे जाळे देशभर पसरलेले आहे. वैयक्तिक आणि सामूहिक "
+"सेवा तसेच अन्य बँकिंग क्षेत्रात बँक कार्यरत आहे."
 
-#: swk/templates/aboutus.html:32
+#: swk/templates/aboutus.html:31
 msgid "About Municipal Corporation of Greater Mumbai "
-msgstr ""
+msgstr "मुंबई महानगरपालिका (एमसीजीएम) बद्दल"
 
-#: swk/templates/aboutus.html:35
+#: swk/templates/aboutus.html:34
 msgid ""
 "The Municipal Corporation of Greater Mumbai (MCGM) formerly and commonly "
 "known as the Bombay Municipal Corporation (BMC) is the governing civic body "
@@ -179,14 +195,19 @@ msgid ""
 "being one of the foremost centers of education, science and technological "
 "research and advancement. "
 msgstr ""
+"बृहन्मुंबई महानगरपालिका (एमसीजीएम) ही सामान्यत: बॉम्बे म्युनिसिपल कॉर्पोरेशन (बीएमसी) "
+"म्हणून ओळखली जाते. ही महाराष्ट्राची राजधानी असलेल्या मुंबईची प्रशासकीय नागरी संस्था आहे. "
+"शहर व उपनगराच्या नागरी पायाभूत सुविधा व कारभाराची जबाबदारी बृहन्मुंबई महानगरपालिकेवर "
+"आहे. बृहन्मुंबई महानगरपालिकेचे क्षेत्रफळ 480.24 चौरस कि.मी. आहे तसेच 2001 च्या "
+"जनगणनेनुसारची लोकसंख्या 1,19,14,378 आहे. या महानगराचा भारताच्या एकूण आंतरराष्ट्रीय "
+"व्यापार, सरकारी महसूल यामध्ये मोठा वाटा आहे. तसेच देशाच्या  शिक्षण, वैज्ञानिक व तंत्रज्ञान "
+"विषयक  संशोधन आणि प्रगतिमध्ये हे महानगर एक आघाडीचे केंद्र बनले आहे."
 
-#: swk/templates/aboutus.html:40
-#, fuzzy
-#| msgid "About Stree Mukti Sanghatana"
+#: swk/templates/aboutus.html:39
 msgid "About Stree Mukti Sangathana(SMS)"
-msgstr "बद्दल एसडब्ल्यूके"
+msgstr "स्त्री मुक्ती संघटनेबद्दल"
 
-#: swk/templates/aboutus.html:43
+#: swk/templates/aboutus.html:42
 msgid ""
 "Stree Mukti Sanghatana established in 1975 is a non-profit organisation and "
 "strives to create a gender just world by improving the lives of women "
@@ -197,18 +218,52 @@ msgid ""
 "publication “Prerak Lalkari”,  Family Counselling centres, Adolescent "
 "sensitization program, creating sustainable livelihood programmes etc.  "
 msgstr ""
+"स्त्री मुक्ती संघटना या स्वयंसेवी संस्थेची स्थापना १९७५ साली झाली. समानतेसाठी अनुकूल "
+"वातावरणाची निर्मिती तसेच गरिबी आणि हिंसा निर्मूलन हे संघटनेचे मुख्य ध्येय आहे. समाजांमध्ये "
+"स्त्रियांच्या प्रश्नांवर जाणीव जागृति करण्यासाठी, “मुलगी झाली हो” सारखी स्त्रियांच्या "
+"प्रश्नावर  आधारित नाटके आणि कलापथक, कौटुंबिक समुपदेशन केंद्रे, पाळणाघरे, पौगंडावस्थेतील "
+"मुलांसाठी जीवन शिक्षण उपक्रम, पुस्तके आणि मासिक प्रकाशन, कचरा वेचक महिलांसाठी आजीविका, "
+"शिक्षण आणि आरोग्य कार्यक्रम अशा अनेक उपक्रमांद्वारे स्त्री मुक्ती संघटना कार्यरत आहे."
 
-#: swk/templates/aboutus.html:44
+#: swk/templates/aboutus.html:43
 msgid ""
 "Since 1999 SMS has been working for the cause of women waste pickers and "
 "offering solutions for Solid Waste Management. SMS is registered under "
 "Bombay Public Trusts Act and Societies registration act and has 80-G and 12 "
 "A certificates under the Income Tax Act, 1961. "
 msgstr ""
+"१९९९ पासून स्त्री मुक्ती संघटना कचरा वेचक महिलांच्या विकासासाठी, त्यांना घन कचरा "
+"व्यवस्थापनाचे काम देण्यासाठी कार्यरत आहे. स्त्री मुक्ती संघटना बॉम्बे पब्लिक ट्रस्ट्स कायदा "
+"आणि सोसायटीज रजिस्ट्रेशन कायदा अंतर्गत नोंदणीकृत असून आयकर कायदा १९६१ अंतर्गत ८०-जी "
+"आणि १२ ए प्रमाणपत्रित आहे. "
 
-#: swk/templates/aboutus.html:50
+#: swk/templates/aboutus.html:49
 msgid "About Community GIS"
+msgstr "कॉम्युनिटी जीआयएस बद्दल"
+
+#: swk/templates/aboutus.html:53
+
+msgid ""
+"Communitygis is a Free and Open Source platform for community ownership of "
+"data and code for geographic data. \n"
+"                        Technically communityGIS is a platform for a spatial "
+"data infrastructure. \n"
+"                        This consists of an application  (with license "
+"GPLv3 ) frontend as GUI  using python Django and Javascripts while the "
+"backend is geonode the code is available at github .\n"
+"                        This platform can be used with modifications for "
+"other themes. The preliminary instructions to install and use  will be made "
+"available soon .\n"
+"                        This has been developed by teams from makerghat and  "
+"CTARA IIT Bombay ."
 msgstr ""
+"कॉम्युनिटी जीआयएस हा भौगोलिक डेटासाठी डेटा आणि कोडच्या समुदायाच्या मालकीसाठी एक मुक्त "
+"आणि मुक्त स्रोत मंच आहे.तांत्रिकदृष्ट्या कम्युनिटी जीआयएस हा अवकाशीय डेटा मूलभूत सुविधांसाठी "
+"एक व्यासपीठ आहे.यात अ‍ॅप्लिकेशन (परवाना जीपीएलव्ही 3 सह) फ्रंटएंड जीयूआय म्हणून पायथन जॅंगो "
+"आणि जावास्क्रिप्ट्सचा वापर करून केला जातो, तर बॅकएंड जिओनोड कोड github वर उपलब्ध आहे.हे "
+"व्यासपीठ इतर थीम्सच्या सुधारणांसह वापरले जाऊ शकते. स्थापित आणि वापरण्याच्या प्राथमिक "
+"सूचना लवकरच उपलब्ध केल्या जातील.हे makerGhat आणि CTARA IIT-B संघांनी "
+"विकसित केले आहे. "
 
 #: swk/templates/adminlogin.html:38
 msgid "SWK Portal Login"
@@ -222,69 +277,83 @@ msgstr "वापरकर्तानाव"
 msgid "Password"
 msgstr "संकेतशब्द"
 
-#: swk/templates/adminlogin.html:48 swk/templates/new.html:121
+#: swk/templates/adminlogin.html:48 swk/templates/new.html:142
 #: swk/templates/test.html:47
 msgid "Login"
 msgstr "लॉगिन"
 
-#: swk/templates/base.html:40 swk/templates/new.html:66
+#: swk/templates/base.html:40 swk/templates/new.html:71
 #: swk/templates/test.html:11
 msgid "Home"
 msgstr "मुख्यपृष्ठ"
 
-#: swk/templates/base.html:43 swk/templates/new.html:72
+#: swk/templates/base.html:43 swk/templates/new.html:77
 #: swk/templates/test.html:13
 msgid "Maps"
 msgstr "नकाशे"
 
-#: swk/templates/base.html:46 swk/templates/new.html:69
+#: swk/templates/base.html:46 swk/templates/new.html:74
 #: swk/templates/test.html:12
 msgid "About Us"
 msgstr "आमच्याबद्दल"
 
-#: swk/templates/base.html:83 swk/templates/new.html:104
-#: swk/templates/report.html:5 swk/templates/test.html:40
+#: swk/templates/base.html:83 swk/templates/new.html:93
+#: swk/templates/new.html:110 swk/templates/report.html:5
+#: swk/templates/test.html:40
 msgid "Report"
 msgstr "अहवाल"
 
-#: swk/templates/download_data_zone.html:160 swk/templates/show_data.html:93
+#: swk/templates/contact.html:9 swk/templates/new.html:133
+msgid "Contact Us"
+msgstr "संपर्क साधा"
+
+#: swk/templates/download_data_zone.html:160 swk/templates/show_data.html:98
+#: swk/templates/test.html:179
 msgid "Houses Doing Segregation"
 msgstr "घरे विभाजन करीत आहेत"
 
-#: swk/templates/download_data_zone.html:161 swk/templates/show_data.html:94
+#: swk/templates/download_data_zone.html:161 swk/templates/show_data.html:99
+#: swk/templates/test.html:180
 msgid "Houses Giving Mixed Waste"
 msgstr "मिश्रित कचरा देणारी घरे"
 
-#: swk/templates/download_data_zone.html:162 swk/templates/show_data.html:95
+#: swk/templates/download_data_zone.html:162 swk/templates/show_data.html:100
+#: swk/templates/test.html:181
 msgid "Dry Waste BF"
 msgstr "आधी ड्राय वेस्ट"
 
-#: swk/templates/download_data_zone.html:163 swk/templates/show_data.html:96
+#: swk/templates/download_data_zone.html:163 swk/templates/show_data.html:101
+#: swk/templates/test.html:182
 msgid "Dry Waste AF"
 msgstr "नंतर सुका कचरा"
 
-#: swk/templates/download_data_zone.html:164 swk/templates/show_data.html:97
+#: swk/templates/download_data_zone.html:164 swk/templates/show_data.html:102
+#: swk/templates/test.html:183
 msgid "Wet Waste BF"
 msgstr "आधी ओला कचरा"
 
-#: swk/templates/download_data_zone.html:165 swk/templates/show_data.html:98
+#: swk/templates/download_data_zone.html:165 swk/templates/show_data.html:103
+#: swk/templates/test.html:184
 msgid "Wet Waste AF"
 msgstr "नंतर ओला कचरा"
 
-#: swk/templates/download_data_zone.html:166 swk/templates/show_data.html:99
+#: swk/templates/download_data_zone.html:166 swk/templates/show_data.html:104
+#: swk/templates/test.html:185
 msgid "Zone Name"
 msgstr "झोन नाव"
 
 #: swk/templates/download_data_zone.html:167 swk/templates/edit.html:17
-#: swk/templates/show_data.html:100
+#: swk/templates/show_data.html:105 swk/templates/test.html:186
 msgid "Track ID"
 msgstr "ट्रॅक आयडी"
 
-#: swk/templates/download_data_zone.html:169 swk/templates/show_data.html:102
+#: swk/templates/download_data_zone.html:169 swk/templates/show_data.html:107
+#: swk/templates/test.html:188
 msgid "Supervisor Name"
 msgstr "पर्यवेक्षकाचे नाव"
 
-#: swk/templates/download_data_zone.html:170 swk/templates/show_data.html:103
+#: swk/templates/download_data_zone.html:170 swk/templates/show_data.html:108
+#: swk/templates/test.html:189
 msgid "Rejected"
 msgstr "नाकारले"
 
@@ -344,157 +413,107 @@ msgstr "झोन आयडी:"
 msgid "Update"
 msgstr "अद्यतनित करा"
 
-#: swk/templates/feedback_form.html:22
-msgid "Feedback / Complaint Form "
-msgstr ""
+#: swk/templates/feedback_form.html:24
+msgid "Grievance Form "
+msgstr "राक्षाचे फॉर्म"
 
-#: swk/templates/map/map.html:302
+#: swk/templates/map/map.html:302 swk/templates/trial.html:487
 msgid "Geographical Hierarchy"
 msgstr "भौगोलिक पदानुक्रम"
 
-#: swk/templates/map/map.html:307
-msgid "Admin Boundary"
+#: swk/templates/map/map.html:307 swk/templates/trial.html:492
+#, fuzzy
+#| msgid "Admin Boundary"
+msgid "Admin Ward Boundary"
 msgstr "प्रशासन सीमा"
 
-#: swk/templates/map/map.html:310
+#: swk/templates/map/map.html:310 swk/templates/trial.html:495
 msgid "Worli Koliwada Lanes"
 msgstr "वरळी कोळीवाडा लेन्स"
 
-#: swk/templates/map/map.html:313
+#: swk/templates/map/map.html:313 swk/templates/trial.html:498
 msgid "Corporator Ward Boundary"
 msgstr "नगरसेवक प्रभाग सीमा"
 
-#: swk/templates/map/map.html:323
+#: swk/templates/map/map.html:323 swk/templates/trial.html:508
 msgid "Zonal Geometry"
 msgstr "क्षेत्रीय भूमिती"
 
-#: swk/templates/map/map.html:331
+#: swk/templates/map/map.html:331 swk/templates/trial.html:516
 msgid "Lanes / Bin Paths "
 msgstr "गल्ली / बिन पथ"
 
-#: swk/templates/map/map.html:334
+#: swk/templates/map/map.html:334 swk/templates/trial.html:519
 #, fuzzy
 #| msgid "Spot"
 msgid "Spots "
 msgstr "स्पॉट"
 
-#: swk/templates/map/map.html:337
+#: swk/templates/map/map.html:337 swk/templates/trial.html:522
 msgid "Spot Images"
 msgstr ""
 
-#: swk/templates/map/map.html:340
+#: swk/templates/map/map.html:340 swk/templates/trial.html:525
 msgid "Bubble"
 msgstr "बबल"
 
-#: swk/templates/map/map.html:343
+#: swk/templates/map/map.html:343 swk/templates/trial.html:528
 msgid "Zones"
 msgstr "झोन"
 
-#: swk/templates/map/map.html:359
-msgid "Seggregation Centres and Pits"
-msgstr "एकत्रीकरण केंद्रे आणि खड्डे"
-
-#: swk/templates/map/map.html:365
-msgid " Compost Pit 1(coming up soon...) "
-msgstr "कंपोस्ट पिट 1 (लवकरच येत आहे ...)"
-
-#: swk/templates/map/map.html:368
-msgid "Compost Pit 2(coming up soon...)"
-msgstr "कंपोस्ट पिट 2 (लवकरच येत आहे ...)"
-
-#: swk/templates/map/map.html:371
-msgid "Seggregation Centres(coming up soon...)"
-msgstr "एकत्रीकरण केंद्रे (लवकरच येत आहे ...)"
-
-#: swk/templates/map/map.html:380
-msgid " Public Places and Amenities"
-msgstr "सार्वजनिक ठिकाणे आणि सुविधा"
-
-#: swk/templates/map/map.html:385
-msgid " Public Toilets(coming up soon...)"
-msgstr "सार्वजनिक शौचालय (लवकरच येत आहे ...)"
-
-#: swk/templates/map/map.html:388
-msgid " Schools(coming up soon...)"
-msgstr "शाळा (लवकरच येत आहे ...)"
-
-#: swk/templates/map/map.html:391
-msgid "Educational Institutes(coming up soon...)"
-msgstr "शैक्षणिक संस्था(लवकरच येत आहे ...)"
-
-#: swk/templates/map/map.html:394
-msgid " Terrace Garden (coming up soon...)"
-msgstr "टेरेस गार्डन(लवकरच येत आहे ...)"
-
-#: swk/templates/map/map.html:397
-msgid "Nutri Gardens(coming up soon...)"
-msgstr "न्यूट्री गार्डन (लवकरच येत आहे ...)"
-
-#: swk/templates/map/map.html:400
-msgid "Open Space (coming up soon...)"
-msgstr "मोकळी जागा(लवकरच येत आहे ...)"
-
-#: swk/templates/map/map.html:407
-msgid "Zone-wise trends in waste generation"
-msgstr "कचरा निर्मितीतील झोननिहाय ट्रेंड"
-
-#: swk/templates/map/map.html:413
-msgid "Choropleth (color coded) zones"
-msgstr "कोरोप्लेथ (रंग कोड केलेले) झोन"
-
-#: swk/templates/map/map.html:416
-msgid " Dry Waste Trend"
-msgstr "ड्राय वेस्ट ट्रेंड"
-
-#: swk/templates/map/map.html:419
-msgid "Wet Waste Trend"
-msgstr "ओला कचरा ट्रेंड"
-
-#: swk/templates/map/map.html:422
-msgid " Rejected Dry Waste Trend"
-msgstr "नाकारलेला सुका कचरा ट्रेंड"
-
-#: swk/templates/map/map.html:425
-msgid "Rejected Wet Waste Trend"
-msgstr "नाकारलेला ओला कचरा ट्रेंड"
-
-#: swk/templates/new.html:76
+#: swk/templates/new.html:86
 #, fuzzy
 msgid "DataManager-EntryForm"
 msgstr "डेटा व्यवस्थापक प्रविष्टी फॉर्म"
 
-#: swk/templates/new.html:79 swk/templates/new.html:90
-msgid "OneTimeSurvey Form"
-msgstr "एक वेळ सर्वेक्षण फॉर्म"
-
-#: swk/templates/new.html:82 swk/templates/new.html:93
+#: swk/templates/new.html:87 swk/templates/new.html:104
 #: swk/templates/test.html:30
 msgid "View Daily Entry Data"
 msgstr "दैनिक प्रविष्टी डेटा पहा"
 
-#: swk/templates/new.html:87 swk/templates/test.html:19
+#: swk/templates/new.html:88 swk/templates/new.html:105
+msgid "OneTimeSurvey Form"
+msgstr "एक वेळ सर्वेक्षण फॉर्म"
+
+#: swk/templates/new.html:99
+msgid "Forms"
+msgstr "फॉर्म"
+
+#: swk/templates/new.html:103 swk/templates/test.html:19
 msgid "Daily Entry Form"
 msgstr "दैनिक प्रवेश फॉर्म"
 
-#: swk/templates/new.html:97 swk/templates/test.html:35
-msgid "Upload Layer"
+#: swk/templates/new.html:114
+#, fuzzy
+#| msgid "Upload Layer"
+msgid "Upload Image"
 msgstr "स्तर अपलोड करा"
 
-#: swk/templates/new.html:100 swk/templates/test.html:37
+#: swk/templates/new.html:117 swk/templates/test.html:37
 msgid "Dashboard"
 msgstr "डॅशबोर्ड"
 
-#: swk/templates/new.html:109
+#: swk/templates/new.html:122
 msgid "FAQ"
 msgstr "सामान्य प्रश्न"
 
-#: swk/templates/new.html:112
-msgid "Feedback"
+#: swk/templates/new.html:125
+msgid "Grievance"
+msgstr "तक्रार"
+
+#: swk/templates/new.html:129
+#, fuzzy
+#| msgid "Feedback"
+msgid "Mock-Feedback"
 msgstr "अभिप्राय"
 
-#: swk/templates/new.html:116 swk/templates/test.html:44
+#: swk/templates/new.html:137 swk/templates/test.html:44
 msgid "Logout"
 msgstr "लॉग आउट"
+
+#: swk/templates/rating.html:102
+msgid "Feedback"
+msgstr "अभिप्राय"
 
 #: swk/templates/test.html:17
 msgid "Enter/View Data"
@@ -503,6 +522,10 @@ msgstr "डेटा प्रविष्ट करा / पहा"
 #: swk/templates/test.html:29
 msgid "Kobo Form"
 msgstr "कोबो फॉर्म"
+
+#: swk/templates/test.html:35
+msgid "Upload Layer"
+msgstr "स्तर अपलोड करा"
 
 #: swk/views.py:99
 #, fuzzy
@@ -548,6 +571,57 @@ msgstr "आपला डेटा {} दिनांकित {} साठी �
 #: swk/views.py:197 swk/views.py:264
 msgid "Please check your form"
 msgstr "कृपया आपला फॉर्म तपासा"
+
+#~ msgid "Seggregation Centres and Pits"
+#~ msgstr "एकत्रीकरण केंद्रे आणि खड्डे"
+
+#~ msgid " Compost Pit 1(coming up soon...) "
+#~ msgstr "कंपोस्ट पिट 1 (लवकरच येत आहे ...)"
+
+#~ msgid "Compost Pit 2(coming up soon...)"
+#~ msgstr "कंपोस्ट पिट 2 (लवकरच येत आहे ...)"
+
+#~ msgid "Seggregation Centres(coming up soon...)"
+#~ msgstr "एकत्रीकरण केंद्रे (लवकरच येत आहे ...)"
+
+#~ msgid " Public Places and Amenities"
+#~ msgstr "सार्वजनिक ठिकाणे आणि सुविधा"
+
+#~ msgid " Public Toilets(coming up soon...)"
+#~ msgstr "सार्वजनिक शौचालय (लवकरच येत आहे ...)"
+
+#~ msgid " Schools(coming up soon...)"
+#~ msgstr "शाळा (लवकरच येत आहे ...)"
+
+#~ msgid "Educational Institutes(coming up soon...)"
+#~ msgstr "शैक्षणिक संस्था(लवकरच येत आहे ...)"
+
+#~ msgid " Terrace Garden (coming up soon...)"
+#~ msgstr "टेरेस गार्डन(लवकरच येत आहे ...)"
+
+#~ msgid "Nutri Gardens(coming up soon...)"
+#~ msgstr "न्यूट्री गार्डन (लवकरच येत आहे ...)"
+
+#~ msgid "Open Space (coming up soon...)"
+#~ msgstr "मोकळी जागा(लवकरच येत आहे ...)"
+
+#~ msgid "Zone-wise trends in waste generation"
+#~ msgstr "कचरा निर्मितीतील झोननिहाय ट्रेंड"
+
+#~ msgid "Choropleth (color coded) zones"
+#~ msgstr "कोरोप्लेथ (रंग कोड केलेले) झोन"
+
+#~ msgid " Dry Waste Trend"
+#~ msgstr "ड्राय वेस्ट ट्रेंड"
+
+#~ msgid "Wet Waste Trend"
+#~ msgstr "ओला कचरा ट्रेंड"
+
+#~ msgid " Rejected Dry Waste Trend"
+#~ msgstr "नाकारलेला सुका कचरा ट्रेंड"
+
+#~ msgid "Rejected Wet Waste Trend"
+#~ msgstr "नाकारलेला ओला कचरा ट्रेंड"
 
 #, fuzzy
 #~| msgid "First Attendant"

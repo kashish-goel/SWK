@@ -22,7 +22,7 @@ urlpatterns = [
     path('report/',views.report,name='report'),
     path('faq/',views.FAQ, name = 'faq'),
     path('feedback/',views.Feedback, name = 'feedback'),
-    path('rating/',views.Rating, name = 'rating'),
+    path('rating/',views.RatingView, name = 'rating'),
     path('contact/',views.Contact, name = 'contact'),
     path('uploadimage/',views.UploadImage, name = 'uploadimage'),
 ]

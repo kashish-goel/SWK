@@ -2,28 +2,245 @@
 {% load i18n %}
 {% block content %}{% block extra_css %}
 
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<style>
+.rating1,.rating2, .rating3,.rating4,.rating5 {
+    float:left;
+}
 
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+.rating1:not(:checked) > input,
+.rating2:not(:checked) > input,
+.rating3:not(:checked) > input,
+.rating4:not(:checked) > input,
+.rating5:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
+
+.rating1:not(:checked) > label,
+.rating2:not(:checked) > label,
+.rating3:not(:checked) > label,
+.rating4:not(:checked) > label,
+.rating5:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding:0 .1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    line-height:1.2;
+    color:#ddd;
+    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating1:not(:checked) > label:before ,
+.rating2:not(:checked) > label:before ,
+.rating3:not(:checked) > label:before,
+.rating4:not(:checked) > label:before,
+.rating5:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.rating1 > input:checked ~ label ,
+.rating2 > input:checked ~ label,
+.rating3 > input:checked ~ label ,
+.rating4 > input:checked ~ label ,
+.rating5 > input:checked ~ label {
+    color: #f70;
+    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating1:not(:checked) > label:hover,
+.rating1:not(:checked) > label:hover ~ label ,
+.rating2:not(:checked) > label:hover,
+.rating2:not(:checked) > label:hover ~ label ,
+.rating3:not(:checked) > label:hover,
+.rating3:not(:checked) > label:hover ~ label ,
+.rating4:not(:checked) > label:hover,
+.rating4:not(:checked) > label:hover ~ label ,
+.rating5:not(:checked) > label:hover,
+.rating5:not(:checked) > label:hover ~ label {
+    color: gold;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating1 > input:checked + label:hover,
+.rating1 > input:checked + label:hover ~ label,
+.rating1 > input:checked ~ label:hover,
+.rating1 > input:checked ~ label:hover ~ label,
+.rating1 > label:hover ~ input:checked ~ label,
+
+.rating2 > input:checked + label:hover,
+.rating2 > input:checked + label:hover ~ label,
+.rating2 > input:checked ~ label:hover,
+.rating2 > input:checked ~ label:hover ~ label,
+.rating2 > label:hover ~ input:checked ~ label
+
+.rating3 > input:checked + label:hover,
+.rating3 > input:checked + label:hover ~ label,
+.rating3 > input:checked ~ label:hover,
+.rating3 > input:checked ~ label:hover ~ label,
+.rating3 > label:hover ~ input:checked ~ label,
+
+.rating4 > input:checked + label:hover,
+.rating4 > input:checked + label:hover ~ label,
+.rating4 > input:checked ~ label:hover,
+.rating4 > input:checked ~ label:hover ~ label,
+.rating4 > label:hover ~ input:checked ~ label,
+
+.rating5 > input:checked + label:hover,
+.rating5 > input:checked + label:hover ~ label,
+.rating5 > input:checked ~ label:hover,
+.rating5 > input:checked ~ label:hover ~ label,
+.rating5 > label:hover ~ input:checked ~ label
+ {
+    color: #ea0;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating1 > label:active ,
+.rating2 > label:active ,
+.rating3 > label:active ,
+.rating4 > label:active ,
+.rating5 > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
+
+/* end of Lea's code */
+
+
+/*
+ * Clearfix from html5 boilerplate
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* my stuff */
+#status, button {
+    margin: 20px 0;
+}
+table{
+
+  /* border: 1px solid black; */
+  border-image: url('/media/examples/border-diamonds.png') 30 / 19px round;
+}
+
+</style>
 {% endblock %}
 <div class="container mb-7" ><br>
+    <!-- <form id="ratingForm" method="POST" class="form-group" style="text-align:left;"> -->
+      <!--  -->
+    <form action="/rating/" method="POST" class="form-group" style="text-align:left;">
+        {% csrf_token %}
     <h2>{% trans "Feedback" %}</h2>
     <hr>
-    <br>
+    <br><b>
+    <label for="your_name">Your name: &nbsp;&nbsp;&nbsp;</label><input id="your_name" type="text" name="name"><br>
+    <label for="your_email">Your email: &nbsp;&nbsp;&nbsp;</label><input id="your_email" type="text" name="email"><br>
+    <label for="your_mobile">Your mobile: &nbsp;</label><input id="your_mobile" type="text" name="mobile"><br>
+</b><hr>
     <h3>Please rate </h3>
-    <p><b>1. How do you find overall daily collection service of SWK ? <img src ="../static/images/star.jpeg"></b></p>
-    <p><b>2. How suitable  is the timing of SWK collection  to you? <img style ="width:350px;"src ="../static/images/3star1.png"></b></p>
-    <p><b>3. How do you find the SWK website on mobile ? <img  src ="../static/images/star.jpeg"></b></p>
-    <p><b>4. How useful is the compost for your kitchen garden ? <img style ="width:350px;" src ="../static/images/3star1.png"></b></p>
-    <p><b>5. Are you able to communicate your problems to SWK supervisors ? <img  src ="../static/images/star.jpeg"></b></p>
+  
+        
+    <p><b><label for="rating1">1. How do you find overall daily collection service of SWK ?</label></b>
+   
+    <div id="status"></div>
+    
+            <fieldset class="rating1">
+                <!-- <legend>Please rate:</legend> -->
+                <input type="radio" id="star5" name="rating1" value="5" /><label for="star5" title="Excellent!">5 stars</label>
+                <input type="radio" id="star4" name="rating1" value="4" /><label for="star4" title="Very good">4 stars</label>
+                <input type="radio" id="star3" name="rating1" value="3" /><label for="star3" title="Good">3 stars</label>
+                <input type="radio" id="star2" name="rating1" value="2" /><label for="star2" title="Poor">2 stars</label>
+                <input type="radio" id="star1" name="rating1" value="1" /><label for="star1" title="Very Poor">1 star</label>
+            </fieldset>
+            <div class="clearfix"></div>
+            
+    </p>
+    <p><b><label for="rating2">2. How suitable  is the timing of SWK collection  to you?</label></b>
+        <div id="status2"></div>
+            <fieldset class="rating2">
+                <input type="radio" id="star5-2" name="rating2" value="5" /><label for="star5-2" title="Excellent!">5 stars</label>
+                <input type="radio" id="star4-2" name="rating2" value="4" /><label for="star4-2" title="Very good">4 stars</label>
+                <input type="radio" id="star3-2" name="rating2" value="3" /><label for="star3-2" title="Good">3 stars</label>
+                <input type="radio" id="star2-2" name="rating2" value="2" /><label for="star2-2" title="Poor">2 stars</label>
+                <input type="radio" id="star1-2" name="rating2" value="1" /><label for="star1-2" title="Very Poor">1 star</label>
+            </fieldset>
+            <div class="clearfix"></div>
+
+            
+        </p>
+    <p><b><label for="rating3">3. How do you find the SWK website on mobile ?</label></b>
+        <div id="status3"></div>
+        <fieldset class="rating3">
+            <input type="radio" id="star5-3" name="rating3" value="5" /><label for="star5-3" title="Excellent!">5 stars</label>
+            <input type="radio" id="star4-3" name="rating3" value="4" /><label for="star4-3" title="Very good">4 stars</label>
+            <input type="radio" id="star3-3" name="rating3" value="3" /><label for="star3-3" title="Good">3 stars</label>
+            <input type="radio" id="star2-3" name="rating3" value="2" /><label for="star2-3" title="Poor">2 stars</label>
+            <input type="radio" id="star1-3" name="rating3" value="1" /><label for="star1-3" title="Very Poor">1 star</label>
+        </fieldset>
+        <div class="clearfix"></div>
+
+    </p>
+    <p><b><label for="rating4">4. How useful is the compost for your kitchen garden ?</label></b>
+        <div id="status4"></div>
+        <fieldset class="rating4">
+            <input type="radio" id="star5-4" name="rating4" value="5" /><label for="star5-4" title="Excellent!">5 stars</label>
+            <input type="radio" id="star4-4" name="rating4" value="4" /><label for="star4-4" title="Very good">4 stars</label>
+            <input type="radio" id="star3-4" name="rating4" value="3" /><label for="star3-4" title="Good">3 stars</label>
+            <input type="radio" id="star2-4" name="rating4" value="2" /><label for="star2-4" title="Poor">2 stars</label>
+            <input type="radio" id="star1-4" name="rating4" value="1" /><label for="star1-4" title="Very Poor">1 star</label>
+        </fieldset>
+        <div class="clearfix"></div>
+
+    </p>
+    <p><b><label for="rating5">5. Are you able to communicate your problems to SWK supervisors ? </label></b>
+        <div id="status5"></div>
+        <fieldset class="rating5">
+            <input type="radio" id="star5-5" name="rating5" value="5" /><label for="star5-5" title="Excellent!">5 stars</label>
+            <input type="radio" id="star4-5" name="rating5" value="4" /><label for="star4-5" title="Very good">4 stars</label>
+            <input type="radio" id="star3-5" name="rating5" value="3" /><label for="star3-5" title="Good">3 stars</label>
+            <input type="radio" id="star2-5" name="rating5" value="2" /><label for="star2-5" title="Poor">2 stars</label>
+            <input type="radio" id="star1-5" name="rating5" value="1" /><label for="star1-5" title="Very Poor">1 star</label>
+        </fieldset>
+        <div class="clearfix"></div>
+
+    </p>
+    
 <hr>
     <h3>Please Answer</h3><br>
-    <p><b>1) Do you have separate bins for the following </b></h4><br>
-        (A) Food &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img style ="width:30px;"src ="../static/images/radio_ch.png">YES <img style ="width:40px;"src ="../static/images/radio.jpg">No</p>
-        (B) Recyclable paper/plastic &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img style ="width:40px;"src ="../static/images/radio.jpg">YES <img style ="width:30px;"src ="../static/images/radio_ch.png">No</p>
-        (C) e-waste &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img style ="width:40px;"src ="../static/images/radio.jpg">YES <img style ="width:30px;"src ="../static/images/radio_ch.png">No</p>
-        (D) pads( menstrual, sanitation) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<img style ="width:40px;"src ="../static/images/radio.jpg">YES <img style ="width:30px;"src ="../static/images/radio_ch.png">No</p>
-        (E) epr ( packaging from amazone etc) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img style ="width:40px;"src ="../static/images/radio.jpg">YES <img style ="width:30px;"src ="../static/images/radio_ch.png">No</p>
-<br>
-        <p><b>2) Will you keep those if you don't have and you get them free. Which</b><br>
+    <table>
+        <tr><th><b>1) Do you have separate bins for the following </b></th></tr>
+        <tr><td><b>(A) Food  </b></td><td><input type="radio" name="yes_no" value ="yes">Yes</input><input type="radio" name="yes_no" value="no" >No</input></td></tr>
+        <tr><td><b>(B) Recyclable paper/plastic  </b></td><td><input type="radio" name="yes_no1" value ="yes" >Yes</input><input type="radio" value="no" name="yes_no1" >No</input></td></tr>
+        <tr><td><b>(C) e-waste  </b></td><td><input type="radio" name="yes_no2" value ="yes">Yes</input><input type="radio" name="yes_no2"value="no" >No</input></td></tr>
+        <tr><td><b>(D) pads( menstrual, sanitation)  </b></td><td><input type="radio" name="yes_no3" value ="yes" >Yes</input><input type="radio" name="yes_no3" value="no">No</input></td></tr>
+        <tr><td><b>(E) epr ( packaging from amazone etc)  </b></td><td><input type="radio" name="yes_no4" value ="yes" >Yes</input><input type="radio" name="yes_no4"value ="no" >No</input></td></tr></table>
+        <!-- <p><b>2) Will you keep those if you don't have and you get them free. Which</b><br>
             (A) Food &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img style ="width:30px;"src ="../static/images/radio_ch.png">YES <img style ="width:40px;"src ="../static/images/radio.jpg">No</p>
             (B) Recyclable paper/plastic &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img style ="width:40px;"src ="../static/images/radio.jpg">YES <img style ="width:30px;"src ="../static/images/radio_ch.png">No</p>
             (C) e-waste &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img style ="width:40px;"src ="../static/images/radio.jpg">YES <img style ="width:30px;"src ="../static/images/radio_ch.png">No</p>
@@ -45,8 +262,65 @@
                 <p><b></b></p>
     <p><b></b></p>
     <p><b></b></p>
-    <p><b></b></p>
-
+    <p><b></b></p> -->
+    <div class="clearfix"></div>
+    <button class="submit clearfix">Submit</button></form>
 </div>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
 
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+    </div>
+
+    {% endfor %}
+</ul>
+{% endif %} 
+
+{% endblock %}
+{% block extra_javascript %}
+<script>
+$(document).ready(function() {
+    $("form#ratingForm").submit(function(e) 
+    {   
+        // alert("I am clicked")
+        e.preventDefault(); // prevent the default click action from being performed
+        if ($("#ratingForm :radio:checked").length == 0) {
+            $('#status').html("nothing checked");
+            return false;
+        } else {
+            $('#status').html( 'You picked ' + $('input:radio[name=rating1]:checked').val() );
+            $('#status2').html( 'You picked ' + $('input:radio[name=rating2]:checked').val() );
+            $('#status3').html( 'You picked ' + $('input:radio[name=rating3]:checked').val() );
+            $('#status4').html( 'You picked ' + $('input:radio[name=rating4]:checked').val() );
+            $('#status5').html( 'You picked ' + $('input:radio[name=rating5]:checked').val() );
+        }
+
+    // $("form#ratingForm").submit(function(e) 
+    // {
+        // e.preventDefault(); // prevent the default click action from being performed
+        // if ($("#ratingForm :radio:checked").length == 0) {
+        //     $('#status').html("nothing checked");
+        //     return false;
+        // } else {
+        //     $('#status').html( 'You picked ' + $('input:radio[name=rating]:checked').val() );
+        // }
+    // });
+    // $("form#ratingForm2").submit(function(e) 
+    // {
+    //     e.preventDefault(); // prevent the default click action from being performed
+    //     if ($("#ratingForm2 :radio:checked").length == 0) {
+    //         $('#status2').html("nothing checked");
+    //         return false;
+    //     } else {
+    //         $('#status2').html( 'You picked ' + $('input:radio[name=rating2]:checked').val() );
+    //     }
+    // });
+    });
+});
+</script>
 {% endblock %}
