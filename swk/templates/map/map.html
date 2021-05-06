@@ -341,10 +341,10 @@ table, th, td
                           </div>
                           <div class="checkbox">
                               <label><input type="checkbox" value="{zones}" id ="zone" onchange="getBoundaryru(this)"><span> {% trans "Zones" %}</span></label>
-                          </div>
-                         
+                          </div>                       
                       
-                      </div>
+                      </div><br>
+                      <button type="button" class="btn btn-primary" id='locate'>Your Location</button>
                     </div>
                    
                 </div> 
@@ -359,6 +359,49 @@ table, th, td
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
 // *****************
+        let $locate = $('#locate');
+        let $body = $('body');
+        let currentPos = null;
+        let marker = null;
+        let oldMarker = null;
+        let oldLayer = null;
+
+        // YOUR LOCATION BUTTON
+        $locate.on('click', function(e) {
+            if (oldMarker) {
+                mymap.removeLayer(oldMarker);
+                oldMarker = null;
+            }
+            if (oldLayer) {
+                mymap.removeLayer(oldLayer);
+                oldLayer = null;
+                facilityLayer = new L.featureGroup();
+            }
+            // $status.html('finding your location');
+            if (!navigator.geolocation) {
+                alert("<p>Sorry, your browser does not support Geolocation</p>");
+                return;
+            }
+            $body.removeClass('loaded');
+            navigator.geolocation.getCurrentPosition(success, error);
+        });
+
+         // IF LOCATION FETCH BY BROWSER SUCCESS
+         function success(position) {
+            $body.addClass('loaded');
+            currentPos = [position.coords.latitude, position.coords.longitude];
+            mymap.setView(currentPos, 13);
+            marker = L.marker(currentPos)
+                .addTo(mymap)
+                .bindTooltip("Your Location")
+                .openTooltip();
+            oldMarker = marker;
+
+        };
+        // IF error IN FETCHING LOCATION
+        function error() {
+            alert("Unable to retrieve your location");
+        };
 
         const domain = ['https://communitygis.net/', 'http://localhost/'];
             var rootUrl = domain[0] + 'geoserver/geonode/ows';
@@ -383,7 +426,7 @@ table, th, td
             var myWorliLayerList = [];
             var popup_layer, content;           
             let  imageloca= [];
-            let currentPos = null;
+           
 
                        
 
