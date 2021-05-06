@@ -444,6 +444,8 @@
 
 /*! export getContrastRatio [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export getDays [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export getDropdownLanes [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export getDynamicStyles [provided] [no usage info] [missing usage info prevents renaming] */
@@ -452,6 +454,8 @@
 
 /*! export getLuminance [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export getMonth [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export getNextChildMapping [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export getOffsetLeft [provided] [no usage info] [missing usage info prevents renaming] */
@@ -459,6 +463,8 @@
 /*! export getOffsetTop [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export getTransitionProps [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export getYear [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export groupDataByCategory [provided] [no usage info] [missing usage info prevents renaming] */
 

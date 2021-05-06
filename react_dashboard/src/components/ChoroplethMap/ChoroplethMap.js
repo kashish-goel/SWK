@@ -3,7 +3,7 @@ import { Map, TileLayer , GeoJSON,LayersControl} from "react-leaflet";
 import Control from 'react-leaflet-control';
 
 import "./ChoroplethMap.css";
-import { groupDataByCategory, mergeGeomData , groupDataByDateCategory} from "./../util";
+import { groupDataByCategory, mergeGeomData , groupDataByDateCategory,getDays,getMonth,getYear} from "./../util";
 import { scaleSequential } from "d3-scale";
 import { interpolateRdYlGn} from "d3-scale-chromatic";
 import {select} from "d3-selection";
@@ -24,14 +24,25 @@ import { sliderLeft, sliderVertical } from 'd3-simple-slider';
 
 
 
-function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
+function ChoroplethMap({geojson,data,bubblePopulationData,setSelLane,selCategory}) {
     const geoJsonRef = useRef();
     const dataByCategory = groupDataByCategory(data,selCategory);
     const [zoneControl,setZoneControl] = useState(false);
     const svgLegRef = useRef();
-    const svgSliderRef = useRef(); 
+    const svgSliderRef = useRef();
+
+    const zonePopulation = bubblePopulationData.reduce((obj,elem)=>{
+        let category = elem["zone_id"];
+        if(!obj.hasOwnProperty(category))
+            obj[category] = 0;
+        obj[category] += elem["bubble_population"]
+        return obj;
+    },[])
     
     
+  
+
+   
       
     
     const [selDay, setSelDay] = useState(1);
@@ -45,26 +56,26 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
         // else if(selYear==='2021'){  setSelMonth('01');}
     //   }
     const dataByDateCategory = groupDataByDateCategory(data,selCategory,selYear,selMonth,selDay)
-    console.log(dataByDateCategory)
-    const geojsonWithData = mergeGeomData(geojson,dataByDateCategory);
-    console.log(geojsonWithData)
+    const geojsonWithData = mergeGeomData(geojson.zones,dataByDateCategory,zonePopulation);
     
-
-    console.log([selMonth, setSelMonth])
+    console.log(geojsonWithData)
     const domain = []
-    for( let key in dataByDateCategory){
-        domain.push(dataByDateCategory[key])
-    }
-     console.log(domain)
+        // for( let key in dataByDateCategory){
+        //     domain.push(dataByDateCategory[key])
+        //     console.log(domain)
+        // }
+
+    geojsonWithData.features.map(feature =>{
+        domain.push(feature.properties.perCapita);
+    })
     const [min,max] = extent(domain);
 
-    let colorScale= scaleSequential().domain([min,max]).interpolator(interpolateRdYlGn);
+    let colorScale= scaleSequential().domain([max,min]).interpolator(interpolateRdYlGn);
   
     let legend = select("#svg-color-scale")
     legend.append("g")
     .attr("class", "svg-color-legend")
-    .attr("transform", "translate(50,15)");
-    console.log(selCategory)
+    .attr("transform", "translate(50,20)");
     let newtitle;
     if(selCategory=='dry'){
       newtitle=`Recyclable Dry Waste`
@@ -77,7 +88,7 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
       }
     let colorLegend = legendColor()
         .labelFormat(format(".2f"))
-        .title(`Legend : ${newtitle}(Kgs)`)
+        .title(`Legend:${newtitle}(Kgs/capita)`)
         .scale(colorScale);
 
     
@@ -90,54 +101,39 @@ function ChoroplethMap({geojson,data,setSelLane,selCategory}) {
 
 
 // slider
+let minimumDay = Math.min(...getDays(data,selYear,selMonth));
+let maximumDay = Math.max(...getDays(data,selYear,selMonth));
 var sliderVertical = sliderLeft()
     .min(1)
-    .max(31)
+    .max(30)
     .step(1)
     .height(300)
     // .tickFormat(d3.format('.2%'))
     .ticks(5)
     .default(0.015)
     .on('onchange', val => {
-        setSelDay(val)
-    });
+        setSelDay(val);
 
-  var gVertical = select(svgSliderRef.current)
+    });
+    
+
+  var gVertical = select('#svg-time-slider')
     // .append('svg')
     .attr('width', 100)
     .attr('height', 400)
     .append('g')
+
     .attr('transform', 'translate(60,30)');
+    // gVertical.remove();
 
-  gVertical.call(sliderVertical);
-
-//   d3.select('p#value-vertical').text(d3.format('.2%')(sliderVertical.value()));
-// var sliderVertical = sliderLeft()
-//                         .min(1)
-//                         .max(30)
-//                         .step(1)
-//                         .height(300)
-//                         // .tickFormat(format('.2%'))
-//                         .ticks(5)
-//                         .default(0.015)
-//                         .on('onchange', val => {
-//                             setSelDay(val)
-//                         // d3.select('p#value-vertical').text(d3.format('.2%')(val));
-//                         });
-
-// const slider = select(svgSliderRef.current)
-//             .attr('width', 100)
-//             .attr('height', 350)
-//             .append('g')
-//             .attr('transform', 'translate(60,30)');
-
-// slider.call(sliderVertical);
-
-
+    // useEffect(() => {
+    gVertical.call(sliderVertical);
+     
+    // }, [maximumDay])
 
 const zoneStyle = (e) =>{
     if(typeof e.properties.dataValue !== "undefined")
-    return { fillColor:colorScale(e.properties.dataValue), color:"black" }
+    return { fillColor:colorScale(e.properties.perCapita), color:"black" }
     else
     return { fillColor:"black",color:"black" }
 }
@@ -156,7 +152,7 @@ const onEachLane = (lane,layer) =>{
 
 const setDataValue = value =>{
     if(typeof value !== "undefined")
-        return `<h1 class="text-center">${value} kg</h1>`
+        return `<h1 class="text-center">${value} Kg per capita</h1>`
     else    
         return `<h5 class="text-center">Data not Found</h5>`
 }
@@ -174,7 +170,7 @@ layer.on({
     mouseover: e => {
        L.popup()
         .setLatLng(e.latlng)
-        .setContent(`<b>${e.target.feature.properties.zone_name}</b> <hr> ${setDataValue(e.target.feature.properties.dataValue)}`)
+        .setContent(`<b>${e.target.feature.properties.zone_name}</b> <hr> ${setDataValue(e.target.feature.properties.perCapita)}<br>Total Population:${e.target.feature.properties.population}<br>Total Waste:${e.target.feature.properties.dataValue}Kg`)
         .openOn(layer._map);
     },
     mouseout: e=> layer._map.closePopup()
@@ -207,7 +203,7 @@ if(true){
 
 </Control>
 }else{
-    zoneControlDiv
+    // zoneControlDiv
 }
        
 let geojsonMap =  <GeoJSON key='my-geojson' style={zoneStyle} data={geojsonWithData} onEachFeature={onEachLane}  />
@@ -217,18 +213,14 @@ const handleDropdownChange = (e) =>{
 }
 const handleYearDropdownChange = (e) =>{
     setSelYear(e.target.value)
-    console.log(e.target.value)
     if (e.target.value==='2021') {
 setSelMonth('02');  
-console.log('its 2021')      
     }
     else{setSelMonth('01')}
 }
-console.log(selYear)
-let menuItems;
+const monthName = {'09':'Sep','10':'Oct','11':'Nov','12':'Dec','01':'Jan','02':'Feb','03':'Mar','04':'April','05':'May','06':'June','07':'July','08':'Aug'}; 
 
-    if(selYear === '2020'){
-        menuItems =<Select
+let menuItems =<Select
         labelId="demo-simple-select-outlined-label"
         id="demo-simple-select-outlined"
         value={selMonth}
@@ -239,34 +231,13 @@ let menuItems;
         <MenuItem value="">
             <em>None</em>
         </MenuItem>
-        
-        
-         <MenuItem value={'09'}>September</MenuItem>
-        <MenuItem value={'10'}>October</MenuItem>
-        <MenuItem value={'11'}>November</MenuItem>
-        <MenuItem value={'12'}>December</MenuItem> 
+        {getMonth(data,selYear).map((month)=>{
+             return <MenuItem value={month}>{monthName[month]}</MenuItem>
+        })
+        }
+         
+       
     </Select>
-    }else{
-        menuItems = <Select
-        labelId="demo-simple-select-outlined-label"
-        id="demo-simple-select-outlined"
-        value={selMonth}
-        onChange={handleDropdownChange}
-        label="Month"
-        className="month-drop"
-        >
-        <MenuItem value="">
-            <em>None</em>
-        </MenuItem>
-        
-        
-         <MenuItem value={'01'}>January</MenuItem>
-         <MenuItem value={'02'}>February</MenuItem>
-         <MenuItem value={'03'}>March</MenuItem>
-         <MenuItem value={'04'}>April</MenuItem>
-        
-    </Select>
-    }
 
 return (
     <div className="map">
@@ -291,8 +262,12 @@ return (
                     <MenuItem value="">
                         <em>None</em>
                     </MenuItem>
-                    <MenuItem value={'2020'}>2020</MenuItem>
-                    <MenuItem value={'2021'}>2021</MenuItem>
+                    {
+                        getYear(data).map(year =>{
+                            return <MenuItem value={year}>{year}</MenuItem>
+                        })
+                    }
+                   
                 </Select>    
                 
                     {menuItems}
@@ -309,7 +284,6 @@ return (
       attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
       url='https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png'
     /> */}
-        {geojsonMap}
         
         <LayersControl position="topright">
             
@@ -331,14 +305,14 @@ return (
             <LayersControl.Overlay name="Spots">
                 <GeoJSON key='my-geojson' style={spotsStyle} data={geojson.spots} pointToLayer={pointToLayer} onEachFeature={onEachSpot}/>
             </LayersControl.Overlay>
-            {/* <LayersControl.Overlay name="Zones"  >
+            <LayersControl.Overlay checked name="Zones"  >
               
+            {geojsonMap}
 
-                <FeatureGroup >
-                   {geojsonMap}
+                {/* <FeatureGroup >
                     
-                </FeatureGroup>
-            </LayersControl.Overlay> */}
+                </FeatureGroup> */}
+            </LayersControl.Overlay>
             </LayersControl>
 
 
@@ -352,3 +326,7 @@ return (
 }
 
 export default ChoroplethMap
+
+
+// geonode:worli_bubble_updated_15march
+// geonode:worli_spot_updated_10march
