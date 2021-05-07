@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-01 16:34+0530\n"
+"POT-Creation-Date: 2021-05-07 12:28+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -136,6 +136,11 @@ msgid ""
 "segregation at source. The project plans to drive this change through a "
 "participatory process within the Worli Koliwada community. "
 msgstr ""
+"IDFC FIRST बैंक की तरफसे बृहन्मुंबई महानगर निगम (MCGM) और स्त्री मुक्ति संघटना द्वारा "
+"'स्वच्छ वर्ली कोलीवाड़ा' यह प्रकल्प कार्यान्वित किया जा रहा है। इस प्रकल्प का मुख्य उद्देश्य "
+"पर्यावरण के बारे में लोगों में जागरूकता निर्माण करना, कचरा अलग रखने की आदत को विकसित "
+"करना और सामाजिक व्यवहार को बदलना, यह है। हमे विश्वास ​​है के, यह बदलाव वर्ली कोलीवाड़ा "
+"में अधिकतम लोगों की भागीदारी के साथ ही प्राप्त किया जा सकता है|"
 
 #: swk/templates/aboutus.html:19
 msgid ""
@@ -144,6 +149,11 @@ msgid ""
 "generate, with a model where community participation will be a key at every "
 "stage, ensuring sustainability of this program. "
 msgstr ""
+"वर्ली कोलीवाड़ा में निर्माण होनेवाला कचरा अगर हम अलग-अलग अर्थात गिला कचरा और सूखा "
+"कचरे का वैज्ञानिक तरीके से प्रबंधन करे और सिर्फ घातक कचराही हम महानगर निगम (MCGM) को "
+"दे और इस प्रक्रिया को हम सभी मिलकर करे तो हम अपने वर्ली कोलीवाड़ा क्षेत्र को शून्य कचरा "
+"क्षेत्र बना सकते हैं। एक बार अगर हम इस तरीकेसे स्वछता करने की खुदको आदत लगाले तो,  हम "
+"सभीका सफर एक निरंतर/शाश्वत विकास की ओर शुरू हो जाएगा |"
 
 #: swk/templates/aboutus.html:23
 msgid "About IDFC FIRST Bank"
@@ -160,6 +170,13 @@ msgid ""
 "wealth management services. IDFC FIRST Bank has a nationwide presence and "
 "operates in the Retail Banking, Wholesale Banking and other Banking segments."
 msgstr ""
+"IDFC FIRST बैंक की स्थापना दिसंबर 2018 में IDFC बैंक और कैपिटल फर्स्ट के विलय के बाद हुई | "
+"IDFC FIRST बैंक अन्य बैंकों, व्यक्तियों, छोटे व्यवसायों और कॉर्पोरेटों को कई तरह से वित्तीय "
+"लेनदेन के विकल्प प्रदान कर रही हैं।IDFC FIRST बैंक में बचत और चालू खाता, एनआरआय खाता, "
+"वेतन खाता, डीमैट खाता, निश्चित और आवर्ती जमा, गृह और व्यक्तिगत ऋण, साइकिल ऋण, "
+"उपभोक्ता स्थायी ऋण, लघु व्यवसाय ऋण, विदेशी मुद्रा उत्पाद, भुगतान समाधान और धन प्रबंधन "
+"जैसी कई सेवाएं उपलब्ध हैं।IDFC FIRST बैंक का नेटवर्क पूरे देश में फैला हुआ है। बैंक का व्यक्तिगत "
+"और सामूहिक सेवाओं के साथ-साथ अन्य बैंकिंग क्षेत्रों में भी काम शुरू है।"
 
 #: swk/templates/aboutus.html:31
 msgid "About Municipal Corporation of Greater Mumbai "
@@ -177,6 +194,13 @@ msgid ""
 "being one of the foremost centers of education, science and technological "
 "research and advancement. "
 msgstr ""
+"बृहन्मुंबई महानगर निगम (MCGM) को आमतौर पर बॉम्बे महानगर निगम (BMC) के रूप में जाना "
+"जाता है। यह महाराष्ट्र की राजधानी मुंबई का प्रशासनिक नागरिक संस्था है। शहर और उपनगरों "
+"के शहरी बुनियादी ढांचे और प्रबंधन की जिम्मेदारी बृहन्मुंबई महानगर निगम पर है। बृहन्मुंबई "
+"महानगर निगम का क्षेत्रफल 480.24 वर्ग कि.मी. है और 2001 की जनगणना अनुसार उसकी "
+"जनसंख्या 1,19,14,378 थी। भारत के कुल अंतर्राष्ट्रीय व्यापार और सरकारी राजस्व में महानगर "
+"निगम का बड़ा योगदान है| इसीके साथ देश में शिक्षा, वैज्ञानिक और तकनीकी अनुसंधान और प्रगति "
+"का एक प्रमुख केंद्र भी महानगर निगम बना है।"
 
 #: swk/templates/aboutus.html:39
 msgid "About Stree Mukti Sangathana(SMS)"
@@ -193,6 +217,13 @@ msgid ""
 "publication “Prerak Lalkari”,  Family Counselling centres, Adolescent "
 "sensitization program, creating sustainable livelihood programmes etc.  "
 msgstr ""
+"स्त्री मुक्ति संघटना यह स्वयंसेवी संस्था सन 1975 में स्थापित की गई| समानता के लिए एक अनुकूल "
+"माहौल बनाना और इसके साथ गरीबी और हिंसा का उन्मूलन करना, यह संघटना के मुख्य लक्ष्य है। "
+"समाज में महिलाओं के समस्याओं बारे में जागरूकता बढ़ाने के लिए, “मुलगी झाली हो” (लड़की हुई|) "
+"ऐसे महिलाओं के सवालोंपर आधारित नाटक और कला मंडली, परिवार परामर्श केंद्र, बच्चोंका पालना "
+"घर, किशोरों के लिए जीवन शिक्षा कार्यक्रम, पुस्तकों और पत्रिकाओं, कचरा चुनने वाले महिलाओंके "
+"लिए आजीविका, शिक्षा और स्वास्थ्य कार्यक्रम इस तरह के बहुत उपक्रम दवारा स्त्री मुक्ति "
+"संघटना काम कर रही है।"
 
 #: swk/templates/aboutus.html:43
 msgid ""
@@ -201,6 +232,10 @@ msgid ""
 "Bombay Public Trusts Act and Societies registration act and has 80-G and 12 "
 "A certificates under the Income Tax Act, 1961. "
 msgstr ""
+"1999 से स्त्री मुक्ति संघटना कचरा चुननेवाली महिलाओंके विकास के लिए, उन्हें ठोस कचरा प्रबंधन "
+"का काम दिलवाने के लिए काम कर रही है। स्त्री मुक्ति संघटना बॉम्बे पब्लिक ट्रस्ट्स अधिनियम "
+"और सोसायटी पंजीकरण अधिनियम के तहत पंजीकृत है और आयकर अधिनियम, 1961 के तहत 80-जी और "
+"12 ए प्रमाणित है।"
 
 #: swk/templates/aboutus.html:49
 msgid "About Community GIS"
@@ -220,7 +255,14 @@ msgid ""
 "available soon .\n"
 "                        This has been developed by teams from makerghat and  "
 "CTARA IIT Bombay ."
-msgstr "कॉम्युनिटी जीआयएस,भौगोलिक डेटा और कोड के लिए एक स्वतंत्र और मुक्त स्रोत मंच है। तकनीकी तौर पर कम्युनिटी जीआईएस एक भौगोलिक(डेटा इन्फ्रास्ट्रक्चर) के लिए एक मंच है। यह एक आवेदन (लाइसेंस GPLv3 के साथ) GUI के रूप में Pyhton Django और Javascripts का उपयोग करता है, जबकि बैकेंड जियोनोड है कोड github पर उपलब्ध है। इस मंच का उपयोग अन्य विषयों के संशोधनों के साथ किया जा सकता है। स्थापित करने और उपयोग करने के लिए प्रारंभिक निर्देश जल्द ही उपलब्ध कराए जाएंगे। इसे makerGhat और CTARA IIT-B की टीमों द्वारा विकसित किया गया है। "
+msgstr ""
+"कॉम्युनिटी जीआयएस,भौगोलिक डेटा और कोड के लिए एक स्वतंत्र और मुक्त स्रोत मंच है। तकनीकी "
+"तौर पर कम्युनिटी जीआईएस एक भौगोलिक(डेटा इन्फ्रास्ट्रक्चर) के लिए एक मंच है। यह एक आवेदन "
+"(लाइसेंस GPLv3 के साथ) GUI के रूप में Pyhton Django और Javascripts का उपयोग करता है, "
+"जबकि बैकेंड जियोनोड है कोड github पर उपलब्ध है। इस मंच का उपयोग अन्य विषयों के संशोधनों "
+"के साथ किया जा सकता है। स्थापित करने और उपयोग करने के लिए प्रारंभिक निर्देश जल्द ही "
+"उपलब्ध कराए जाएंगे। इसे makerGhat और CTARA IIT-B की टीमों द्वारा विकसित किया गया "
+"है। "
 
 #: swk/templates/adminlogin.html:38
 msgid "SWK Portal Login"
@@ -235,7 +277,7 @@ msgstr "दिनांक दर्ज करें"
 msgid "Password"
 msgstr "कुंजिका"
 
-#: swk/templates/adminlogin.html:48 swk/templates/new.html:142
+#: swk/templates/adminlogin.html:48 swk/templates/new.html:164
 #: swk/templates/test.html:47
 msgid "Login"
 msgstr "लॉग इन करें"
@@ -255,13 +297,13 @@ msgstr "नक्शा"
 msgid "About Us"
 msgstr "हमारे बारे में"
 
-#: swk/templates/base.html:83 swk/templates/new.html:93
-#: swk/templates/new.html:110 swk/templates/report.html:5
+#: swk/templates/base.html:83 swk/templates/new.html:104
+#: swk/templates/new.html:132 swk/templates/report.html:5
 #: swk/templates/test.html:40
 msgid "Report"
 msgstr "रिपोर्ट"
 
-#: swk/templates/contact.html:9 swk/templates/new.html:133
+#: swk/templates/contact.html:9 swk/templates/new.html:155
 msgid "Contact Us"
 msgstr "संपर्क करें"
 
@@ -383,105 +425,370 @@ msgstr "झोन आईडी:"
 msgid "Update"
 msgstr "अपडेट करें"
 
+#: swk/templates/faq.html:5
+msgid "OUR VISION"
+msgstr ""
+
+#: swk/templates/faq.html:10
+msgid ""
+"Making the area of Worli Koliwada a Zero Waste Area, \n"
+"    thus helping in environment and creating job opportunities \n"
+"    for women and men from  marginalised section of the \n"
+"    society. "
+msgstr ""
+
+#: swk/templates/faq.html:20
+msgid "FREQUENTLY ASKED QUESTIONS"
+msgstr ""
+
+#: swk/templates/faq.html:21
+msgid "1. What do you mean by Zero Waste?"
+msgstr ""
+
+#: swk/templates/faq.html:22
+msgid ""
+"ANS:&nbsp;&nbsp;  Zero Waste is a concept where waste is completely utilized "
+"by reusing or recycling.   Only minimal quantity is transported to the "
+"dumping ground.  This ensures a cyclical process of resources and leaves "
+"behind only minimal quantity of residual waste."
+msgstr ""
+
+#: swk/templates/faq.html:24
+msgid "2. What are the advantages of ensuring Zero Waste?"
+msgstr ""
+
+#: swk/templates/faq.html:30
+msgid ""
+"that valuable recyclable materials (Dry and Wet) are not wasted at the "
+"dumping grounds."
+msgstr ""
+
+#: swk/templates/faq.html:33
+msgid "conversion of wet waste into compost thus restoring nature’s wealth."
+msgstr ""
+
+#: swk/templates/faq.html:36
+msgid "saving of transport cost and tipping fee for Local Self Governments."
+msgstr ""
+
+#: swk/templates/faq.html:39
+msgid "saving of emissions due to transport, cleaner roads, lesser pollution."
+msgstr ""
+
+#: swk/templates/faq.html:42
+msgid "prevention of Air Pollution."
+msgstr ""
+
+#: swk/templates/faq.html:45
+msgid "prevention of Water Pollution."
+msgstr ""
+
+#: swk/templates/faq.html:48
+msgid "prevention of Land Pollution."
+msgstr ""
+
+#: swk/templates/faq.html:51
+msgid ""
+"economy of resources thus enabling savings at individual level, family "
+"level, society level, state level, national level and also universal level."
+msgstr ""
+
+#: swk/templates/faq.html:58
+msgid "3. What is the process adopted to ensure Zero Waste?"
+msgstr ""
+
+#: swk/templates/faq.html:59
+msgid ""
+"Ans:&nbsp;&nbsp;  The process of Zero Waste Management involves 4 simple "
+"steps:"
+msgstr ""
+
+#: swk/templates/faq.html:63
+msgid ""
+"Collection of the waste separated according to categories namely (a) Dry "
+"Waste. (b) Wet Waste and (c) Hazardous Waste."
+msgstr ""
+
+#: swk/templates/faq.html:66
+msgid "Further segregation depending on the requirement for recycling."
+msgstr ""
+
+#: swk/templates/faq.html:69
+msgid "Recycling"
+msgstr ""
+
+#: swk/templates/faq.html:72
+msgid "Disposal of Hazardous Waste."
+msgstr ""
+
+#: swk/templates/faq.html:79
+msgid "4. What do you do with the Separated Waste?"
+msgstr ""
+
+#: swk/templates/faq.html:80
+msgid ""
+"Ans:&nbsp;&nbsp;We (i)convert Organic Wet Waste into compost,  (ii) send Dry "
+"Waste for recycling & (iii) send the hazardous waste to the municipality for "
+"processing in the incinerator."
+msgstr ""
+
+#: swk/templates/faq.html:87
+msgid ""
+"5. Would you be processing the waste in our nearby localities?  If so, it "
+"will lead to foul smell.  We do not want the process to be carried out in "
+"our backyard. We would rather give mixed waste so it may be sent to  the "
+"dump yard.  Out of sight is out of mind."
+msgstr ""
+
+#: swk/templates/faq.html:89
+msgid ""
+"Ans:&nbsp;&nbsp; It is a misconception that the process leads to generation "
+"of foul smell.  We have been processing the waste in Kandivali Cemetery for "
+"over 6 months now."
+msgstr ""
+
+#: swk/templates/faq.html:91
+msgid ""
+"We strongly recommend that you visit the cemetery and experience for "
+"yourself how least inconvenient the process is to the community.   Instead, "
+"it in fact contributes to reducing health hazards."
+msgstr ""
+
+#: swk/templates/faq.html:93
+msgid "6. Why should we maintain the Waste separately before giving?"
+msgstr ""
+
+#: swk/templates/faq.html:94
+msgid ""
+"Ans:&nbsp;&nbsp;  Maintaining different kinds of waste separately is the "
+"first step towards cleanliness.  It helps to ensure better public health.  "
+"It also helps in minimizing the pollution of air, water, and land and thus "
+"also prevents health hazards"
+msgstr ""
+
+#: swk/templates/faq.html:96
+msgid ""
+"All of these can happen only if the community participates whole heartedly "
+"and gives the waste of different kinds in separate category.  It is not "
+"difficult. "
+msgstr ""
+
+#: swk/templates/faq.html:98
+msgid ""
+"7. We pay tax to the municipality.  To take care of issues relating to "
+"public health is the responsibility of the Municipality. Why should we do "
+"their job?"
+msgstr ""
+
+#: swk/templates/faq.html:99
+msgid ""
+"Ans:&nbsp;&nbsp;If we cannot as a family provide one kilogram of waste "
+"separated appropriately it is unreasonable to expect Municipality to "
+"segregate 7-8 thousand kilograms of waste."
+msgstr ""
+
+#: swk/templates/faq.html:101
+msgid ""
+"To dispose off the waste in appropriate manner is indeed the job of the "
+"municipality.  However, unless we provide waste separately, the same cannot "
+"be processed; instead it then has to be sent to the dumping ground."
+msgstr ""
+
+#: swk/templates/faq.html:103
+msgid ""
+"You are not providing the waste separately to help Municipality; you are "
+"maintaining the different categories of waste separately to ensure better "
+"recyclying of resources in the present and ensuring availability of "
+"sufficient and better quality resources(air, water and land) for the future "
+"generation."
+msgstr ""
+
+#: swk/templates/faq.html:105
+msgid ""
+"8. Even if we give different kinds of waste separately, most of the people "
+"in the neighborhood throw their waste in the sea/kiosk/dumping bin."
+msgstr ""
+
+#: swk/templates/faq.html:106
+msgid ""
+"Ans:&nbsp;&nbsp; Waste segregation by the waste generator is a new thought "
+"and requires change in habit of the people. This transformation will take "
+"some time. But we are working together to bring about the much needed "
+"change.   We are also making significant progress in bringing about this "
+"change."
+msgstr ""
+
+#: swk/templates/faq.html:108
+msgid ""
+"Earlier in August 2020 we did not get different kinds of waste separately "
+"from people but gradually by September 2020 we started getting 2 tons (2000 "
+"kg) of wet waste per month and by January 2021 this number has increased to "
+"21 tons (21,000 kg) per month."
+msgstr ""
+
+#: swk/templates/faq.html:110
+msgid ""
+"If we continue to progress at this rate, and the number of people's "
+"participation continues to increase, we will soon be able to declare our "
+"Worli Koliwada as a Zero-Waste area."
+msgstr ""
+
+#: swk/templates/faq.html:118
+msgid "Put the Organic/ Wet Waste food items in the bin"
+msgstr ""
+
+#: swk/templates/faq.html:121
+msgid "Keep a plastic bag to put the dry waste and e-waste in."
+msgstr ""
+
+#: swk/templates/faq.html:124
+msgid ""
+"Keep another plastic bag to put the hazardous waste like sanitary napkins, "
+"diapers,  needles and syringes  -  This waste is not generated very often "
+"and therefore when generated may be handed over in a separate plastic bag, "
+"preferably with a mark as will signify that it is hazardous waste."
+msgstr ""
+
+#: swk/templates/faq.html:130
+msgid ""
+"10. We cannot be keeping the fish waste at home and therefore we throw it in "
+"the sea."
+msgstr ""
+
+#: swk/templates/faq.html:131
+msgid ""
+"Ans:&nbsp;&nbsp;Fish waste comprises of flesh, skin, and bones.  Fish wastes "
+"degrade rapidly in warm temperatures. As a result of bacterial "
+"decomposition, it emits foul smell. If not managed properly, such disposal "
+"poses environmental and health problems as it requires higher levels of "
+"oxygen to process the organic waste."
+msgstr ""
+
+#: swk/templates/faq.html:133
+msgid ""
+"Environmental concerns associated with disposal of fish wastes into ocean "
+"waters include:"
+msgstr ""
+
+#: swk/templates/faq.html:137
+msgid "reduced oxygen levels in the seawaters at the ocean bottom;"
+msgstr ""
+
+#: swk/templates/faq.html:140
+msgid "burial or smothering of living organisms; and"
+msgstr ""
+
+#: swk/templates/faq.html:143
+msgid ""
+"introduction of disease or non-native and invasive species to the ecosystem "
+"of the sea floor."
+msgstr ""
+
+#: swk/templates/faq.html:148
+msgid ""
+"To add to this if any plastic is disposed along-with the organic waste, it "
+"imposes even greater threat with its adverse effect seen at multiple levels."
+msgstr ""
+
 #: swk/templates/feedback_form.html:24
 msgid "Grievance Form "
 msgstr ""
 
-#: swk/templates/map/map.html:302 swk/templates/trial.html:487
+#: swk/templates/map/map.html:302
 msgid "Geographical Hierarchy"
 msgstr "भौगोलिक पदानुक्रम"
 
-#: swk/templates/map/map.html:307 swk/templates/trial.html:492
+#: swk/templates/map/map.html:307
 #, fuzzy
 #| msgid "Admin Boundary"
 msgid "Admin Ward Boundary"
 msgstr "व्यवस्थापक सीमा"
 
-#: swk/templates/map/map.html:310 swk/templates/trial.html:495
+#: swk/templates/map/map.html:310
 msgid "Worli Koliwada Lanes"
 msgstr "स्वच्छ वरली कोलीवाड़ा"
 
-#: swk/templates/map/map.html:313 swk/templates/trial.html:498
+#: swk/templates/map/map.html:313
 msgid "Corporator Ward Boundary"
 msgstr "निगमायुक्त वार्ड की सीमा"
 
-#: swk/templates/map/map.html:323 swk/templates/trial.html:508
+#: swk/templates/map/map.html:323
 msgid "Zonal Geometry"
 msgstr "आंचलिक ज्यामिति"
 
-#: swk/templates/map/map.html:331 swk/templates/trial.html:516
+#: swk/templates/map/map.html:331
 msgid "Lanes / Bin Paths "
 msgstr "गलियाँ / बिन रास्ता"
 
-#: swk/templates/map/map.html:334 swk/templates/trial.html:519
+#: swk/templates/map/map.html:334
 #, fuzzy
 #| msgid "Spot"
 msgid "Spots "
 msgstr "स्थान"
 
-#: swk/templates/map/map.html:337 swk/templates/trial.html:522
+#: swk/templates/map/map.html:337
 msgid "Spot Images"
 msgstr ""
 
-#: swk/templates/map/map.html:340 swk/templates/trial.html:525
+#: swk/templates/map/map.html:340
 msgid "Bubble"
 msgstr "बुलबुला"
 
-#: swk/templates/map/map.html:343 swk/templates/trial.html:528
+#: swk/templates/map/map.html:343
 msgid "Zones"
 msgstr "क्षेत्र"
 
-#: swk/templates/new.html:86
+#: swk/templates/new.html:86 swk/templates/new.html:97
 #, fuzzy
 msgid "DataManager-EntryForm"
 msgstr "डेटा व्यवस्थापक प्रविष्टी फार्म"
 
-#: swk/templates/new.html:87 swk/templates/new.html:104
+#: swk/templates/new.html:87 swk/templates/new.html:98
+#: swk/templates/new.html:115 swk/templates/new.html:126
 #: swk/templates/test.html:30
 msgid "View Daily Entry Data"
 msgstr "दैनिक प्रवेश डेटा देखें"
 
-#: swk/templates/new.html:88 swk/templates/new.html:105
+#: swk/templates/new.html:88 swk/templates/new.html:99
+#: swk/templates/new.html:116 swk/templates/new.html:127
 msgid "OneTimeSurvey Form"
 msgstr "एक समय सर्वेक्षण फार्म"
 
-#: swk/templates/new.html:99
+#: swk/templates/new.html:93 swk/templates/new.html:110
+#: swk/templates/new.html:121
 msgid "Forms"
 msgstr "फार्म"
 
-#: swk/templates/new.html:103 swk/templates/test.html:19
+#: swk/templates/new.html:114 swk/templates/new.html:125
+#: swk/templates/test.html:19
 msgid "Daily Entry Form"
 msgstr "दैनिक प्रवेश फार्म"
 
-#: swk/templates/new.html:114
+#: swk/templates/new.html:136
 #, fuzzy
 #| msgid "Upload Layer"
 msgid "Upload Image"
 msgstr "परत अपलोड करें"
 
-#: swk/templates/new.html:117 swk/templates/test.html:37
+#: swk/templates/new.html:139 swk/templates/test.html:37
 msgid "Dashboard"
 msgstr "डैशबोर्ड"
 
-#: swk/templates/new.html:122
+#: swk/templates/new.html:144
 msgid "FAQ"
 msgstr "सामान्य प्रश्न"
 
-#: swk/templates/new.html:125
+#: swk/templates/new.html:147
 msgid "Grievance"
 msgstr "शिकायत"
 
-#: swk/templates/new.html:129
-msgid "Mock-Feedback"
-msgstr "दिखावटी प्रतिपुष्टि"
-
-#: swk/templates/new.html:137 swk/templates/test.html:44
-msgid "Logout"
-msgstr "लॉग आउट"
-
-#: swk/templates/rating.html:102
+#: swk/templates/new.html:151 swk/templates/rating.html:159
 msgid "Feedback"
 msgstr "प्रतिपुष्टि"
+
+#: swk/templates/new.html:159 swk/templates/test.html:44
+msgid "Logout"
+msgstr "लॉग आउट"
 
 #: swk/templates/test.html:17
 msgid "Enter/View Data"
@@ -495,49 +802,58 @@ msgstr "कोबो रूप"
 msgid "Upload Layer"
 msgstr "परत अपलोड करें"
 
-#: swk/views.py:99
+#: swk/views.py:100
 msgid ""
 "loggedin sucessfully. Please check navigation bar on top to fill required "
 "forms."
 msgstr "सफलतापूर्वक लॉग इन हो चुका है|कृपया आवश्यक भरने के लिए शीर्ष पर नेविगेशन बार जांचें|"
 
-#: swk/views.py:103
+#: swk/views.py:104
 msgid "Your account is disabled"
 msgstr ""
 
-#: swk/views.py:107
+#: swk/views.py:108
 msgid "invalid login details for "
 msgstr "अवैध प्रवेश जानकारी"
 
-#: swk/views.py:109
+#: swk/views.py:110
 msgid "Invalid username or password."
 msgstr "अमान्य उपयोगकर्ता नाम या पासवर्ड"
 
-#: swk/views.py:122
+#: swk/views.py:123
 msgid "Logged out successfully!"
 msgstr ""
 
-#: swk/views.py:132
+#: swk/views.py:133
 #, fuzzy
 #| msgid "Your data is saved for {} dated {}"
 msgid "Your data is saved"
 msgstr "आपका डेटा {} दिनांक {} के लिए सहेजा गया है"
 
-#: swk/views.py:175 swk/views.py:242
+#: swk/views.py:176 swk/views.py:243
 msgid "Please select Zone"
 msgstr ""
 
-#: swk/views.py:179 swk/views.py:246
+#: swk/views.py:180 swk/views.py:247
 msgid "Data already exists"
 msgstr ""
 
-#: swk/views.py:191 swk/views.py:258
+#: swk/views.py:192 swk/views.py:259
 msgid "Your data is saved for {} dated {}"
 msgstr "आपका डेटा {} दिनांक {} के लिए सहेजा गया है"
 
-#: swk/views.py:197 swk/views.py:264
+#: swk/views.py:198 swk/views.py:265
 msgid "Please check your form"
 msgstr "कृपया अपना फ़ॉर्म जांचें"
+
+#: swk/views.py:334
+#, fuzzy
+#| msgid "Your data is saved for {} dated {}"
+msgid " Your feedback is saved. "
+msgstr "आपका डेटा {} दिनांक {} के लिए सहेजा गया है"
+
+#~ msgid "Mock-Feedback"
+#~ msgstr "दिखावटी प्रतिपुष्टि"
 
 #~ msgid "Seggregation Centres and Pits"
 #~ msgstr "सेग्रेगेशन सेंटर और गड्ढे"
