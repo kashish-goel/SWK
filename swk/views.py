@@ -53,9 +53,10 @@ def downloadzone(request,year,month,day,year1,month1,day1,zone_name):
     if(zone_name=='ALL'):
         datas= Tracksheet.objects.filter(date__range=(new_date, new_date1)).order_by('date','lane_name')
     else:
-        # datas= Tracksheet.objects.filter(lane_name__in=(zone_name), date__range=(new_date, new_date1)).order_by('date','lane_name')
-        datas= Tracksheet.objects.filter(lane_name=zone_name, date__range=(new_date, new_date1)).order_by('date','lane_name')
-        print(datas)
+        
+        datas= Tracksheet.objects.filter(lane_name__in=(zone_name.split(',')), date__range=(new_date, new_date1)).order_by('date','lane_name')
+        # datas= Tracksheet.objects.filter(lane_name=zone_name, date__range=(new_date, new_date1)).order_by('date','lane_name')
+        # print(datas.query)
     return render(request,'download_data_zone.html',{'datas':datas})
 
 def edit(request, id):  

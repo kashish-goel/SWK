@@ -54,13 +54,13 @@
         <div class="input col-md-6">
      
             <b>Filter data by</b><br>
-            <b>From Date  </b><input type="date" id="date"><b>To Date  </b>  <input type="date" id="date1"> 
-              <br>and by <b>Zone  </b>    
+            <b>From Date  &nbsp;&nbsp;</b><input type="date" id="date"><b>&nbsp;&nbsp;To Date  &nbsp;&nbsp;</b>  <input type="date" id="date1"> 
+              &nbsp;&nbsp;&nbsp;&nbsp;and by <b>Zone  </b> &nbsp;&nbsp;   
             <!-- <b>Filter data by</b><br>
             <b>Date  </b><input type="date" id="date">and by <b>Zone  </b>     -->
-            <!-- <select id="zone" multiple onclick = "zoneclick()"> -->
-            <select id="zone">
-            <option value="ALL">All</option>
+            <select class ="dropdown" id="zone" multiple onclick = "zoneclick()">
+            <!-- <select id="zone"> -->
+            <!-- <option value="ALL">All</option> -->
             <option value="Hira Seth Chawl to Waras Lane">Hira Seth Chawl to Waras Lane</option>
             <option value="Navneet Lane to Tare Galli">Navneet Lane to Tare Galli</option>
             <option value="Bhandar Wada to Amar Prem Chowk">Bhandar Wada to Amar Prem Chowk</option>
@@ -80,8 +80,8 @@
             <input type="radio" id="HW" name="Hira Seth Chawl to Waras Lane" value="Hira Seth Chawl to Waras Lane"> -->
             <!-- <label for="HW">Hira Seth Chawl to Waras Lane</label><br> -->
             <!-- <a href="" onclick = "this.href='/download_data_zone/' +document.getElementById('date').value +'&'+document.getElementById('zone').value" class="btn btn-primary">Get Data</a> -->
-            <a href="" onclick = "this.href='/download_data_zone/' +document.getElementById('date').value +'to'+document.getElementById('date1').value+'&'+document.getElementById('zone').value" class="btn btn-primary">Get Data</a>
-            <!-- <a href="" onclick = "this.href='/download_data_zone/' +document.getElementById('date').value +'to'+document.getElementById('date1').value+'&'+document.getElementById('selected_zone').innerHTML" class="btn btn-primary">Get Data</a> -->
+            <!-- <a href="" onclick = "this.href='/download_data_zone/' +document.getElementById('date').value +'to'+document.getElementById('date1').value+'&'+document.getElementById('zone').value" class="btn btn-primary">Get Data</a> -->
+            <a href="" onclick = "this.href='/download_data_zone/' +document.getElementById('date').value +'to'+document.getElementById('date1').value+'&'+document.getElementById('selected_zone').innerHTML" class="btn btn-primary">Get Data</a>
  
         </div>
         
@@ -372,12 +372,13 @@ $(function() {
               for (var option of document.getElementById('zone').options){
                 if(option.selected){
                   // selected.push("'")
-                  selected.push("'"+option.value+"'");
+                  // selected.push("'"+option.value+"'");
+                  selected.push(option.value);
                   // selected.push("'")
                   selected_zone.innerHTML =  selected;
                 }
               }
-              alert(selected);
+              // alert(selected);
               
               
             }
