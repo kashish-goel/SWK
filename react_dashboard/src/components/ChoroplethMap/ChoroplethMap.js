@@ -16,7 +16,7 @@ import {extent} from 'd3-array'
 import 'd3-transition'
 import L from 'leaflet';
 // import { sliderLeft, sliderVertical } from 'd3-simple-slider';
-import {FormControl,InputLabel,MenuItem, Select} from '@material-ui/core'
+import {FormControl,InputLabel,MenuItem, Select,Slider,Typography} from '@material-ui/core'
 // import * as d3 from 'd3';
 import { sliderLeft, sliderVertical } from 'd3-simple-slider';
 
@@ -29,7 +29,6 @@ function ChoroplethMap({geojson,data,bubblePopulationData,setSelLane,selCategory
     const dataByCategory = groupDataByCategory(data,selCategory);
     const [zoneControl,setZoneControl] = useState(false);
     const svgLegRef = useRef();
-    const svgSliderRef = useRef();
 
     const zonePopulation = bubblePopulationData.reduce((obj,elem)=>{
         let category = elem["zone_id"];
@@ -58,7 +57,6 @@ function ChoroplethMap({geojson,data,bubblePopulationData,setSelLane,selCategory
     const dataByDateCategory = groupDataByDateCategory(data,selCategory,selYear,selMonth,selDay)
     const geojsonWithData = mergeGeomData(geojson.zones,dataByDateCategory,zonePopulation);
     
-    console.log(geojsonWithData)
     const domain = []
         // for( let key in dataByDateCategory){
         //     domain.push(dataByDateCategory[key])
@@ -97,39 +95,6 @@ function ChoroplethMap({geojson,data,bubblePopulationData,setSelLane,selCategory
 
 
 
-// }, [dataByCategory])
-
-
-// slider
-let minimumDay = Math.min(...getDays(data,selYear,selMonth));
-let maximumDay = Math.max(...getDays(data,selYear,selMonth));
-var sliderVertical = sliderLeft()
-    .min(1)
-    .max(30)
-    .step(1)
-    .height(300)
-    // .tickFormat(d3.format('.2%'))
-    .ticks(5)
-    .default(0.015)
-    .on('onchange', val => {
-        setSelDay(val);
-
-    });
-    
-
-  var gVertical = select('#svg-time-slider')
-    // .append('svg')
-    .attr('width', 100)
-    .attr('height', 400)
-    .append('g')
-
-    .attr('transform', 'translate(60,30)');
-    // gVertical.remove();
-
-    // useEffect(() => {
-    gVertical.call(sliderVertical);
-     
-    // }, [maximumDay])
 
 const zoneStyle = (e) =>{
     if(typeof e.properties.dataValue !== "undefined")
@@ -192,6 +157,12 @@ const removeZoneControl = (e) =>{
         setZoneControl(false)
 }
 
+
+function valuetext(value) {
+    setSelDay(value)    
+    return value;
+  }
+
 let zoneControlDiv;
 if(true){
     zoneControlDiv =  <Control position="bottomleft" className="legend-div">
@@ -200,6 +171,7 @@ if(true){
         <h4 style={{fontSize:"15px",fontWeight:"bold"}}>Click on polygon to select lane</h4>
     </div>
     <svg className = "svg-legend" ref={svgLegRef} id="svg-color-scale" style={{fontSize:"13px"}}></svg>
+    
 
 </Control>
 }else{
@@ -238,7 +210,18 @@ let menuItems =<Select
          
        
     </Select>
+    let days=[];
 
+ 
+
+  let minimumDay = Math.min(...getDays(data,selYear,selMonth));
+  let maximumDay = Math.max(...getDays(data,selYear,selMonth));
+   let day; 
+  for(day = minimumDay;day<=maximumDay;day++){
+    if(day%3==0)
+
+    days.push({value:day,label:day.toString()});
+  }
 return (
     <div className="map">
 
@@ -276,7 +259,21 @@ return (
     </FormControl>
     </Control>
     <Control position="bottomright">
-    <svg id="svg-time-slider" ref={svgSliderRef}></svg>
+    <Typography id="discrete-slider-small-steps" gutterBottom>
+        Select Day
+      </Typography>
+    <Slider
+          orientation="vertical"
+          getAriaValueText={valuetext}
+          defaultValue={1}
+          aria-labelledby="vertical-slider"
+          style={{height:300}}
+          valueLabelDisplay="on"
+          step={1}
+          min={minimumDay}
+          max={maximumDay}
+          marks={days}
+        />
     </Control>
     {zoneControlDiv}
 
