@@ -168,7 +168,7 @@
 
               document.getElementById("get-data").addEventListener("click", function(event){
                 let urlSplit = (window.location.href.split('/'));
-                let currentURL = `${urlSplit[0]}//${urlSplit[2]}/`
+                let currentURL = `${urlSplit[0]}//${urlSplit[2]}/download_data_zone/`
                 console.log(currentURL)
                   event.preventDefault()
                   let date = document.getElementById('date').value;
@@ -179,7 +179,7 @@
                     document.getElementById("error_msg").innerHTML = "<p>Please select Zones , start and end date<p>"
                   } 
                   else{
-                    let url = `download_data_zone/${date}to${date1}&${selected_zone}`;
+                    let url = `${date}to${date1}&${selected_zone}`;
                     let uri = encodeURIComponent(url);
                     window.location = currentURL + uri;
                   }
