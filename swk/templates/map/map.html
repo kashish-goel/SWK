@@ -509,12 +509,17 @@ table, th, td
                     else if (boundary == "{zones}")    
                         putWMSru("geonode:zone_polygon300121");   
                     else if (boundary == "{bubble}")    
-                        putWMSru("geonode:worli_bubble_updated_15march");   
+                        // putWMSru("geonode:worli_bubble_updated_15march"); 
+                        putWMSru("geonode:worli_buubles_12may2021");  
                     else if (boundary == "{spots}") 
                         putWMSru("geonode:worli_spot_updated_10march"); 
                         // displayPoints(tempParameter);
                     else if (boundary == "{grounds}") 
+                        putWMSru("geonode:ground_shp");
+                    else if (boundary == "{toilets}") 
                         putWMSru("geonode:ground_shp"); 
+                    else if (boundary == "{temples}") 
+                        putWMSru("geonode:worli_temples_15may21"); 
                                          
 
                 } else {
@@ -530,7 +535,8 @@ table, th, td
                     else if (boundary == "{zones}")                        
                         removeWMS("geonode:zone_polygon300121");
                     else if (boundary == "{bubble}")    
-                        removeWMS("geonode:worli_bubble_updated_15march");  
+                        // removeWMS("geonode:worli_bubble_updated_15march");  
+                        removeWMS("geonode:worli_buubles_12may2021");  
                     else if (boundary == "{spots}")    
                         removeWMS("geonode:worli_spot_updated_10march");
                     else if (boundary == "{grounds}")    
@@ -615,7 +621,7 @@ table, th, td
                     legend.addTo(mymap);
                }
                
-               else if (layer == "geonode:worli_bubble_updated_15march") {
+               else if (layer == "geonode:worli_buubles_12may2021") {
                     console.log(layer)
                     var wms_layer = L.tileLayer.wms('https://communitygis.net/geoserver/wms', {
                         layers: layer,
@@ -624,7 +630,7 @@ table, th, td
                         
                     });
                     wms_layer.addTo(mymap);
-                    mymap.setView([19.0175, 72.815], 16);
+                    mymap.setView([19.0207, 72.8159], 17);
                     newLayerList.push(wms_layer);
                     popup_layer="https://communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
                     console.log("popupzone",popup_layer);
@@ -667,11 +673,31 @@ table, th, td
                     popup_layer="https://communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
                     
                     console.log(wms_layer);
-                    legend.addTo(mymap);
+                    // legend.addTo(mymap);
                     // addWMSLegend(wms_layer.options.layers);
                 }
-            } 
+            
+            else if (layer == "geonode:worli_temples_15may21") {
+                    console.log(layer)
+                    var wms_layer = L.tileLayer.wms('https://communitygis.net/geoserver/wms', {
+                        layers: layer,
+                        format: 'image/png',
+                        transparent: 'true',
+                        
+                    });
+                    wms_layer.addTo(mymap);
 
+
+                    mymap.setView([19.0200, 72.8160], 17);
+                    newLayerList.push(wms_layer);
+                    popup_layer="https://communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
+                    
+                    console.log(wms_layer);
+                    // legend.addTo(mymap);
+                    // addWMSLegend(wms_layer.options.layers);
+                }
+            
+            }
             function removeWMS(unchecked_layer) {
                 newLayerList.forEach((layer, index) => {
                 if (layer.options.layers === unchecked_layer) {
@@ -780,9 +806,27 @@ table, th, td
                           
                             content = "<table border = 2 class = 'popupclass' ><tr><td colSpan='5'><b>Ground Information</b></td></tr>"+
                                 
-                                "<tr><td colSpan='5'><b>Name: </b></td><td>" +ground_name+ "</td></tr>" +
+                                "<tr><td colSpan='5'><b>Name:</b></td><td>" +ground_name+ "</td></tr>" +
                                 "<tr><td colSpan='5 '><b>Image: </b></td><td><img class = 'popupimage' src='../static/images/Ground/".concat(filename)+"' alt='image not found - '>"+filename+"</a></td></tr>" + "</table>";
+                        }
+                        if (feature.properties.Temple_nam) {
+                            // console.log("For Grounds(lanmark menu)
+                            str1 = feature.properties.Temple_nam
+                            items = str1.split('.')
+                            Temple_nam = items[items.length - 2]
+                            fn = feature.properties.Temple_nam.trim()
+                            console.log(items[items.length - 2 ]);
+                            console.log(items);
+                            // console.log
+                            filename = Temple_nam+'.jpg';
+                            console.log(filename)
+                          
+                            content = "<table border = 2 class = 'popupclass' ><tr><td colSpan='5'><b>Temple Information</b></td></tr>"+
+                                
+                                "<tr><td colSpan='5'><b>Name:</b></td><td>" +Temple_nam+ "</td></tr>" +
+                                "<tr><td colSpan='5 '><b>Image: </b></td><td><img class = 'popupimage' src='../static/images/Temple/".concat(filename)+"' alt='image not found - '>"+filename+"</a></td></tr>" + "</table>";
                         } 
+                        
                         
 
                         popup.setContent(content);
@@ -806,7 +850,7 @@ table, th, td
                 }
                 var div = L.DomUtil.create('div', 'info legend'),
                     grades = [1,2,3,4,5,6,7,8,9,10,11,12,13],
-                    labels = ['HiraSeth Chawl to Waras Lane','Navneet Lane to Tare Galli','BhandarVada to Amar Prem Chowk','Pakhari Galli','Shankar Mandir to Bhagat Galli','Gonta Galli to Kranti Galli','Kranti Galli to Navjeevan Wasahat','Bazar Galli to Fish Market','Maval Maratha(Payari)','Sonapur to Dukkar Galli','Dukkar Galli to Taak Galli', 'Nagobacha Ghumat to Achanak','GolfaDevi'];
+                    labels = ['HiraSeth Chawl to Waras Lane','Navneet Lane to Tare Galli','BhandarVada to Amar Prem Chowk','Pakhari Galli','Shankar Mandir to Bhagat Galli','Gonta Galli to Kranti Galli','Kranti Galli to Navjeevan Wasahat','Bazar Galli to Fish Market','Maval Maratha (Payari)','Sonapur to Dukkar Galli','Dukkar Galli to Taak Galli', 'Nagobacha Ghumat to Achanak','GolfaDevi'];
 
                 // loop through our density intervals and generate a label with a colored square for each interval
                 div.innerHTML += "<h4>Legend</h4><hr>";
