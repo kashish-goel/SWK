@@ -18,7 +18,6 @@ from django.core.mail import send_mail, get_connection
 
 def show(request):
     datas= Tracksheet.objects.all().order_by('-date')
-    datas = (datas[0:2])
     # datas1= Tracksheet.objects.all().order_by('-lane_name')
     wardetail= DutyEntry.objects.all()
     # data= User.objects.all()
