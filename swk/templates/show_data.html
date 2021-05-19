@@ -32,7 +32,7 @@
 <!-- <form action="coordinator" method="POST">
     {% csrf_token %} -->
 <div id="wrapper">
-    <h2>Tracksheet Filtered Details</h2></centre> 
+    <h2>{% trans "Tracksheet Filtered Details" %}</h2></centre> 
     <!-- <a href="/xyz/">Update Duty Chart</a> -->
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
@@ -49,13 +49,12 @@
             </select>
         </div><br>
         <br>
-        <br>
         <div id ="selected_zone"></div>
         <div class="input col-md-6">
      
-            <b>Filter data by</b><br>
-            <b>From Date  &nbsp;&nbsp;</b><input type="date" id="date"><b>&nbsp;&nbsp;To Date  &nbsp;&nbsp;</b>  <input type="date" id="date1"> 
-              &nbsp;&nbsp;&nbsp;&nbsp;and by <b>Zone  </b> &nbsp;&nbsp;   
+            <b>{% trans "Filter data by" %}</b><br>
+            <b>{% trans "From Date" %}  &nbsp;&nbsp;</b><input type="date" id="date"><b>{% trans "To Date" %}  &nbsp;&nbsp;</b>  <input type="date" id="date1"> <br>
+            <b>{% trans "Zone" %}  </b> &nbsp;&nbsp;   
             <!-- <b>Filter data by</b><br>
             <b>Date  </b><input type="date" id="date">and by <b>Zone  </b>     -->
             <select class ="dropdown" id="zone" multiple onclick = "zoneclick()">
@@ -107,6 +106,7 @@
                         <th>{% trans "Supervisor Name" %}</th>
                         <th>{% trans "Rejected" %}</th>
                         <th>{% trans "Zone ID" %}</th>
+                        <th>{% trans "Entry" %}</th>
                         {% if request.user|has_group:"Editor" %}
                             <th>Update</th>
                         {% endif %}
@@ -130,6 +130,7 @@
                         <td>{{i.supervisor_name}}</td>
                         <td>{{i.rejected}}</td>
                         <td>{{i.zone_id_id}}</td>
+                        <td>{{i.reason_late_entry}}</td>
                         {% if request.user|has_group:"Editor" %}
                         <td>
                             <a href="/edit/{{ i.track_id }}" style="color: rgb(168, 4, 4);"><span class="glyphicon glyphicon-pencil" >Edit | </span></a>
@@ -309,13 +310,13 @@ function limitPagging(){
 
 $(function() {
   // Just to append id number for each row
-  $('table tr:eq(0)').prepend('<th> ID </th>');
+  // $('table tr:eq(0)').prepend('<th> ID </th>');
 
   var id = 0;
 
   $('table tr:gt(0)').each(function() {
     id++;
-    $(this).prepend('<td>' + id + '</td>');
+    // $(this).prepend('<td>' + id + '</td>');
   });
 });
 
