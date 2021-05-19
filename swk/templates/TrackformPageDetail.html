@@ -3,6 +3,7 @@
 {% load l10n %}
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <style>
     .form-row {
         margin: 50px;
@@ -51,9 +52,11 @@
           </button>
     </div>
 
-    {% endfor %}
+{% endfor %}
 </ul>
-{% endif %} {% endblock %} {% block extra_javascript %}
+{% endif %} {% endblock %} 
+
+{% block extra_javascript %}
 <script>
     $(function() {
         var $docName = $('#id_lane_name').val();

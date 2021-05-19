@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect,HttpResponse,HttpResponseRedirect
 from django.template import loader
-from .forms import TracksheetForm, DutyEntryForm, TracksheetForm1,FeedbackForm,UploadPictureForm#,RatingForm
+from .forms import TracksheetForm, DutyEntryForm, TracksheetForm1,GrievanceForm#,RatingForm
 from .models import DutyEntry,Tracksheet,Zones ,SwkAttendants, Rating
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User,auth
@@ -11,6 +11,11 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.utils.translation import gettext_lazy as _
 from django.core.mail import send_mail, get_connection
+# import pandas as pd
+# import plotly.express as px
+# from plotly.offline import plot
+# import plotly.graph_objects as og
+# import numpy
 
 
 # Create your views here.form
@@ -264,7 +269,7 @@ def TrackformPageDetail(request):
             messages.warning(request, _(u'Please check your form'))
     else:
         
-        form = TracksheetForm(request.POST or None)
+        form = TracksheetForm1(request.POST or None)
     context= {
         'form': form,
                
@@ -338,13 +343,10 @@ def RatingView(request):
 
         return render(request,"rating.html")  
 
-def Feedback(request):
-    # form_class = FeedbackForm
-    # return render(request,"feedback_form.html", { 'form': form_class,})
-
-    form = FeedbackForm(request.POST or None)
+def Grievance(request):
+    form = GrievanceForm(request.POST or None)
     if request.method == 'POST':
-        form = FeedbackForm(request.POST or None)
+        form = GrievanceForm(request.POST or None)
         if form.is_valid():
             latitude = request.POST.get('latitude')
             longitude = request.POST.get('longitude')
@@ -358,10 +360,10 @@ def Feedback(request):
             # dw_container = form.cleaned_data['dw_container']
             # mw_container = form.cleaned_data['mw_container']
             # ew_container = form.cleaned_data['ew_container']
-            print("feedabck is"+cd['feedback'])
-            print("email is"+ cd['email'])
+            print("Grievance is "+cd['grievance'])
+            print("email is "+ cd['email'])
             from_email = form.cleaned_data['email']
-            message_mail = 'Senders Name -  '+ name + "\n" + 'Senders Mobile - '+ str(mobile) + "\n" + 'Senders Email Id - ' +from_email + "\n" + 'Feedback Received - '+ feedback
+            message_mail = 'Senders Name -  '+ name + "\n" + 'Senders Mobile - '+ str(mobile) + "\n" + 'Senders Email Id - ' +from_email + "\n" + 'Grievance Received - '+ grievance
             # message_mail = 'Senders Name -  '+ name + "\n" + 'Senders Mobile - '+ str(mobile) + "\n" + 'Senders Email Id - ' +from_email + "\n" 
             # + 'Is collecting food waste once a day enough? - '+ fw_once + "\n"
             # + 'Would you like to collect food waste twice a day enough? - '+ str(fw_twice) + "\n"
@@ -382,13 +384,13 @@ def Feedback(request):
             con = get_connection('django.core.mail.backends.smtp.EmailBackend')
             # if (send_mail('Feedback (SWK)', cd['feedback'],cd.get('email', 'noreply@example.com'),
             # ['monikapatira@gmail.com'],connection=con)):
-            if(send_mail('Feedback received for swk.communitygis.net', message_mail,from_email,['sms.swk@gmail.com'],fail_silently=False,)):
+            if(send_mail('Grievance received for swk.communitygis.net', message_mail,from_email,['sms.swk@gmail.com'],fail_silently=False,)):
             # if(send_mail('Feedback (SWK)', message_mail,from_email,['monikapatira@gmail.com'],fail_silently=False,)):
                 print("message sent")
             else :
                 console.log(message_mail)
                 print("Failure")
-            messages.success(request, 'Your feedback is saved and email is sent.') 
+            messages.success(request, 'Your grievance is saved and email is sent.') 
             return HttpResponseRedirect(request.path_info)
         else:
             # latitude = request.POST.get('latitude')
@@ -401,10 +403,10 @@ def Feedback(request):
             print(cd)
             print(form.errors)
             messages.warning(request, 'Please check your form') 
-            return render(request, 'feedback_form.html',{'form': FeedbackForm})
+            return render(request, 'grievance_form.html',{'form': GrievanceForm})
     else: 
-        form_class = FeedbackForm
-        return render(request,"feedback_form.html", { 'form': form_class,})
+        form_class = GrievanceForm
+        return render(request,"grievance_form.html", { 'form': form_class,})
 
 
 
@@ -438,3 +440,54 @@ def UploadImage(request):
         
 
     return render(request,"upload_image.html",{'form':form})
+
+# def Graphs(request):
+#     df = pd.read_excel('/home/ubuntu/Documents/Diet-Diversity/Nutri-infotainment survey (Part 1) (Responses).xlsx',0)
+#     df.head(2)
+#     # Bar chart 
+#     # fig = px.bar(df, x = 'What is your Weight? (kgs)', y = 'What is your Height? (cms)', title='Weight to Height ratio')
+#     # plot_div = plot(fig, output_type='div')
+    
+#     # Pie Chart
+#     names = ['White colour', 'Orange colour', 'No Ration card']
+#     fig = px.pie(df, names=names, title ='Ration card Holders')
+#     fig.update_traces(
+#         textposition = 'inside',
+#         textinfo = 'percent+label'
+#     )
+#     fig.update_layout(
+#         title_font_size = 42
+#     )
+
+#     # Bar Chart with count and index
+#     entities = df['What is your dietary habit?'].value_counts()
+#     index = entities.index
+#     fig1 = px.bar(df, x=index, y=entities, title= 'Dietary Habits')
+#     fig1.update_layout(
+#         title_font_size = 42
+#     )
+
+#      # Grouped Bar Chart with count and index
+
+#     fig2 = og.Figure(data=[og.Bar(
+#     name = 'Consume Banana Peel',
+#     y = df['Do you consume banana peel?'].value_counts(),
+#     x = df['Do you consume banana peel?'].value_counts().index
+#    ),
+#     og.Bar(
+#     name = 'Consume Dudhi (Bottle gourd) Peel',
+#     y = df['Do you consume bottle gourd (dudhi/lauki)peel?'].value_counts(),
+#     x = df['Do you consume bottle gourd (dudhi/lauki)peel?'].value_counts().index
+#    )   
+# ])
+     
+    
+#     fig2.update_layout(
+#     title ='Consumption of banana and dudhi peel',
+#     title_font_size = 42
+#     )
+
+#     plot_div = plot(fig, output_type='div')
+#     plot_div1 = plot(fig1,output_type='div')
+#     plot_div2 = plot(fig2,output_type='div')
+#     return render(request,'graphs.html', context={'plot_div': plot_div, 'plot_div1':plot_div1,'plot_div2':plot_div2 })

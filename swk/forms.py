@@ -1,5 +1,5 @@
 from django import forms
-from .models import Tracksheet,DutyEntry,Zones,Feedback,UploadPicture#, Rating
+from .models import Tracksheet,DutyEntry,Zones,Grievance#,UploadPicture#, Rating
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit, Row, Column, ButtonHolder
@@ -81,7 +81,11 @@ supervisor_name = [
     ('Akash','Akash'),
 ]
 
-
+reason_late_entry = [
+    ("Late Entry - Holiday", 'On Holiday'),
+    ("Late Entry - Forgot", 'Forgot to make Entry'),
+    ("Late Entry - Unwell",'Not Well')
+]
 class TracksheetForm(forms.ModelForm):
     
     date= forms.DateField(label = _(u'Date'),required=True,widget=forms.TextInput(attrs={'type': 'date'}),initial=datetime.date.today)
@@ -126,7 +130,7 @@ class TracksheetForm(forms.ModelForm):
 
         model = Tracksheet
         fields = '__all__'
-        exclude = ['zone_id']
+        exclude = ['zone_id','reason_late_entry']
 
 class TracksheetForm1(forms.ModelForm):
     
@@ -146,17 +150,21 @@ class TracksheetForm1(forms.ModelForm):
     num_houses_doing_segg = forms.IntegerField(label = _(u"Houses doing segregation"))
     num_houses_giving_mixwaste = forms.IntegerField(label = _(u"Houses giving mixed waste"),widget=forms.HiddenInput(),required=False)
     rejected = forms.IntegerField(label=_(u"Rejected Waste"),widget=forms.HiddenInput(),required=False)
+    reason_late_entry=forms.CharField(label=_(u"Reason for Late Entry"),widget =forms.Select(choices=reason_late_entry), localize=True,required=True)
     zone_id_id=forms.CharField(max_length=10, label=_(u"Zone ID"),widget=forms.HiddenInput(),required=False)
     
     def __init__(self, *args, **kwargs):
-        # self.user = kwargs.pop('user',None)
-        # super(TracksheetForm, self).__init__(*args, **kwargs)
-
-        super().__init__(*args, **kwargs)
-
-        # self.fields['date'].localize = True
-        # self.fields['zone_id']=forms.ModelChoiceField(queryset=Zones.objects.filter(zone_name=user))
-     
+           super().__init__(*args, **kwargs)
+    def clean(self):
+        my_date = self.cleaned_data['date']
+        today = datetime.date.today()
+        yesterday = today - timedelta(days = 1)
+        # my_time = self.cleaned_data['my_time']
+        # my_date_time = (my_date + ' ' + my_time + ':00')
+        # my_date_time = datetime.strptime(my_date_time, '%m/%d/%Y %H:%M:%S')
+        # console.log(date.today())
+        if my_date > datetime.date.today():
+           raise forms.ValidationError('Future Dates are not allowed.!!')
 
     class Meta:
 
@@ -195,7 +203,7 @@ class DutyEntryForm(forms.ModelForm):
         fields = '__all__'
 
 
-class FeedbackForm(forms.ModelForm):
+class GrievanceForm(forms.ModelForm):
     # latitude = forms.CharField()
     # longitude = forms.CharField()
     YESNO_CHOICES = ((0, 'No'), (1, 'Yes'))
@@ -211,23 +219,23 @@ class FeedbackForm(forms.ModelForm):
     # ew_container = forms.ChoiceField(choices=YESNO_CHOICES, widget=forms.RadioSelect,label ="Do you have container for e-waste waste?")
     # req_dw_cont = forms.ChoiceField(choices=YESNO_CHOICES, widget=forms.RadioSelect,label ="Do you like container for food waste?")
     # req_ww_cont = forms.ChoiceField(choices=YESNO_CHOICES, widget=forms.RadioSelect,label ="Do you have container for food waste?")
-    feedback = forms.CharField(widget=forms.Textarea(attrs={"rows":15, "cols":50}))
+    grievance = forms.CharField(widget=forms.Textarea(attrs={"rows":15, "cols":50}))
     
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         
     class Meta:
-        model = Feedback
+        model = Grievance
         fields = '__all__'
         exclude = ['latitude','longitude','id']
 
-class UploadPictureForm(forms.ModelForm):
-    picture = forms.ImageField(label='')
-    date = forms.DateField(label = 'Date')
-    class Meta:
-            model = UploadPicture
-            fields = '__all__'
+# class UploadPictureForm(forms.ModelForm):
+#     picture = forms.ImageField(label='')
+#     date = forms.DateField(label = 'Date')
+#     class Meta:
+#             model = UploadPicture
+#             fields = '__all__'
 
 # class RatingForm(forms.Form):
 #     name = forms.CharField(label='Your name', max_length=100)

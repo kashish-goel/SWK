@@ -57,7 +57,7 @@
      
             <b>Filter data by</b><br>
             <b>From Date  &nbsp;&nbsp;</b><input type="date" id="date"><b>&nbsp;&nbsp;To Date  &nbsp;&nbsp;</b>  <input type="date" id="date1"> 
-              &nbsp;&nbsp;&nbsp;&nbsp;and by <b>Zone  </b> &nbsp;&nbsp;   
+              &nbsp;&nbsp;&nbsp;&nbsp;<br>and by <b>Zone  </b> &nbsp;&nbsp;   
             <!-- <b>Filter data by</b><br>
             <b>Date  </b><input type="date" id="date">and by <b>Zone  </b>     -->
             <select class ="dropdown" id="zone" multiple onclick = "zoneclick()">
@@ -110,6 +110,7 @@
                         <th>{% trans "Supervisor Name" %}</th>
                         <th>{% trans "Rejected" %}</th>
                         <th>{% trans "Zone ID" %}</th>
+                        <th>{% trans "Entry" %}</th>
                         {% if request.user|has_group:"Editor" %}
                             <th>Update</th>
                         {% endif %}
@@ -133,6 +134,7 @@
                         <td>{{i.supervisor_name}}</td>
                         <td>{{i.rejected}}</td>
                         <td>{{i.zone_id_id}}</td>
+                        <td>{{i.reason_late_entry}}</td>
                         {% if request.user|has_group:"Editor" %}
                         <td>
                             <a href="/edit/{{ i.track_id }}" style="color: rgb(168, 4, 4);"><span class="glyphicon glyphicon-pencil" >Edit | </span></a>
@@ -176,7 +178,7 @@
                   let selected_zone = document.getElementById('selected_zone_text').innerHTML;
                   if(date==="" || date1=="" || selected_zone===""){
                     console.log("fill the value")
-                    document.getElementById("error_msg").innerHTML = "<p>Please select Zones , start and end date<p>"
+                    document.getElementById("error_msg").innerHTML = "<p>Please select Zones , from and to date<p>"
                   } 
                   else{
                     let url = `${date}to${date1}&${selected_zone}`;
@@ -185,17 +187,10 @@
                   }
 
                 });
-
-
-
-
-
-
-
                 $('#maxRows').on('change', function() {
                     // getPagination('#myTable', $(this).val());
                 });
-                getPagination('#myTable', 10); // the no of rows default you want to show
+                getPagination('#myTable', 26); // the no of rows default you want to show
                 // getPagination1('#myTable');
             });
 
@@ -340,13 +335,13 @@ function limitPagging(){
 
 $(function() {
   // Just to append id number for each row
-  $('table tr:eq(0)').prepend('<th> ID </th>');
+  // $('table tr:eq(0)').prepend('<th> ID </th>');
 
   var id = 0;
 
   $('table tr:gt(0)').each(function() {
     id++;
-    $(this).prepend('<td>' + id + '</td>');
+    // $(this).prepend('<td>' + id + '</td>');
   });
 });
 

@@ -169,6 +169,7 @@
                         <th>{% trans "Supervisor Name" %}</th>
                         <th>{% trans "Rejected" %}</th>
                         <th>{% trans "Zone ID" %}</th>
+                        <th>{% trans "Entry" %}</th>
                         {% if request.user|has_group:"Editor" %}
                             <th>Update</th>
                         {% endif %}
@@ -196,6 +197,7 @@
                         <td>{{i.supervisor_name}}</td>
                         <td>{{i.rejected}}</td>
                         <td>{{i.zone_id_id}}</td>
+                        <td>{{i.reason_late_entry}}</td>
                         {% if request.user|has_group:"Editor" %}
                         <td>
                             <a href="/edit/{{ i.track_id }}" style="color: rgb(168, 4, 4);"><span class="glyphicon glyphicon-pencil" >Edit | </span></a>
@@ -217,7 +219,7 @@
                     <td id ="result_wetaf" style="font-weight: bold;"></td>
                     <td>-</td><td>-</td><td>-</td><td>-</td>
                     <td id ="result_rejected" style="font-weight: bold;"></td>
-                    <td>-</td><td>-</td>
+                    <td>-</td><td>-</td><td>-</td>
                     
                 </tr>
             </table>
@@ -260,7 +262,7 @@
                     column12 = row.cells[11].innerText;
                     column13 = row.cells[12].innerText;
                     column14 = row.cells[13].innerHTML;
-                    
+                    column14 = row.cells[14].innerHTML;
                     // alert(column11);
                     // column15 = row.cells[14].innerText;
                     // column16 = row.cells[15].innerText;

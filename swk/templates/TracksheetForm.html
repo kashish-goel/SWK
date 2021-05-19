@@ -3,6 +3,7 @@
 {% load l10n %}
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <style>
     .form-row {
         margin: 50px;
@@ -16,31 +17,7 @@
 <div class="container mb-7" style="margin-top: 10px;">
    <br>
     <h2>{% trans "Houses providing segregated Waste "%}</h2><hr><br>
-
-    <form method="post" data-url="{{ request.build_absolute_uri|safe }}"  class="form-group" style="text-align:left;">
-        {% csrf_token %}
-        <!-- {{ form|crispy }}
-        <button type="submit" class="btn btn-primary">Sign in</button> -->
-        <!-- {% crispy form %} -->
-
-        <!-- <table style="margin-right: 10px";>{% localize on %}{{ form.as_table }} {% endlocalize %}</table>  -->
-        <table style="margin-right: 10px";>{{ form.as_table }} </table> 
-        <br>
-    <!--<h2>{% trans "Houses providing segregated Waste "%}</h2><hr><br> -->
-    <centre><button type="submit" style="align-items: center;" class="btn btn-primary">{% trans "Submit" %}</button></centre>
-    </form>
-    <br>
-    <br><br>
-    <!-- <form>
-        {{ tracksheetoutput_form.as_ul }}
-    </form> -->
-</div>
-<div>
-    <!-- {{ form.errors }}
-  {{ form.non_field_errors }} -->
-
-</div>
-{% if messages %}
+    {% if messages %}
 <ul class="messages">
     {% for message in messages %}
 
@@ -53,7 +30,25 @@
 
     {% endfor %}
 </ul>
-{% endif %} {% endblock %} {% block extra_javascript %}
+{% endif %}
+    <form method="post" data-url="{{ request.build_absolute_uri|safe }}"  class="form-group" style="text-align:left;">
+        {% csrf_token %}
+        <table style="margin-right: 10px";>{{ form.as_table }} </table> 
+        <br>
+    <centre><button type="submit" style="align-items: center;" class="btn btn-primary">{% trans "Submit" %}</button></centre>
+    </form>
+    <br>
+    <br><br>
+   
+</div>
+<div>
+    <!-- {{ form.errors }}
+  {{ form.non_field_errors }} -->
+
+</div>
+ {% endblock %}
+
+{% block extra_javascript %}
 <script>
     $(function() {
         var $docName = $('#id_lane_name').val();
