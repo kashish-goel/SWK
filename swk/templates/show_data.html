@@ -57,7 +57,7 @@
      
             <b>Filter data by</b><br>
             <b>From Date  &nbsp;&nbsp;</b><input type="date" id="date"><b>&nbsp;&nbsp;To Date  &nbsp;&nbsp;</b>  <input type="date" id="date1"> 
-              &nbsp;&nbsp;&nbsp;&nbsp;and by <b>Zone  </b> &nbsp;&nbsp;   
+              &nbsp;&nbsp;&nbsp;&nbsp;<br>and by <b>Zone  </b> &nbsp;&nbsp;   
             <!-- <b>Filter data by</b><br>
             <b>Date  </b><input type="date" id="date">and by <b>Zone  </b>     -->
             <select class ="dropdown" id="zone" multiple onclick = "zoneclick()">
@@ -178,7 +178,7 @@
                   let selected_zone = document.getElementById('selected_zone_text').innerHTML;
                   if(date==="" || date1=="" || selected_zone===""){
                     console.log("fill the value")
-                    document.getElementById("error_msg").innerHTML = "<p>Please select Zones , start and end date<p>"
+                    document.getElementById("error_msg").innerHTML = "<p>Please select Zones , from and to date<p>"
                   } 
                   else{
                     let url = `${date}to${date1}&${selected_zone}`;
@@ -187,17 +187,10 @@
                   }
 
                 });
-
-
-
-
-
-
-
                 $('#maxRows').on('change', function() {
                     // getPagination('#myTable', $(this).val());
                 });
-                getPagination('#myTable', 10); // the no of rows default you want to show
+                getPagination('#myTable', 26); // the no of rows default you want to show
                 // getPagination1('#myTable');
             });
 
