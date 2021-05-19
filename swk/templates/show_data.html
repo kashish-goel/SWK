@@ -32,7 +32,7 @@
 <!-- <form action="coordinator" method="POST">
     {% csrf_token %} -->
 <div id="wrapper">
-    <h2>{% trans "Tracksheet Filtered Details" %}</h2></centre> 
+    <h2>Tracksheet Filtered Details</h2></centre> 
     <!-- <a href="/xyz/">Update Duty Chart</a> -->
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
@@ -49,12 +49,15 @@
             </select>
         </div><br>
         <br>
-        <div id ="selected_zone"></div>
+        <br>
+        <div id ="selected_zone_text"></div>
+        <div id ="error_msg"></div>
+        
         <div class="input col-md-6">
      
-            <b>{% trans "Filter data by" %}</b><br>
-            <b>{% trans "From Date" %}  &nbsp;&nbsp;</b><input type="date" id="date"><b>{% trans "To Date" %}  &nbsp;&nbsp;</b>  <input type="date" id="date1"> <br>
-            <b>{% trans "Zone" %}  </b> &nbsp;&nbsp;   
+            <b>Filter data by</b><br>
+            <b>From Date  &nbsp;&nbsp;</b><input type="date" id="date"><b>&nbsp;&nbsp;To Date  &nbsp;&nbsp;</b>  <input type="date" id="date1"> 
+              &nbsp;&nbsp;&nbsp;&nbsp;and by <b>Zone  </b> &nbsp;&nbsp;   
             <!-- <b>Filter data by</b><br>
             <b>Date  </b><input type="date" id="date">and by <b>Zone  </b>     -->
             <select class ="dropdown" id="zone" multiple onclick = "zoneclick()">
@@ -80,7 +83,8 @@
             <!-- <label for="HW">Hira Seth Chawl to Waras Lane</label><br> -->
             <!-- <a href="" onclick = "this.href='/download_data_zone/' +document.getElementById('date').value +'&'+document.getElementById('zone').value" class="btn btn-primary">Get Data</a> -->
             <!-- <a href="" onclick = "this.href='/download_data_zone/' +document.getElementById('date').value +'to'+document.getElementById('date1').value+'&'+document.getElementById('zone').value" class="btn btn-primary">Get Data</a> -->
-            <a href="" onclick = "this.href='/download_data_zone/' +document.getElementById('date').value +'to'+document.getElementById('date1').value+'&'+document.getElementById('selected_zone').innerHTML" class="btn btn-primary">Get Data</a>
+            <!-- <a href="" onclick = "this.href='/download_data_zone/' +document.getElementById('date').value +'to'+document.getElementById('date1').value+'&'+document.getElementById('selected_zone').innerHTML" class="btn btn-primary">Get Data</a> -->
+            <a href="" id="get-data"class="btn btn-primary">Get Data</a>
  
         </div>
         
@@ -158,8 +162,36 @@
 
 
         <script>
+
+               
+            
             
             $(document).ready(function() {
+
+              document.getElementById("get-data").addEventListener("click", function(event){
+                let urlSplit = (window.location.href.split('/'));
+                let currentURL = `${urlSplit[0]}//${urlSplit[2]}/download_data_zone/`
+                console.log(currentURL)
+                  event.preventDefault()
+                  let date = document.getElementById('date').value;
+                  let date1 = document.getElementById('date1').value;
+                  let selected_zone = document.getElementById('selected_zone_text').innerHTML;
+                  if(date==="" || date1=="" || selected_zone===""){
+                    console.log("fill the value")
+                    document.getElementById("error_msg").innerHTML = "<p>Please select Zones , start and end date<p>"
+                  } 
+                  else{
+                    let url = `${date}to${date1}&${selected_zone}`;
+                    let uri = encodeURIComponent(url);
+                    window.location = currentURL + uri;
+                  }
+
+                });
+
+
+
+
+
 
 
                 $('#maxRows').on('change', function() {
@@ -369,7 +401,8 @@ $(function() {
 
           function zoneclick(){
               var selected = [];
-              var selected_zone = document.getElementById('selected_zone')
+              var selected_zone = document.getElementById('selected_zone_text')
+              document.getElementById("error_msg").innerHTML = "";
               for (var option of document.getElementById('zone').options){
                 if(option.selected){
                   // selected.push("'")
