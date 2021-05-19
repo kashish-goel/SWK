@@ -61,6 +61,7 @@ class Tracksheet(models.Model):
     time_of_visit = models.CharField(max_length=100)
     track_id = models.AutoField(primary_key=True)
     rejected = models.IntegerField()
+    reason_late_entry = models.CharField(blank=False,max_length=200,default="OnTime")
     zone_id=models.ForeignKey(Zones, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -94,7 +95,7 @@ class SwkTracksheetReport(models.Model):
         managed = False
         db_table = 'swk_tracksheet_report'
 
-class Feedback(models.Model):
+class Grievance(models.Model):
     # location = models.PointField(geography=True, default=Point(0.0, 0.0))
     # position = GeopositionField()
     # latitude = models.DecimalField(max_digits=11, decimal_places=8)
@@ -111,15 +112,10 @@ class Feedback(models.Model):
     # ew_container = models.BooleanField()
     # req_dw_cont =models.BooleanField()
     # req_ww_cont =models.BooleanField()
-    feedback = models.TextField(blank=False, null=False)
+    grievance = models.TextField(blank=False, null=False)
     class Meta:
         managed = False
-        db_table = 'swk_feedback'
-
-class UploadPicture(models.Model):
-    picture = models.FileField(upload_to='uploadPics/', blank=True, null=True)
-    date = models.DateField()
-
+        db_table = 'swk_grievance'
 
 class Rating(models.Model):
     name = models.CharField(max_length=100)
