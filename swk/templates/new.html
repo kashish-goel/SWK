@@ -1,5 +1,6 @@
 {% load static %} {% load has_group %}
 {% load i18n %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +32,15 @@
     <!-- For close button on messages -->
     <script src= "https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity= 
 "sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"crossorigin="anonymous"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0EJKZHQGLH"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
+    gtag('config', 'G-0EJKZHQGLH');
+    </script>
 
     <!-- =======================================================
   * Template Name: Amoeba - v3.0.0
@@ -128,6 +137,7 @@
                       <li><a class="dropdown-item" href="{% url 'trackform' %}"class="nav-link text-white">{% trans "Daily Entry Form" %}</a></li>
                       <li><a class="dropdown-item" href="{% url 'show' %}"class="nav-link text-white">{% trans "View Daily Entry Data" %}</a></li>
                       <li><a class="dropdown-item" href="https://ee.humanitarianresponse.info/x/Y3Ji0ej7" class="nav-link text-white">{% trans "OneTimeSurvey Form" %}</a></li>
+                      <li><a href="{% url 'uploadimage' %}" class="waves-effect">Upload Image</a></li>
                     </ul>
                 </li>
                    
@@ -185,9 +195,11 @@
                 </select>  <input type = "submit" value ="Go">
             </form>
 
+            
         </ul>
         </nav>
     </nav>
+    
     <!-- End #header -->
 
     <!-- ======= Hero Section ======= -->

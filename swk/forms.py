@@ -1,5 +1,5 @@
 from django import forms
-from .models import Tracksheet,DutyEntry,Zones,Grievance#,UploadPicture#, Rating
+from .models import Tracksheet,DutyEntry,Zones,Grievance,UploadPictureModel#, Rating
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit, Row, Column, ButtonHolder
@@ -230,6 +230,15 @@ class GrievanceForm(forms.ModelForm):
         fields = '__all__'
         exclude = ['latitude','longitude','id']
 
+class UploadPictureForm(forms.ModelForm):
+    class Meta:
+        model = UploadPictureModel
+        fields = ('picture','name','date')
+
+class ImageShowForm(forms.Form):
+    picture = forms.CharField(widget=forms.Textarea(attrs={"rows":15, "cols":50}))
+    # pictures = forms.FileField()
+       
 # class UploadPictureForm(forms.ModelForm):
 #     picture = forms.ImageField(label='')
 #     date = forms.DateField(label = 'Date')
