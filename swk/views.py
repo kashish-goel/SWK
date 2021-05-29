@@ -14,16 +14,29 @@ from django.core.mail import send_mail, get_connection
 from datetime import datetime
 import easygui
 from django.conf import settings 
+from django.views.generic import TemplateView
+from .services import get_droplets
+from swk.HelloAnalytics import *
+import json
+
 
 # import pandas as pd
 # import plotly.express as px
 # from plotly.offline import plot
+
 # import plotly.graph_objects as og
 # import numpy
 
 
 # Create your views here.form
 
+class GetDroplets(TemplateView):
+    template_name = 'droplets.html'
+    def get_context_data(self, *args, **kwargs):
+        context = {
+            'droplets' : get_droplets(),
+        }
+        return context
 
 def show(request):
     datas= Tracksheet.objects.all().order_by('-date')
@@ -105,6 +118,7 @@ def user_login(request):
                     login(request, user)
                     # Redirect to index page.
                     # messages.info(request,"login sucessfully")
+                    
                     messages.info(request,_(u"loggedin sucessfully. Please check navigation bar on top to fill required forms."))
                     return render(request,"HomePage.html")
                 else:
@@ -124,7 +138,28 @@ def user_login(request):
 def formLayout(request):
     return render(request,"formlayout.html")
 def HomePage(request):
-        return render(request,"HomePage.html")
+        # print(main)
+        analytics = initialize_analyticsreporting()
+        response = get_report(analytics)
+        # print(response)
+        recd_response = print_response(response)
+        print(recd_response)
+        # print(dimension)
+                # scope = 'https://www.googleapis.com/auth/analytics.readonly'
+        # key_file_location = '/home/ubuntu/myenv/SWKV2/swk/swk-new.json'
+        
+        # service = get_service(
+        #     api_name='analytics',
+        #     api_version='v3',
+        #     scopes=[scope],
+        #     key_file_location=key_file_location)
+        # profile_id = get_first_profile_id(service)
+        # print_results(get_results(service, profile_id))
+        context ={
+            'Visitor_count':recd_response
+        }
+
+        return render(request,"HomePage.html",context)
 
 def logout_request(request):
     logout(request)
