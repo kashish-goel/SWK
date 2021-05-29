@@ -352,19 +352,19 @@ table, th, td
                         </div>
                         <div id="checkboxes2">
                         <div class="checkbox">
-                            <label><input type="checkbox" value="{grounds}" id ="grounds" onchange="getBoundaryru(this)"><span> {% trans "Grounds" %}</span></label>
+                            <label><input type="checkbox" value="{grounds}" id ="grounds" onchange="getBoundaryru(this)"><span> {% trans "Grounds" %}(7)</span></label>
                          </div>
                           <div class="checkbox">
-                            <label><input type="checkbox" value="{toilets}" id ="toilets"onchange="getBoundaryru(this)"><span> {% trans " Public Toilets" %}</span></label>
+                            <label><input type="checkbox" value="{toilets}" id ="toilets"onchange="getBoundaryru(this)"><span> {% trans " Public Toilets" %}(7)</span></label>
                          </div>
                          <div class="checkbox">
-                            <label><input type="checkbox" value="{compost}" id ="compost"onchange="getBoundaryru(this)"><span> {% trans "Compost Pits " %}</span></label>
+                            <label><input type="checkbox" value="{compost}" id ="compost"onchange="getBoundaryru(this)"><span> {% trans "Compost Pits " %}(13)</span></label>
                          </div>
                          <div class="checkbox">
-                            <label><input type="checkbox" value="{openplace}" id ="openplace" onchange="getBoundaryru(this)"><span> {% trans "Open Places " %}</span></label>
+                            <label><input type="checkbox" value="{openplace}" id ="openplace" onchange="getBoundaryru(this)"><span> {% trans "Open Places " %}(4)</span></label>
                          </div>
                          <div class="checkbox">
-                            <label><input type="checkbox" value="{temples}" id ="temples"onchange="getBoundaryru(this)"><span> {% trans "Temples " %}</span></label>
+                            <label><input type="checkbox" value="{temples}" id ="temples"onchange="getBoundaryru(this)"><span> {% trans "Temples/Worship places " %}(24)</span></label>
                          </div>
                          </div>
                          <br>
@@ -517,9 +517,13 @@ table, th, td
                     else if (boundary == "{grounds}") 
                         putWMSru("geonode:ground_shp");
                     else if (boundary == "{toilets}") 
-                        putWMSru("geonode:ground_shp"); 
+                        putWMSru("geonode:public_toilets_24may21"); 
                     else if (boundary == "{temples}") 
                         putWMSru("geonode:worli_temples_15may21"); 
+                    else if (boundary == "{openplace}") 
+                        putWMSru("geonode:openplace_24may21"); 
+                    else if(boundary == "{compost}")
+                        putWMSru("geonode:worli_composting_pits_25may21");
                                          
 
                 } else {
@@ -541,6 +545,12 @@ table, th, td
                         removeWMS("geonode:worli_spot_updated_10march");
                     else if (boundary == "{grounds}")    
                         removeWMS("geonode:ground_shp");
+                    else if (boundary == "{toilets}")    
+                        removeWMS("geonode:public_toilets_24may21");
+                    else if (boundary == "{openplace}")    
+                        removeWMS("geonode:openplace_24may21");
+                    else if(boundary == "{compost}")
+                        removeWMS("geonode:worli_composting_pits_25may21");
                     
                 };
 
@@ -566,12 +576,13 @@ table, th, td
                        layers: layer,
                        format: 'image/png',
                        transparent: 'true',
-                       
+                       maxZoom:20
                      });
                     wms_layer.addTo(mymap);
                     mymap.setView([19.0220, 72.8160], 17); 
                     newLayerList.push(wms_layer);
                     console.log(wms_layer);
+                    mymap.removeControl(legend);
                }
                else if (layer == "geonode:ward_193_updated_3nov") {
                    console.log(layer)
@@ -579,13 +590,14 @@ table, th, td
                        layers: layer,
                        format: 'image/png',
                        transparent: 'true',
-                       
+                       maxZoom:20
                    });
 
                     wms_layer.addTo(mymap);
                     mymap.setView([19.0220, 72.8110], 14);
                     newLayerList.push(wms_layer);
                     console.log(wms_layer);
+                    mymap.removeControl(legend);
                }
                else if (layer == "geonode:binpath_worli_merged_10march_updated") {
                    console.log(layer)
@@ -593,7 +605,7 @@ table, th, td
                        layers: layer,
                        format: 'image/png',
                        opacity: .7,
-                       
+                       maxZoom:20                       
                     });
                     wms_layer.addTo(mymap);
                     
@@ -602,6 +614,7 @@ table, th, td
                     popup_layer="https://communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
                     console.log("popupzone",popup_layer);
                     console.log(wms_layer);
+                    mymap.removeControl(legend);
                     legend.addTo(mymap);
                }
                else if (layer == "geonode:zone_polygon300121") {
@@ -609,7 +622,8 @@ table, th, td
                    var wms_layer = L.tileLayer.wms('https://communitygis.net/geoserver/wms', {
                        layers: layer,
                        format: 'image/png',
-                        opacity: .7,
+                       opacity: .7,
+                       maxZoom:20
                        
                    });
                     wms_layer.addTo(mymap);
@@ -618,6 +632,7 @@ table, th, td
                     popup_layer="https://communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
                     console.log("popupzone",popup_layer);
                     console.log(wms_layer);
+                    mymap.removeControl(legend);
                     legend.addTo(mymap);
                }
                
@@ -627,7 +642,7 @@ table, th, td
                         layers: layer,
                         format: 'image/png',
                         opacity: .7,
-                        
+                        maxZoom:20
                     });
                     wms_layer.addTo(mymap);
                     mymap.setView([19.0207, 72.8159], 17);
@@ -644,7 +659,7 @@ table, th, td
                         layers: layer,
                         format: 'image/png',
                         transparent: 'true',
-                        
+                        maxZoom:20
                     });
                     wms_layer.addTo(mymap);
 
@@ -654,7 +669,9 @@ table, th, td
                     popup_layer="https://communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
                     
                     console.log(wms_layer);
+                    mymap.removeControl(legend);
                     legend.addTo(mymap);
+                    
                     // addWMSLegend(wms_layer.options.layers);
                 }
                 else if (layer == "geonode:ground_shp") {
@@ -663,6 +680,7 @@ table, th, td
                         layers: layer,
                         format: 'image/png',
                         transparent: 'true',
+                        maxZoom:20
                         
                     });
                     wms_layer.addTo(mymap);
@@ -673,6 +691,7 @@ table, th, td
                     popup_layer="https://communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
                     
                     console.log(wms_layer);
+                    mymap.removeControl(legend);
                     // legend.addTo(mymap);
                     // addWMSLegend(wms_layer.options.layers);
                 }
@@ -683,7 +702,7 @@ table, th, td
                         layers: layer,
                         format: 'image/png',
                         transparent: 'true',
-                        
+                        maxZoom:20
                     });
                     wms_layer.addTo(mymap);
 
@@ -693,6 +712,68 @@ table, th, td
                     popup_layer="https://communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
                     
                     console.log(wms_layer);
+                    mymap.removeControl(legend);
+                    // legend.addTo(mymap);
+                    // addWMSLegend(wms_layer.options.layers);
+                }
+            
+            
+            else if (layer == "geonode:public_toilets_24may21") {
+                    console.log(layer)
+                    var wms_layer = L.tileLayer.wms('https://communitygis.net/geoserver/wms', {
+                        layers: layer,
+                        format: 'image/png',
+                        transparent: 'true',
+                        maxZoom:20
+                    });
+                    wms_layer.addTo(mymap);
+
+
+                    mymap.setView([19.0200, 72.8160], 17);
+                    newLayerList.push(wms_layer);
+                    popup_layer="https://communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
+                    
+                    console.log(wms_layer);
+                    mymap.removeControl(legend);
+                    // legend.addTo(mymap);
+                    // addWMSLegend(wms_layer.options.layers);
+                }
+            else if (layer == "geonode:openplace_24may21") {
+                    console.log(layer)
+                    var wms_layer = L.tileLayer.wms('https://communitygis.net/geoserver/wms', {
+                        layers: layer,
+                        format: 'image/png',
+                        transparent: 'true',
+                        maxZoom:20
+                    });
+                    wms_layer.addTo(mymap);
+
+
+                    mymap.setView([19.0200, 72.8160], 17);
+                    newLayerList.push(wms_layer);
+                    popup_layer="https://communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
+                    
+                    console.log(wms_layer);
+                    mymap.removeControl(legend);
+                    // legend.addTo(mymap);
+                    // addWMSLegend(wms_layer.options.layers);
+                }
+            else if (layer == "geonode:worli_composting_pits_25may21") {
+                    console.log(layer)
+                    var wms_layer = L.tileLayer.wms('https://communitygis.net/geoserver/wms', {
+                        layers: layer,
+                        format: 'image/png',
+                        transparent: 'true',
+                        maxZoom:20
+                    });
+                    wms_layer.addTo(mymap);
+
+                    mymap.setView([19.0169, 72.823], 17);
+                    newLayerList.push(wms_layer);
+                    popup_layer="https://communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
+                    
+                    console.log(wms_layer);
+                    mymap.removeControl(legend);
                     // legend.addTo(mymap);
                     // addWMSLegend(wms_layer.options.layers);
                 }
@@ -826,8 +907,57 @@ table, th, td
                                 "<tr><td colSpan='5'><b>Name:</b></td><td>" +Temple_nam+ "</td></tr>" +
                                 "<tr><td colSpan='5 '><b>Image: </b></td><td><img class = 'popupimage' src='../static/images/Temple/".concat(filename)+"' alt='image not found - '>"+filename+"</a></td></tr>" + "</table>";
                         } 
-                        
-                        
+                        if (feature.properties.Toilet_Nam) {
+                            console.log("For Toilets(lanmark menu)")
+                            str1 = feature.properties.Toilet_Nam
+                            items = str1.split('.')
+                            Toilet_Nam = items[items.length - 2]
+                            fn = feature.properties.Toilet_Nam.trim()
+                            console.log(items[items.length - 2 ]);
+                            console.log(items);
+                            // console.log
+                            filename = Toilet_Nam+'.jpg';
+                            console.log(filename)
+                          
+                            content = "<table border = 2 class = 'popupclass' ><tr><td colSpan='5'><b>Toilet Information</b></td></tr>"+
+                                
+                                "<tr><td colSpan='5'><b>Name:</b></td><td>" +Toilet_Nam+ "</td></tr>" +
+                                "<tr><td colSpan='5 '><b>Image: </b></td><td><img class = 'popupimage' src='../static/images/Toilets/".concat(filename)+"' alt='image not found - '>"+filename+"</a></td></tr>" + "</table>";
+                        } 
+                        if (feature.properties.OpenPlace) {
+                            console.log("For OpenPlace(lanmark menu)")
+                            str1 = feature.properties.OpenPlace
+                            items = str1.split('.')
+                            OpenPlace = items[items.length - 2]
+                            fn = feature.properties.OpenPlace.trim()
+                            console.log(items[items.length - 2 ]);
+                            console.log(items);
+                            // console.log
+                            filename = OpenPlace+'.jpg';
+                            console.log(filename)
+                          
+                            content = "<table border = 2 class = 'popupclass' ><tr><td colSpan='5'><b>Temple Information</b></td></tr>"+
+                                
+                                "<tr><td colSpan='5'><b>Name:</b></td><td>" +OpenPlace+ "</td></tr>" +
+                                "<tr><td colSpan='5 '><b>Image: </b></td><td><img class = 'popupimage' src='../static/images/Open Spaces/".concat(filename)+"' alt='image not found - '>"+filename+"</a></td></tr>" + "</table>";
+                        } 
+                        if (feature.properties.Pits_Name) {
+                            console.log("For Pits_Name(lanmark menu)")
+                            str1 = feature.properties.Pits_Name
+                            items = str1.split('.')
+                            Pits_Name = items[items.length - 2]
+                            fn = feature.properties.Pits_Name.trim()
+                            console.log(items[items.length - 2 ]);
+                            console.log(items);
+                            // console.log
+                            filename = Pits_Name+'.jpg';
+                            console.log(filename)
+                          
+                            content = "<table border = 2 class = 'popupclass' ><tr><td colSpan='5'><b>Temple Information</b></td></tr>"+
+                                
+                                "<tr><td colSpan='5'><b>Name:</b></td><td>" +Pits_Name+ "</td></tr>" +
+                                "<tr><td colSpan='5 '><b>Image: </b></td><td><img class = 'popupimage' src='../static/images/Open Spaces/".concat(filename)+"' alt='image not found - '>"+filename+"</a></td></tr>" + "</table>";
+                        }
 
                         popup.setContent(content);
                             popup.setLatLng(e.latlng);

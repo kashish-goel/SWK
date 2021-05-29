@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect,HttpResponse,HttpResponseRedirect
 from django.template import loader
-from .forms import TracksheetForm, DutyEntryForm, TracksheetForm1,GrievanceForm#,RatingForm
-from .models import DutyEntry,Tracksheet,Zones ,SwkAttendants, Rating
+from .forms import TracksheetForm, DutyEntryForm, TracksheetForm1,GrievanceForm, UploadPictureForm,ImageShowForm#,RatingForm
+from .models import DutyEntry,Tracksheet,Zones ,SwkAttendants, Rating, UploadPictureModel
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User,auth
 from django.contrib.auth import logout
@@ -11,6 +11,10 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.utils.translation import gettext_lazy as _
 from django.core.mail import send_mail, get_connection
+from datetime import datetime
+# import easygui
+from django.conf import settings 
+
 # import pandas as pd
 # import plotly.express as px
 # from plotly.offline import plot
@@ -147,21 +151,58 @@ def DutyEntryPage(request):
 
 def TracksheetPage(request):
     form = TracksheetForm(request.POST or None)
+    form1 = ImageShowForm(request.POST or None)
+
     if request.is_ajax():
-        selected_field = request.GET['name']
-        print(selected_field)
-        docinfo = list(SwkAttendants.objects.filter(zone_name=selected_field).values()); 
-        print(docinfo)
-        jsondata =docinfo[0]
-        # field=docinfo[0]["zone_id"]
-        # print(field)
-        # docinfo1 = list(SwkAttendants.objects.filter(zone_id=field).values()); 
-        # jsondata1=docinfo1[0]
-        return JsonResponse(jsondata)
+        requestvar = request.get_full_path()
+        print(requestvar)
+        # if(requestvar!=null):
+        # docinfo = []
+        # docinfo1 =[]
+        
+        # 
+
+        # if(requestvar.find('name1')):
+        if "name1" in requestvar:
+            selected_field1 = request.GET['name1']
+            print("true")
+            print(selected_field1)
+            docinfo1 = list(UploadPictureModel.objects.filter(date=selected_field1).values()); 
+            print("doc info from upload picture model is " ,docinfo1)
+            jsondata2 =docinfo1[0]
+            return JsonResponse(jsondata2)
+        
+        # diary = UploadPictureModel.objects.all() 
+        # context={}
+        # context["diary"] = diary
+        # print("context is :")
+        # print(context)
+
+      
+        elif "name" in requestvar:
+            selected_field = request.GET['name']
+            print(selected_field)
+            docinfo = list(SwkAttendants.objects.filter(zone_name=selected_field).values()); 
+            print("doc info is " ,docinfo)
+            jsondata2 =docinfo[0]
+            # field=docinfo[0]["zone_id"]
+            # print(field)
+            # docinfo1 = list(SwkAttendants.objects.filter(zone_id=field).values()); 
+            # jsondata2=docinfo1[0]
+            # print("docinfo 0 is ",docinfo[0])
+            return JsonResponse(jsondata2)
+        # print(docinfo1)
+
+        # jsondata2 = {
+        #     'jsondata':docinfo,
+        #     'jsondata1':docinfo1
+        # }
+
+        # return JsonResponse(jsondata2)
 
     if request.method == "POST":
-         
         form = TracksheetForm(request.POST or None)
+       
         print(form)
         if form.is_valid():
             query_column = form.cleaned_data['lane_name']
@@ -203,22 +244,48 @@ def TracksheetPage(request):
     else:
         
         form = TracksheetForm(request.POST or None)
-    context= {
+        # form1 = ImageShowForm(request.POST or None)
+        # if request.is_ajax():
+        #     selected_field1 = request.GET['name1']
+        # else:
+        # selected_field1 = datetime.now()
+        # print("'",selected_field1,"'")
+        
+        # diary = UploadPictureModel.objects.filter(date=selected_field1).values(); 
+        # print("diary is",diary.query)
+        # if request.is_ajax():
+        #     date_chosen = request.GET.get('date',datetime.date.today())
+        # # date_chosen = request.get('date')
+        #     print("date chosen is ",date_chosen)
+        # # date_selected =  form.cleaned_data['date']
+        # # print("date selected is ",date_chosen)
+        # # today = date.today()
+        # # print("Today's date:", today)
+        #     diary = UploadPictureModel.objects.filter(date=date_chosen).values(); 
+        diary = UploadPictureModel.objects.order_by("-date")[:1]
+        
+        context= {
         'form': form,
-               
-        'test': 'test',
-    }
+        'diary': diary,
+        'media_url':settings.MEDIA_URL 
+        
+        }
+        # diary = UploadPictureModel.objects.all() 
+        # context={}
+        # context["diary"] = diary
+        # print("context is :")
+        # print(context)
 
-    return render(request,'TracksheetForm.html',context)
+        return render(request,'TracksheetForm.html',context)
 
 
 def TrackformPageDetail(request):
     form = TracksheetForm1(request.POST or None)
     if request.is_ajax():
         selected_field = request.GET['name']
-        print(selected_field)
+        print("Selected Fileds is" +selected_field)
         docinfo = list(SwkAttendants.objects.filter(zone_name=selected_field).values()); 
-        print(docinfo)
+        # print(docinfo)
         jsondata =docinfo[0]
         # field=docinfo[0]["zone_id"]
         # print(field)
@@ -408,38 +475,40 @@ def Grievance(request):
         form_class = GrievanceForm
         return render(request,"grievance_form.html", { 'form': form_class,})
 
-
-
-def UploadImage(request):
-    form = UploadPictureForm()
-    global datauri
-    if request.is_ajax():
-        datauri = request.POST['picture']
-    
-
-    if request.method == 'POST' and not request.is_ajax():
-        form = UploadPictureForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-        # lat = request.POST.get('lat')
-        # lng = request.POST.get('lng')
-
-        # try:
-        #     imgstr = re.search(r'base64,(.*)', datauri).group(1)
-        #     data = ContentFile(base64.b64decode(imgstr))
-        #     myfile = "profile-"+time.strftime("%Y%m%d-%H%M%S")+".png"
-        #     fs = FileSystemStorage()
-        #     filename = fs.save(myfile, data)
-        #     picLocation = PictureLocation.objects.create(user=request.user,picture_name=filename,lat=lat,lng=lng)
-        #     picLocation.save()
-        #     datauri = False
-        #     del datauri
-        # except NameError:
-        #     print("Image is not captured")
-       
+# def uploadimage(request):
+#     if request.method == 'POST':
+#         form = UploadPictureForm(request.POST, request.FILES)
+#         name = request.POST.get('name')
+#         picture = request.POST.get('picture')
+#         date = request.POST.get('date')
+#         obj, created = UploadPictureModel.objects.get_or_create(name=name, picture=picture, date = date)
         
+#         if created is False:
+#             easygui.msgbox("Image for this date already exists", title="Information!")
+#         else:
+#             obj.save()
+#     else:
+#         form=UploadPictureForm()
+#     return render(request,'upload_image.html', {'form':form})
+	
 
-    return render(request,"upload_image.html",{'form':form})
+def uploadimage(request):
+    if request.method == 'POST':
+        form = UploadPictureForm(request.POST, request.FILES)
+        date = request.POST.get('date')
+        if form.is_valid():
+            if  UploadPictureModel.objects.filter(date=date).exists():
+                messages.warning(request, _(u'Image for this date already exists'))
+            else:
+                instance = form.save()
+                instance.user = request.user
+                instance.save()
+                print("Image is saved.")
+                messages.success(request,_(u'Image has been uploaded'))
+                return redirect('/')
+    else:
+        form = UploadPictureForm()
+    return render(request,'upload_image.html',{'form': form})
 
 # def Graphs(request):
 #     df = pd.read_excel('/home/ubuntu/Documents/Diet-Diversity/Nutri-infotainment survey (Part 1) (Responses).xlsx',0)
@@ -491,3 +560,7 @@ def UploadImage(request):
 #     plot_div1 = plot(fig1,output_type='div')
 #     plot_div2 = plot(fig2,output_type='div')
 #     return render(request,'graphs.html', context={'plot_div': plot_div, 'plot_div1':plot_div1,'plot_div2':plot_div2 })
+
+# def some_object_view(request, pk):
+#     some_obj = get_object_or_404(SOME_MODEL, pk=pk)
+#     Visit.objects.add_object_visit(request, obj=some_obj)

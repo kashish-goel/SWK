@@ -5,8 +5,8 @@ from oauth2client.service_account import ServiceAccountCredentials
 
 
 SCOPES = ['https://www.googleapis.com/auth/analytics.readonly']
-KEY_FILE_LOCATION = '/home/ubuntu/SWKV2/swk/templates/swk-website-2ff0ea0fc0ba.json'
-VIEW_ID = '273689404'
+KEY_FILE_LOCATION = '/home/ubuntu/SWKV2/swk/templates/swk-new.json'
+VIEW_ID = '243710477'
 
 
 def initialize_analyticsreporting():
@@ -70,8 +70,10 @@ def print_response(response):
 
 
 def main():
+  print("Hello")
   analytics = initialize_analyticsreporting()
   response = get_report(analytics)
+  print(response)
   print_response(response)
 
 if __name__ == '__main__':

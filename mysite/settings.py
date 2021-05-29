@@ -83,7 +83,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'swk/static')
 
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'swk/media')
 MEDIA_URL = '/media/'
 WAGTAIL_SITE_NAME = 'SWACCH WORLI KOLIWADA'
 

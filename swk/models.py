@@ -1,6 +1,8 @@
 from django.db import models
 from django import forms
 from django.forms import ModelForm
+from datetime import datetime
+
 
 from wagtail.core.models import Page
 from django.utils.translation import gettext_lazy as _
@@ -144,4 +146,9 @@ class SwkBubblePopulation(models.Model):
     class Meta:
         managed = False
         db_table = 'swk_bubble_population'
+
+class UploadPictureModel(models.Model):
+    picture = models.ImageField(upload_to='Images/', blank=True, null=True)
+    name = models.CharField(max_length=100, blank=True, null=True)
+    date = models.DateField(null=True, blank=True, default=datetime.now)
 

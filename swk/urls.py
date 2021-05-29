@@ -1,7 +1,9 @@
 from django.urls import path
 from django.conf.urls import url
 from . import views
-
+from django.conf import settings
+from django.conf.urls.static import static
+# from visits.models import Visits
 urlpatterns = [
     path('',views.HomePage, name = 'homepage'),
     path('aboutus/', views.AboutUs, name = 'aboutus'),
@@ -24,7 +26,8 @@ urlpatterns = [
     path('grievance/',views.Grievance, name = 'grievance'),
     path('rating/',views.RatingView, name = 'rating'),
     path('contact/',views.Contact, name = 'contact'),
-    path('uploadimage/',views.UploadImage, name = 'uploadimage'),
+    path('uploadimage/',views.uploadimage, name = 'uploadimage'),
     # path('graphs/',views.Graphs, name = 'graphs'),
 ]
-
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
