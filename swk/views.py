@@ -15,9 +15,8 @@ from datetime import datetime
 # import easygui
 from django.conf import settings 
 from django.views.generic import TemplateView
-from .services import get_droplets
 from swk.HelloAnalytics import *
-import json
+
 
 
 # import pandas as pd
@@ -29,14 +28,6 @@ import json
 
 
 # Create your views here.form
-
-class GetDroplets(TemplateView):
-    template_name = 'droplets.html'
-    def get_context_data(self, *args, **kwargs):
-        context = {
-            'droplets' : get_droplets(),
-        }
-        return context
 
 def show(request):
     datas= Tracksheet.objects.all().order_by('-date')
