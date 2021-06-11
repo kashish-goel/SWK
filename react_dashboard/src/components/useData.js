@@ -28,10 +28,18 @@ export const FetchGeom = () =>{
     const [geom,setGeom] = useState(null);
     useEffect(()=>{
         // const urlZones = "https://gist.githubusercontent.com/AnimeshN/29199ffdba88fd7b4345ec64b54af732/raw/d1821894029a3315adad5c9c2a6dca16fe375381/dummy_lane_polygon_v1.1.geojson";
-        const urlZones = "https://communitygis.net/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typename=geonode%3Aswk_13_zone_polygon&outputFormat=json&srs=EPSG%3A4326&srsName=EPSG%3A4326";
-        const urlSpots = "https://communitygis.net/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typename=geonode%3Aworli_spot_updated_10march&outputFormat=json&srs=EPSG%3A4326&srsName=EPSG%3A4326";
-        const urlBubble = "https://communitygis.net/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typename=geonode%3Aworli_bubble_updated_15march&outputFormat=json&srs=EPSG%3A4326&srsName=EPSG%3A4326";
-        json(urlZones,zones=>{
+//        const urlZones = "https://geonode.communitygis.net/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typename=geonode%3Aswk_13_zone_polygon&outputFormat=json&srs=EPSG%3A4326&srsName=EPSG%3A4326";
+	    const urlZones ="https://gist.githubusercontent.com/MonikaShah/4740f99518fcb83a2e41e43b86683b31/raw/ce8e66f8b2f179cf5b337208815c7d27cc9b92ca/swk_13_zone_polygon"
+	    
+//        const urlSpots = "https://geonode.communitygis.net/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typename=geonode%3Aworli_spot_updated_10march&outputFormat=json&srs=EPSG%3A4326&srsName=EPSG%3A4326";
+
+	    const urlSpots = "https://geonode.communitygis.net/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typename=geonode%3Aworli_spot_updated_10march&outputFormat=json&srs=EPSG%3A4326&srsName=EPSG%3A4326"
+
+  //      const urlBubble = "https://geonode.communitygis.net/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typename=geonode%3Aworli_bubble_updated_15march&outputFormat=json&srs=EPSG%3A4326&srsName=EPSG%3A4326";
+
+	    const urlBubble = "https://geonode.communitygis.net/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typename=geonode%3Aworli_bubble_updated_15march&outputFormat=json&srs=EPSG%3A4326&srsName=EPSG%3A4326"
+
+	    json(urlZones,zones=>{
             json(urlSpots,spots =>{
                 json(urlBubble,bubble =>{
                     setGeom({"zones":zones,"spots":spots,"bubble":bubble});
