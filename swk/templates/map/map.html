@@ -366,6 +366,9 @@ table, th, td
                          <div class="checkbox">
                             <label><input type="checkbox" value="{temples}" id ="temples"onchange="getBoundaryru(this)"><span> {% trans "Temples/Worship places " %}(24)</span></label>
                          </div>
+                         <div class="checkbox">
+                            <label><input type="checkbox" value="{schools}" id ="schools"onchange="" disabled><span> {% trans "Schools " %}(0)</span></label>
+                         </div>
                          </div>
                          <br>
                       <button type="button" class="btn btn-primary" id='locate'>{% trans "Your Location" %}</button>
@@ -427,7 +430,7 @@ table, th, td
             alert("Unable to retrieve your location");
         };
 
-        const domain = ['https://communitygis.net/', 'http://localhost/'];
+        const domain = ['https://geonode.communitygis.net/', 'http://localhost/'];
             var rootUrl = domain[0] + 'geoserver/geonode/ows';
 
             var defaultParameters = {
@@ -505,7 +508,7 @@ table, th, td
                     else if (boundary == "{corbound}")
                         putWMSru("geonode:ward_193_updated_3nov");
                     else if (boundary == "{binpath}")    
-                        putWMSru("geonode:binpath_worli_merged_10march_updated"); 
+                        putWMSru("geonode:binpath_worli_merged_10march2021"); 
                     else if (boundary == "{zones}")    
                         putWMSru("geonode:zone_polygon300121");   
                     else if (boundary == "{bubble}")    
@@ -535,7 +538,7 @@ table, th, td
                     else if (boundary == "{corbound}")                        
                         removeWMS("geonode:ward_193_updated_3nov");
                     else if (boundary == "{binpath}")                        
-                        removeWMS("geonode:binpath_worli_merged_10march_updated");
+                        removeWMS("geonode:binpath_worli_merged_10march2021");
                     else if (boundary == "{zones}")                        
                         removeWMS("geonode:zone_polygon300121");
                     else if (boundary == "{bubble}")    
@@ -561,7 +564,7 @@ table, th, td
                if (layer == "geonode:worli_pincodes_30_25_18") {
                 //alert("Reached ad map");
                 
-                   var wms_layer = L.tileLayer.wms('https://communitygis.net/geoserver/wms', {
+                   var wms_layer = L.tileLayer.wms('https://geonode.communitygis.net/geoserver/wms', {
                        layers: layer,
                        format: 'image/png',
                        opacity:0.5,
@@ -572,7 +575,7 @@ table, th, td
                 } 
                else if (layer == "geonode:worli_hand_drawn_update_26oct") {
                    console.log(layer)
-                   var wms_layer = L.tileLayer.wms('https://communitygis.net/geoserver/wms', {
+                   var wms_layer = L.tileLayer.wms('https://geonode.communitygis.net/geoserver/wms', {
                        layers: layer,
                        format: 'image/png',
                        transparent: 'true',
@@ -586,7 +589,7 @@ table, th, td
                }
                else if (layer == "geonode:ward_193_updated_3nov") {
                    console.log(layer)
-                   var wms_layer = L.tileLayer.wms('https://communitygis.net/geoserver/wms', {
+                   var wms_layer = L.tileLayer.wms('https://geonode.communitygis.net/geoserver/wms', {
                        layers: layer,
                        format: 'image/png',
                        transparent: 'true',
@@ -599,9 +602,9 @@ table, th, td
                     console.log(wms_layer);
                     mymap.removeControl(legend);
                }
-               else if (layer == "geonode:binpath_worli_merged_10march_updated") {
+               else if (layer == "geonode:binpath_worli_merged_10march2021") {
                    console.log(layer)
-                   var wms_layer = L.tileLayer.wms('https://communitygis.net/geoserver/wms', {
+                   var wms_layer = L.tileLayer.wms('https://geonode.communitygis.net/geoserver/wms', {
                        layers: layer,
                        format: 'image/png',
                        opacity: .7,
@@ -611,7 +614,7 @@ table, th, td
                     
                     mymap.setView([19.0170, 72.8137], 16);
                     newLayerList.push(wms_layer);
-                    popup_layer="https://communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
+                    popup_layer="https://geonode.communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
                     console.log("popupzone",popup_layer);
                     console.log(wms_layer);
                     mymap.removeControl(legend);
@@ -619,7 +622,7 @@ table, th, td
                }
                else if (layer == "geonode:zone_polygon300121") {
                    console.log(layer)
-                   var wms_layer = L.tileLayer.wms('https://communitygis.net/geoserver/wms', {
+                   var wms_layer = L.tileLayer.wms('https://geonode.communitygis.net/geoserver/wms', {
                        layers: layer,
                        format: 'image/png',
                        opacity: .7,
@@ -629,7 +632,7 @@ table, th, td
                     wms_layer.addTo(mymap);
                     mymap.setView([19.0175, 72.813], 16);
                     newLayerList.push(wms_layer);
-                    popup_layer="https://communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
+                    popup_layer="https://geonode.communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
                     console.log("popupzone",popup_layer);
                     console.log(wms_layer);
                     mymap.removeControl(legend);
@@ -638,7 +641,7 @@ table, th, td
                
                else if (layer == "geonode:worli_buubles_12may2021") {
                     console.log(layer)
-                    var wms_layer = L.tileLayer.wms('https://communitygis.net/geoserver/wms', {
+                    var wms_layer = L.tileLayer.wms('https://geonode.communitygis.net/geoserver/wms', {
                         layers: layer,
                         format: 'image/png',
                         opacity: .7,
@@ -647,7 +650,7 @@ table, th, td
                     wms_layer.addTo(mymap);
                     mymap.setView([19.0207, 72.8159], 17);
                     newLayerList.push(wms_layer);
-                    popup_layer="https://communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
+                    popup_layer="https://geonode.communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
                     console.log("popupzone",popup_layer);
                     console.log(wms_layer);
                     mymap.removeControl(legend);
@@ -655,7 +658,7 @@ table, th, td
                 }
                 else if (layer == "geonode:worli_spot_updated_10march") {
                     console.log(layer)
-                    var wms_layer = L.tileLayer.wms('https://communitygis.net/geoserver/wms', {
+                    var wms_layer = L.tileLayer.wms('https://geonode.communitygis.net/geoserver/wms', {
                         layers: layer,
                         format: 'image/png',
                         transparent: 'true',
@@ -666,7 +669,7 @@ table, th, td
 
                     mymap.setView([19.0200, 72.8160], 17);
                     newLayerList.push(wms_layer);
-                    popup_layer="https://communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
+                    popup_layer="https://geonode.communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
                     
                     console.log(wms_layer);
                     mymap.removeControl(legend);
@@ -676,7 +679,7 @@ table, th, td
                 }
                 else if (layer == "geonode:ground_shp") {
                     console.log(layer)
-                    var wms_layer = L.tileLayer.wms('https://communitygis.net/geoserver/wms', {
+                    var wms_layer = L.tileLayer.wms('https://geonode.communitygis.net/geoserver/wms', {
                         layers: layer,
                         format: 'image/png',
                         transparent: 'true',
@@ -688,17 +691,18 @@ table, th, td
 
                     mymap.setView([19.0200, 72.8160], 17);
                     newLayerList.push(wms_layer);
-                    popup_layer="https://communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
+                    popup_layer="https://geonode.communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
                     
                     console.log(wms_layer);
                     mymap.removeControl(legend);
+                    // legend.update();
                     // legend.addTo(mymap);
                     // addWMSLegend(wms_layer.options.layers);
                 }
             
             else if (layer == "geonode:worli_temples_15may21") {
                     console.log(layer)
-                    var wms_layer = L.tileLayer.wms('https://communitygis.net/geoserver/wms', {
+                    var wms_layer = L.tileLayer.wms('https://geonode.communitygis.net/geoserver/wms', {
                         layers: layer,
                         format: 'image/png',
                         transparent: 'true',
@@ -709,7 +713,7 @@ table, th, td
 
                     mymap.setView([19.0200, 72.8160], 17);
                     newLayerList.push(wms_layer);
-                    popup_layer="https://communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
+                    popup_layer="https://geonode.communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
                     
                     console.log(wms_layer);
                     mymap.removeControl(legend);
@@ -720,7 +724,7 @@ table, th, td
             
             else if (layer == "geonode:public_toilets_24may21") {
                     console.log(layer)
-                    var wms_layer = L.tileLayer.wms('https://communitygis.net/geoserver/wms', {
+                    var wms_layer = L.tileLayer.wms('https://geonode.communitygis.net/geoserver/wms', {
                         layers: layer,
                         format: 'image/png',
                         transparent: 'true',
@@ -731,7 +735,7 @@ table, th, td
 
                     mymap.setView([19.0200, 72.8160], 17);
                     newLayerList.push(wms_layer);
-                    popup_layer="https://communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
+                    popup_layer="https://geonode.communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
                     
                     console.log(wms_layer);
                     mymap.removeControl(legend);
@@ -740,7 +744,7 @@ table, th, td
                 }
             else if (layer == "geonode:openplace_24may21") {
                     console.log(layer)
-                    var wms_layer = L.tileLayer.wms('https://communitygis.net/geoserver/wms', {
+                    var wms_layer = L.tileLayer.wms('https://geonode.communitygis.net/geoserver/wms', {
                         layers: layer,
                         format: 'image/png',
                         transparent: 'true',
@@ -751,7 +755,7 @@ table, th, td
 
                     mymap.setView([19.0200, 72.8160], 17);
                     newLayerList.push(wms_layer);
-                    popup_layer="https://communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
+                    popup_layer="https://geonode.communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
                     
                     console.log(wms_layer);
                     mymap.removeControl(legend);
@@ -760,7 +764,7 @@ table, th, td
                 }
             else if (layer == "geonode:worli_composting_pits_25may21") {
                     console.log(layer)
-                    var wms_layer = L.tileLayer.wms('https://communitygis.net/geoserver/wms', {
+                    var wms_layer = L.tileLayer.wms('https://geonode.communitygis.net/geoserver/wms', {
                         layers: layer,
                         format: 'image/png',
                         transparent: 'true',
@@ -770,7 +774,7 @@ table, th, td
 
                     mymap.setView([19.0169, 72.823], 17);
                     newLayerList.push(wms_layer);
-                    popup_layer="https://communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
+                    popup_layer="https://geonode.communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" + wms_layer.options.layers + "&QUERY_LAYERS=" + wms_layer.options.layers;  
                     
                     console.log(wms_layer);
                     mymap.removeControl(legend);
@@ -793,7 +797,7 @@ table, th, td
                 console.log(feature)
                 console.log(layer)
                 // does this feature have a property named popupContent?
-                
+               
                 var str1 = "<img class = 'popupimage' src='../static/images/SPOT21.4.2021/".concat(feature.properties.Name);
                                 // var str1 = "<img class = 'popupimage' src='../static/images/GPS_Photos/prerana/".concat("Copy of GPSe-0.jpg");
                                 var str2 = str1.concat("' alt='image not found'>").concat(`<br><br>Date of Image:${feature.properties.Date}`).concat(`<br><br>Name of Image:${feature.properties.Name}`);
@@ -802,6 +806,29 @@ table, th, td
                                 layer.bindPopup(str2);
             
             }
+            // let landmarks = {}
+
+            // legend.update = function() {
+            //                         console.log("landmarks facility", landmarks)
+            //                         legendValues = {
+            //                             "Grounds": ['Grounds', '#f5ce42'],
+            //                             "PublicToilets": ['Public Toilets', '#0004ff'],
+            //                             "CompostPits": ['Compost Pits', '#a8325a'],
+            //                             "OpenPlaces": ['Open Places', '#143d5e'],
+            //                             "Temples": ['Temples/Workship Places', '#fa4646'],
+                                       
+            //                         }
+            //                         labels = ['<strong>Legends</strong>'];
+            //                         for (let fac in landmarks) {
+            //                             this._div.innerHTML +=
+            //                                 labels.push(
+            //                                     '<i class="circle" style="background:' + legendValues[fac][1] + ';opacity:1;">&nbsp;&nbsp;&nbsp;&nbsp;</i> ' +
+            //                                     legendValues[fac][0] + '<br>')
+
+
+            //                         }
+            //                         this._div.innerHTML = labels.join('<br>');
+            //                     }
 
         function Identify(e) {
 
@@ -836,9 +863,63 @@ table, th, td
                         });
                         if (feature.properties.zono_numbe) {
                             console.log("I reached at");
-                            content = "<table class = 'popupclass' ><tr><td><b>Zone Information</b></td><td></td></tr>" +
-                                "<tr><td><b>Zone Name</b></td><td>" + feature.properties.zone_name + "</td></tr>" +
-                                "<tr><td><b>Zone Number</b></td><td>" + feature.properties.zono_numbe+ "</td></tr>" + "</table>";
+                            
+                            if(feature.properties.zono_numbe == 1){
+                                lanes = "Akbar saikh chowl,"+"Muktabai chowl,"+"Laxman patel chowl,"+"Sulochna bane chowl,"+"John golbo chowl,"+"Atmaram sonar chowl,"+"	Dilima house,"+"Kutina house,"+"Rita john house,"+"Anthony kini house,"+"Mahendra niwas,"+"Rojibai agosti chowl,"+"Micle josef chowl,"+"Savitribai chowl,"+"Tigdi chowl,"+"Narayan niwas chowl,"+"Nitore chowl,"+"Vitthal worlikar chowl,"+"Naryan krupa chowl,"+"Guru krupa chowl,"+"Parvati bai niwas";
+
+                            }
+                            if(feature.properties.zono_numbe == 2){
+                                lanes = "Jayhind Krida Mandal,"+"Naveet Galli,"+"Buddist chaal,"+"Ganesa krida mandal,"+"Sanjay krida mandal,"+"Sarasvati band pataka,"+"Lakshmi narayan sadan,"+"Kalikhan chaal,"+"Hamuman galli,"+"Buddey house,"+"Tare Galli";
+
+                            }
+                            if(feature.properties.zono_numbe == 3){
+                                lanes = "Our Lady Of Velenkanni Cross,"+"Bhandarwada Ground,"+"Siddhivinayak Grhanirmana Sanstha ,"+"Waras Lane,"+"Love Star Krida Mandal,"+"Love Star Krida Mandal 2,"+"Amar Prem Chowk,"+"Amar Prem Krida mandal,"+"Ram singh chowl,"+"Mohan jayram chowl	Bhagirathi,"+"Daru pawar chowl,"+"Munsipal chaowl,"+"Gokhran chowl,"+"Ganpat shivra chowl,"+"ramdhani gupta niwas chowl,"+"Atmaram kharote chowl,"+"Bhagirathi niwas,"+"Chikane house";
+                            }
+                            if(feature.properties.zono_numbe == 4){
+                                lanes = "Milinda mitra mandal,"+"Datta kupa mandal,"+"Datta kupa mandal 2,"+"Baji Bala mitra mandal,"+"Sangama krida mandal,"+"Sambhaji mitra mandal,"+"Lucky matton shop";
+
+                            }
+                            if(feature.properties.zono_numbe == 5){
+                                lanes = "Jamat Hall	Datta Kridamandal,"+"Baji Balmandal	Amol classes,"+"Pakhari Galli,"+"Bajar Galli,"+"Vijay Mitra Mandal,"+"Chotu Bai Ganapat House,"+"Fish Market,"+"Aaradhna,"+"Yashwant Asharm,"+"Teen Batti Naka,"+"Bal Mitra Seva Mandal";
+
+                            }
+                            if(feature.properties.zono_numbe == 6){
+                                lanes = "Bhagat Galli,"+"Tare Galli,"+"Balchandra Nivas	Vrundavan,"+"Gonta Galli,"+"Jagruti Mandal,"+"Swarajya Mandal,"+"Manik Nakva House,"+"Pimpal Galli,"+"Lakshimi Jaganath Shruti Nivas,"+"Randhir Seva Mandal,"+"Mata Hirkani Nivas,"+"Jay Malhar House,"+"Aanad Classes,"+"Aaradhna Shankar Mandir";
+
+                            }
+                            if(feature.properties.zono_numbe == 7){
+                                lanes = "Dukkur Galli,"+"Dukkur Galli 2,"+"Tare House,"+"Isana John Koli,"+"Amar Meghnath Mandal,"+"Sadguru Bhavan,"+"Dyaneshwar Mandal,"+"Ekvira Nivas (Shriram Galli)	Shriram Galli,"+"Shriram Galli 2,"+"Shri Lakshimi Nivas,"+"Amar Sports Clube,"+"120 Kridamandal,"+"K House (Sonapur Lane),"+"Sonapur Lane,"+"Dyaneshwar Kridamandal Mandal,"+"Shriram Galli 3,"+"Matru Smruti Nivas,"+"Sonapur Lane 2,"+"Ekvira Nivas (Sonpur Lane),"+"Sai baba mandir";
+
+                            }
+                            if(feature.properties.zono_numbe == 8){
+                                lanes = "Walmiki Chowk,"+"Ganesha Temple,"+"Walmiki Chowk 2,"+"Pandharinath Niwas,"+"Janaki sadhan,"+"Balvir Galli,"+"Parvatibai,"+"Parashuram Niwas,"+"Balvir Galli 2,"+"Balvir Galli 3,"+"Walmiki Chowk 3,"+"Shankar Patil Niwas";
+
+                            }
+                            if(feature.properties.zono_numbe == 9){
+                                lanes = "Taak galli,"+"Dinesh store,"+"Taak galli 1,"+"Shree krishna mandir,"+"taak galli,"+"Taak galli 2,"+"Sri sai madir ,"+"Sai baba madir,"+"Siddhivinayak krida mandal,"+"Sri ram galli,"+"Astik brass band Pathak	Amar meghnath mandal,"+"Nautan bala mitra mandal";
+
+                            }
+                            if(feature.properties.zono_numbe == 10){
+                                lanes = "Kranti Kridamandal,"+"Lkshimi Sahwas,"+"Ashish Bhavan ,"+"Vikas Mitra Mandam,"+"Vijay Jayant Koli Nivas,"+"Vikas Galli,"+"Mahapooja Mandal,"+"Vikas Galli,"+"Dinesh Store,"+"Taak Galli,"+"Shree Ganesh Seva Mandal,"+"Navjivan Kridamandal,"+"Navjivan Wasahat,"+"Navjivan Wasahat 2,"+"Killa (Worli Koliwada),"+"K House (Killa),"+"	Sai Baba Mandir (Navjivan)";
+
+                            }
+                            if(feature.properties.zono_numbe == 11){
+                                lanes = "Sri Sai Prasad Sadan,"+"Nikam House,"+"Frank Mery Villa,"+"Worli Village Nagari vikasa Sanstha,"+"Damodara Seva Mandal,"+"Damodara Ground,"+"Dattatraya save Mandal,"+"Datta mandir ";
+
+                            }
+                            if(feature.properties.zono_numbe == 12){
+                                lanes = "Golfadevi Navratrotsava Mandal,"+"Golfadevi Navratrotsava Mandal 2	,"+"Dhananjaya krida mandal,"+"Jana seva mandal,"+"Sai baba mandir Ghumata mandal,"+"Golfadevi mandir,"+"Golfadevi Krida mandal";
+
+                            }
+                            if(feature.properties.zono_numbe == 13){
+                                lanes = "Ganpti Mandir,"+"Amol classes,"+"Prakash Arun Band Pathk,"+"Shilpa Hair Saloon Galli,"+"Dr Yadav Galli,"+"Mary Nivas,"+"Shree Sai Krupa Market,"+"Hanuman Nivas,"+"SAP Enterpriser ,"+"Sangam Kridamandal,"+"Sangam Kridamandal 2	,"+"Sangam Kridamandal 3";
+
+                            }
+                            
+                            content = "<table class = 'popupclass' ><tr colspan='5'><b>Zone Information</b></tr>" +
+                                "<tr><td><b>Name</b></td><td>" + feature.properties.zone_name + "</td></tr>" +
+                                "<tr><td><b>Number </b></td><td>" + feature.properties.zono_numbe+ "</td></tr>" + 
+                                "<tr><td><b>Lanes</b></td><td>" + lanes+ "</td></tr>" +"</table>";
                         }
                         if (feature.properties.layer) {
                             console.log("I reached at");
@@ -864,9 +945,11 @@ table, th, td
                             // console.log(items[items.length - 1]);
                             // console.log(items);
                             // console.log
-                            filename = spot_num + '.' + feature.properties.spot_id +fn+'.jpg';
+                            // filename = spot_num + '.' + feature.properties.spot_id +fn+'.jpg';
+                            filename = spot_num + '.' + feature.properties.spot_id +fn;
                             console.log(filename)
-                            content = "<table border = 2 class = 'popupclass' ><tr><td colspan='4'><b>Spot Information</b></td></tr>"+
+
+                            content = "<table border = 2 class = 'popupclass' ><tr colspan='4'><b>Spot Information</b></tr>"+
                                 "<tr><td colSpan='5'><b>Spot Number: </b></td><td>" + feature.properties.spot_id + "</td></tr>" +
                                 "<tr><td colSpan='5'><b>Spot Name: </b></td><td>" + feature.properties.spot_name + "</td></tr>" +
                                 "<tr><td colSpan='5'><b>Zone ID: </b></td><td>" + feature.properties.zone_id + "</td></tr>" +
@@ -885,7 +968,7 @@ table, th, td
                             filename = ground_name+'.jpg';
                             console.log(filename)
                           
-                            content = "<table border = 2 class = 'popupclass' ><tr><td colSpan='5'><b>Ground Information</b></td></tr>"+
+                            content = "<table border = 2 class = 'popupclass' ><tr colSpan='5'><b>Ground Information</b></tr>"+
                                 
                                 "<tr><td colSpan='5'><b>Name:</b></td><td>" +ground_name+ "</td></tr>" +
                                 "<tr><td colSpan='5 '><b>Image: </b></td><td><img class = 'popupimage' src='../static/images/Ground/".concat(filename)+"' alt='image not found - '>"+filename+"</a></td></tr>" + "</table>";
@@ -902,7 +985,7 @@ table, th, td
                             filename = Temple_nam+'.jpg';
                             console.log(filename)
                           
-                            content = "<table border = 2 class = 'popupclass' ><tr><td colSpan='5'><b>Temple Information</b></td></tr>"+
+                            content = "<table border = 2 class = 'popupclass' ><tr colSpan='5'><b>Worship Place Information</b></tr>"+
                                 
                                 "<tr><td colSpan='5'><b>Name:</b></td><td>" +Temple_nam+ "</td></tr>" +
                                 "<tr><td colSpan='5 '><b>Image: </b></td><td><img class = 'popupimage' src='../static/images/Temple/".concat(filename)+"' alt='image not found - '>"+filename+"</a></td></tr>" + "</table>";
@@ -919,7 +1002,7 @@ table, th, td
                             filename = Toilet_Nam+'.jpg';
                             console.log(filename)
                           
-                            content = "<table border = 2 class = 'popupclass' ><tr><td colSpan='5'><b>Toilet Information</b></td></tr>"+
+                            content = "<table border = 2 class = 'popupclass' ><tr colSpan='5'><b>Toilet Information</b></tr>"+
                                 
                                 "<tr><td colSpan='5'><b>Name:</b></td><td>" +Toilet_Nam+ "</td></tr>" +
                                 "<tr><td colSpan='5 '><b>Image: </b></td><td><img class = 'popupimage' src='../static/images/Toilets/".concat(filename)+"' alt='image not found - '>"+filename+"</a></td></tr>" + "</table>";
@@ -936,7 +1019,7 @@ table, th, td
                             filename = OpenPlace+'.jpg';
                             console.log(filename)
                           
-                            content = "<table border = 2 class = 'popupclass' ><tr><td colSpan='5'><b>Temple Information</b></td></tr>"+
+                            content = "<table border = 2 class = 'popupclass' ><tr colSpan='5'><b>Workship Places Information</b></tr>"+
                                 
                                 "<tr><td colSpan='5'><b>Name:</b></td><td>" +OpenPlace+ "</td></tr>" +
                                 "<tr><td colSpan='5 '><b>Image: </b></td><td><img class = 'popupimage' src='../static/images/Open Spaces/".concat(filename)+"' alt='image not found - '>"+filename+"</a></td></tr>" + "</table>";
@@ -953,10 +1036,10 @@ table, th, td
                             filename = Pits_Name+'.jpg';
                             console.log(filename)
                           
-                            content = "<table border = 2 class = 'popupclass' ><tr><td colSpan='5'><b>Temple Information</b></td></tr>"+
+                            content = "<table border = 2 class = 'popupclass' ><tr colSpan='5'><b>Pit Information</b></tr>"+
                                 
                                 "<tr><td colSpan='5'><b>Name:</b></td><td>" +Pits_Name+ "</td></tr>" +
-                                "<tr><td colSpan='5 '><b>Image: </b></td><td><img class = 'popupimage' src='../static/images/Open Spaces/".concat(filename)+"' alt='image not found - '>"+filename+"</a></td></tr>" + "</table>";
+                                "<tr><td colSpan='5 '><b>Image: </b></td><td><img class = 'popupimage' src='../static/images/Pits/".concat(filename)+"' alt='image not found - '>"+filename+"</a></td></tr>" + "</table>";
                         }
 
                         popup.setContent(content);
