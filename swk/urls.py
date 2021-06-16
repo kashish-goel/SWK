@@ -27,6 +27,7 @@ urlpatterns = [
     path('rating/',views.RatingView, name = 'rating'),
     path('contact/',views.Contact, name = 'contact'),
     path('uploadimage/',views.uploadimage, name = 'uploadimage'),
+    path('getdetails/',views.getdetails,name = 'getdetails')
     # path('graphs/',views.Graphs, name = 'graphs'),
 ]
 if settings.DEBUG:
