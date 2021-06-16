@@ -1,6 +1,6 @@
 from django import forms
-from .models import Tracksheet,DutyEntry,Zones,Grievance,UploadPictureModel#, Rating
-
+from .models import  Tracksheet,DutyEntry,Zones,Grievance,UploadPictureModel#, Rating
+import os
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit, Row, Column, ButtonHolder
 import datetime
@@ -9,6 +9,12 @@ from django.contrib.gis import forms
 from django.utils.translation import ugettext_lazy as _
 from django.core.exceptions import ValidationError
 from datetime import timedelta
+import pandas as pd
+import numpy as np
+import xlrd
+import csv
+
+
 
 
             
@@ -206,10 +212,25 @@ class DutyEntryForm(forms.ModelForm):
 class GrievanceForm(forms.ModelForm):
     # latitude = forms.CharField()
     # longitude = forms.CharField()
+    #df = pd.read_excel("zones_lanes.xlsx", sheet_name=0)
+   # print(df)
+    
+
+# Print list of lists i.e. rows
+    
+
+    #print(res)
+    #print(res)
+    
+    #print(list_zones_pair)
     YESNO_CHOICES = ((0, 'No'), (1, 'Yes'))
     name= forms.CharField()
     email = forms.CharField()
-    mobile = forms.IntegerField()
+    mobile = forms.CharField()
+    
+    selectzones = forms.CharField(widget = forms.HiddenInput())
+    selectlanes = forms.CharField(widget = forms.HiddenInput())
+
     # q1 = forms.CharField(label ="how do you find overall  daily collection service of SWK ?")
     # fw_once =forms.ChoiceField(choices=YESNO_CHOICES, widget=forms.RadioSelect,label ="Is collecting food waste once a day enough?")
     # fw_twice =forms.ChoiceField(choices=YESNO_CHOICES, widget=forms.RadioSelect,label ="Would you like to collect food waste twice a day enough?")
@@ -238,6 +259,11 @@ class UploadPictureForm(forms.ModelForm):
 class ImageShowForm(forms.Form):
     picture = forms.CharField(widget=forms.Textarea(attrs={"rows":15, "cols":50}))
     # pictures = forms.FileField()
+
+# class SupervisorListForm(forms.ModelForm):
+#     class Meta:
+#         model = SupervisorsList
+#         exclude = ('Grievance',)
        
 # class UploadPictureForm(forms.ModelForm):
 #     picture = forms.ImageField(label='')
