@@ -98,14 +98,16 @@ class SwkTracksheetReport(models.Model):
         db_table = 'swk_tracksheet_report'
 
 class Grievance(models.Model):
+    
     # location = models.PointField(geography=True, default=Point(0.0, 0.0))
     # position = GeopositionField()
     # latitude = models.DecimalField(max_digits=11, decimal_places=8)
     # longitude = models.DecimalField(max_digits=11, decimal_places=8)
     name = models.CharField(max_length=100)
-    email = models.EmailField(blank=True, null=True)
+    email = models.EmailField(blank=True)
     mobile = models.IntegerField(blank=True, null=True)
-    
+    selectzones = models.CharField(max_length=100)
+    selectlanes = models.CharField(max_length=100)
     # fw_once =models.BooleanField(max_length=1)
     # fw_twice =models.BooleanField()
     # fw_container =models.BooleanField()
@@ -128,11 +130,12 @@ class Rating(models.Model):
     mobile_swk = models.IntegerField()
     compost_kit_garden = models.IntegerField()
     communicate_swk = models.IntegerField()
-    food_bin = models.CharField(default = 'no',max_length=10)
-    paper_bin = models.CharField(default = 'no',max_length=10)
-    ewaste_bin = models.CharField(default = 'no',max_length=10)
-    pads_bin = models.CharField(default = 'no',max_length=10)
-    epr_bin = models.CharField(default = 'no',max_length=10)
+    solid_waste_man = models.IntegerField()
+    service_workers = models.IntegerField()
+    segregation = models.IntegerField()
+    recycle_process = models.IntegerField()
+    awareness = models.IntegerField()
+    role = models.CharField(max_length=10)
     class Meta:
         managed = False
         db_table = 'swk_rating'
@@ -151,4 +154,13 @@ class UploadPictureModel(models.Model):
     picture = models.ImageField(upload_to='Images/', blank=True, null=True)
     name = models.CharField(max_length=100, blank=True, null=True)
     date = models.DateField(null=True, blank=True, default=datetime.now)
+
+class SupervisorsList(models.Model):
+    
+    supervisor_names = models.CharField(max_length=100, blank=True, null=True)
+    supervisor_email = models.CharField(max_length=100,null=True, blank=True)
+    zone_id = models.CharField(max_length=100,null=True, blank=True)
+    class Meta:
+        managed = False
+        db_table = 'swk_zone_supervisors'
 
