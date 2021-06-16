@@ -3,25 +3,24 @@
 from apiclient.discovery import build
 from oauth2client.service_account import ServiceAccountCredentials
 
-
 SCOPES = ['https://www.googleapis.com/auth/analytics.readonly']
 KEY_FILE_LOCATION = '/home/ubuntu/myenv/SWKV2/swk/swk-new.json'
 VIEW_ID = '243710477'
 
 
 def initialize_analyticsreporting():
-  """Initializes an Analytics Reporting API V4 service object.
+    """Initializes an Analytics Reporting API V4 service object.
 
-  Returns:
-    An authorized Analytics Reporting API V4 service object.
-  """
-  credentials = ServiceAccountCredentials.from_json_keyfile_name(
-      KEY_FILE_LOCATION, SCOPES)
+    Returns:
+      An authorized Analytics Reporting API V4 service object.
+    """
+    credentials = ServiceAccountCredentials.from_json_keyfile_name(
+        KEY_FILE_LOCATION, SCOPES)
 
-  # Build the service object.
-  analytics = build('analyticsreporting', 'v4', credentials=credentials)
+    # Build the service object.
+    analytics = build('analyticsreporting', 'v4', credentials=credentials)
 
-  return analytics
+    return analytics
 
 
 def get_report(analytics):
@@ -43,65 +42,45 @@ def get_report(analytics):
         }]
       }
   ).execute()
-  #           body={
-  #         'reportRequests': [
-  #             {
-  #                 'viewId': VIEW_ID,
-  #                 'dateRanges': [{'startDate': '7daysAgo', 'endDate': 'today'}],
-  #                 'metrics': [
-  #                     {'expression': 'ga:pageviews'},
-  #                     {'expression': 'ga:uniquePageviews'},
-  #                     {'expression': 'ga:timeOnPage'},
-  #                     {'expression': 'ga:bounces'},
-  #                     {'expression': 'ga:entrances'},
-  #                     {'expression': 'ga:exits'}
-  #                 ],
-  #                 "dimensions": [
-  #                     {"name": "ga:pagePath"}
-  #                 ],
-  #                 "orderBys": [
-  #                     {"fieldName": "ga:pageviews", "sortOrder": "DESCENDING"}
-  #                 ]
-  #             }
-  #         ]
-  #     }
-  # ).execute() 
-
-
 
 
 def print_response(response):
-    """Parses and prints the Analytics Reporting API V4 response"""
+    totalvalue =0
+    """Parses and prints the Analytics Reporting API V4 response.
 
+     Args:
+       response: An Analytics Reporting API V4 response.
+     """
     for report in response.get('reports', []):
-
         columnHeader = report.get('columnHeader', {})
         dimensionHeaders = columnHeader.get('dimensions', [])
         metricHeaders = columnHeader.get('metricHeader', {}).get('metricHeaderEntries', [])
-        rows = report.get('data', {}).get('rows', [])
+        totalvalue ="0"
 
-        for row in rows:
-          dimensions = row.get('dimensions', [])
-          dateRangeValues = row.get('metrics', [])
+        for row in report.get('data', {}).get('rows', []):
+            dimensions = row.get('dimensions', [])
+            dateRangeValues = row.get('metrics', [])
 
-        # for header, dimension in zip(dimensionHeaders, dimensions):
-          # print(header + ': ' + dimension)
-          # print(dimension)
+            for header, dimension in zip(dimensionHeaders, dimensions):
+                print(header + ': ', dimension)
 
-        for i, values in enumerate(dateRangeValues):
+            for i, values in enumerate(dateRangeValues):
+                print('Date range:', str(i))
+                for metricHeader, value in zip(metricHeaders, values.get('values')):
+                    totalvalue = int(value) + int(totalvalue)
+                    print(metricHeader.get('name') + ':', value)
+                    return(totalvalue)
+                # print(totalvalue)
+                    
 
-          for metricHeader, value in zip(metricHeaders, values.get('values')):
-            # print(metricHeader.get('name') + ': ' + value)
-            return(value)
 
 def main():
-  # print("Hello")
-  analytics = initialize_analyticsreporting()
-  response = get_report(analytics)
-  # print(response)
-  print_response(response)
-  
+    analytics = initialize_analyticsreporting()
+    response = get_report(analytics)
+    print_response(response)
+
 
 if __name__ == '__main__':
-  main()
+    main()
+
 

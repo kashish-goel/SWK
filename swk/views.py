@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect,HttpResponse,HttpResponseRedirect
 from django.template import loader
 from .forms import TracksheetForm, DutyEntryForm, TracksheetForm1,GrievanceForm, UploadPictureForm,ImageShowForm#,RatingForm
-from .models import DutyEntry,Tracksheet,Zones ,SwkAttendants, Rating, UploadPictureModel
+from .models import DutyEntry, SupervisorsList,Tracksheet,Zones ,SwkAttendants, Rating, UploadPictureModel
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User,auth
 from django.contrib.auth import logout
@@ -16,8 +16,12 @@ import easygui
 from django.conf import settings 
 from django.views.generic import TemplateView
 from swk.HelloAnalytics import *
-
-
+from django.views.generic import ListView
+import json
+import csv
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_http_methods
+import pandas as pd
 
 # import pandas as pd
 # import plotly.express as px
@@ -411,20 +415,18 @@ def RatingView(request):
             mobile_swk = request.POST.get('rating3')
             compost_kit_garden = request.POST.get('rating4')
             communicate_swk = request.POST.get('rating5')
-            food_bin =request.POST.get('yes_no')
-            paper_bin = request.POST.get('yes_no1')
-            ewaste_bin =request.POST.get('yes_no2')
-            pads_bin = request.POST.get('yes_no3')
-            epr_bin= request.POST.get('yes_no4')
-            print(food_bin)
-            print(paper_bin)
-            print(ewaste_bin)
-            print(pads_bin)
-            print(epr_bin)
+            solid_waste_man = request.POST.get('rating6')
+            service_workers = request.POST.get('rating7')
+            segregation = request.POST.get('rating8')
+            recycle_process = request.POST.get('rating9')
+            awareness = request.POST.get('rating10')
+            role =  request.POST.get('rating11')
+           
+            
 
 
         
-            sub=Rating(name=name,mobile=mobile,email=email,service_swk=service_swk,timing_swk=timing_swk,mobile_swk=mobile_swk,compost_kit_garden=compost_kit_garden,communicate_swk=communicate_swk,food_bin=food_bin,paper_bin=paper_bin, ewaste_bin=ewaste_bin, epr_bin=epr_bin,pads_bin=pads_bin)
+            sub=Rating(name=name,mobile=mobile,email=email,service_swk=service_swk,timing_swk=timing_swk,mobile_swk=mobile_swk,compost_kit_garden=compost_kit_garden,communicate_swk=communicate_swk,solid_waste_man=solid_waste_man,service_workers=service_workers,segregation=segregation,recycle_process=recycle_process,awareness=awareness,role=role)
             # if sub.save():
                 # print(sub.save)
             sub.save()
@@ -436,7 +438,11 @@ def RatingView(request):
 
         return render(request,"rating.html")  
 
+
+
 def Grievance(request):
+
+    
     form = GrievanceForm(request.POST or None)
     if request.method == 'POST':
         form = GrievanceForm(request.POST or None)
@@ -446,7 +452,61 @@ def Grievance(request):
             cd = form.cleaned_data
             name = form.cleaned_data['name']
             mobile = form.cleaned_data['mobile']
+            selectzones = form.cleaned_data['selectzones']
+            
+            selectlanes = form.cleaned_data['selectlanes']
             grievance = form.cleaned_data['grievance']
+            df = pd.read_csv('zones_lanes.csv', delimiter=',')
+    # User list comprehension to create a list of lists from Dataframe rows
+            row_wise_csv = [list(row) for row in df.values]
+            
+
+        
+            list_zones_true = row_wise_csv[0]
+            list_zones_true = list_zones_true[1:]
+        
+        
+        
+            print(list_zones_true)
+
+            ind  =  list_zones_true.index(selectzones)
+            print(ind)
+            with open('supervisors.csv') as csvfile:
+                rows = csv.reader(csvfile)
+                column_wise_csv = list(zip(*rows))
+            
+            column_zones = column_wise_csv[1]
+            column_zones = column_zones[1:]
+            cell_zones = ""
+            ind = ind+1
+            i=-1
+            flag = -1
+            for cell in column_zones:
+                i = i+1
+                cell_zones = cell
+                
+                
+                my_list = cell_zones.split(",")
+                print(my_list)
+                for num in my_list:
+                    num = num.strip()
+                    curr_num = int(num)
+                    
+                    if (ind == curr_num) :
+                        print("here")
+                        flag = i
+                        break
+                
+            supervisor_name = column_wise_csv[0]
+            supervisor_name = supervisor_name[1:]
+            supervisor_name_curr = supervisor_name[flag]
+            print(supervisor_name_curr)
+
+
+            supervisor_email = column_wise_csv[2]
+            supervisor_email = supervisor_email[1:]
+            supervisor_email_curr = supervisor_email[flag]
+            print(supervisor_email_curr)
             # fw_once =form.cleaned_data['fw_once']
             # fw_twice = form.cleaned_data['fw_twice']
             # fw_container = form.cleaned_data['fw_container']
@@ -473,11 +533,13 @@ def Grievance(request):
             form.save()
             
 
-            # con = get_connection('django.core.mail.backends.console.EmailBackend')
+            #con = get_connection('django.core.mail.backends.console.EmailBackend')
             con = get_connection('django.core.mail.backends.smtp.EmailBackend')
             # if (send_mail('Feedback (SWK)', cd['feedback'],cd.get('email', 'noreply@example.com'),
-            # ['monikapatira@gmail.com'],connection=con)):
-            if(send_mail('Grievance received for swk.communitygis.net', message_mail,from_email,['sms.swk@gmail.com'],fail_silently=False,)):
+            #     ['monikapatira@gmail.com'],connection=con)):
+            to_emails = ['karu1098@gmail.com', 'sms.swk@gmail.com']
+            to_emails.append(supervisor_email_curr)
+            if(send_mail('Grievance received for swk.communitygis.net', message_mail,from_email,to_emails,fail_silently=False,)):
             # if(send_mail('Feedback (SWK)', message_mail,from_email,['monikapatira@gmail.com'],fail_silently=False,)):
                 print("message sent")
             else :
@@ -536,6 +598,53 @@ def uploadimage(request):
         form = UploadPictureForm()
     return render(request,'upload_image.html',{'form': form})
 
+#@csrf_exempt
+@require_http_methods(["GET"])
+def getdetails(request):
+    #country_name = request.POST['country_name']
+    if request.method == 'GET' and request.is_ajax():
+        
+        
+        ourid = request.GET.get('name[]')
+        
+        result_set = []
+        all_cities = []
+
+        with open('zones_lanes.csv') as csvfile:
+            rows = csv.reader(csvfile)
+            column_wise_csv = list(zip(*rows))
+        
+        df = pd.read_csv('zones_lanes.csv', delimiter=',')
+    # User list comprehension to create a list of lists from Dataframe rows
+        row_wise_csv = [list(row) for row in df.values]
+
+        with open('zones_lanes.csv') as csvfile:
+            rows = csv.reader(csvfile)
+            column_wise_csv = list(zip(*rows))
+        
+        list_zones_true = row_wise_csv[0]
+        list_zones_true = list_zones_true[1:]
+        if ourid == 'please select your zone':
+        
+        
+            list_zones = row_wise_csv[0]
+            list_zones = list_zones[1:]
+        else:
+            ind  =  list_zones_true.index(ourid)
+            
+            ind = ind +1
+            list_zones =column_wise_csv[ind]
+            list_zones = list_zones[2:]
+
+        list_zones = list(list_zones)
+        while("" in list_zones) :
+            list_zones.remove("")
+        list_zones = tuple(list_zones)
+        for zone in list_zones:
+            
+            result_set.append({'name': zone})
+    return JsonResponse(result_set,safe = False)
+
 # def Graphs(request):
 #     df = pd.read_excel('/home/ubuntu/Documents/Diet-Diversity/Nutri-infotainment survey (Part 1) (Responses).xlsx',0)
 #     df.head(2)
@@ -590,3 +699,8 @@ def uploadimage(request):
 # def some_object_view(request, pk):
 #     some_obj = get_object_or_404(SOME_MODEL, pk=pk)
 #     Visit.objects.add_object_visit(request, obj=some_obj)
+
+# class SupervisorListView(ListView):
+#     model = SupervisorsList
+#     template = "/grievance.html"
+#     return render(request, 'cities_template.html', {'cities': cities})
