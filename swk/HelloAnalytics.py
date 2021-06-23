@@ -19,7 +19,7 @@ def initialize_analyticsreporting():
 
     # Build the service object.
     analytics = build('analyticsreporting', 'v4', credentials=credentials)
-
+    print("in initialise")
     return analytics
 
 

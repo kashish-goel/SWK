@@ -17,7 +17,7 @@
 .rating4:not(:checked) > input,
 .rating5:not(:checked) > input {
     position:absolute;
-    top:-9999px;
+    
     clip:rect(0,0,0,0);
 }
 
@@ -230,16 +230,91 @@ table{
         <div class="clearfix"></div>
 
     </p>
+
+    <p><b><label for="rating6">6. Information received on Solid Waste Management </label></b>
+        <div id="status6"></div>
+        <fieldset class="rating5">
+            <input type="radio" id="star5-6" name="rating6" value="5" /><label for="star5-6" title="Excellent!">5 stars</label>
+            <input type="radio" id="star4-6" name="rating6" value="4" /><label for="star4-6" title="Very good">4 stars</label>
+            <input type="radio" id="star3-6" name="rating6" value="3" /><label for="star3-6" title="Good">3 stars</label>
+            <input type="radio" id="star2-6" name="rating6" value="2" /><label for="star2-6" title="Poor">2 stars</label>
+            <input type="radio" id="star1-6" name="rating6" value="1" /><label for="star1-6" title="Very Poor">1 star</label>
+        </fieldset>
+        <div class="clearfix"></div>
+
+    </p>
+
+    <p><b><label for="rating7">7. The services received from the Cleanliness Workers </label></b>
+        <div id="status7"></div>
+        <fieldset class="rating5">
+            <input type="radio" id="star5-7" name="rating7" value="5" /><label for="star5-7" title="Excellent!">5 stars</label>
+            <input type="radio" id="star4-7" name="rating7" value="4" /><label for="star4-7" title="Very good">4 stars</label>
+            <input type="radio" id="star3-7" name="rating7" value="3" /><label for="star3-7" title="Good">3 stars</label>
+            <input type="radio" id="star2-7" name="rating7" value="2" /><label for="star2-7" title="Poor">2 stars</label>
+            <input type="radio" id="star1-7" name="rating7" value="1" /><label for="star1-7" title="Very Poor">1 star</label>
+        </fieldset>
+        <div class="clearfix"></div>
+
+    </p>
+
+    <p><b><label for="rating8">8. Segregation of Waste </label></b>
+        <div id="status8"></div>
+        <fieldset class="rating5">
+            <input type="radio" id="star5-8" name="rating8" value="8" /><label for="star5-8" title="Excellent!">5 stars</label>
+            <input type="radio" id="star4-8" name="rating8" value="8" /><label for="star4-8" title="Very good">4 stars</label>
+            <input type="radio" id="star3-8" name="rating8" value="8" /><label for="star3-8" title="Good">3 stars</label>
+            <input type="radio" id="star2-8" name="rating8" value="8" /><label for="star2-8" title="Poor">2 stars</label>
+            <input type="radio" id="star1-8" name="rating8" value="8" /><label for="star1-8" title="Very Poor">1 star</label>
+        </fieldset>
+        <div class="clearfix"></div>
+
+    </p>
+
+    <p><b><label for="rating9">9. The process involved in systematic recycling/disposal of Wet waste, Dry waste and Hazardous Waste. </label></b>
+        <div id="status9"></div>
+        <fieldset class="rating5">
+            <input type="radio" id="star5-9" name="rating9" value="5" /><label for="star5-9" title="Excellent!">5 stars</label>
+            <input type="radio" id="star4-9" name="rating9" value="4" /><label for="star4-9" title="Very good">4 stars</label>
+            <input type="radio" id="star3-9" name="rating9" value="3" /><label for="star3-9" title="Good">3 stars</label>
+            <input type="radio" id="star2-9" name="rating9" value="2" /><label for="star2-9" title="Poor">2 stars</label>
+            <input type="radio" id="star1-9" name="rating9" value="1" /><label for="star1-9" title="Very Poor">1 star</label>
+        </fieldset>
+        <div class="clearfix"></div>
+
+    </p>
+
+    <p><b><label for="rating10">10.  Waste Management Awareness campaigns conducted by the team in your neighborhood. </label></b>
+        <div id="status10"></div>
+        <fieldset class="rating5">
+            <input type="radio" id="star5-10" name="rating10" value="5" /><label for="star5-10" title="Excellent!">5 stars</label>
+            <input type="radio" id="star4-10" name="rating10" value="4" /><label for="star4-10" title="Very good">4 stars</label>
+            <input type="radio" id="star3-10" name="rating10" value="3" /><label for="star3-10" title="Good">3 stars</label>
+            <input type="radio" id="star2-10" name="rating10" value="2" /><label for="star2-10" title="Poor">2 stars</label>
+            <input type="radio" id="star1-10" name="rating10" value="1" /><label for="star1-10" title="Very Poor">1 star</label>
+        </fieldset>
+        <div class="clearfix"></div>
+
+    </p>
+
+    <p><b><label for="rating11">11. Your contribution/role in the Waste Management Program</label></b>
+    <div>
+    <select name="rating11">
+		<option value="Worker">Worker</option>
+		<option value="Passerby">Passerby</option>
+		<option value="Homeowner" selected>Homeowner</option>
+		<option value="Other">Other</option>
+	</select>
+</div>
     
 <hr>
-    <h3>Please Answer</h3><br>
+    <!-- <h3>Please Answer</h3><br>
     <table>
         <tr><th><b>1) Do you have separate bins for the following </b></th></tr>
         <tr><td><b>(A) Food  </b></td><td><input type="radio" name="yes_no" value ="yes">Yes</input><input type="radio" name="yes_no" value="no" >No</input></td></tr>
         <tr><td><b>(B) Recyclable paper/plastic  </b></td><td><input type="radio" name="yes_no1" value ="yes" >Yes</input><input type="radio" value="no" name="yes_no1" >No</input></td></tr>
         <tr><td><b>(C) e-waste  </b></td><td><input type="radio" name="yes_no2" value ="yes">Yes</input><input type="radio" name="yes_no2"value="no" >No</input></td></tr>
         <tr><td><b>(D) pads( menstrual, sanitation)  </b></td><td><input type="radio" name="yes_no3" value ="yes" >Yes</input><input type="radio" name="yes_no3" value="no">No</input></td></tr>
-        <tr><td><b>(E) epr ( packaging from amazone etc)  </b></td><td><input type="radio" name="yes_no4" value ="yes" >Yes</input><input type="radio" name="yes_no4"value ="no" >No</input></td></tr></table>
+        <tr><td><b>(E) epr ( packaging from amazone etc)  </b></td><td><input type="radio" name="yes_no4" value ="yes" >Yes</input><input type="radio" name="yes_no4"value ="no" >No</input></td></tr></table> -->
         <!-- <p><b>2) Will you keep those if you don't have and you get them free. Which</b><br>
             (A) Food &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img style ="width:30px;"src ="../static/images/radio_ch.png">YES <img style ="width:40px;"src ="../static/images/radio.jpg">No</p>
             (B) Recyclable paper/plastic &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img style ="width:40px;"src ="../static/images/radio.jpg">YES <img style ="width:30px;"src ="../static/images/radio_ch.png">No</p>

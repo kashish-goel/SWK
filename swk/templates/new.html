@@ -79,7 +79,9 @@ gtag('config', 'UA-197940159-2');
             <img class="header-center" src="{% static 'images/sms_logo.jpg' %}" style="height: 60px; width: 80px;overflow: hidden;">
             <img class="header-right" src="{% static 'images/mcgm_logo.jpg' %}" style="height: 60px; width: 60px;overflow: hidden;">              
         </div>
-        
+        <div>
+            <!-- {{ Visitor_count }} -->
+        </div>
         <nav class ="nav-menu d-none d-lg-block">
             <ul class="navbar-nav">
                 <li class="nav-item active">
@@ -214,6 +216,7 @@ gtag('config', 'UA-197940159-2');
     
     <main>
         {% block content%}
+        {{ Visitor_count }}
         {% endblock%}
        
     </main>

@@ -105,7 +105,7 @@ class Grievance(models.Model):
     # longitude = models.DecimalField(max_digits=11, decimal_places=8)
     name = models.CharField(max_length=100)
     email = models.EmailField(blank=True)
-    mobile = models.IntegerField(blank=True, null=True)
+    mobile = models.CharField(max_length=15,blank=True, null=True)
     selectzones = models.CharField(max_length=100)
     selectlanes = models.CharField(max_length=100)
     # fw_once =models.BooleanField(max_length=1)
@@ -163,4 +163,3 @@ class SupervisorsList(models.Model):
     class Meta:
         managed = False
         db_table = 'swk_zone_supervisors'
-

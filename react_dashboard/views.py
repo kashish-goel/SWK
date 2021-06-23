@@ -1,6 +1,12 @@
 from django.shortcuts import render
-
+from swk.HelloAnalytics import *
 # Create your views here.
 
 def index(request,*args,**kwargs):
-    return render(request,'react_dashboard/index.html')
+    analytics = initialize_analyticsreporting()
+    response = get_report(analytics)
+    recd_response = print_response(response)
+    context = {
+      'Visitor_count': recd_response
+    }
+    return render(request,'react_dashboard/index.html',context)

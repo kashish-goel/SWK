@@ -12,7 +12,7 @@ from django.http import HttpResponseRedirect
 from django.utils.translation import gettext_lazy as _
 from django.core.mail import send_mail, get_connection
 from datetime import datetime
-import easygui
+#import easygui
 from django.conf import settings 
 from django.views.generic import TemplateView
 from swk.HelloAnalytics import *
@@ -21,7 +21,10 @@ import json
 import csv
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
-import pandas as pd
+from django.contrib.staticfiles.storage import staticfiles_storage
+
+
+#import pandas as pd
 
 # import pandas as pd
 # import plotly.express as px
@@ -38,16 +41,25 @@ def show(request):
     # datas1= Tracksheet.objects.all().order_by('-lane_name')
     wardetail= DutyEntry.objects.all()
     # data= User.objects.all()
-    return render(request,'show_data.html',{'datas':datas})
+    analytics = initialize_analyticsreporting()
+    response = get_report(analytics)
+    recd_response = print_response(response)
+    context = {
+        'datas':datas,
+        'Visitor_count': recd_response
+    }
+    
+    # return render(request,'show_data.html',{'datas':datas})
+    return render(request,'show_data.html',context)
 
-def download(request,year,month,day):
-    print(year)
-    print(month)
-    print(day)
-    new_date=year+'-'+ month +'-'+day
-    datas= Tracksheet.objects.filter(date=new_date)
-    # print(datas)
-    return render(request,'download_data.html',{'datas':datas})
+# def download(request,year,month,day):
+#     print(year)
+#     print(month)
+#     print(day)
+#     new_date=year+'-'+ month +'-'+day
+#     datas= Tracksheet.objects.filter(date=new_date)
+#     # print(datas)
+#     return render(request,'download_data.html',{'datas':datas})
 
 def downloadzone(request,year,month,day,year1,month1,day1,zone_name):
     print(zone_name) 
@@ -73,13 +85,31 @@ def downloadzone(request,year,month,day,year1,month1,day1,zone_name):
         datas= Tracksheet.objects.filter(lane_name__in=(zone_name.split(',')), date__range=(new_date, new_date1)).order_by('date','lane_name')
         # datas= Tracksheet.objects.filter(lane_name=zone_name, date__range=(new_date, new_date1)).order_by('date','lane_name')
         # print(datas.query)
-    return render(request,'download_data_zone.html',{'datas':datas})
+    analytics = initialize_analyticsreporting()
+    response = get_report(analytics)
+    recd_response = print_response(response)
+    context = {
+        'datas':datas,
+        'Visitor_count': recd_response
+    }
+    
+    # return render(request,'show_data.html',{'datas':datas})
+    return render(request,'download_data_zone.html',context)
+    # return render(request,'download_data_zone.html',{'datas':datas})
 
 def edit(request, id):  
     data = Tracksheet.objects.get(track_id=id)
     # docdata  = doctor.objects.get(id=id)  
     print(data.date)
-    return render(request,'edit.html', {'data':data}) 
+    analytics = initialize_analyticsreporting()
+    response = get_report(analytics)
+    recd_response = print_response(response)
+    context = {
+        'data':data,
+        'Visitor_count': recd_response
+    }
+    # return render(request,'edit.html', {'data':data}) 
+    return render(request,'edit.html',context) 
 
 def update(request, id):
     # print(id)
@@ -93,7 +123,15 @@ def update(request, id):
         return redirect("/show/")  
     else:
         print("fail")
-    return render(request, 'edit.html', {'data': data}) 
+    analytics = initialize_analyticsreporting()
+    response = get_report(analytics)
+    recd_response = print_response(response)
+    context = {
+        'data':data,
+        'Visitor_count': recd_response
+    }
+    # return render(request, 'edit.html', {'data': data}) 
+    return render(request, 'edit.html', context) 
 
 
 def destroy(request, id):  
@@ -115,7 +153,15 @@ def user_login(request):
                     # messages.info(request,"login sucessfully")
                     
                     messages.info(request,_(u"loggedin sucessfully. Please check navigation bar on top to fill required forms."))
-                    return render(request,"HomePage.html")
+                    analytics = initialize_analyticsreporting()
+                    response = get_report(analytics)
+                    recd_response = print_response(response)
+                    context = {
+                        'Visitor_count': recd_response
+                    }
+
+                    # return render(request, "rating.html", context)
+                    return render(request,"HomePage.html",context)
                 else:
                     # Return a 'disabled account' error message
                     messages.info(request,_(u"Your account is disabled"))
@@ -125,13 +171,27 @@ def user_login(request):
                 print (_(u"invalid login details for " + username))
                 # messages.info(request,"Invalid login details"+ username )
                 messages.error(request, _(u"Invalid username or password."))
-                return render(request,'adminlogin.html')
+                analytics = initialize_analyticsreporting()
+                response = get_report(analytics)
+                recd_response = print_response(response)
+                context = {
+                    'Visitor_count': recd_response
+                }
+
+                return render(request,'adminlogin.html',context)
     else:
         # the login is a  GET request, so just show the user the login form.
-        return render(request,'adminlogin.html')
+        analytics = initialize_analyticsreporting()
+        response = get_report(analytics)
+        recd_response = print_response(response)
+        context = {
+            'Visitor_count': recd_response
+        }
 
-def formLayout(request):
-    return render(request,"formlayout.html")
+        return render(request,'adminlogin.html',context)
+        # return render(request,'adminlogin.html')
+
+
 def HomePage(request):
         # print(main)
         analytics = initialize_analyticsreporting()
@@ -139,17 +199,7 @@ def HomePage(request):
         # print(response)
         recd_response = print_response(response)
         print(recd_response)
-        # print(dimension)
-                # scope = 'https://www.googleapis.com/auth/analytics.readonly'
-        # key_file_location = '/home/ubuntu/myenv/SWKV2/swk/swk-new.json'
         
-        # service = get_service(
-        #     api_name='analytics',
-        #     api_version='v3',
-        #     scopes=[scope],
-        #     key_file_location=key_file_location)
-        # profile_id = get_first_profile_id(service)
-        # print_results(get_results(service, profile_id))
         context ={
             'Visitor_count':recd_response
         }
@@ -159,7 +209,15 @@ def HomePage(request):
 def logout_request(request):
     logout(request)
     messages.info(request, _(u"Logged out successfully!"))
-    return render(request,"HomePage.html")
+    analytics = initialize_analyticsreporting()
+    response = get_report(analytics)
+    recd_response = print_response(response)
+    context = {
+        'Visitor_count': recd_response
+    }
+
+    # return render(request,'adminlogin.html',context)
+    return render(request,"HomePage.html",context)
 
 def DutyEntryPage(request):
     if request.method == "POST":
@@ -202,13 +260,7 @@ def TracksheetPage(request):
             jsondata2 =docinfo1[0]
             return JsonResponse(jsondata2)
         
-        # diary = UploadPictureModel.objects.all() 
-        # context={}
-        # context["diary"] = diary
-        # print("context is :")
-        # print(context)
-
-      
+            
         elif "name" in requestvar:
             selected_field = request.GET['name']
             print(selected_field)
@@ -221,14 +273,7 @@ def TracksheetPage(request):
             # jsondata2=docinfo1[0]
             # print("docinfo 0 is ",docinfo[0])
             return JsonResponse(jsondata2)
-        # print(docinfo1)
-
-        # jsondata2 = {
-        #     'jsondata':docinfo,
-        #     'jsondata1':docinfo1
-        # }
-
-        # return JsonResponse(jsondata2)
+       
 
     if request.method == "POST":
         form = TracksheetForm(request.POST or None)
@@ -274,38 +319,21 @@ def TracksheetPage(request):
     else:
         
         form = TracksheetForm(request.POST or None)
-        # form1 = ImageShowForm(request.POST or None)
-        # if request.is_ajax():
-        #     selected_field1 = request.GET['name1']
-        # else:
-        # selected_field1 = datetime.now()
-        # print("'",selected_field1,"'")
         
-        # diary = UploadPictureModel.objects.filter(date=selected_field1).values(); 
-        # print("diary is",diary.query)
-        # if request.is_ajax():
-        #     date_chosen = request.GET.get('date',datetime.date.today())
-        # # date_chosen = request.get('date')
-        #     print("date chosen is ",date_chosen)
-        # # date_selected =  form.cleaned_data['date']
-        # # print("date selected is ",date_chosen)
-        # # today = date.today()
-        # # print("Today's date:", today)
-        #     diary = UploadPictureModel.objects.filter(date=date_chosen).values(); 
         diary = UploadPictureModel.objects.order_by("-date")[:1]
         
+        analytics = initialize_analyticsreporting()
+        response = get_report(analytics)
+        recd_response = print_response(response)
+
         context= {
         'form': form,
         'diary': diary,
-        'media_url':settings.MEDIA_URL 
+        'media_url':settings.MEDIA_URL,
+        'Visitor_count': recd_response
         
         }
-        # diary = UploadPictureModel.objects.all() 
-        # context={}
-        # context["diary"] = diary
-        # print("context is :")
-        # print(context)
-
+        
         return render(request,'TracksheetForm.html',context)
 
 
@@ -367,42 +395,52 @@ def TrackformPageDetail(request):
     else:
         
         form = TracksheetForm1(request.POST or None)
+        analytics = initialize_analyticsreporting()
+        response = get_report(analytics)
+        recd_response = print_response(response)
     context= {
-        'form': form,
-               
+        'form': form,               
         'test': 'test',
+        'Visitor_count': recd_response
     }
 
     return render(request,'TrackformPageDetail.html',context)
 
 
 
-def MapPage(request):
-    return render(request,"map_fromFGIS.html")
-
-# def TracksheetPage(request):
-#     form = TracksheetForm(request.POST or None)
-#     if form.is_valid():
-#         form.save()
-
-#     context= {
-#         'form': form,
-#         'test': 'test',
-#     }
-
-#     return render(request,'TracksheetForm.html',context)
 
 def AboutUs(request):
-    return render(request,"aboutus.html")
+    analytics = initialize_analyticsreporting()
+    response = get_report(analytics)
+    recd_response = print_response(response)
+    context = {
+        'Visitor_count': recd_response
+    }
+
+    return render(request, "aboutus.html", context)
 
 def report(request):
         return HttpResponseRedirect('/report_builder/report/9')
 
 def FAQ(request):
-        return render(request,"faq.html")
+    analytics = initialize_analyticsreporting()
+    response = get_report(analytics)
+    recd_response = print_response(response)
+    context = {
+        'Visitor_count': recd_response
+    }
+
+    return render(request, "faq.html", context)
 
 def Contact(request):
-        return render(request,"contact.html")
+    analytics = initialize_analyticsreporting()
+    response = get_report(analytics)
+    recd_response = print_response(response)
+    context = {
+        'Visitor_count': recd_response
+    }
+
+    return render(request, "contact.html", context)
 
 def RatingView(request):
         print(request.method)
@@ -434,15 +472,22 @@ def RatingView(request):
             return HttpResponseRedirect(request.path_info)
             # else:
             #     messages.warning(request, _(u'Please check your form'))
-       
+        analytics = initialize_analyticsreporting()
+        response = get_report(analytics)
+        recd_response = print_response(response)
+        context = {
+            'Visitor_count': recd_response
+        }
 
-        return render(request,"rating.html")  
+        return render(request, "rating.html", context)
+        # return render(request,"rating.html")  
 
 
 
 def Grievance(request):
 
-    
+    url = staticfiles_storage.path('zones_lanes.csv')
+    url2 = staticfiles_storage.path('supervisors.csv')
     form = GrievanceForm(request.POST or None)
     if request.method == 'POST':
         form = GrievanceForm(request.POST or None)
@@ -456,22 +501,28 @@ def Grievance(request):
             
             selectlanes = form.cleaned_data['selectlanes']
             grievance = form.cleaned_data['grievance']
-            df = pd.read_csv('zones_lanes.csv', delimiter=',')
-    # User list comprehension to create a list of lists from Dataframe rows
-            row_wise_csv = [list(row) for row in df.values]
-            
+            #df = pd.read_csv('zones_lanes.csv', delimiter=',')
+            # User list comprehension to create a list of lists from Dataframe rows
+            #row_wise_csv = [list(row) for row in df.values]
+            with open(url, "r") as file:
+
+                lines = file.readlines()
+
+                row_wise_csv = [[value for value in line.split(",")] for line in lines]
 
         
-            list_zones_true = row_wise_csv[0]
+            list_zones_true = row_wise_csv[1]
             list_zones_true = list_zones_true[1:]
+            list_zones_true_2 =[]
+            for element in list_zones_true:
+                list_zones_true_2.append(element.strip('\n'))
         
         
-        
-            print(list_zones_true)
+            print(list_zones_true_2)
 
-            ind  =  list_zones_true.index(selectzones)
+            ind  =  list_zones_true_2.index(selectzones)
             print(ind)
-            with open('supervisors.csv') as csvfile:
+            with open(url2) as csvfile:
                 rows = csv.reader(csvfile)
                 column_wise_csv = list(zip(*rows))
             
@@ -507,12 +558,7 @@ def Grievance(request):
             supervisor_email = supervisor_email[1:]
             supervisor_email_curr = supervisor_email[flag]
             print(supervisor_email_curr)
-            # fw_once =form.cleaned_data['fw_once']
-            # fw_twice = form.cleaned_data['fw_twice']
-            # fw_container = form.cleaned_data['fw_container']
-            # dw_container = form.cleaned_data['dw_container']
-            # mw_container = form.cleaned_data['mw_container']
-            # ew_container = form.cleaned_data['ew_container']
+           
             print("Grievance is "+cd['grievance'])
             print("email is "+ cd['email'])
             from_email = form.cleaned_data['email']
@@ -539,46 +585,39 @@ def Grievance(request):
             #     ['monikapatira@gmail.com'],connection=con)):
             to_emails = ['karu1098@gmail.com', 'sms.swk@gmail.com']
             to_emails.append(supervisor_email_curr)
+
+            print(to_emails)
+
             if(send_mail('Grievance received for swk.communitygis.net', message_mail,from_email,to_emails,fail_silently=False,)):
+            
             # if(send_mail('Feedback (SWK)', message_mail,from_email,['monikapatira@gmail.com'],fail_silently=False,)):
                 print("message sent")
             else :
                 console.log(message_mail)
                 print("Failure")
+
             messages.success(request, 'Your grievance is saved and email is sent.') 
             return HttpResponseRedirect(request.path_info)
         else:
-            # latitude = request.POST.get('latitude')
-            # longitude = request.POST.get('longitude','')
-            # print(latitude)
-            # print(longitude)
-            # print(request.POST.get('lat'))
-            # print(request.POST)
+           
             cd = form.cleaned_data
             print(cd)
             print(form.errors)
-            messages.warning(request, 'Please check your form') 
+            messages.warning(request, 'Please check your form')
+            form_class = GrievanceForm
+    #        return render(request,"grievance_form.html",context)
+
             return render(request, 'grievance_form.html',{'form': GrievanceForm})
     else: 
         form_class = GrievanceForm
-        return render(request,"grievance_form.html", { 'form': form_class,})
+        analytics = initialize_analyticsreporting()
+        response = get_report(analytics)
+        recd_response = print_response(response)
+        context = {
+            'Visitor_count': recd_response
+        }
 
-# def uploadimage(request):
-#     if request.method == 'POST':
-#         form = UploadPictureForm(request.POST, request.FILES)
-#         name = request.POST.get('name')
-#         picture = request.POST.get('picture')
-#         date = request.POST.get('date')
-#         obj, created = UploadPictureModel.objects.get_or_create(name=name, picture=picture, date = date)
-        
-#         if created is False:
-#             easygui.msgbox("Image for this date already exists", title="Information!")
-#         else:
-#             obj.save()
-#     else:
-#         form=UploadPictureForm()
-#     return render(request,'upload_image.html', {'form':form})
-	
+        return render(request, "grievance_form.html", {'form': form_class, 'Visitor_count':recd_response})
 
 def uploadimage(request):
     if request.method == 'POST':
@@ -596,38 +635,56 @@ def uploadimage(request):
                 return redirect('/')
     else:
         form = UploadPictureForm()
-    return render(request,'upload_image.html',{'form': form})
+    
+    analytics = initialize_analyticsreporting()
+    response = get_report(analytics)
+    recd_response = print_response(response)
+    context = {
+        'Visitor_count': recd_response,
+        'form':form
+    }
+
+    # return render(request,'upload_image.html',{'form': form})
+    return render(request,'upload_image.html',context)
 
 #@csrf_exempt
 @require_http_methods(["GET"])
 def getdetails(request):
     #country_name = request.POST['country_name']
+    url = staticfiles_storage.path('zones_lanes.csv')
+    result_set = []
     if request.method == 'GET' and request.is_ajax():
         
         
         ourid = request.GET.get('name[]')
         
-        result_set = []
-        all_cities = []
-
-        with open('zones_lanes.csv') as csvfile:
+        
+        # all_cities = []
+        with open(url) as csvfile:
             rows = csv.reader(csvfile)
             column_wise_csv = list(zip(*rows))
         
-        df = pd.read_csv('zones_lanes.csv', delimiter=',')
+    #    df = pd.read_csv('zones_lanes.csv', delimiter=',')
+        with open(url, "r") as file:
+            
+            lines = file.readlines()
+
+            row_wise_csv = [[value for value in line.split(",")] for line in lines]
+        
+        
     # User list comprehension to create a list of lists from Dataframe rows
-        row_wise_csv = [list(row) for row in df.values]
+       # row_wise_csv = [list(row) for row in df.values]
 
-        with open('zones_lanes.csv') as csvfile:
+        with open(url) as csvfile:
             rows = csv.reader(csvfile)
             column_wise_csv = list(zip(*rows))
         
-        list_zones_true = row_wise_csv[0]
+        list_zones_true = row_wise_csv[1]
         list_zones_true = list_zones_true[1:]
         if ourid == 'please select your zone':
         
         
-            list_zones = row_wise_csv[0]
+            list_zones = row_wise_csv[1]
             list_zones = list_zones[1:]
         else:
             ind  =  list_zones_true.index(ourid)
@@ -704,3 +761,4 @@ def getdetails(request):
 #     model = SupervisorsList
 #     template = "/grievance.html"
 #     return render(request, 'cities_template.html', {'cities': cities})
+
