@@ -33,14 +33,18 @@ def get_report(analytics):
   """
   return analytics.reports().batchGet(
       body={
-        'reportRequests': [
-        {
-          'viewId': VIEW_ID,
-          'dateRanges': [{'startDate': '7daysAgo', 'endDate': 'today'}],
-          'metrics': [{'expression': 'ga:sessions'}],
-          'dimensions': [{'name': 'ga:country'}]
-        }]
-      }
+          "reportRequests": [
+            {
+              "viewId": "243710477",
+              "dateRanges": [
+                {
+                  "startDate": "2020-09-15",
+                  "endDate": "yesterday"
+                }
+              ]
+            }
+          ]
+        }
   ).execute()
 
 

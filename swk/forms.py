@@ -15,8 +15,6 @@ import xlrd
 import csv
 
 
-
-
             
 demarcated_lane = [('none','Select Zone'),
         ('Hira Seth Chawl to Waras Lane','Hira Seth Chawl to Waras Lane'),
@@ -208,40 +206,14 @@ class DutyEntryForm(forms.ModelForm):
         model = DutyEntry
         fields = '__all__'
 
-
 class GrievanceForm(forms.ModelForm):
-    # latitude = forms.CharField()
-    # longitude = forms.CharField()
-    #df = pd.read_excel("zones_lanes.xlsx", sheet_name=0)
-   # print(df)
-    
-
-# Print list of lists i.e. rows
-    
-
-    #print(res)
-    #print(res)
-    
-    #print(list_zones_pair)
     YESNO_CHOICES = ((0, 'No'), (1, 'Yes'))
     name= forms.CharField()
     email = forms.CharField()
-    mobile = forms.CharField()
-    
-    selectzones = forms.CharField(widget = forms.HiddenInput())
-    selectlanes = forms.CharField(widget = forms.HiddenInput())
-
-    # q1 = forms.CharField(label ="how do you find overall  daily collection service of SWK ?")
-    # fw_once =forms.ChoiceField(choices=YESNO_CHOICES, widget=forms.RadioSelect,label ="Is collecting food waste once a day enough?")
-    # fw_twice =forms.ChoiceField(choices=YESNO_CHOICES, widget=forms.RadioSelect,label ="Would you like to collect food waste twice a day enough?")
-    # fw_container = forms.ChoiceField(choices=YESNO_CHOICES, widget=forms.RadioSelect,label ="Do you have container for food waste?")
-    # dw_container = forms.ChoiceField(choices=YESNO_CHOICES, widget=forms.RadioSelect,label ="Do you have container for dry waste?")
-    # mw_container = forms.ChoiceField(choices=YESNO_CHOICES, widget=forms.RadioSelect,label ="Do you have container for menstrual waste?")
-    # ew_container = forms.ChoiceField(choices=YESNO_CHOICES, widget=forms.RadioSelect,label ="Do you have container for e-waste waste?")
-    # req_dw_cont = forms.ChoiceField(choices=YESNO_CHOICES, widget=forms.RadioSelect,label ="Do you like container for food waste?")
-    # req_ww_cont = forms.ChoiceField(choices=YESNO_CHOICES, widget=forms.RadioSelect,label ="Do you have container for food waste?")
+    mobile = forms.IntegerField()
     grievance = forms.CharField(widget=forms.Textarea(attrs={"rows":15, "cols":50}))
-    
+    grievance_no = forms.CharField(widget=forms.HiddenInput())
+
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -249,7 +221,28 @@ class GrievanceForm(forms.ModelForm):
     class Meta:
         model = Grievance
         fields = '__all__'
+        exclude = ['latitude','longitude','id','audio_src','img_src']
+        widgets = {'selectzones': forms.HiddenInput(),'selectlanes':forms.HiddenInput()}
+
+class AudioGrievanceForm(forms.ModelForm):
+    name= forms.CharField()
+    email = forms.CharField()
+    mobile = forms.CharField()
+    selectzones = forms.CharField(widget = forms.HiddenInput())
+    selectlanes = forms.CharField(widget = forms.HiddenInput())
+    grievance = forms.CharField(widget=forms.Textarea(attrs={"rows":15, "cols":50}))
+    audio_src = forms.CharField(widget=forms.HiddenInput())
+    img_src = forms.CharField(widget=forms.HiddenInput())
+    grievance_no = forms.CharField(widget=forms.HiddenInput())
+  
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+    class Meta:
+        model = Grievance
+        fields = '__all__'
         exclude = ['latitude','longitude','id']
+        widgets = {'audio_src':forms.HiddenInput(),'img_src':forms.HiddenInput(),'grievance_no':forms.HiddenInput()}
 
 class UploadPictureForm(forms.ModelForm):
     class Meta:

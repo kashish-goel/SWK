@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>SWK-Home</title>
+    <title>Swachh Worli Koliwada</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -121,6 +121,13 @@ gtag('config', 'UA-197940159-2');
                     <a href="{% url 'report' %}" class="nav-link text-white">{% trans "Report" %}</a>
                 </li>
                 {% endif %}
+
+                {% if request.user|has_group:"Demo-Audio" %}
+                <li class="nav-item">
+                    <a href="{% url 'audiogrievance' %}" class="nav-link text-white">{% trans "Audio Grievance" %}</a>
+                </li>
+                {% endif %}
+
                 {% if request.user|has_group:"supervisor" %}
                 <!-- <div class="dropdown">
                     <a class="nav-link dropdown-toggle text-white" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
@@ -207,6 +214,7 @@ gtag('config', 'UA-197940159-2');
         
         </nav>
     </nav>
+    <!--  -->
     
     <!-- End #header -->
 
@@ -216,7 +224,7 @@ gtag('config', 'UA-197940159-2');
     
     <main>
         {% block content%}
-        {{ Visitor_count }}
+        
         {% endblock%}
        
     </main>
