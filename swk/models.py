@@ -7,6 +7,12 @@ from datetime import datetime
 from wagtail.core.models import Page
 from django.utils.translation import gettext_lazy as _
 
+
+class Document(models.Model):
+    description = models.CharField(max_length=255, blank=True)
+    document = models.FileField(upload_to='documents/')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
 class DutyEntry(models.Model):
     lane_name = models.CharField(primary_key = True, max_length=200, blank = False)
     first_attendants_name = models.CharField(max_length=100)
@@ -105,9 +111,10 @@ class Grievance(models.Model):
     # longitude = models.DecimalField(max_digits=11, decimal_places=8)
     name = models.CharField(max_length=100)
     email = models.EmailField(blank=True)
-    mobile = models.IntegerField(blank=True, null=True)
+    mobile = models.CharField(max_length=15,blank=True, null=True)
     selectzones = models.CharField(max_length=100)
     selectlanes = models.CharField(max_length=100)
+    audio_src = models.CharField(max_length=100)
     # fw_once =models.BooleanField(max_length=1)
     # fw_twice =models.BooleanField()
     # fw_container =models.BooleanField()
@@ -117,6 +124,7 @@ class Grievance(models.Model):
     # req_dw_cont =models.BooleanField()
     # req_ww_cont =models.BooleanField()
     grievance = models.TextField(blank=False, null=False)
+    uploaded_at = models.DateTimeField(auto_now_add=True)
     class Meta:
         managed = False
         db_table = 'swk_grievance'
@@ -163,4 +171,3 @@ class SupervisorsList(models.Model):
     class Meta:
         managed = False
         db_table = 'swk_zone_supervisors'
-

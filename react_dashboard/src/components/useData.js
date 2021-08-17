@@ -31,13 +31,13 @@ export const FetchGeom = () =>{
 //        const urlZones = "https://geonode.communitygis.net/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typename=geonode%3Aswk_13_zone_polygon&outputFormat=json&srs=EPSG%3A4326&srsName=EPSG%3A4326";
 	    const urlZones ="https://gist.githubusercontent.com/MonikaShah/4740f99518fcb83a2e41e43b86683b31/raw/ce8e66f8b2f179cf5b337208815c7d27cc9b92ca/swk_13_zone_polygon"
 	    
-//        const urlSpots = "https://geonode.communitygis.net/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typename=geonode%3Aworli_spot_updated_10march&outputFormat=json&srs=EPSG%3A4326&srsName=EPSG%3A4326";
+        const urlSpots = "https://gist.githubusercontent.com/MonikaShah/4740f99518fcb83a2e41e43b86683b31/raw/81597bd74d772a7f4650265262fcde19a0b7f560/worli_spot_updated_10march";
 
-	    const urlSpots = "https://geonode.communitygis.net/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typename=geonode%3Aworli_spot_updated_10march&outputFormat=json&srs=EPSG%3A4326&srsName=EPSG%3A4326"
+	    // const urlSpots = "https://geonode.communitygis.net/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typename=geonode%3Aworli_spot_updated_10march&outputFormat=json&srs=EPSG%3A4326&srsName=EPSG%3A4326"
 
-  //      const urlBubble = "https://geonode.communitygis.net/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typename=geonode%3Aworli_bubble_updated_15march&outputFormat=json&srs=EPSG%3A4326&srsName=EPSG%3A4326";
+        const urlBubble = "https://gist.githubusercontent.com/MonikaShah/4740f99518fcb83a2e41e43b86683b31/raw/81597bd74d772a7f4650265262fcde19a0b7f560/worli_bubble_updated_15march";
 
-	    const urlBubble = "https://geonode.communitygis.net/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typename=geonode%3Aworli_bubble_updated_15march&outputFormat=json&srs=EPSG%3A4326&srsName=EPSG%3A4326"
+	    // const urlBubble = "https://geonode.communitygis.net/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typename=geonode%3Aworli_bubble_updated_15march&outputFormat=json&srs=EPSG%3A4326&srsName=EPSG%3A4326"
 
 	    json(urlZones,zones=>{
             json(urlSpots,spots =>{
@@ -49,4 +49,5 @@ export const FetchGeom = () =>{
     },[])
     return geom;
 }
+
 

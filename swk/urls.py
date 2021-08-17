@@ -7,7 +7,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('',views.HomePage, name = 'homepage'),
     path('aboutus/', views.AboutUs, name = 'aboutus'),
-    path('formlayout/',views.formLayout,name='formlayout'),
+    # path('formlayout/',views.formLayout,name='formlayout'),
     path('trackform/', views.TracksheetPage, name = "trackform"),
     path('trackform_det/',views.TrackformPageDetail, name ="trackform_det"),
     path('dutyentryform/', views.DutyEntryPage, name = "dutyentryform"),
@@ -27,7 +27,8 @@ urlpatterns = [
     path('rating/',views.RatingView, name = 'rating'),
     path('contact/',views.Contact, name = 'contact'),
     path('uploadimage/',views.uploadimage, name = 'uploadimage'),
-    path('getdetails/',views.getdetails,name = 'getdetails')
+    path('getdetails/',views.getdetails,name = 'getdetails'),
+    path('audiogrievance/',views.audiogrievance, name = 'audiogrievance')
     # path('graphs/',views.Graphs, name = 'graphs'),
 ]
 if settings.DEBUG:

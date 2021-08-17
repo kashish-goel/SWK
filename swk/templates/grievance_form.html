@@ -4,12 +4,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
 <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script type="text/javascript" src="http://yourjavascript.com/7174319415/script.js"></script>
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+    <!-- <script type="text/javascript" src="http://yourjavascript.com/7174319415/script.js"></script> -->
     <script>
+        window.onload = () => {
         
-        
-
+        $(document).ready(function() {
         $(document).on('change', 'select#selectlanes', function () {
             document.getElementById("id_selectzones").value =  $('#selectzones').val();
             document.getElementById("id_selectlanes").value =  $('#selectlanes').val();
@@ -86,7 +86,8 @@
                     
              });
             });
-
+        });
+    }
 
             // $(document).on('change', 'select#selectzones', function () {
             //      var optionSelected = $(this).find("option:selected");

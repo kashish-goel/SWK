@@ -79,7 +79,9 @@ gtag('config', 'UA-197940159-2');
             <img class="header-center" src="{% static 'images/sms_logo.jpg' %}" style="height: 60px; width: 80px;overflow: hidden;">
             <img class="header-right" src="{% static 'images/mcgm_logo.jpg' %}" style="height: 60px; width: 60px;overflow: hidden;">              
         </div>
-        
+        <div>
+            <!-- {{ Visitor_count }} -->
+        </div>
         <nav class ="nav-menu d-none d-lg-block">
             <ul class="navbar-nav">
                 <li class="nav-item active">
@@ -119,6 +121,13 @@ gtag('config', 'UA-197940159-2');
                     <a href="{% url 'report' %}" class="nav-link text-white">{% trans "Report" %}</a>
                 </li>
                 {% endif %}
+
+                {% if request.user|has_group:"Demo-Audio" %}
+                <li class="nav-item">
+                    <a href="{% url 'audiogrievance' %}" class="nav-link text-white">{% trans "Audio Grievance" %}</a>
+                </li>
+                {% endif %}
+
                 {% if request.user|has_group:"supervisor" %}
                 <!-- <div class="dropdown">
                     <a class="nav-link dropdown-toggle text-white" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
@@ -205,6 +214,7 @@ gtag('config', 'UA-197940159-2');
         
         </nav>
     </nav>
+    <!--  -->
     
     <!-- End #header -->
 
@@ -214,6 +224,7 @@ gtag('config', 'UA-197940159-2');
     
     <main>
         {% block content%}
+        
         {% endblock%}
        
     </main>
