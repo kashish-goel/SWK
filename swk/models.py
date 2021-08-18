@@ -104,27 +104,17 @@ class SwkTracksheetReport(models.Model):
         db_table = 'swk_tracksheet_report'
 
 class Grievance(models.Model):
-    
-    # location = models.PointField(geography=True, default=Point(0.0, 0.0))
-    # position = GeopositionField()
-    # latitude = models.DecimalField(max_digits=11, decimal_places=8)
-    # longitude = models.DecimalField(max_digits=11, decimal_places=8)
     name = models.CharField(max_length=100)
     email = models.EmailField(blank=True)
     mobile = models.CharField(max_length=15,blank=True, null=True)
     selectzones = models.CharField(max_length=100)
     selectlanes = models.CharField(max_length=100)
     audio_src = models.CharField(max_length=100)
-    # fw_once =models.BooleanField(max_length=1)
-    # fw_twice =models.BooleanField()
-    # fw_container =models.BooleanField()
-    # dw_container =models.BooleanField()
-    # mw_container =models.BooleanField()
-    # ew_container = models.BooleanField()
-    # req_dw_cont =models.BooleanField()
-    # req_ww_cont =models.BooleanField()
+    img_src =  models.CharField(max_length=100)
     grievance = models.TextField(blank=False, null=False)
     uploaded_at = models.DateTimeField(auto_now_add=True)
+    grievance_no = models.CharField(max_length=100)
+
     class Meta:
         managed = False
         db_table = 'swk_grievance'

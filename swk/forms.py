@@ -9,8 +9,8 @@ from django.contrib.gis import forms
 from django.utils.translation import ugettext_lazy as _
 from django.core.exceptions import ValidationError
 from datetime import timedelta
-#import pandas as pd
-#import numpy as np
+# import pandas as pd
+# import numpy as np
 import xlrd
 import csv
 
@@ -206,14 +206,14 @@ class DutyEntryForm(forms.ModelForm):
         model = DutyEntry
         fields = '__all__'
 
-
 class GrievanceForm(forms.ModelForm):
     YESNO_CHOICES = ((0, 'No'), (1, 'Yes'))
     name= forms.CharField()
     email = forms.CharField()
     mobile = forms.IntegerField()
     grievance = forms.CharField(widget=forms.Textarea(attrs={"rows":15, "cols":50}))
-    
+    grievance_no = forms.CharField(widget=forms.HiddenInput())
+
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -221,29 +221,20 @@ class GrievanceForm(forms.ModelForm):
     class Meta:
         model = Grievance
         fields = '__all__'
-        exclude = ['latitude','longitude','id','audio_src']
-        widgets = {'selectzones': forms.HiddenInput(),'selectlanes':forms.HiddenInput(), 'audio_src':forms.HiddenInput()}
-
+        exclude = ['latitude','longitude','id','audio_src','img_src']
+        widgets = {'selectzones': forms.HiddenInput(),'selectlanes':forms.HiddenInput()}
 
 class AudioGrievanceForm(forms.ModelForm):
-    
-    YESNO_CHOICES = ((0, 'No'), (1, 'Yes'))
     name= forms.CharField()
     email = forms.CharField()
     mobile = forms.CharField()
-
-    #voice_record = forms.FileField()#farin
-
-    
     selectzones = forms.CharField(widget = forms.HiddenInput())
     selectlanes = forms.CharField(widget = forms.HiddenInput())
-
-
     grievance = forms.CharField(widget=forms.Textarea(attrs={"rows":15, "cols":50}))
     audio_src = forms.CharField(widget=forms.HiddenInput())
-    #attach_voicenote = forms.ChoiceField(required=True, widget=forms.RadioSelect(
-    #attrs={'class': 'Radio'}), choices=(('yes','Yes'),('no','No'),))
-
+    img_src = forms.CharField(widget=forms.HiddenInput())
+    grievance_no = forms.CharField(widget=forms.HiddenInput())
+  
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
@@ -251,8 +242,7 @@ class AudioGrievanceForm(forms.ModelForm):
         model = Grievance
         fields = '__all__'
         exclude = ['latitude','longitude','id']
-        widgets = {'selectzones': forms.HiddenInput(),'selectlanes':forms.HiddenInput(), 'audio_src':forms.HiddenInput()}
-
+        widgets = {'audio_src':forms.HiddenInput(),'img_src':forms.HiddenInput(),'grievance_no':forms.HiddenInput()}
 
 class UploadPictureForm(forms.ModelForm):
     class Meta:

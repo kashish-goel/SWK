@@ -10,3 +10,4 @@ def index(request,*args,**kwargs):
       'Visitor_count': recd_response
     }
     return render(request,'react_dashboard/index.html',context)
+    return render(request,'react_dashboard/index.html',context)
