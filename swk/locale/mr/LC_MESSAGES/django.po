@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-24 08:20+0000\n"
+"POT-Creation-Date: 2021-08-27 14:47+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,146 +18,162 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: forms.py:97 forms.py:143 templates/download_data_zone.html:168
-#: templates/show_data.html:109
+#: swk/forms.py:95 swk/forms.py:141 swk/forms_audio.py:95
+#: swk/forms_audio.py:141 swk/forms_orig.py:91 swk/forms_orig.py:137
+#: swk/templates/download_data_zone.html:168 swk/templates/show_data.html:109
+#: swk/templates/test.html:187 swk/templates/test.html:909
 msgid "Date"
 msgstr "तारीख"
 
-#: forms.py:98 forms.py:144
+#: swk/forms.py:96 swk/forms.py:142 swk/forms_audio.py:96
+#: swk/forms_audio.py:142 swk/forms_orig.py:92 swk/forms_orig.py:138
+#: swk/templates/test.html:861
 msgid "Zone"
 msgstr "झोन"
 
-#: forms.py:99 forms.py:145
+#: swk/forms.py:97 swk/forms.py:143 swk/forms_audio.py:97
+#: swk/forms_audio.py:143 swk/forms_orig.py:93 swk/forms_orig.py:139
 #, fuzzy
 #| msgid "First Attendant"
 msgid "Attendants Number"
 msgstr "प्रथम अटेंडंट"
 
-#: forms.py:100 forms.py:146
+#: swk/forms.py:98 swk/forms.py:144 swk/forms_audio.py:98
+#: swk/forms_audio.py:144 swk/forms_orig.py:94 swk/forms_orig.py:140
 msgid "First Attendant"
 msgstr "प्रथम अटेंडंट"
 
-#: forms.py:101 forms.py:147
+#: swk/forms.py:99 swk/forms.py:145 swk/forms_audio.py:99
+#: swk/forms_audio.py:145 swk/forms_orig.py:95 swk/forms_orig.py:141
 #, fuzzy
 #| msgid "First Attendant"
 msgid "Second Attendant"
 msgstr "द्वितीय अटेंडंट"
 
-#: forms.py:102 forms.py:148
+#: swk/forms.py:100 swk/forms.py:146 swk/forms_audio.py:100
+#: swk/forms_audio.py:146 swk/forms_orig.py:96 swk/forms_orig.py:142
 msgid "Supervisor"
 msgstr "पर्यवेक्षक"
 
-#: forms.py:103 forms.py:149 templates/download_data_zone.html:159
-#: templates/show_data.html:100
+#: swk/forms.py:101 swk/forms.py:147 swk/forms_audio.py:101
+#: swk/forms_audio.py:147 swk/forms_orig.py:97 swk/forms_orig.py:143
+#: swk/templates/download_data_zone.html:159 swk/templates/show_data.html:100
+#: swk/templates/test.html:178 swk/templates/test.html:900
 msgid "Houses Reached"
 msgstr "घरे पोहोचली"
 
-#: forms.py:105 forms.py:151
+#: swk/forms.py:103 swk/forms.py:149 swk/forms_audio.py:103
+#: swk/forms_audio.py:149 swk/forms_orig.py:99 swk/forms_orig.py:145
 msgid "Time of Visit"
 msgstr "भेट देण्याची वेळ"
 
-#: forms.py:106 forms.py:152
+#: swk/forms.py:104 swk/forms.py:150 swk/forms_audio.py:104
+#: swk/forms_audio.py:150 swk/forms_orig.py:100 swk/forms_orig.py:146
 msgid "Dry waste before(kgs)"
 msgstr "आधी सुका कचरा (किलो)"
 
-#: forms.py:107 forms.py:153
+#: swk/forms.py:105 swk/forms.py:151 swk/forms_audio.py:105
+#: swk/forms_audio.py:151 swk/forms_orig.py:101 swk/forms_orig.py:147
 msgid "Dry waste after(kgs)"
 msgstr "सुका कचरा (किलोग्राम) नंतर"
 
-#: forms.py:108 forms.py:154
+#: swk/forms.py:106 swk/forms.py:152 swk/forms_audio.py:106
+#: swk/forms_audio.py:152 swk/forms_orig.py:102 swk/forms_orig.py:148
 msgid "Wet waste before(kgs)"
 msgstr "आधी ओला कचरा (किलोग्राम)"
 
-#: forms.py:109 forms.py:155
+#: swk/forms.py:107 swk/forms.py:153 swk/forms_audio.py:107
+#: swk/forms_audio.py:153 swk/forms_orig.py:103 swk/forms_orig.py:149
 msgid "Wet waste after(kgs)"
 msgstr "ओला कचरा (किलोग्राम) नंतर"
 
-#: forms.py:110 forms.py:156
+#: swk/forms.py:108 swk/forms.py:154 swk/forms_audio.py:108
+#: swk/forms_audio.py:154 swk/forms_orig.py:104 swk/forms_orig.py:150
 msgid "Houses doing segregation"
 msgstr "घरे वेगळी करत आहेत"
 
-#: forms.py:111 forms.py:157
+#: swk/forms.py:109 swk/forms.py:155 swk/forms_audio.py:109
+#: swk/forms_audio.py:155 swk/forms_orig.py:105 swk/forms_orig.py:151
 msgid "Houses giving mixed waste"
 msgstr "मिश्र कचरा देणारी घरे"
 
-#: forms.py:112 forms.py:158
+#: swk/forms.py:110 swk/forms.py:156 swk/forms_audio.py:110
+#: swk/forms_audio.py:156 swk/forms_orig.py:106 swk/forms_orig.py:152
 msgid "Rejected Waste"
 msgstr "नाकारलेला कचरा"
 
-#: forms.py:113 forms.py:160 templates/download_data_zone.html:171
-#: templates/show_data.html:112
+#: swk/forms.py:111 swk/forms.py:158 swk/forms_audio.py:111
+#: swk/forms_audio.py:158 swk/forms_orig.py:107 swk/forms_orig.py:154
+#: swk/templates/download_data_zone.html:171 swk/templates/show_data.html:112
+#: swk/templates/test.html:190 swk/templates/test.html:912
 msgid "Zone ID"
 msgstr "झोन आयडी"
 
-#: forms.py:159
+#: swk/forms.py:157 swk/forms_audio.py:157 swk/forms_orig.py:153
 msgid "Reason for Late Entry"
 msgstr "उशीरा प्रवेश करण्याचे कारण"
 
-#: forms.py:227
+#: swk/forms.py:211 swk/models.py:108
 msgid "Name"
 msgstr "नाव"
 
-#: forms.py:228
-msgid "Email"
+#: swk/forms.py:212
+msgid "email"
 msgstr "ईमेल"
 
-#: forms.py:229
-msgid "Mobile"
+#: swk/forms.py:213
+msgid "mobile"
 msgstr "मोबाईल"
 
-#: forms.py:231
-#, fuzzy
-#| msgid "Please select Zone"
-msgid "Select Zone"
-msgstr "कृपया झोन निवडा"
-
-#: forms.py:232
-msgid "Select Lanes"
-msgstr "लेन निवडा"
-
-#: forms.py:243 templates/new.html:163
-msgid "Grievance"
+#: swk/forms.py:214
+msgid "grievance"
 msgstr "तक्रार"
 
-#: models.py:49
+#: swk/forms.py:215
+msgid "grievance no"
+msgstr "तक्रार क्रमांक"
+
+#: swk/models.py:56 swk/models_audio.py:55 swk/models_orig.py:49
 msgid "Enter Date"
 msgstr "तारीख प्रविष्ट करा"
 
-#: models.py:56
+#: swk/models.py:63 swk/models_audio.py:62 swk/models_orig.py:56
 msgid "Enter Houses Reached"
 msgstr "घरे पोहोचली"
 
-#: templates/HomePage.html:22
+#: swk/templates/HomePage.html:22
 msgid "Swachh Worli Koliwada"
 msgstr "स्वच्छ वरळी कोळीवाडा"
 
-#: templates/HomePage.html:24
+#: swk/templates/HomePage.html:24
 msgid "A Project by Stree Mukti Sanghatana, sponsored by IDFC FIRST Bank"
 msgstr "प्रकल्प - स्त्री मुक्ति संघटनेचा, प्रायोजित - IDFC FIRST बँकेद्वारे "
 
-#: templates/TrackformPageDetail.html:19
+#: swk/templates/TrackformPageDetail.html:19
 #, fuzzy
 #| msgid "Houses providing segregated Waste "
 msgid "Houses providing segregated Waste (For DataManager)"
 msgstr "घरे वेगळी कचरा पुरवित आहेत"
 
-#: templates/TrackformPageDetail.html:30 templates/TracksheetForm.html:26
+#: swk/templates/TrackformPageDetail.html:30
+#: swk/templates/TracksheetForm.html:26
 msgid "Houses providing segregated Waste "
 msgstr "घरे वेगळी कचरा पुरवित आहेत"
 
-#: templates/TrackformPageDetail.html:31 templates/TracksheetForm.html:46
+#: swk/templates/TrackformPageDetail.html:31
+#: swk/templates/TracksheetForm.html:46 swk/templates/rating.html:342
 msgid "Submit"
 msgstr "प्रस्तुत करणे"
 
-#: templates/aboutus.html:9
+#: swk/templates/aboutus.html:10
 msgid "About Swachh Worli Koliwada"
 msgstr "बद्दल स्वच्छ वरळी कोळीवाडा"
 
-#: templates/aboutus.html:15
+#: swk/templates/aboutus.html:16
 msgid "Background"
 msgstr "पार्श्वभूमी"
 
-#: templates/aboutus.html:18
+#: swk/templates/aboutus.html:19
 msgid ""
 "IDFC FIRST Bank in collaboration with Municipal Corporation of Greater "
 "Mumbai (MCGM) and Stree Mukti Sanghatana spearheaded Swachh Worli Koliwada "
@@ -172,7 +188,7 @@ msgstr ""
 "सवय लावणे आणि त्यासाठी समाज वर्तनात बदल घडवून आणणे हा आहे. वरळी कोळीवाडा या "
 "वस्तीतील जास्तीत जास्त लोकांच्या सहभागातूनच हा बदल होऊ शकेल असा आम्हाला विश्वास आहे."
 
-#: templates/aboutus.html:19
+#: swk/templates/aboutus.html:20
 msgid ""
 "Swachh Worli Koliwada project aims at building a zero waste neighbourhood "
 "with self-sustainable zones that are equipped to manage solid waste they "
@@ -184,11 +200,11 @@ msgstr ""
 "पूर्णपणे केल्यास हा आपला वरळी कोळीवाडा विभाग शून्य कचरा विभाग आपण करू शकू. अशी "
 "स्वच्छतेची सवय आपल्याला एकदा लागली तर निरंतर/शाश्वत विकासाकडे आपली वाटचाल सुरु होईल."
 
-#: templates/aboutus.html:23
+#: swk/templates/aboutus.html:24
 msgid "About IDFC FIRST Bank"
 msgstr "आयडीएफसी फर्स्ट बँक बद्दल"
 
-#: templates/aboutus.html:26
+#: swk/templates/aboutus.html:27
 msgid ""
 "IDFC FIRST Bank was founded by the merger of IDFC Bank and Capital First in "
 "December 2018. The Bank provides a range of financial solutions to "
@@ -207,11 +223,11 @@ msgstr ""
 "अनेक सेवा उपलब्ध आहेत. आयडीएफसी फर्स्ट बँकेचे जाळे देशभर पसरलेले आहे. वैयक्तिक आणि सामूहिक "
 "सेवा तसेच अन्य बँकिंग क्षेत्रात बँक कार्यरत आहे."
 
-#: templates/aboutus.html:31
+#: swk/templates/aboutus.html:32
 msgid "About Municipal Corporation of Greater Mumbai "
 msgstr "मुंबई महानगरपालिका (एमसीजीएम) बद्दल"
 
-#: templates/aboutus.html:34
+#: swk/templates/aboutus.html:35
 msgid ""
 "The Municipal Corporation of Greater Mumbai (MCGM) formerly and commonly "
 "known as the Bombay Municipal Corporation (BMC) is the governing civic body "
@@ -231,11 +247,11 @@ msgstr ""
 "व्यापार, सरकारी महसूल यामध्ये मोठा वाटा आहे. तसेच देशाच्या  शिक्षण, वैज्ञानिक व तंत्रज्ञान "
 "विषयक  संशोधन आणि प्रगतिमध्ये हे महानगर एक आघाडीचे केंद्र बनले आहे."
 
-#: templates/aboutus.html:39
+#: swk/templates/aboutus.html:40
 msgid "About Stree Mukti Sangathana(SMS)"
 msgstr "स्त्री मुक्ती संघटनेबद्दल"
 
-#: templates/aboutus.html:42
+#: swk/templates/aboutus.html:43
 msgid ""
 "Stree Mukti Sanghatana established in 1975 is a non-profit organisation and "
 "strives to create a gender just world by improving the lives of women "
@@ -253,7 +269,7 @@ msgstr ""
 "मुलांसाठी जीवन शिक्षण उपक्रम, पुस्तके आणि मासिक प्रकाशन, कचरा वेचक महिलांसाठी आजीविका, "
 "शिक्षण आणि आरोग्य कार्यक्रम अशा अनेक उपक्रमांद्वारे स्त्री मुक्ती संघटना कार्यरत आहे."
 
-#: templates/aboutus.html:43
+#: swk/templates/aboutus.html:44
 msgid ""
 "Since 1999 SMS has been working for the cause of women waste pickers and "
 "offering solutions for Solid Waste Management. SMS is registered under "
@@ -265,11 +281,11 @@ msgstr ""
 "आणि सोसायटीज रजिस्ट्रेशन कायदा अंतर्गत नोंदणीकृत असून आयकर कायदा १९६१ अंतर्गत ८०-जी "
 "आणि १२ ए प्रमाणपत्रित आहे. "
 
-#: templates/aboutus.html:49
+#: swk/templates/aboutus.html:50
 msgid "About Community GIS"
 msgstr "कॉम्युनिटी जीआयएस बद्दल"
 
-#: templates/aboutus.html:53
+#: swk/templates/aboutus.html:54
 msgid ""
 "Communitygis is a Free and Open Source platform for community ownership of "
 "data and code for geographic data. \n"
@@ -291,150 +307,208 @@ msgstr ""
 "व्यासपीठ इतर थीम्सच्या सुधारणांसह वापरले जाऊ शकते. स्थापित आणि वापरण्याच्या प्राथमिक "
 "सूचना लवकरच उपलब्ध केल्या जातील.हे makerGhat आणि CTARA IIT-B संघांनी विकसित केले आहे. "
 
-#: templates/adminlogin.html:38
+#: swk/templates/adminlogin.html:38
 msgid "SWK Portal Login"
 msgstr "एसडब्ल्यूके पोर्टल लॉगिन"
 
-#: templates/adminlogin.html:41
+#: swk/templates/adminlogin.html:41
 msgid "EnterUsername"
 msgstr "वापरकर्तानाव"
 
-#: templates/adminlogin.html:45
+#: swk/templates/adminlogin.html:45
 msgid "Password"
 msgstr "संकेतशब्द"
 
-#: templates/adminlogin.html:48 templates/new.html:181
+#: swk/templates/adminlogin.html:48 swk/templates/new.html:190
+#: swk/templates/test.html:47
 msgid "Login"
 msgstr "लॉगिन"
 
-#: templates/base.html:40 templates/new.html:86
+#: swk/templates/audio-grievance_form.html:309
+#, fuzzy
+#| msgid "Grievance Form "
+msgid "Audio Grievance Form "
+msgstr "राक्षाचे फॉर्म"
+
+#: swk/templates/base.html:40 swk/templates/new.html:88
+#: swk/templates/test.html:11
 msgid "Home"
 msgstr "मुख्यपृष्ठ"
 
-#: templates/base.html:43 templates/new.html:92
+#: swk/templates/base.html:43 swk/templates/new.html:94
+#: swk/templates/test.html:13
 msgid "Maps"
 msgstr "नकाशे"
 
-#: templates/base.html:46 templates/new.html:89
+#: swk/templates/base.html:46 swk/templates/new.html:91
+#: swk/templates/test.html:12
 msgid "About Us"
 msgstr "आमच्याबद्दल"
 
-#: templates/base.html:83 templates/new.html:119 templates/new.html:148
-#: templates/report.html:5
+#: swk/templates/base.html:83 swk/templates/new.html:121
+#: swk/templates/new.html:157 swk/templates/report.html:5
+#: swk/templates/test.html:40
 msgid "Report"
 msgstr "अहवाल"
 
-#: templates/contact.html:9 templates/new.html:171
+#: swk/templates/contact.html:9 swk/templates/new.html:180
 msgid "Contact Us"
 msgstr "संपर्क साधा"
 
-#: templates/download_data_zone.html:160 templates/show_data.html:101
+#: swk/templates/contact.html:15
+msgid "Site Office Address"
+msgstr ""
+
+#: swk/templates/contact.html:16
+msgid "Swk Container, Khan Abdul Gaffar Khan Road, Worli Sea Face,"
+msgstr "स्व कंटेनर, खान अब्दुल गफ्फार खान रोड, वरळी सी फेस, "
+
+#: swk/templates/contact.html:17
+msgid "Worli Mumbai, Maharasthra 400018 India"
+msgstr " वरळी मुंबई, महाराष्ट्र 400018 भारत"
+
+#: swk/templates/contact.html:19
+msgid "phone number"
+msgstr "फोन नंबर:"
+
+#: swk/templates/contact.html:19
+msgid "+91 73044 94032"
+msgstr "+९१ ७३०४४ ९४०३२"
+
+#: swk/templates/contact.html:21 swk/templates/contact.html:26
+msgid "email id"
+msgstr "ई - मेल आयडी"
+
+#: swk/templates/contact.html:23
+msgid "Head office Address:"
+msgstr "मुख्य कार्यालयाचा पत्ता:"
+
+#: swk/templates/contact.html:23
+msgid "Ahilyabai Holkar Marg, Near Jafri High School bus stop,"
+msgstr "अहिल्याबाई होळकर मार्ग, जाफरी हायस्कूल बस स्टॉप जवळ,"
+
+#: swk/templates/contact.html:24
+msgid "Govandi- Mumbai-400043"
+msgstr "गोवंडी- मुंबई -400043"
+
+#: swk/templates/download_data_zone.html:160 swk/templates/show_data.html:101
+#: swk/templates/test.html:179 swk/templates/test.html:901
 msgid "Houses Doing Segregation"
 msgstr "घरे विभाजन करीत आहेत"
 
-#: templates/download_data_zone.html:161 templates/show_data.html:102
+#: swk/templates/download_data_zone.html:161 swk/templates/show_data.html:102
+#: swk/templates/test.html:180 swk/templates/test.html:902
 msgid "Houses Giving Mixed Waste"
 msgstr "मिश्रित कचरा देणारी घरे"
 
-#: templates/download_data_zone.html:162 templates/show_data.html:103
+#: swk/templates/download_data_zone.html:162 swk/templates/show_data.html:103
+#: swk/templates/test.html:181 swk/templates/test.html:903
 msgid "Dry Waste BF"
 msgstr "आधी ड्राय वेस्ट"
 
-#: templates/download_data_zone.html:163 templates/show_data.html:104
+#: swk/templates/download_data_zone.html:163 swk/templates/show_data.html:104
+#: swk/templates/test.html:182 swk/templates/test.html:904
 msgid "Dry Waste AF"
 msgstr "नंतर सुका कचरा"
 
-#: templates/download_data_zone.html:164 templates/show_data.html:105
+#: swk/templates/download_data_zone.html:164 swk/templates/show_data.html:105
+#: swk/templates/test.html:183 swk/templates/test.html:905
 msgid "Wet Waste BF"
 msgstr "आधी ओला कचरा"
 
-#: templates/download_data_zone.html:165 templates/show_data.html:106
+#: swk/templates/download_data_zone.html:165 swk/templates/show_data.html:106
+#: swk/templates/test.html:184 swk/templates/test.html:906
 msgid "Wet Waste AF"
 msgstr "नंतर ओला कचरा"
 
-#: templates/download_data_zone.html:166 templates/show_data.html:107
+#: swk/templates/download_data_zone.html:166 swk/templates/show_data.html:107
+#: swk/templates/test.html:185 swk/templates/test.html:907
 #, fuzzy
 msgid "Zone Name"
 msgstr "झोन नाव"
 
-#: templates/download_data_zone.html:167 templates/edit.html:17
-#: templates/show_data.html:108
+#: swk/templates/download_data_zone.html:167 swk/templates/edit.html:17
+#: swk/templates/show_data.html:108 swk/templates/test.html:186
+#: swk/templates/test.html:908
 msgid "Track ID"
 msgstr "ट्रॅक आयडी"
 
-#: templates/download_data_zone.html:169 templates/show_data.html:110
+#: swk/templates/download_data_zone.html:169 swk/templates/show_data.html:110
+#: swk/templates/test.html:188 swk/templates/test.html:910
 msgid "Supervisor Name"
 msgstr "पर्यवेक्षकाचे नाव"
 
-#: templates/download_data_zone.html:170 templates/show_data.html:111
+#: swk/templates/download_data_zone.html:170 swk/templates/show_data.html:111
+#: swk/templates/test.html:189 swk/templates/test.html:911
 msgid "Rejected"
 msgstr "नाकारले"
 
-#: templates/download_data_zone.html:172 templates/show_data.html:113
+#: swk/templates/download_data_zone.html:172 swk/templates/show_data.html:113
+#: swk/templates/test.html:913
 msgid "Entry"
 msgstr ""
 
-#: templates/edit.html:13
+#: swk/templates/edit.html:13
 msgid "Update Details"
 msgstr "तपशील अद्यतनित करा"
 
-#: templates/edit.html:23
+#: swk/templates/edit.html:23
 msgid "Houses Reached:"
 msgstr "घरे पोहोचली:"
 
-#: templates/edit.html:29
+#: swk/templates/edit.html:29
 msgid "Houses Doing Seggregation:"
 msgstr "घरे एकत्रीकरण करीत आहेत:"
 
-#: templates/edit.html:35
+#: swk/templates/edit.html:35
 msgid "Houses Giving Mixed Wasted:"
 msgstr "मिश्र वाया घालणारी घरे:"
 
-#: templates/edit.html:41
+#: swk/templates/edit.html:41
 msgid "Dry Waste BF:"
 msgstr "ड्राय वेस्ट बीएफ:"
 
-#: templates/edit.html:47
+#: swk/templates/edit.html:47
 msgid "Dry Waste AF:"
 msgstr "सुका कचरा वायफळ वायू:"
 
-#: templates/edit.html:53
+#: swk/templates/edit.html:53
 msgid "Wet Waste BF:"
 msgstr "ओला कचरा बीएफ:"
 
-#: templates/edit.html:59
+#: swk/templates/edit.html:59
 msgid "Wet Waste AF:"
 msgstr "ओला कचरा वायू:"
 
-#: templates/edit.html:65
+#: swk/templates/edit.html:65
 msgid "Zone Name:"
 msgstr "झोन नाव:"
 
-#: templates/edit.html:72
+#: swk/templates/edit.html:72
 msgid "Date:"
 msgstr "तारीख:"
 
-#: templates/edit.html:78
+#: swk/templates/edit.html:78
 msgid "Supervisor Name:"
 msgstr "पर्यवेक्षकाचे नाव:"
 
-#: templates/edit.html:84
+#: swk/templates/edit.html:84
 msgid "Rejected:"
 msgstr "नाकारलेले:"
 
-#: templates/edit.html:90
+#: swk/templates/edit.html:90
 msgid "Zone ID:"
 msgstr "झोन आयडी:"
 
-#: templates/edit.html:98
+#: swk/templates/edit.html:98
 msgid "Update"
 msgstr "अद्यतनित करा"
 
-#: templates/faq.html:5
+#: swk/templates/faq.html:5
 msgid "OUR VISION"
 msgstr "आमचे उद्दिष्ट"
 
-#: templates/faq.html:10
+#: swk/templates/faq.html:10
 msgid ""
 "Making the area of Worli Koliwada a Zero Waste Area, \n"
 "    thus helping in environment and creating job opportunities \n"
@@ -444,15 +518,15 @@ msgstr ""
 "वरळी कोळीवाडा हा विभाग शून्य कचरा विभाग बनविणे, याप्रमाणे निसर्गाला सहाय्य करणे आणि "
 "समाजातील उपेक्षित विभागातील महिला आणि पुरुषांसाठी रोजगाराच्या संधी निर्माण करणे. "
 
-#: templates/faq.html:20
+#: swk/templates/faq.html:20
 msgid "FREQUENTLY ASKED QUESTIONS"
 msgstr "सतत विचारले जाणारे प्रश्न"
 
-#: templates/faq.html:21
+#: swk/templates/faq.html:21
 msgid "1. What do you mean by Zero Waste?"
 msgstr "1. शून्य कचरा म्हणजे काय?"
 
-#: templates/faq.html:22
+#: swk/templates/faq.html:22
 msgid ""
 "ANS:&nbsp;&nbsp;  Zero Waste is a concept where waste is completely utilized "
 "by reusing or recycling.   Only minimal quantity is transported to the "
@@ -463,11 +537,11 @@ msgstr ""
 "आणला जातो आणि वास्तविक काहीच कचरा न उरणे म्हणजेच शून्य कचरा होणे. परिणामी डम्पिंग "
 "ग्राऊंडवर फार कमीत कमी प्रमाणात कचरा नेणे."
 
-#: templates/faq.html:24
+#: swk/templates/faq.html:24
 msgid "2. What are the advantages of ensuring Zero Waste?"
 msgstr "२. आपला विभाग हा शून्य कचरा करण्याचे कोणते फायदे आहेत?"
 
-#: templates/faq.html:25
+#: swk/templates/faq.html:25
 msgid ""
 "Ans:&nbsp;&nbsp;  Ensuring Zero Waste is the most environmentally friendly "
 "way of living as it prevents valuable recyclable materials(Dry and Wet) from "
@@ -482,37 +556,37 @@ msgstr ""
 "मातीची गुणवत्ता खराब होते. उलट सेंद्रिय खतामुळे जमिनीची पाणी धारण करण्याची क्षमता अधिक "
 "वाढते.हे शून्य कचरा करण्याचे ध्येय गाठल्यास खालीलप्रकारे आपल्याला प्रभावी उपयोग होऊ शकेल:  "
 
-#: templates/faq.html:30
+#: swk/templates/faq.html:30
 msgid ""
 "that valuable recyclable materials (Dry and Wet) are not wasted at the "
 "dumping grounds."
 msgstr "डंपिंग ग्राउंडवर मूल्यवान पुनर्वापर योग्य कचरा (ओला व कोरडा) वाया जाणार नाही."
 
-#: templates/faq.html:33
+#: swk/templates/faq.html:33
 msgid "conversion of wet waste into compost thus restoring nature’s wealth."
 msgstr "ओल्या कचऱ्याचे खतात रूपांतर झाल्यामुळे निसर्गाची संपत्ती पुनर्संचयित होते."
 
-#: templates/faq.html:36
+#: swk/templates/faq.html:36
 msgid "saving of transport cost and tipping fee for Local Self Governments."
 msgstr "स्थानिक स्वराज्य संस्थांच्या वाहतुकीच्या खर्चाची आणि फी याची बचत "
 
-#: templates/faq.html:39
+#: swk/templates/faq.html:39
 msgid "saving of emissions due to transport, cleaner roads, lesser pollution."
 msgstr "वाहतूक, स्वच्छ रस्ते आणि कमी प्रदूषणामुळे उत्सर्जनाची बचत"
 
-#: templates/faq.html:42
+#: swk/templates/faq.html:42
 msgid "prevention of Air Pollution."
 msgstr "वायू प्रदूषण रोखणे."
 
-#: templates/faq.html:45
+#: swk/templates/faq.html:45
 msgid "prevention of Water Pollution."
 msgstr "जल प्रदूषण रोखणे."
 
-#: templates/faq.html:48
+#: swk/templates/faq.html:48
 msgid "prevention of Land Pollution."
 msgstr "भूप्रदूषण रोखणे."
 
-#: templates/faq.html:51
+#: swk/templates/faq.html:51
 msgid ""
 "economy of resources thus enabling savings at individual level, family "
 "level, society level, state level, national level and also universal level."
@@ -521,7 +595,7 @@ msgstr ""
 "समाज पातळीवर, राज्य पातळीवर, राष्ट्रीय पातळीवर तसेच वैश्विक स्तरावरही ती सक्षमपणे "
 "जाणवेल."
 
-#: templates/faq.html:55
+#: swk/templates/faq.html:55
 msgid ""
 "It is a way to give back to the nature and also an unconditional gift of "
 "love intended from us to the next generation."
@@ -529,18 +603,18 @@ msgstr ""
 "यामार्गाने आपण निसर्गाला परतफेड करू शकतो तसेच आपल्या पुढच्या पिढीला आपल्याकडून हि एक "
 "प्रेमळ निःशर्तपणे दिलेली भेट ठरेल."
 
-#: templates/faq.html:58
+#: swk/templates/faq.html:58
 msgid "3. What is the process adopted to ensure Zero Waste?"
 msgstr "३. नेमक्या कोणत्या प्रक्रियेने शून्य कचरा केला जातो? "
 
-#: templates/faq.html:59
+#: swk/templates/faq.html:59
 msgid ""
 "Ans:&nbsp;&nbsp;  The process of Zero Waste Management involves 4 simple "
 "steps:"
 msgstr ""
 "उत्तर: शून्य कचरा व्यवस्थापन करण्याच्या प्रक्रियेत 4 सोप्या पायऱ्यांचा समावेश आहे:    "
 
-#: templates/faq.html:63
+#: swk/templates/faq.html:63
 msgid ""
 "Collection of the waste separated according to categories namely (a) Dry "
 "Waste. (b) Wet Waste and (c) Hazardous Waste."
@@ -548,23 +622,23 @@ msgstr ""
 "कचर्‍याचे संकलन खालील वर्गीकरणानुसार करणे - (अ) सुका कचरा (ब) ओला कचरा आणि (क) "
 "धोकादायक/ घातक कचरा."
 
-#: templates/faq.html:66
+#: swk/templates/faq.html:66
 msgid "Further segregation depending on the requirement for recycling."
 msgstr "पुनर्वापर करण्याच्या आवश्यकतेनुसार आणखी सविस्तर वर्गीकरण "
 
-#: templates/faq.html:69
+#: swk/templates/faq.html:69
 msgid "Recycling"
 msgstr "पुनर्वापर"
 
-#: templates/faq.html:72
+#: swk/templates/faq.html:72
 msgid "Disposal of Hazardous Waste."
 msgstr " घातक कचर्‍याची विल्हेवाट लावणे."
 
-#: templates/faq.html:79
+#: swk/templates/faq.html:79
 msgid "4. What do you do with the Separated Waste?"
 msgstr "४. वर्गीकरण असलेल्या कचऱ्याचे आपण करतो?"
 
-#: templates/faq.html:80
+#: swk/templates/faq.html:80
 msgid ""
 "Ans:&nbsp;&nbsp;We (i)convert Organic Wet Waste into compost,  (ii) send Dry "
 "Waste for recycling & (iii) send the hazardous waste to the municipality for "
@@ -574,7 +648,7 @@ msgstr ""
 "पुनर्वापरासाठी पाठवितो आणि (iii) घातक कचरा भस्मसात करण्याच्या प्रक्रियेसाठी म.न.पा. "
 "कडे पाठवितो."
 
-#: templates/faq.html:87
+#: swk/templates/faq.html:87
 msgid ""
 "5. Would you be processing the waste in our nearby localities?  If so, it "
 "will lead to foul smell.  We do not want the process to be carried out in "
@@ -587,7 +661,7 @@ msgstr ""
 "आम्ही त्याऐवजी मिश्र कचरा देऊ, जेणेकरून तो डम्पिंग ग्राउंडला पाठविला जाऊ शकेल.  म्हणजे "
 "दृष्टी आड सृष्टी. "
 
-#: templates/faq.html:88
+#: swk/templates/faq.html:88
 msgid ""
 " \"Ans:&nbsp;&nbsp; It is a misconception that the process leads to "
 "generation of foul smell.  We have been processing the waste in Kandivali "
@@ -602,11 +676,11 @@ msgstr ""
 "असलेल्या जागी भेट द्या आणि हे सर्व किती सोयीस्कर आहे, याचा स्वतः अनुभव घ्या.  उलट यामुळे "
 "तर आपण निरोगी राहण्यास याचा प्रक्रियेचा उपयोग होतोय हे आपल्या लक्षात येईल.  "
 
-#: templates/faq.html:91
+#: swk/templates/faq.html:91
 msgid "6. Why should we maintain the Waste separately before giving?"
 msgstr "६. आम्ही कचरा देण्यापूर्वीच वर्गीकरण नुसार वेगवेगळा का ठेवला पाहिजे? "
 
-#: templates/faq.html:92
+#: swk/templates/faq.html:92
 msgid ""
 "Ans:&nbsp;&nbsp;  Maintaining different kinds of waste separately is the "
 "first step towards cleanliness.  It helps to ensure better public health.  "
@@ -617,7 +691,7 @@ msgstr ""
 "आपले सार्वजनिक आरोग्य चांगले राहण्यास मदत होते. सोबतच यामुळे हवा, पाणी आणि जमीन यांचे "
 "प्रदूषण कमी करण्यात मदत होऊन आरोग्यासंबंधित धोक्यांना यामुळे आळाही बसतो. "
 
-#: templates/faq.html:94
+#: swk/templates/faq.html:94
 msgid ""
 "All of these can happen only if the community participates whole heartedly "
 "and gives the waste of different kinds in separate category.  It is not "
@@ -626,7 +700,7 @@ msgstr ""
 "जर वस्तीपातळीवर सर्वांनी यात मनापासून सहभाग घेऊन कचरा वेगवेगळा दिला तरच या सर्व "
 "गोष्टी घडू शकतात."
 
-#: templates/faq.html:96
+#: swk/templates/faq.html:96
 msgid ""
 "7. We pay tax to the municipality.  To take care of issues relating to "
 "public health is the responsibility of the Municipality. Why should we do "
@@ -635,7 +709,7 @@ msgstr ""
 "७. आम्ही महानगरपालिकेला कर भरतो. सार्वजनिक आरोग्याशी संबंधित मुद्द्यांची काळजी घेणे ही "
 "पालिकेची जबाबदारी आहे. त्यांचे काम आम्ही का करावे?"
 
-#: templates/faq.html:97
+#: swk/templates/faq.html:97
 msgid ""
 "Ans:&nbsp;&nbsp;If we cannot as a family provide one kilogram of waste "
 "separated appropriately it is unreasonable to expect Municipality to "
@@ -645,7 +719,7 @@ msgstr ""
 "तर पालिकेने 7-8 हजार किलोग्रॅम कचरा वेगळा करावा ही अपेक्षा आपण करणे म्हणजे हे किती "
 "अवास्तविक आहे. कचर्‍याची योग्य प्रकारे विल्हेवाट लावणे हे खरंच पालिकेचे काम आहे."
 
-#: templates/faq.html:99
+#: swk/templates/faq.html:99
 msgid ""
 "To dispose off the waste in appropriate manner is indeed the job of the "
 "municipality.  However, unless we provide waste separately, the same cannot "
@@ -654,7 +728,7 @@ msgstr ""
 " पण तरीही, जोपर्यंत आपण स्वतंत्रपणे वेगवेगळा कचरा देत नाही तोपर्यंत त्यावर प्रक्रिया करणे "
 "अशक्य आहे. त्याऐवजी तो सर्व कचरा डम्पिंग ग्राऊंडवरच पाठवावा लागेल."
 
-#: templates/faq.html:101
+#: swk/templates/faq.html:101
 msgid ""
 "You are not providing the waste separately to help Municipality; you are "
 "maintaining the different categories of waste separately to ensure better "
@@ -666,7 +740,7 @@ msgstr ""
 "चांगला पुनर्वापर करण्यासाठी आणि भविष्यातील आपल्या पिढीसाठी पुरेशी आणि चांगल्या प्रतीची "
 "संसाधने (हवा, पाणी आणि जमीन) उपलब्ध करुन देण्यासाठी कचरा वेगवेगळा ठेवून देणार आहोत."
 
-#: templates/faq.html:103
+#: swk/templates/faq.html:103
 msgid ""
 "8. Even if we give different kinds of waste separately, most of the people "
 "in the neighborhood throw their waste in the sea/kiosk/dumping bin."
@@ -674,7 +748,7 @@ msgstr ""
 "८. जर आम्ही विविध प्रकारचा कचरा हा वेगवेगळा जरी दिला तरी आजूबाजूच्या भागातील बहुतेक "
 "लोक त्यांचा कचरा हा समुद्रात/ किओस्कमध्ये/ डम्पिंग बिनमध्ये टाकतात. त्याचे काय?"
 
-#: templates/faq.html:104
+#: swk/templates/faq.html:104
 msgid ""
 "Ans:&nbsp;&nbsp; Waste segregation by the waste generator is a new thought "
 "and requires change in habit of the people. This transformation will take "
@@ -687,7 +761,7 @@ msgstr ""
 "आम्ही लोकांच्या या सवयींमध्ये आवश्यक ते बदल घडवून आणण्यासाठी एकत्र काम करत आहोत. आम्ही "
 "हा बदल घडवून आणण्यातही महत्त्वपूर्ण प्रगती करीत आहोत."
 
-#: templates/faq.html:106
+#: swk/templates/faq.html:106
 msgid ""
 "Earlier in August 2020 we did not get different kinds of waste separately "
 "from people but gradually by September 2020 we started getting 2 tons (2000 "
@@ -698,7 +772,7 @@ msgstr ""
 "नाही. परंतु हळूहळू सप्टेंबर २०२० पर्यंत आम्हाला दरमहा 2 टन (2000 किलो) वेगळा ओला कचरा "
 "मिळू लागला आणि जानेवारी 2021 पर्यंत हा आकडा 21 टन (21,000 किलो) पर्यंत वाढला आहे."
 
-#: templates/faq.html:108
+#: swk/templates/faq.html:108
 #, fuzzy
 #| msgid ""
 #| "If we continue to progress at this rate, and the number of peoples "
@@ -712,7 +786,7 @@ msgstr ""
 "या वेगाने जर आपण प्रगती पुढे सुरु राहिली व लोक सहभागाची संख्या वाढत राहिली तर आपण सर्व "
 "लवकरच आपला वरळी कोळीवाडा हा शून्य कचरा क्षेत्र/ विभाग म्हणून घोषित करू."
 
-#: templates/faq.html:110
+#: swk/templates/faq.html:110
 msgid ""
 "9. Our house is small. How can we keep different kinds of waste separately "
 "without having to use more bins and space?"
@@ -720,7 +794,7 @@ msgstr ""
 "९. आमची घरे लहान आहेत. कमी जागेत एकाच कचऱ्याच्या डब्यात आम्ही कचरा वर्गीकरण कशाप्रकारे "
 "करू शकतो?"
 
-#: templates/faq.html:111
+#: swk/templates/faq.html:111
 msgid ""
 "Ans:&nbsp;&nbsp;For day to day use, you need only one bin per household.To "
 "ensure that different kinds of waste are maintained separately :"
@@ -728,15 +802,15 @@ msgstr ""
 "उत्तरः कचऱ्यासाठी दररोज तुम्हाला प्रत्येक घरात फक्त एका डब्याची गरज आहे.खालीलप्रकारे "
 "तुम्ही तुमचा कचरा वेगळा ठेवू शकाल."
 
-#: templates/faq.html:115
+#: swk/templates/faq.html:115
 msgid "Put the Organic/ Wet Waste food items in the bin"
 msgstr "ओला कचरा कचऱ्याच्या डब्यात ठेवा."
 
-#: templates/faq.html:118
+#: swk/templates/faq.html:118
 msgid "Keep a plastic bag to put the dry waste and e-waste in."
 msgstr "कोरडा कचरा आणि ई-कचरा एकत्र प्लॅस्टिकच्या पिशवीत ठेवा."
 
-#: templates/faq.html:121
+#: swk/templates/faq.html:121
 msgid ""
 "Keep another plastic bag to put the hazardous waste like sanitary napkins, "
 "diapers,  needles and syringes  -  This waste is not generated very often "
@@ -748,13 +822,13 @@ msgstr ""
 "तेव्हा तो वेगळ्या प्लास्टिकच्या पिशवीत ठेवा. शक्यतो त्या पिशवीवर चिन्ह करून तो घातक "
 "असल्याचे नमूद करा."
 
-#: templates/faq.html:127
+#: swk/templates/faq.html:127
 msgid ""
 "10. We cannot be keeping the fish waste at home and therefore we throw it in "
 "the sea."
 msgstr "१०. आम्ही माशांचा कचरा घरी ठेवू शकत नाही आणि म्हणून आम्ही तो समुद्रात फेकतो."
 
-#: templates/faq.html:128
+#: swk/templates/faq.html:128
 msgid ""
 "Ans:&nbsp;&nbsp;Fish waste comprises of flesh, skin, and bones.  Fish wastes "
 "degrade rapidly in warm temperatures. As a result of bacterial "
@@ -768,21 +842,21 @@ msgstr ""
 "तो योग्यरित्या तो व्यवस्थापन केला नाही तर त्यामुळे पर्यावरणीय आणि आरोग्याच्या समस्या "
 "उद्भवू शकतात."
 
-#: templates/faq.html:130
+#: swk/templates/faq.html:130
 msgid ""
 "Environmental concerns associated with disposal of fish wastes into ocean "
 "waters include:"
 msgstr "माशांचा कचरा समुद्रात फेकल्यामुळे पर्यावरणीय समस्या खालीलप्रमाणे यात समाविष्ट आहेः"
 
-#: templates/faq.html:134
+#: swk/templates/faq.html:134
 msgid "reduced oxygen levels in the seawaters at the ocean bottom;"
 msgstr "समुद्राच्या तळाशी असलेल्या समुद्रातील पाण्यातील ऑक्सिजन पातळीत घट;"
 
-#: templates/faq.html:137
+#: swk/templates/faq.html:137
 msgid "burial or smothering of living organisms; and"
 msgstr "समुद्रातील सजीव प्राण्यांना त्रास किंवा ते दफन होण्याची शक्यता; आणि"
 
-#: templates/faq.html:140
+#: swk/templates/faq.html:140
 msgid ""
 "introduction of disease or non-native and invasive species to the ecosystem "
 "of the sea floor.To add to this if any plastic is disposed along-with the "
@@ -793,7 +867,7 @@ msgstr ""
 "परिचय यात आणखी भर म्हणजे या कचऱ्यासोबत प्लास्टिकही गेले तर त्याचे अधिक प्रतिकूल परिणाम "
 "त्यांच्या एकाधिक पातळीवर दिसून आणखी धोका निर्माण होतो."
 
-#: templates/faq.html:147
+#: swk/templates/faq.html:147
 msgid ""
 "11. As our houses are on loft-like premises and/or are far placed from the "
 "spot location or the location wherefrom the SWK team blows the whistle, we "
@@ -802,7 +876,7 @@ msgstr ""
 "११. कचरा घेण्यासाठी SWK टीम आलेली आम्हाला कसे कळेल? ते शिटी वाजवतात पण आमची घरे उंच, "
 "मोठी असून माळे आहेत त्यामुळे आम्हाला शिटी ऐकायला येत नाही."
 
-#: templates/faq.html:148
+#: swk/templates/faq.html:148
 msgid ""
 "Ans:&nbsp;&nbsp;Our aim is to attend to each and every complaint within 24 "
 "hours. \n"
@@ -818,217 +892,346 @@ msgstr ""
 "काम करणे हेच आमचे उद्दीष्ट आहे.या दरम्यान, आपण सी कॉर्नर हॉटेल जवळील महाकाली कंटेनर "
 "येथील SWK प्रकल्प कार्यालयात संबंधित पर्यवेक्षकास भेटू शकता."
 
-#: templates/feedback_form.html:24 templates/feedback_form_20june21.html:24
-#: templates/grievance_form.html:173 templates/grievance_form_16june21.html:172
+#: swk/templates/feedback_form.html:24 swk/templates/grievance_form.html:164
+#: swk/templates/grievance_form_audio.html:173
+#: swk/templates/grievance_form_jul21_working.html:173
+#: swk/templates/grievance_form_orig.html:24
 msgid "Grievance Form "
 msgstr "राक्षाचे फॉर्म"
 
-#: templates/map/map.html:302 templates/map/map.orig.7june21.html:302
+#: swk/templates/map/map.html:302
 msgid "Geographical Hierarchy"
 msgstr "भौगोलिक पदानुक्रम"
 
-#: templates/map/map.html:307 templates/map/map.orig.7june21.html:307
-#, fuzzy
-#| msgid "Admin Boundary"
-msgid "Admin Ward Boundary"
+#: swk/templates/map/map.html:307
+msgid "AdminWard Boundary"
 msgstr "प्रशासन सीमा"
 
-#: templates/map/map.html:310 templates/map/map.orig.7june21.html:310
+#: swk/templates/map/map.html:310
 msgid "Worli Koliwada Lanes"
 msgstr "वरळी कोळीवाडा लेन्स"
 
-#: templates/map/map.html:313 templates/map/map.orig.7june21.html:313
+#: swk/templates/map/map.html:313
 msgid "Corporator Ward Boundary"
 msgstr "नगरसेवक प्रभाग सीमा"
 
-#: templates/map/map.html:323 templates/map/map.orig.7june21.html:323
+#: swk/templates/map/map.html:323
 msgid "Zonal Geometry"
 msgstr "क्षेत्रीय भूमिती"
 
-#: templates/map/map.html:331 templates/map/map.orig.7june21.html:331
+#: swk/templates/map/map.html:331
 msgid "Lanes / Bin Paths "
 msgstr "गल्ली / बिन पथ"
 
-#: templates/map/map.html:334 templates/map/map.orig.7june21.html:334
-#, fuzzy
-#| msgid "Spot"
+#: swk/templates/map/map.html:334
 msgid "Spots "
 msgstr "स्पॉट"
 
-#: templates/map/map.html:337 templates/map/map.orig.7june21.html:337
+#: swk/templates/map/map.html:337
 msgid "Spot Images"
 msgstr ""
 
-#: templates/map/map.html:340 templates/map/map.orig.7june21.html:340
+#: swk/templates/map/map.html:340
 msgid "Bubble"
 msgstr "बबल"
 
-#: templates/map/map.html:343 templates/map/map.orig.7june21.html:343
+#: swk/templates/map/map.html:343
 msgid "Zones"
 msgstr "झोन"
 
-#: templates/map/map.html:350 templates/map/map.orig.7june21.html:350
+#: swk/templates/map/map.html:350
 msgid "Landmarks"
 msgstr "साइट"
 
-#: templates/map/map.html:355 templates/map/map.orig.7june21.html:355
+#: swk/templates/map/map.html:355
 msgid "Grounds"
 msgstr "मैदान"
 
-#: templates/map/map.html:358 templates/map/map.orig.7june21.html:358
-#, fuzzy
-#| msgid " Public Toilets(coming up soon...)"
-msgid " Public Toilets"
-msgstr "सार्वजनिक शौचालय (लवकरच येत आहे ...)"
+#: swk/templates/map/map.html:358
+msgid "Public-Toilets"
+msgstr "सार्वजनिक शौचालय"
 
-#: templates/map/map.html:361 templates/map/map.orig.7june21.html:361
+#: swk/templates/map/map.html:361
 msgid "Compost Pits "
 msgstr "कंपोस्ट स्तन"
 
-#: templates/map/map.html:364 templates/map/map.orig.7june21.html:364
+#: swk/templates/map/map.html:364
 msgid "Open Places "
 msgstr "मोकळी जागा"
 
-#: templates/map/map.html:367 templates/map/map.orig.7june21.html:367
+#: swk/templates/map/map.html:367
 msgid "Temples/Worship places "
-msgstr ""
+msgstr "मंदिर/पूजेचे ठिकाण"
 
-#: templates/map/map.html:370
-msgid "Schools "
-msgstr ""
+#: swk/templates/map/map.html:370
+msgid "Schools"
+msgstr "शाळा"
 
-#: templates/map/map.html:374 templates/map/map.orig.7june21.html:371
+#: swk/templates/map/map.html:374
 msgid "Your Location"
 msgstr "आपले स्थान"
 
-#: templates/new.html:101 templates/new.html:112
+#: swk/templates/new.html:103 swk/templates/new.html:114
 #, fuzzy
 msgid "DataManager-EntryForm"
 msgstr "डेटा व्यवस्थापक प्रविष्टी फॉर्म"
 
-#: templates/new.html:102 templates/new.html:113 templates/new.html:130
-#: templates/new.html:141
+#: swk/templates/new.html:104 swk/templates/new.html:115
+#: swk/templates/new.html:139 swk/templates/new.html:150
+#: swk/templates/test.html:30
 msgid "View Daily Entry Data"
 msgstr "दैनिक प्रविष्टी डेटा पहा"
 
-#: templates/new.html:103 templates/new.html:114 templates/new.html:131
-#: templates/new.html:142
+#: swk/templates/new.html:105 swk/templates/new.html:116
+#: swk/templates/new.html:140 swk/templates/new.html:151
 msgid "OneTimeSurvey Form"
 msgstr "एक वेळ सर्वेक्षण फॉर्म"
 
-#: templates/new.html:108 templates/new.html:125 templates/new.html:136
+#: swk/templates/new.html:110 swk/templates/new.html:134
+#: swk/templates/new.html:145
 msgid "Forms"
 msgstr "फॉर्म"
 
-#: templates/new.html:129 templates/new.html:140
+#: swk/templates/new.html:127
+#, fuzzy
+#| msgid "Grievance"
+msgid "Audio Grievance"
+msgstr "तक्रार"
+
+#: swk/templates/new.html:138 swk/templates/new.html:149
+#: swk/templates/test.html:19
 msgid "Daily Entry Form"
 msgstr "दैनिक प्रवेश फॉर्म"
 
-#: templates/new.html:152
-#, fuzzy
-#| msgid "Upload Layer"
-msgid "Upload Image"
-msgstr "स्तर अपलोड करा"
+#: swk/templates/new.html:152
+msgid "Upload Image of DailyCollection"
+msgstr "चित्र उपलोड करा"
 
-#: templates/new.html:155
+#: swk/templates/new.html:161
+msgid "Upload Image"
+msgstr "चित्र उपलोड करा"
+
+#: swk/templates/new.html:164 swk/templates/test.html:37
 msgid "Dashboard"
 msgstr "डॅशबोर्ड"
 
-#: templates/new.html:160
+#: swk/templates/new.html:169
 msgid "FAQ"
 msgstr "सामान्य प्रश्न"
 
-#: templates/new.html:167 templates/rating.html:159
-#: templates/rating_20june21.html:159
+#: swk/templates/new.html:172
+msgid "Grievance"
+msgstr "तक्रार"
+
+#: swk/templates/new.html:176 swk/templates/rating.html:159
+#: swk/templates/rating_orig.html:159
 msgid "Feedback"
 msgstr "अभिप्राय"
 
-#: templates/new.html:176
+#: swk/templates/new.html:185 swk/templates/test.html:44
 msgid "Logout"
 msgstr "लॉग आउट"
 
-#: views.py:155 views_16june21.py:117
+#: swk/templates/rating.html:162
+msgid "Your name"
+msgstr "तुमचे नाव"
+
+#: swk/templates/rating.html:163
+msgid "Your email"
+msgstr "तुमचे ईमेल"
+
+#: swk/templates/rating.html:164
+msgid "Your mobile"
+msgstr "तुमचे मोबाईल"
+
+#: swk/templates/rating.html:169
+msgid "How do you find overall daily collection service of SWK ?"
+msgstr "तुम्हाला SWK ची एकंदर दैनंदिन संकलन सेवा कशी मिळेल ?"
+
+#: swk/templates/rating.html:184
+msgid "How suitable  is the timing of SWK collection  to you?"
+msgstr "SWK संकलनाची वेळ तुमच्यासाठी किती योग्य आहे?"
+
+#: swk/templates/rating.html:197
+msgid "How do you find the SWK website on mobile ?"
+msgstr "तुम्हाला मोबाईलवर SWK वेबसाइट कशी वाटते?"
+
+#: swk/templates/rating.html:209
+msgid "How useful is the compost for your kitchen garden ?"
+msgstr "तुमच्या किचन गार्डनसाठी कंपोस्ट किती उपयुक्त आहे?"
+
+#: swk/templates/rating.html:221
+msgid "Are you able to communicate your problems to SWK supervisors ? "
+msgstr "आपण आपल्या समस्या SWK पर्यवेक्षकांशी संवाद साधण्यास सक्षम आहात का?"
+
+#: swk/templates/rating.html:234
+msgid "Information received on Solid Waste Management "
+msgstr "घनकचरा व्यवस्थापनाबाबत प्राप्त माहिती"
+
+#: swk/templates/rating.html:247
+msgid "The services received from the Cleanliness Workers "
+msgstr "स्वच्छता कामगारांकडून मिळालेल्या सेवा"
+
+#: swk/templates/rating.html:260
+#, fuzzy
+#| msgid "Seggregation Centres and Pits"
+msgid "Segregation of Waste "
+msgstr "एकत्रीकरण केंद्रे आणि खड्डे"
+
+#: swk/templates/rating.html:273
+msgid ""
+"The process involved in systematic recycling/disposal of Wet waste, Dry "
+"waste and Hazardous Waste."
+msgstr ""
+"ओल्या कचऱ्याची पद्धतशीर पुनर्वापर/विल्हेवाट लावण्याची प्रक्रिया कचरा आणि घातक कचरा."
+
+#: swk/templates/rating.html:286
+msgid ""
+"Waste Management Awareness campaigns conducted by the team in your "
+"neighborhood. "
+msgstr "तुमच्या टीम मध्ये कचरा व्यवस्थापन जनजागृती मोहीम शेजार."
+
+#: swk/templates/rating.html:299
+msgid "Your contribution/role in the Waste Management Program "
+msgstr "कचरा व्यवस्थापन कार्यक्रमात तुमचे योगदान/भूमिका"
+
+#: swk/templates/test.html:17
+msgid "Enter/View Data"
+msgstr "डेटा प्रविष्ट करा / पहा"
+
+#: swk/templates/test.html:29
+msgid "Kobo Form"
+msgstr "कोबो फॉर्म"
+
+#: swk/templates/test.html:35
+msgid "Upload Layer"
+msgstr "स्तर अपलोड करा"
+
+#: swk/templates/test.html:839
+msgid "Tracksheet Filtered Details"
+msgstr "ट्रॅकशीट -फिल्टर केलेले तपशील"
+
+#: swk/templates/test.html:859
+msgid "Filter data by"
+msgstr "फिल्टर डेटा"
+
+#: swk/templates/test.html:860
+msgid "From Date"
+msgstr "या तारखेपासून"
+
+#: swk/templates/test.html:860
+msgid "To Date"
+msgstr "तारीख"
+
+#: swk/views.py:162 swk/views_audio.py:159
+#: swk/views_audio_grievance27aug21.py:159 swk/views_july21_working.py:155
+#: swk/views_orig.py:113
 #, fuzzy
 msgid ""
 "loggedin sucessfully. Please check navigation bar on top to fill required "
 "forms."
 msgstr "यशस्वीरित्या लॉग इन केले| कृपया भरण्यासाठी नेव्हिगेशन बार तपासा|"
 
-#: views.py:167 views_16june21.py:121
+#: swk/views.py:174 swk/views_audio.py:171
+#: swk/views_audio_grievance27aug21.py:171 swk/views_july21_working.py:167
+#: swk/views_orig.py:117
 msgid "Your account is disabled"
 msgstr "आपले खाते अक्षम केले आहे"
 
-#: views.py:171 views_16june21.py:125
+#: swk/views.py:178 swk/views_audio.py:175
+#: swk/views_audio_grievance27aug21.py:175 swk/views_july21_working.py:171
+#: swk/views_orig.py:121
 msgid "invalid login details for "
 msgstr "यासाठी अवैध लॉगिन तपशील"
 
-#: views.py:173 views_16june21.py:127
+#: swk/views.py:180 swk/views_audio.py:177
+#: swk/views_audio_grievance27aug21.py:177 swk/views_july21_working.py:173
+#: swk/views_orig.py:123
 msgid "Invalid username or password."
 msgstr "अवैध वापरकर्तानाव किंवा संकेतशब्द"
 
-#: views.py:211 views_16june21.py:161
+#: swk/views.py:218 swk/views_audio.py:215
+#: swk/views_audio_grievance27aug21.py:215 swk/views_july21_working.py:211
+#: swk/views_orig.py:157
 msgid "Logged out successfully!"
 msgstr "यशस्वीरित्या लॉग आउट केले!"
 
-#: views.py:229 views_16june21.py:171
+#: swk/views.py:236 swk/views_audio.py:233
+#: swk/views_audio_grievance27aug21.py:233 swk/views_july21_working.py:229
+#: swk/views_orig.py:167
 #, fuzzy
 #| msgid "Your data is saved for {} dated {}"
 msgid "Your data is saved"
 msgstr "आपला डेटा {} दिनांकित {} साठी जतन केला आहे"
 
-#: views.py:296 views.py:372 views_16june21.py:251 views_16june21.py:344
+#: swk/views.py:303 swk/views.py:379 swk/views_audio.py:300
+#: swk/views_audio.py:376 swk/views_audio_grievance27aug21.py:300
+#: swk/views_audio_grievance27aug21.py:376 swk/views_july21_working.py:296
+#: swk/views_july21_working.py:372 swk/views_orig.py:247 swk/views_orig.py:340
 msgid "Please select Zone"
 msgstr "कृपया झोन निवडा"
 
-#: views.py:300 views.py:376 views_16june21.py:255 views_16june21.py:348
+#: swk/views.py:307 swk/views.py:383 swk/views_audio.py:304
+#: swk/views_audio.py:380 swk/views_audio_grievance27aug21.py:304
+#: swk/views_audio_grievance27aug21.py:380 swk/views_july21_working.py:300
+#: swk/views_july21_working.py:376 swk/views_orig.py:251 swk/views_orig.py:344
 msgid "Data already exists"
 msgstr "डेटा आधीपासून विद्यमान आहे"
 
-#: views.py:312 views.py:388 views_16june21.py:267 views_16june21.py:360
+#: swk/views.py:319 swk/views.py:395 swk/views_audio.py:316
+#: swk/views_audio.py:392 swk/views_audio_grievance27aug21.py:316
+#: swk/views_audio_grievance27aug21.py:392 swk/views_july21_working.py:312
+#: swk/views_july21_working.py:388 swk/views_orig.py:263 swk/views_orig.py:356
 msgid "Your data is saved for {} dated {}"
 msgstr "आपला डेटा {} दिनांकित {} साठी जतन केला आहे"
 
-#: views.py:318 views.py:394 views_16june21.py:273 views_16june21.py:366
+#: swk/views.py:325 swk/views.py:401 swk/views_audio.py:322
+#: swk/views_audio.py:398 swk/views_audio_grievance27aug21.py:322
+#: swk/views_audio_grievance27aug21.py:398 swk/views_july21_working.py:318
+#: swk/views_july21_working.py:394 swk/views_orig.py:269 swk/views_orig.py:362
 msgid "Please check your form"
 msgstr "कृपया आपला फॉर्म तपासा"
 
-#: views.py:471 views_16june21.py:433
+#: swk/views.py:478 swk/views_audio.py:475
+#: swk/views_audio_grievance27aug21.py:475 swk/views_july21_working.py:471
+#: swk/views_orig.py:437
 msgid " Your feedback is saved. "
 msgstr "आपला डेटा {} दिनांकित {} साठी जतन केला आहे"
 
-#: views.py:628 views_16june21.py:589
+#: swk/views.py:651 swk/views_audio.py:789
+#: swk/views_audio_grievance27aug21.py:796 swk/views_july21_working.py:628
+#: swk/views_orig.py:533
 #, fuzzy
 #| msgid "Data already exists"
 msgid "Image for this date already exists"
 msgstr "डेटा आधीपासून विद्यमान आहे"
 
-#: views.py:634 views_16june21.py:595
+#: swk/views.py:657 swk/views_audio.py:795
+#: swk/views_audio_grievance27aug21.py:802 swk/views_july21_working.py:634
+#: swk/views_orig.py:539
 msgid "Image has been uploaded"
 msgstr ""
 
-#~ msgid "Enter/View Data"
-#~ msgstr "डेटा प्रविष्ट करा / पहा"
+#~ msgid "please select your zone"
+#~ msgstr "कृपया झोन निवडा"
 
-#~ msgid "Kobo Form"
-#~ msgstr "कोबो फॉर्म"
+#~ msgid "please select address lane"
+#~ msgstr "कृपया झोन निवडा"
 
-#~ msgid "Upload Layer"
-#~ msgstr "स्तर अपलोड करा"
+#~ msgid "Send Mail"
+#~ msgstr "मेल पाठवा"
 
-#~ msgid "Tracksheet Filtered Details"
-#~ msgstr "ट्रॅकशीट -फिल्टर केलेले तपशील"
+#~ msgid "Spot"
+#~ msgstr "स्पॉट"
 
-#~ msgid "Filter data by"
-#~ msgstr "फिल्टर डेटा"
+#~ msgid "Select Lanes"
+#~ msgstr "लेन निवडा"
 
-#~ msgid "From Date"
-#~ msgstr "या तारखेपासून"
-
-#~ msgid "To Date"
-#~ msgstr "तारीख"
+#~ msgid "Select Zone"
+#~ msgstr "कृपया झोन निवडा"
 
 #~ msgid "Temples "
-#~ msgstr "मंदिरे"
+#~ msgstr "मंदिर"
 
 #~ msgid ""
 #~ "introduction of disease or non-native and invasive species to the "
@@ -1042,9 +1245,6 @@ msgstr ""
 #~| msgid "Feedback"
 #~ msgid "Mock-Feedback"
 #~ msgstr "अभिप्राय"
-
-#~ msgid "Seggregation Centres and Pits"
-#~ msgstr "एकत्रीकरण केंद्रे आणि खड्डे"
 
 #~ msgid " Compost Pit 1(coming up soon...) "
 #~ msgstr "कंपोस्ट पिट 1 (लवकरच येत आहे ...)"

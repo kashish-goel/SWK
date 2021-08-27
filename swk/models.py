@@ -8,6 +8,7 @@ from wagtail.core.models import Page
 from django.utils.translation import gettext_lazy as _
 
 
+
 class Document(models.Model):
     description = models.CharField(max_length=255, blank=True)
     document = models.FileField(upload_to='documents/')
@@ -104,14 +105,17 @@ class SwkTracksheetReport(models.Model):
         db_table = 'swk_tracksheet_report'
 
 class Grievance(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100,help_text=_('Name'))
     email = models.EmailField(blank=True)
     mobile = models.CharField(max_length=15,blank=True, null=True)
     selectzones = models.CharField(max_length=100)
     selectlanes = models.CharField(max_length=100)
-    audio_src = models.CharField(max_length=100)
-    img_src =  models.CharField(max_length=100)
-    grievance = models.TextField(blank=False, null=False)
+    # audio_src = models.CharField(max_length=100)
+    audio_src = models.CharField(max_length=100,null=True, default=None, blank=True)
+    # img_src =  models.CharField(max_length=100)
+    img_src =  models.CharField(max_length=100,null=True, default=None, blank=True)
+    # grievance = models.TextField(blank=False, null=False)
+    grievance = models.TextField(null=True, default=None, blank=True),
     uploaded_at = models.DateTimeField(auto_now_add=True)
     grievance_no = models.CharField(max_length=100)
 

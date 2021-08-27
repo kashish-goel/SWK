@@ -208,11 +208,11 @@ class DutyEntryForm(forms.ModelForm):
 
 class GrievanceForm(forms.ModelForm):
     YESNO_CHOICES = ((0, 'No'), (1, 'Yes'))
-    name= forms.CharField()
-    email = forms.CharField()
-    mobile = forms.IntegerField()
-    grievance = forms.CharField(widget=forms.Textarea(attrs={"rows":15, "cols":50}))
-    grievance_no = forms.CharField(widget=forms.HiddenInput())
+    name= forms.CharField(label = _(u'Name'))
+    email = forms.CharField(label = _(u'email'))
+    mobile = forms.IntegerField(label = _(u'mobile'))
+    grievance = forms.CharField(widget=forms.Textarea(attrs={"rows":15, "cols":50}),label = _(u'grievance'))
+    grievance_no = forms.CharField(widget=forms.HiddenInput(),label = _(u'grievance no'))
 
 
     def __init__(self, *args, **kwargs):
@@ -230,7 +230,8 @@ class AudioGrievanceForm(forms.ModelForm):
     mobile = forms.CharField()
     selectzones = forms.CharField(widget = forms.HiddenInput())
     selectlanes = forms.CharField(widget = forms.HiddenInput())
-    grievance = forms.CharField(widget=forms.Textarea(attrs={"rows":15, "cols":50}))
+    # grievance = forms.CharField(widget=forms.Textarea(attrs={"rows":15, "cols":50}))
+    grievance = forms.CharField(required=False,widget=forms.Textarea(attrs={"rows":15, "cols":50}))
     audio_src = forms.CharField(widget=forms.HiddenInput())
     img_src = forms.CharField(widget=forms.HiddenInput())
     grievance_no = forms.CharField(widget=forms.HiddenInput())
