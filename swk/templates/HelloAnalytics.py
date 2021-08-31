@@ -10,9 +10,9 @@ from oauth2client.service_account import ServiceAccountCredentials
 
 SCOPES = ['https://www.googleapis.com/auth/analytics.readonly']
 
-KEY_FILE_LOCATION = '/home/ubuntu/myenv/SWKV2/swk/swk-new.json'
+KEY_FILE_LOCATION = config('KEY_FILE_LOCATION')
 
-VIEW_ID = '243710477'
+VIEW_ID = config('VIEW_ID')
 
 
 
