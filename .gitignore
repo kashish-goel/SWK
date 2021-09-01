@@ -181,3 +181,5 @@ dmypy.json
 **/yarn-error.log*/**
 ./swk/static/react_dashboard/main.js
 ./swk/static/react_dashboard/main.js.LICENSE.txt
+./swk/swk-new.json
+
