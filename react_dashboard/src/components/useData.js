@@ -8,8 +8,8 @@ export const FetchData = () => {
         // const url = "https://gist.githubusercontent.com/AnimeshN/229fb500cc795975547231297b0e7773/raw/4f5e46b549c483fcdeb8cb5d520e6b1df346537d/3_month_dummy_swk_cleaned_v1.1.csv";
         let currentURL = window.location.href.split('/')
        
-        // const url =  `${currentURL[0]}//${currentURL[2]}/trackid/`;
-        const url=`https://swk.communitygis.net/trackid/`;
+        const url = `${currentURL[0]}//${currentURL[2]}/trackid/`;
+        // const url=`https:swk.communitygis.net/trackid/`;
         const populationURL = `https://swk.communitygis.net/bubblepopulation/`;
         console.log(url)
          

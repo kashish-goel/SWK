@@ -20,6 +20,9 @@ function Barchart({data,selLane,selCategory}) {
     else if(upperCaseSelCategory=='Rejected'){
       newtitle=`Segregated Rejected Waste`
     }
+    else if(upperCaseSelCategory=='Total'){
+      newtitle=`Total Waste`
+    }
     let titleText = `${upperCaseSelLane} Monthly ${newtitle}`;
 
     return (

@@ -109,6 +109,7 @@
                         <th>{% trans "Date" %}</th>
                         <th>{% trans "Supervisor Name" %}</th>
                         <th>{% trans "Rejected" %}</th>
+                        <th>{% trans "Total" %}</th>
                         <th>{% trans "Zone ID" %}</th>
                         <th>{% trans "Entry" %}</th>
                         {% if request.user|has_group:"Editor" %}
@@ -133,6 +134,7 @@
                         <td>{{i.date}}</td>
                         <td>{{i.supervisor_name}}</td>
                         <td>{{i.rejected}}</td>
+                        <td>{{i.total}}</td>
                         <td>{{i.zone_id_id}}</td>
                         <td>{{i.reason_late_entry}}</td>
                         {% if request.user|has_group:"Editor" %}

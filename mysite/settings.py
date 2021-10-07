@@ -16,18 +16,21 @@ from decouple import config
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+GDAL_LIBRARY_PATH = r'C:\OSGeo4W\bin\gdal303'
+GEOS_LIBRARY_PATH = r'C:\OSGeo4W\bin\geos_c'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = 'abcd'
+# config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', cast=bool)
+DEBUG = True
+# config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -82,7 +85,6 @@ MIDDLEWARE = [
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'swk/static')
 
-
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 WAGTAIL_SITE_NAME = 'SWACCH WORLI KOLIWADA'
@@ -109,7 +111,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
@@ -126,11 +127,11 @@ DATABASES = {
         'NAME': config('DB_NAME'),
         'USER': config('DB_USER'),
         'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
-        'PORT': '',
+        'HOST': 'localhost',
+        # config('DB_HOST'),
+        'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -150,7 +151,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -164,19 +164,18 @@ USE_L10N = True
 
 USE_TZ = True
 
-LOCALE_PATHS =[
-    os.path.join(BASE_DIR,'locale'),
-    
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale'),
 
 ]
 
-LANGUAGES =[
+LANGUAGES = [
     ('en', 'English'),
-    ('hi','Hindi'),
+    ('hi', 'Hindi'),
     ('mr', 'Marathi')
 ]
 
-DATE_INPUT_FORMATS = ('%d-%m-%Y','%Y-%m-%d')
+DATE_INPUT_FORMATS = ('%d-%m-%Y', '%Y-%m-%d')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/

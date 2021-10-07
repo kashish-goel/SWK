@@ -19,7 +19,7 @@ class newTracksheet(serializers.HyperlinkedModelSerializer):
         "first_attendants_name",
         "second_attendants_name",
         "supervisor_name",
-        "time_of_visit","rejected","zone_id")
+        "time_of_visit","rejected","zone_id","total")
 
 class populationSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:

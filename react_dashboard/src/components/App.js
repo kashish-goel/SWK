@@ -32,7 +32,7 @@ export default function App() {
     
 
     <div className="app__info">
-       <InfoBoxes data={data.track} selLane={selLane} selCategory={selCategory} setSelCategory={setSelCategory}/>
+       <InfoBoxes data={data.track} population={data.population} selLane={selLane} selCategory={selCategory} setSelCategory={setSelCategory}/>
     </div>
 
     <div className="app__stat">

@@ -1,10 +1,10 @@
 import _ from 'lodash';
 
 
-const colName = {'dry':'drywaste_af','wet':'wetwaste_af','rejected':'rejected'};
+const colName = {'dry':'drywaste_af','wet':'wetwaste_af','rejected':'rejected', 'total':'total'};
 
 export const parseInteger = (data) =>{
-    const dataColumns = ['rejected','drywaste_af','drywaste_bf','num_houses_doing_segg','num_houses_giving_mixwaste','num_houses_reached','wetwaste_af','wetwaste_bf'];
+    const dataColumns = ['total', 'rejected','drywaste_af','drywaste_bf','num_houses_doing_segg','num_houses_giving_mixwaste','num_houses_reached','wetwaste_af','wetwaste_bf'];
     dataColumns.map(col =>{
         _.each(data, item => item[col] = parseInt(item[col], 10));
 
@@ -62,24 +62,31 @@ export const getDropdownLanes = (data) =>{
     ZONES = [{'zone_id':'all','lane_name':'All'},...uniqueLanes];
     return uniqueLanes;
 } 
-export const calcTotalWaste = (data,selLane,cases) =>{
-    let totWaste,caseCol;
+export const calcTotalWaste = (data,population,selLane,cases) =>{
+    let totWaste,caseCol,percapWaste,popCol,perWaste, roundingPrecision;
     if(selLane ==='all'){
         caseCol = _.map(data,cases)
-       
+        popCol = _.map(population,'bubble_population')
+
     }else{
         let selLaneData= data.filter(d => d.zone_id === selLane)
+        let selZoneData= population.filter(p => p.zone_id === selLane)
         caseCol = _.map(selLaneData,cases)
+        popCol = _.map(selZoneData,'bubble_population')
     }
     totWaste =  _.sum(caseCol);
-    return totWaste;
+    perWaste = _.divide(totWaste,_.sum(popCol));
+    roundingPrecision = 2;
+    percapWaste = _.round(perWaste, roundingPrecision);
+    // console.log(percapWaste)
+    return [totWaste, percapWaste];
 }
 
 const monthName = {'09':'Sep','10':'Oct','11':'Nov','12':'Dec','01':'Jan','02':'Feb','03':'Mar','04':'April','05':'May','06':'June','07':'July','08':'Aug'}; 
 
 export const calMonthlyData = (data,selLane,selCategory) =>{
   const yaxis = {};
-  const colName = {'dry':'drywaste_af','wet':'wetwaste_af','rejected':'rejected'};
+  const colName = {'dry':'drywaste_af','wet':'wetwaste_af','rejected':'rejected', 'total':'total'};
   let yearMonth = {};
   getYear(data).map(year =>{
     yearMonth[year] = [];
@@ -144,7 +151,7 @@ const createLabel = (oldArr,maxVal) =>{
 }
 
 export const calcDailyData = (selLanedata,selCategory) =>{
-    const colName = {'dry':'drywaste_af','wet':'wetwaste_af','rejected':'rejected'};
+    const colName = {'dry':'drywaste_af','wet':'wetwaste_af','rejected':'rejected','total':'total'};
     const catData = _.map(selLanedata,colName[selCategory])
     const date = _.map(selLanedata,'date')
     const MAXVAL = 15;

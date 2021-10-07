@@ -72,6 +72,7 @@ class Tracksheet(models.Model):
     rejected = models.IntegerField()
     reason_late_entry = models.CharField(blank=False,max_length=200,default="OnTime")
     zone_id=models.ForeignKey(Zones, on_delete=models.CASCADE)
+    total = models.IntegerField()
 
     def __str__(self):
         return self.lane_name

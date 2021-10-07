@@ -36,8 +36,8 @@ function ChoroplethMap({geojson,data,bubblePopulationData,setSelLane,selCategory
         obj[category] += elem["bubble_population"]
         return obj;
     },[])
-    
-    
+
+
   
 
    
@@ -83,6 +83,9 @@ function ChoroplethMap({geojson,data,bubblePopulationData,setSelLane,selCategory
     else if(selCategory=='rejected'){
         newtitle=`Seggregated Rejected Waste`
       }
+    else if(selCategory=='total'){
+        newtitle=`Total Waste`
+    }
     let colorLegend = legendColor()
         .labelFormat(format(".2f"))
         .title(`Legend:${newtitle}(Kgs/capita)`)
